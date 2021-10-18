@@ -9,7 +9,7 @@
                             <a href="https://africablockchain.institute/">
                                 <img src="~/assets/icons/abi.png" alt="ABI logo">
                             </a>
-                            <a href="https://www.algorand.com/futurefi/">
+                            <a href="https://algorand.foundation/">
                                 <img src="~/assets/icons/algorand.png" alt="Algorand logo">
                             </a>
                         </div>
@@ -205,6 +205,7 @@ export default {
     methods: {
         async downloadReport(){
             try {
+
                 const res = await this.$axios.$post('/subscribers/add-subscriber', this.form);
 
                 if(res.status == 'success'){
@@ -217,7 +218,7 @@ export default {
                         // confirmButtonText: '<a href="/africa-blockchain-report-2021.pdf" download style="{color: white; text-decoration: none}">Click to download</a>'
                     }).then((result) => {
                         if (result.value) {
-                            return document.location.href="https://african-blockchain.s3.us-east-2.amazonaws.com/algorand/AFRICA+Blockchain+Report+2021-2.pdf";
+                            return window.location="https://african-blockchain.s3.us-east-2.amazonaws.com/algorand/AFRICA+Blockchain+Report+2021-2.pdf";
                         }
                     })
                 }
@@ -368,8 +369,6 @@ export default {
                 margin: 0 auto;
 
                 .row{
-                    // margin-bottom: 1rem;
-
                     .col-12{
                         margin-bottom: 1rem;
                     }
@@ -817,22 +816,14 @@ export default {
                     }
 
                     .form-label{
-                        font-weight: lighter;
                         font-size: $font-rg;
                     }
 
                     .form-control {
                         padding-left: 1rem;
-                        box-shadow: none;
-                        font-weight: lighter;
-
-                        &:focus{
-                            border: 1px solid $primary;
-                        }
                     }
 
                     .btn{
-                        @include button();
                         float: right;
                         padding: .75rem 1.5rem;
                     }
