@@ -215,10 +215,10 @@ export default {
                         type: 'success',
                         showCancelButton: false,
                         confirmButtonText: 'Download Now!'
-                        // confirmButtonText: '<a href="/africa-blockchain-report-2021.pdf" download style="{color: white; text-decoration: none}">Click to download</a>'
+                        // confirmButtonText: '<a href="/africa-blockchain-report-2021.pdf" target="blank" download style="color:white; text-decoration: none">Click to download</a>'
                     }).then((result) => {
                         if (result.value) {
-                            return window.location="https://african-blockchain.s3.us-east-2.amazonaws.com/algorand/AFRICA+Blockchain+Report+2021-2.pdf";
+                            return document.location.href="https://african-blockchain.s3.us-east-2.amazonaws.com/algorand/AFRICA+Blockchain+Report+2021-2.pdf";
                         }
                     })
                 }
