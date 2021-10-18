@@ -1,0 +1,91 @@
+@mixin button() {
+    background-color: $secondary;
+    color: $white;
+    padding: .75rem 1.2rem;
+    box-shadow: none;
+    border: none;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    transition: all .3s;
+    font-weight: bold;
+
+    &:hover {
+        background-color: $white;
+        color: $secondary;
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+        transform: translateY(-.15rem);
+    }
+}
+
+@mixin card(){
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    transition: all .3s;
+    border-radius: .75rem;
+    border: none;
+    margin-bottom: 1.5rem;
+
+    &:hover {
+        box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+        transform: translateY(-.15rem);
+    }
+
+    &-body{
+        padding: 1.5rem 2rem;
+    }
+}
+
+@mixin form-group {
+    label {
+        position: relative;
+        color: $primary;
+        margin-bottom: 0;
+        bottom: -.7rem;
+        left: .75rem;
+        z-index: 10;
+        background: $white;
+        font-size: $font-sm;
+        padding: .1rem .3rem;
+        font-weight: bold;
+    }
+
+    .form-control{
+        z-index: 5;
+        padding-top: 1rem;
+        padding-bottom: .5rem;
+        padding-left: 1rem;
+        background: $white!important;
+        box-shadow: none;
+        font-size: $font-rg;
+
+        &:focus{
+            border: 1px solid $primary;
+            background: $white!important;
+        }
+    }
+
+    .form-text{
+        color: $red;
+        font-size: $font-sm;
+    }
+
+    .password-disp {
+        position: relative;
+        top: -2.12rem;
+        right: 1.5rem;
+        float: right;
+        color: $primary;
+        font-weight: 500;
+        cursor: pointer;
+        font-size: $font-sm;
+    }
+}
+
+@mixin link {
+    color: $primary;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 500;
+
+    &:hover {
+        color: $secondary;
+    }
+}
