@@ -576,7 +576,7 @@ export default {
     @media (min-width: 992px) {  
         .wrapper{
             .hero{
-                height: 90vh;
+                height: 100vh;
                 padding-top: 2rem;
 
                 &__logos{
@@ -586,8 +586,8 @@ export default {
                 }
 
                 &__text{
-                    top: 30%;
-                    transform: translateY(30%);
+                    top: 35%;
+                    transform: translateY(35%);
 
                     &--title{
                         font-size: $font-xl;
