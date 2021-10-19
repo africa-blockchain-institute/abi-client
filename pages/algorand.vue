@@ -240,7 +240,7 @@ export default {
             background: url("@/assets/images/algorand/hero.jpg");
             background-size: cover;
             height: 50vh;
-            clip-path: polygon(0 0, 100% 0%, 100% 80%, 50% 100%, 0 80%);
+            clip-path: polygon(0 0, 100% 0%, 100% 70%, 50% 100%, 0 70%);
             text-align: center;
             padding-top: 1rem;
             margin-bottom: 5rem;
@@ -713,7 +713,8 @@ export default {
     @media (min-width: 1400px) { 
         .wrapper{
             .hero{
-                height: 80vh;
+                height: 100vh;
+                clip-path: polygon(0 0, 100% 0%, 100% 75%, 50% 100%, 0 75%);
                
                 &__logos{
                     a{
@@ -728,19 +729,19 @@ export default {
                 }
 
                 &__text{
-                    top: 40%;
-                    transform: translateY(40%);
+                    top: 55%;
+                    transform: translateY(55%);
 
                     &--title{
                         font-size: $font-xxl;
                     }
 
                     &--desc{
-                        font-size: $font-hd;
+                        font-size: $font-xl;
                     }
 
                     &--tagline{
-                        font-size: $font-md;
+                        font-size: $font-hd;
                     }
                 }
             }
