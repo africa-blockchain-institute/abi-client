@@ -128,7 +128,7 @@
                             </div>
 
                             <div class="row">
-                                <div class="col">
+                                <div class="col text-center">
                                     <button class="btn details__form--btn">Download</button>
                                 </div>
                             </div>
@@ -243,7 +243,7 @@ export default {
             clip-path: polygon(0 0, 100% 0%, 100% 80%, 50% 100%, 0 80%);
             text-align: center;
             padding-top: 1rem;
-            margin-bottom: 5rem;
+            margin-bottom: 2rem;
 
             &__logos{
                 text-align: center;
@@ -274,6 +274,7 @@ export default {
 
                 &--desc{
                     font-size: $font-rg;
+                    text-transform: uppercase;
                 }
 
                 &--tagline{
@@ -386,7 +387,7 @@ export default {
                     padding-left: 1rem;
                     background: $white!important;
                     box-shadow: none;
-                    font-size: $font-rg;
+                    // font-size: $font-rg;
 
                     &:focus{
                         border: 1px solid $primary;
@@ -395,7 +396,6 @@ export default {
 
                 .btn{
                     @include button();
-                    float: right;
                     padding: .75rem 1.5rem;
                 }
             }
@@ -576,7 +576,7 @@ export default {
     @media (min-width: 992px) {  
         .wrapper{
             .hero{
-                height: 80vh;
+                height: 90vh;
                 padding-top: 2rem;
 
                 &__logos{
@@ -586,12 +586,12 @@ export default {
                 }
 
                 &__text{
-                    top: 50%;
-                    transform: translateY(50%);
+                    top: 30%;
+                    transform: translateY(30%);
 
                     &--title{
                         font-size: $font-xl;
-                        font-weight: bolder;
+                        font-size: 4rem;
                     }
 
                     &--desc{
@@ -646,7 +646,7 @@ export default {
                     }
 
                     &--title{
-                        font-size: $font-rg;
+                        font-size: $font-hd;
                     }
 
                     &--text{
@@ -676,7 +676,12 @@ export default {
                     }
 
                     .form-control {
-                        padding-left: 1rem;
+                        padding: 1rem;
+                    }
+
+                    .btn{
+                        padding: .75rem 2.5rem;
+                        font-size: $font-hd;
                     }
                 }
             }
@@ -752,11 +757,11 @@ export default {
 
                 &__text{
                     &--title{
-                        font-size: $font-md;
+                        font-size: $font-lg;
                     }
 
                     &--content{
-                        font-size: $font-rg;
+                        font-size: $font-hd;
                     }
                 }
 
@@ -774,11 +779,11 @@ export default {
                     margin-bottom: 5rem;
 
                     &--title{
-                        font-size: $font-md;
+                        font-size: $font-lg;
                     }
 
                     &--subtext{
-                        font-size: $font-rg;
+                        font-size: $font-hd;
                     }
                 }
 
@@ -793,7 +798,7 @@ export default {
                     }
 
                     &--text{
-                        font-size: $font-rg;
+                        font-size: $font-hd;
                     }
                 }
             }
@@ -806,7 +811,7 @@ export default {
                     margin: 0 auto 5rem;
 
                     &--title{
-                        font-size: $font-md;
+                        font-size: $font-lg;
                     }
                 }
 
@@ -814,7 +819,7 @@ export default {
                     margin: 0 auto;
 
                     .row{
-                        margin-bottom: 2rem;
+                        margin-bottom: 1rem;
                     }
 
                     .form-label{
@@ -822,12 +827,11 @@ export default {
                     }
 
                     .form-control {
-                        padding-left: 1rem;
+                        padding: 1rem;
                     }
 
                     .btn{
-                        float: right;
-                        padding: .75rem 1.5rem;
+                        padding: 1rem 2.5rem;
                     }
                 }
             }
