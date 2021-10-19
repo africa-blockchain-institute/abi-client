@@ -234,13 +234,13 @@ export default {
 
 <style lang="scss" scoped>
     .wrapper{
-        background-color: #F9E3F0;
+        background: rgba(249, 227, 240, 0.2);
 
         .hero{
             background: url("@/assets/images/algorand/hero.jpg");
             background-size: cover;
-            height: 50vh;
-            clip-path: polygon(0 0, 100% 0%, 100% 70%, 50% 100%, 0 70%);
+            height: 55vh;
+            clip-path: polygon(0 0, 100% 0%, 100% 80%, 50% 100%, 0 80%);
             text-align: center;
             padding-top: 1rem;
             margin-bottom: 5rem;
@@ -437,7 +437,7 @@ export default {
     @media (min-width: 768px) {  
         .wrapper{
             .hero{
-                height: 50vh;
+                height: 60vh;
                 clip-path: polygon(0 0, 100% 0%, 100% 80%, 50% 100%, 0 80%);
                 padding-top: 2rem;
 
@@ -576,8 +576,7 @@ export default {
     @media (min-width: 992px) {  
         .wrapper{
             .hero{
-                height: 60vh;
-                clip-path: polygon(0 0, 100% 0%, 100% 80%, 50% 100%, 0 80%);
+                height: 80vh;
                 padding-top: 2rem;
 
                 &__logos{
@@ -587,19 +586,20 @@ export default {
                 }
 
                 &__text{
-                    top: 30%;
-                    transform: translateY(30%);
+                    top: 50%;
+                    transform: translateY(50%);
 
                     &--title{
-                        font-size: $font-lg;
+                        font-size: $font-xl;
+                        font-weight: bolder;
                     }
 
                     &--desc{
-                        font-size: $font-rg;
+                        font-size: $font-xl;
                     }
 
                     &--tagline{
-                        font-size: $font-rg;
+                        font-size: $font-hd;
                     }
                 }
             }
@@ -714,7 +714,7 @@ export default {
         .wrapper{
             .hero{
                 height: 100vh;
-                clip-path: polygon(0 0, 100% 0%, 100% 75%, 50% 100%, 0 75%);
+                clip-path: polygon(0 0, 100% 0%, 100% 80%, 50% 100%, 0 80%);
                
                 &__logos{
                     a{
@@ -729,19 +729,20 @@ export default {
                 }
 
                 &__text{
-                    top: 55%;
-                    transform: translateY(55%);
+                    top: 45%;
+                    transform: translateY(45%);
 
                     &--title{
                         font-size: $font-xxl;
+                        font-weight: bolder;
                     }
 
                     &--desc{
-                        font-size: $font-xl;
+                        font-size: 4rem;
                     }
 
                     &--tagline{
-                        font-size: $font-hd;
+                        font-size: $font-md;
                     }
                 }
             }
