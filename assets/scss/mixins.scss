@@ -18,18 +18,13 @@
 
 @mixin card(){
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
-    transition: all .3s;
+    transition: all .2s;
     border-radius: .75rem;
     border: none;
-    margin-bottom: 1.5rem;
 
     &:hover {
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
         transform: translateY(-.15rem);
-    }
-
-    &-body{
-        padding: 1.5rem 2rem;
     }
 }
 
