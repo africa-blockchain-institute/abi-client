@@ -1,8 +1,8 @@
 <template>
     <div class="hero" :style="{ backgroundImage: 'url('+ require('~/assets/images/'+image+'/banner.jpg')}">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
                     <h1 class="hero__header">{{ title }}</h1>
                 </div>
             </div>
@@ -43,6 +43,16 @@
     @media (min-width: 768px) { 
         .hero{
             padding: 7rem 1rem;
+
+            &__header{
+                font-size: $font-xl;
+            }
+        }
+    }
+
+    @media (min-width: 992px) { 
+        .hero{
+            padding: 9rem 1rem;
 
             &__header{
                 font-size: $font-xl;

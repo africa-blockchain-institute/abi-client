@@ -160,8 +160,29 @@
         }
     }
 
-    @media (min-width: 768px) { 
-        
+    @media (min-width: 992px) { 
+        .footer{
+            padding: 3rem 1rem 2rem;
+
+            &__sect{
+                padding-top: 1rem;
+
+                &--header{
+                    font-size: 1rem;
+                    margin-bottom: 1rem;
+                }
+
+                &--subscribe{
+                    width: 80%;
+
+                    .form-control{
+                        padding: .9rem 1rem;
+                        font-size: .9rem;
+                    }
+                }
+                
+            }
+        }   
     }
 
     // XX-Large devices (larger desktops, 1400px and up)

@@ -104,7 +104,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .wrapper{
         .details{
             background-color: $white;
@@ -130,27 +130,15 @@
                 }
 
                 .form-label{
-                    font-size: $font-sm;
-
-                    span{
-                        color: red;
-                    }
+                    @include form-label();
                 }
 
                 .form-control {
-                    padding-left: 1rem;
-                    background: $white!important;
-                    box-shadow: none;
-                    font-size: $font-rg;
-
-                    &:focus{
-                        border: 1px solid $primary;
-                    }
+                    @include form-control();
                 }
 
                 .btn{
                     @include button();
-                    padding: .75rem 1.5rem;
                     margin-top: 2rem;
                 }
             }
@@ -174,21 +162,7 @@
                 &__form{
                     margin: 0 auto;
 
-                    .row{
-                        margin-bottom: 1rem;
-                    }
-
-                    .form-label{
-                        font-size: $font-rg;
-                    }
-
-                    .form-control {
-                        padding: 1rem;
-                    }
-
-                    .btn{
-                        padding: 1rem 2.5rem;
-                    }
+                    
                 }
             }
         }

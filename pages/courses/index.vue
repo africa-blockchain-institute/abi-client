@@ -42,19 +42,28 @@
                 courses: [
                     {
                         slug: "blockchain-developers",
-                        image: "courses/banner.jpg",
+                        image: "courses/developer.jpg",
                         category: "Blockchain",
                         title: "Blockchain for Developers",
-                        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab, quisquam eos accusantium soluta temporibus. Iste amet hic nihil magnam.",
+                        description: "Lorem ipsum dolor, voluptates dicta ab, quisquam eos accusantium soluta temporibus. Iste amet hic nihil magnam.",
                         lessons: "13",
                         duration: "2"
                     },
                     {
                         slug: "enterprise-for-consultants",
-                        image: "courses/banner.jpg",
+                        image: "courses/enterprise.jpg",
                         category: "Enterprise",
                         title: "Enterprise for Consultants",
-                        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab, quisquam eos accusantium soluta temporibus. Iste amet hic nihil magnam.",
+                        description: "Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab. Iste amet hic nihil magnam.",
+                        lessons: "5",
+                        duration: "1"
+                    },
+                    {
+                        slug: "enterprise-for-consultants",
+                        image: "courses/legal.jpg",
+                        category: "Enterprise",
+                        title: "For Legal Professionals",
+                        description: "Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab. Iste amet hic nihil magnam.",
                         lessons: "5",
                         duration: "1"
                     }
@@ -75,7 +84,7 @@
 <style lang="scss" scoped>
     .wrapper{
         .courses {
-            margin: 3rem 1rem;
+            margin: 2rem 0rem;
 
             &__list{
                 a {
@@ -90,7 +99,7 @@
                     }
 
                     &-body{
-                        padding: 1.5rem;
+                        padding: 1rem;
                         color: $dark;
                     }
                 }
@@ -122,7 +131,52 @@
     @media (min-width: 768px) {  }
 
     // Large devices (desktops, 992px and up)
-    @media (min-width: 992px) {  }
+    @media (min-width: 992px) {  
+        .wrapper{
+            .courses {
+                margin: 3rem 1rem;
+
+                &__list{
+                    a {
+                        text-decoration: none;
+                    }
+
+                    .card {
+                        @include card();
+
+                        &:hover{
+                            box-shadow: 0 .35rem .65rem rgba(0,0,0,.075)!important;
+                        }
+
+                        &-body{
+                            padding: 1.5rem;
+                            color: $dark;
+                        }
+                    }
+                    
+                    &--title{
+                        font-size: 1.2rem;
+                        font-weight: bold;
+                    }
+
+                    &--description{
+                        font-size: .9rem;
+                    }
+
+                    &--lessons, &--duration{
+                        .fas{
+                            color: $primary;
+                            margin-right: .2rem;
+                        }
+
+                        font-weight: bold;
+                        font-size: .9rem;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
 
     // XX-Large devices (larger desktops, 1400px and up)
     @media (min-width: 1400px) {  }

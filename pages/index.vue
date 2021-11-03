@@ -3,9 +3,9 @@
         <div class="hero">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-8 hero__banner">
+                    <div class="col-md-10 hero__banner">
                         <h1 class="hero__banner--title">Building Blockchain Capacities in Africa for Digital Transformation </h1>
-                        <nuxt-link to="/about-us" class="hero__banner--btn btn">Explore</nuxt-link>
+                        <nuxt-link to="/about-abi" class="hero__banner--btn btn">Explore</nuxt-link>
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
 		<div class="trust">
 			<div class="container">
 				<div class="row justify-content-center">
-                    <div class="col-md-8 trust__head">
+                    <div class="col-md-7 trust__head">
                         <h2 class="trust__head--title">Trusted by leading organizations worldwide</h2>
                     </div>
                 </div>
@@ -111,8 +111,8 @@
         <div class="insights">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 insights__head">
-                        <h2 class="insights__head--title">Insights</h2>
+                    <div class="col-md-7 insights__head">
+                        <h2 class="insights__head--title">Read some of our Insights</h2>
                     </div>
                 </div>
 
@@ -121,8 +121,18 @@
                         <a href="/" target="blank">
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <h5 class="insights__list--title">Insights Title</h5>
-									<p class="insights__list--text"> Brief description of what's to come </p>
+                                    <h5 class="insights__list--title">How to invest in Blockchain Technology</h5>
+									<p class="insights__list--text"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores minus quia sed maiores dolore atque exercitationem. </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col insights__list">
+                        <a href="/" target="blank">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="insights__list--title">Blockchain Opportunities in the Accounting Sector</h5>
+									<p class="insights__list--text"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores minus quia sed maiores dolore atque exercitationem. </p>
                                 </div>
                             </div>
                         </a>
@@ -132,17 +142,7 @@
                             <div class="card h-100">
                                 <div class="card-body">
                                     <h5 class="insights__list--title">Insights Title</h5>
-									<p class="insights__list--text"> Brief description of what's to come </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col insights__list">
-                        <a href="/" target="blank">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="insights__list--title">Insights Title</h5>
-									<p class="insights__list--text"> Brief description of what's to come </p>
+									<p class="insights__list--text"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores minus quia sed maiores dolore atque exercitationem. </p>
                                 </div>
                             </div>
                         </a>
@@ -151,7 +151,7 @@
 
 				<div class="row">
 					<div class="col-12 insights__btn text-center">
-						<a href="https://medium.com/@africablockchaininstitute" class="btn insights__btn--btn" target="blank">See More</a>
+						<a href="https://medium.com/@africablockchaininstitute" class="btn insights__btn--btn" target="_blank">See More</a>
 					</div>
 				</div>
             </div>
@@ -159,11 +159,11 @@
 
         <div class="slogan">
             <div class="container">
-                <div class="row justify-content-between align-items-center">
+                <div class="row justify-content-center align-items-center">
                     <div class="col-md-8 col-lg-7">
-                        <h3 class="slogan__info">You have to find the right problem before you find the right solution.</h3>
+                        <h3 class="slogan__info">Explore ABI’s online courses and learning contents</h3>
 					</div>
-                    <div class="col-md-4 col-lg-4">
+                    <div class="col-md-4 col-lg-4 text-center">
                       	<nuxt-link to="/courses" class="btn slogan__btn">View Courses</nuxt-link>
                     </div>
                 </div>
@@ -267,7 +267,7 @@
                     <div class="col-md-7 offset-md-1 find__text">
                         <h3 class="find__text--title">Finding a Talent</h3>
                         <p class="find__text--sub">Get now a talent from our vibrant network of alumni. Post your opportunities here.</p>
-                        <nuxt-link to="/" class="find__text--btn btn">Find Talent</nuxt-link>
+                        <nuxt-link to="/top-talents" class="find__text--btn btn">Find Talent</nuxt-link>
                     </div>
                 </div>
             </div>
@@ -327,7 +327,7 @@
 <style lang="scss" scoped>
     .wrapper{
         .hero{
-            background: url("@/assets/images/enterprise/banner.jpg") center /cover;
+            background: url("@/assets/images/home/banner.jpg") center /cover;
 
             &__banner{
                 text-align: center;
@@ -407,7 +407,7 @@
                 &--sect{
                     margin-bottom: 1rem;
                     img{
-                        width: 100%;
+                        width: 70%;
                     }
                 }
             }
@@ -484,6 +484,45 @@
 				}
 			}
 
+        }
+
+        .skills{
+            padding: 2rem 1rem;
+            
+            &__head{
+                margin-bottom: 2rem;
+
+                &--title{
+                    font-size: $font-hd;
+                    font-weight: bold;
+                    text-align: center;
+                }
+            }
+
+            &__list{
+                margin-bottom: 2rem;
+
+                &--header{
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                    margin-bottom: 1rem;
+                }
+
+                &--list{
+                    padding-left: 0;
+
+                    li{
+                        display: block;
+                        margin-bottom: .5rem;
+
+                        span{
+                            margin-right: 1rem;
+                            font-size: 1.1rem;
+                            color: $secondary;
+                        }
+                    }
+                }
+            }
         }
 
         .events{
@@ -566,7 +605,6 @@
 
                     &--title{
                         font-size: $font-md;
-                        line-height: 3rem;
                         margin-bottom: 2rem;
                     }
 
@@ -631,24 +669,155 @@
     }
 
     // Large devices (desktops, 992px and up)
-    @media (min-width: 992px) {  }
+    @media (min-width: 992px) {  
+        .wrapper{
+            .hero{
+                &__banner{
+                    padding: 7rem 1rem;
+
+                    &--title{
+                        font-size: 4rem;
+                        margin-bottom: 4rem;
+                    }
+
+                    &--btn{
+                        @include button();
+						padding: .75rem 3rem;
+                    }
+                }
+            }
+
+            .info{
+                &__intro{
+                    font-size: 1.2rem;
+					line-height: 2rem;
+                }
+            }
+
+            .values{
+				&__head{
+					margin-bottom: 4rem;
+
+					&--title{
+						font-size: $font-md;
+					}
+				}
+
+				&__key{
+					&--title{
+						font-size: 1.1rem;
+					}
+				}
+			}
+
+            .trust{
+				&__head{
+					margin-bottom: 4rem;
+
+					&--title{
+						font-size: $font-md;
+					}
+				}
+			}
+
+            .insights{
+                &__head{
+                    &--title{
+                        font-size: $font-md;
+                    }
+                }
+
+                &__list{
+                    margin-bottom: 2rem;
+
+                    .card {
+                        &-body{
+                            padding: 2.5rem 1.5rem;
+                        }
+                    }
+                    
+                    &--title{
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+
+            .skills{
+				padding: 3rem 1rem;
+				
+				&__head{
+					margin-bottom: 3rem;
+
+					&--title{
+						font-size: $font-md;
+					}
+				}
+
+				&__list{
+					&--header{
+						font-size: 1.1rem;
+						margin-bottom: 1rem;
+					}
+
+					&--list{
+						padding-left: 0;
+
+						li{
+							margin-bottom: .75rem;
+
+							span{
+								margin-right: 1rem;
+								font-size: 1.1rem;
+							}
+						}
+					}
+				}
+			}
+
+            .events{
+				padding: 3rem 1rem;
+
+				&__head{
+					margin-bottom: 3rem;
+
+					&--title{
+						font-size: $font-md;
+					}
+				}
+
+				&__list{
+					margin-bottom: 2rem;
+				}
+
+				&__info{
+					&--title{
+						font-size: 1.1rem;
+						margin-bottom: .5rem;
+					}
+					
+					&--link{
+						font-size: $font-rg;
+					}
+				}
+			}
+        }
+    }
 
     // XX-Large devices (larger desktops, 1400px and up)
     @media (min-width: 1400px) {  
         .wrapper{
             .hero{
                 &__banner{
-                    padding: 6rem 1rem;
+                    padding: 9rem 1rem;
 
                     &--title{
-                        font-size: $font-xl;
-                        line-height: 4rem;
+                        font-size: $font-xxl;
                         margin-bottom: 4rem;
                     }
 
                     &--btn{
                         @include button();
-						padding: 1rem 2rem;
+						padding: 1rem 3rem;
                     }
                 }
             }
@@ -672,7 +841,6 @@
 						font-size: $font-md;
 					}
 				}
-				
 
 				&__key{
 					margin-bottom: 1.5rem;
@@ -760,15 +928,12 @@
 
 					&--title{
 						font-size: $font-md;
-						font-weight: bold;
-						text-align: center;
 					}
 				}
 
 				&__list{
 					&--header{
 						font-size: 1.1rem;
-						font-weight: bold;
 						margin-bottom: 2rem;
 					}
 
@@ -776,13 +941,11 @@
 						padding-left: 0;
 
 						li{
-							display: block;
 							margin-bottom: .75rem;
 
 							span{
 								margin-right: 1rem;
 								font-size: 1.1rem;
-								color: $secondary;
 							}
 						}
 					}

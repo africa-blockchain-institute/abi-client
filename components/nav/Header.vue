@@ -28,7 +28,7 @@
                             <nuxt-link class="nav-link" to="/contact-us" nuxt-link-active exact>Contact Us</nuxt-link>
                         </li>
                         <li class="nav-item">
-                            <nuxt-link class="nav-link btn" to="/login" nuxt-link-active>Login</nuxt-link>
+                            <nuxt-link class="nav-link btn" to="/auth/login" nuxt-link-active>Login</nuxt-link>
                         </li>
                     </ul>
                 </div>

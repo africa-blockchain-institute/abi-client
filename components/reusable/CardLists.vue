@@ -59,7 +59,42 @@
             &--position{
                 margin-bottom: 0;
                 color: $primary;
+                font-size: .8rem;
             }
         }
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 1400px) { 
+        .listings{
+            margin: 3rem 1rem;
+
+            &__list{
+                .card {
+                    @include card();
+
+                    &:hover{
+                        box-shadow: 0 .35rem .65rem rgba(0,0,0,.075)!important;
+                    }
+                }
+
+                &--name{
+                    font-size: $font-rg;
+                    margin-bottom: 0;
+                    font-weight: bold;
+                }
+
+                &--title{
+                    font-size: $font-sm;
+                    display: inline-block;
+                    margin-bottom: .5rem;
+                }
+
+                &--position{
+                    margin-bottom: 0;
+                    color: $primary;
+                }
+            }
+        }    
     }
 </style>

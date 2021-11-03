@@ -1,7 +1,7 @@
 @mixin button() {
     background-color: $secondary;
     color: $white;
-    padding: .75rem 1.2rem;
+    padding: .75rem 2.5rem;
     box-shadow: none;
     border: none;
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
@@ -25,6 +25,27 @@
     &:hover {
         box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
         transform: translateY(-.15rem);
+    }
+}
+
+@mixin form-control{
+    padding-left: 1rem;
+    background: $white!important;
+    box-shadow: none;
+    font-size: .8rem;
+    padding: .75rem;
+
+    &:focus{
+        border: 1px solid $primary;
+    }
+}
+
+@mixin form-label{
+    font-size: $font-sm;
+    font-weight: bold;
+
+    span{
+        color: red;
     }
 }
 

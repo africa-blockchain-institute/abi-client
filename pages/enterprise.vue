@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-12 hero__banner">
                         <h1 class="hero__banner--title">Blockchain Consulting &amp; <br> Solutions Development </h1>
-                        <a href="/" target="blank" class="hero__banner--btn btn">Bring ABI to your Business</a>
+                        <nuxt-link to="/abi-consulting" class="hero__banner--btn btn">Bring ABI to your Business</nuxt-link>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
         <div class="slogan">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-10">
+                    <div class="col-md-7">
                         <h3 class="slogan__info">You have to find the right problem before you find the right solution.</h3>
                     </div>
                 </div>
@@ -361,7 +361,7 @@
                     <div class="col-md-7 offset-md-1 find__text">
                         <h3 class="find__text--title">Finding the Best Blockchain for Your Business?</h3>
                         <p class="find__text--sub">Let’s work together. Get in touch with us and send some basic info about your project.</p>
-                        <button class="find__text--btn btn">Get Started</button>
+                        <nuxt-link to="/abi-consulting" class="find__text--btn btn">Get Started</nuxt-link>
                     </div>
                 </div>
             </div>
@@ -381,7 +381,7 @@
                         image: "enterprise/alu.jpg",
                         category: "Blockchain",
                         title: "Blockchain for Developers",
-                        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab, quisquam eos accusantium soluta temporibus. Iste amet hic nihil magnam.",
+                        description: "Lorem ipsum, sit adipisicing elit. soluta temporibus. Iste amet hic nihil magnam.",
                         lessons: "13",
                         duration: "2"
                     },
@@ -390,7 +390,7 @@
                         image: "enterprise/abi.jpg",
                         category: "Enterprise",
                         title: "Enterprise for Consultants",
-                        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab, quisquam eos accusantium soluta temporibus. Iste amet hic nihil magnam.",
+                        description: " eos  soluta temporibus. Iste amet hic nihil magnam.",
                         lessons: "5",
                         duration: "1"
                     },
@@ -399,7 +399,7 @@
                         image: "enterprise/alu.jpg",
                         category: "Blockchain",
                         title: "Blockchain for Developers",
-                        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab, quisquam eos accusantium soluta temporibus. Iste amet hic nihil magnam.",
+                        description: "Lvoluptates dicta ab, quisquam eos accusantium soluta temporibus.",
                         lessons: "13",
                         duration: "2"
                     },
@@ -408,7 +408,7 @@
                         image: "enterprise/abi.jpg",
                         category: "Enterprise",
                         title: "Enterprise for Consultants",
-                        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab, quisquam eos accusantium soluta temporibus. Iste amet hic nihil magnam.",
+                        description: "adipisci voluptates dicta ab,temporibus. Iste amet hic nihil magnam.",
                         lessons: "5",
                         duration: "1"
                     }
@@ -437,7 +437,6 @@
 
                 &--btn{
                     @include button();
-                    padding: .75rem .75rem;
                 }
             }
         }
@@ -553,6 +552,7 @@
                 &--description{
                     font-size: .9rem;
                     font-weight: bold;
+                    margin-bottom: 0;
                 }
             }
         }
@@ -821,7 +821,213 @@
     }
 
     // Large devices (desktops, 992px and up)
-    @media (min-width: 992px) {  }
+    @media (min-width: 992px) {  
+        .wrapper{
+            .hero{
+                &__banner{
+                    padding: 6rem 1rem;
+
+                    &--title{
+                        font-size: $font-xl;
+                        line-height: 4rem;
+                        margin-bottom: 4rem;
+                    }
+
+                    &--btn{
+                        @include button();
+                    }
+                }
+            }
+
+            .info{
+                padding: 3rem 1rem;
+
+                &__intro{
+                    font-size: 1.2rem;
+                    margin-bottom: 4rem;
+                }
+
+                &__key{
+                    padding: .5rem 1rem;
+                    &--img{
+                        width: 5rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    &--title{
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            .slogan{
+                padding: 5rem 1rem;
+
+                &__info{
+                    font-size: $font-lg;
+                }
+            }
+
+            .services{
+                padding: 3rem 1rem;
+
+                &__head{
+                    margin-bottom: 4rem;
+
+                    &--title{
+                        font-size: $font-md;
+                    }
+                }
+
+                &__srv{
+                    margin-bottom: 3rem;
+                }
+
+                &__img{
+                    img{
+                        border-radius: .5rem;
+                    }
+                }
+
+                &__info{
+                    &--title{
+                        font-size: $font-hd;
+                        margin-bottom: 1rem;
+                    }
+
+                    &--text{
+                        font-size: 1.1rem;
+                    }
+                }
+            }
+
+            .media{
+                padding: 4rem 1rem;
+
+                &__head{
+                    margin-bottom: 3rem;
+
+                    &--title{
+                        font-size: $font-md;
+                    }
+                }
+
+                &__list{
+                    .card {
+                        &-body{
+                            color: $dark;
+                        }
+                    }
+                    
+                    &--description{
+                        font-size: .9rem;
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .work{
+                padding: 4rem 1rem;
+
+                &__head{
+                    margin-bottom: 3rem;
+
+                    &--title{
+                        font-size: $font-md;
+                    }
+                }
+
+                .card{
+                    margin-bottom: 1rem;
+                }
+
+                &__list{
+                    &--img{
+                        width: 4rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    &--title{
+                        font-size: $font-rg;
+                    }
+                }
+            }
+
+            .tools{
+                padding: 4rem 1rem;
+
+                &__head{
+                    margin-bottom: 3rem;
+
+                    &--title{
+                        font-size: $font-md;
+                    }
+                }
+
+                &__nav{
+                    margin-bottom: 2rem;
+
+                    &--link{
+                        padding: .5rem;
+                        margin-right: 1.5rem;
+                    }
+                }
+
+                &__content{
+                    &--sect{
+                        margin-bottom: 1rem;
+
+                        img{
+                            // width: 80%;
+                        }
+                    }
+                }
+            }
+
+            .resources{
+                padding: 4rem 1rem;
+
+                &__head{
+                    &--title{
+                        font-size: $font-md;
+                    }
+                }
+
+                &__list{
+                    margin-bottom: 2rem;
+
+                    .card {
+                        &-body{
+                            padding: .75rem 1rem;
+                        }
+                    }
+                    
+                    &--title{
+                        font-size: 1.1rem;
+                    }
+                    
+                    &--category{
+                        font-size: .75rem;
+                    }
+                }
+            }
+
+            .find{
+                padding: 4rem 1rem;
+
+                &__text{
+                    &--title{
+                        font-size: $font-lg;
+                    }
+
+                    &--sub{
+                        font-size: $font-rg;
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+        }
+    }
 
     // XX-Large devices (larger desktops, 1400px and up)
     @media (min-width: 1400px) {  
