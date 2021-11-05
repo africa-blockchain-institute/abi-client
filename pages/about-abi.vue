@@ -30,10 +30,6 @@
         <!-- about-abi components section starts -->
         <component :is="currentTabComponent" class="tab"></component>
         <!-- about-abi components section ends -->
-
-        <!-- about section starts -->
-        <About />
-        <!-- about section ends -->
     </div>
 </template>
 

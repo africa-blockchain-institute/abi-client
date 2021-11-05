@@ -1,47 +1,57 @@
 <template>
-    <div class="sect">
-        <div class="container">
-            <div class="row sect__body">
-                <div class="col-12">
-                    <div class="row sect__content">
-                        <div class="col-md-6 col-xl-5 order-1 order-md-1 sect__content--img px-lg-5">
-                            <img src="~/assets/images/about/about-training.jpg" alt="about abi-mission" class="img-fluid">
+    <div class="wrapper">
+        <div class="sect">
+            <div class="container">
+                <div class="row sect__body">
+                    <div class="col-12">
+                        <div class="row sect__content">
+                            <div class="col-md-6 col-xl-5 order-1 order-md-1 sect__content--img px-lg-5">
+                                <img src="~/assets/images/about/about-training.jpg" alt="about abi-mission" class="img-fluid">
+                            </div>
+                            <div class="col-md-6 col-xl-5 order-2 order-md-2 sect__content--text px-lg-5">
+                                <h3 class="title">Training</h3>
+                                <p class="body">Africa Blockchain Institute runs educational programs, and courses to upskill young professionals, students, tech entrepreneurs, including government officials, to be able to handle emerging technology as, Blockchain, for the Future of Work.</p>
+                            </div>
                         </div>
-                        <div class="col-md-6 col-xl-5 order-2 order-md-2 sect__content--text px-lg-5">
-                            <h3 class="title">Training</h3>
-                            <p class="body">Africa Blockchain Institute runs educational programs, and courses to upskill young professionals, students, tech entrepreneurs, including government officials, to be able to handle emerging technology as, Blockchain, for the Future of Work.</p>
+                            
+                        <div class="row sect__content">
+                            <div class="col-md-6 col-xl-5 order-2 order-md-1  sect__content--text px-lg-5">
+                                <h3 class="title">Research</h3>
+                                <p class="body">Africa Blockchain Institute research accommodates in-house and externally-based scholars from across the world. These disciplines include key component function as Decentralize Finance, Web3, Cryptocurrency, DApps, Cryptography, Smart Contract, Regulations, and industry focus. The investigations of these scholars attempt to clarify the foundations of Blockchain Technology in Africa.</p>
+                            </div>
+                            <div class="col-md-6 col-xl-5 order-1 order-md-2  sect__content--img px-lg-5">
+                                <img src="~/assets/images/about/about-research.jpg" alt="about abi-mission" class="img-fluid">
+                            </div>
                         </div>
-                    </div>
-                        
-                    <div class="row sect__content">
-                        <div class="col-md-6 col-xl-5 order-2 order-md-1  sect__content--text px-lg-5">
-                            <h3 class="title">Research</h3>
-                            <p class="body">Africa Blockchain Institute research accommodates in-house and externally-based scholars from across the world. These disciplines include key component function as Decentralize Finance, Web3, Cryptocurrency, DApps, Cryptography, Smart Contract, Regulations, and industry focus. The investigations of these scholars attempt to clarify the foundations of Blockchain Technology in Africa.</p>
-                        </div>
-                        <div class="col-md-6 col-xl-5 order-1 order-md-2  sect__content--img px-lg-5">
-                            <img src="~/assets/images/about/about-research.jpg" alt="about abi-mission" class="img-fluid">
-                        </div>
-                    </div>
 
-                    <div class="row sect__content">
-                        <div class="col-md-6 col-xl-5 order-1 order-md-1 sect__content--img px-lg-5">
-                            <img src="~/assets/images/about/about-deployment.jpg" alt="about abi-mission" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 col-xl-5 order-2 order-md-2 sect__content--text px-lg-5">
-                            <h3 class="title">Deployment</h3>
-                            <p class="body">Africa Blockchain Institute is core on deploying Blockchain solutions across relevant government agencies, multinationals, and business organizations, in bringing them closer to digital transformation. We assist interested organizations in deploying relevant blockchain solutions in transforming their businesses.</p>
+                        <div class="row sect__content">
+                            <div class="col-md-6 col-xl-5 order-1 order-md-1 sect__content--img px-lg-5">
+                                <img src="~/assets/images/about/about-deployment.jpg" alt="about abi-mission" class="img-fluid">
+                            </div>
+                            <div class="col-md-6 col-xl-5 order-2 order-md-2 sect__content--text px-lg-5">
+                                <h3 class="title">Deployment</h3>
+                                <p class="body">Africa Blockchain Institute is core on deploying Blockchain solutions across relevant government agencies, multinationals, and business organizations, in bringing them closer to digital transformation. We assist interested organizations in deploying relevant blockchain solutions in transforming their businesses.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- about section starts -->
+        <About />
+        <!-- about section ends -->
     </div>
 </template>
 
 <script>
-export default {
+    import About from '~/components/reusable/about/About.vue';
 
-}
+    export default {
+        components:{
+            About
+        }
+    }
 </script>
 
 <style lang="scss" scoped>

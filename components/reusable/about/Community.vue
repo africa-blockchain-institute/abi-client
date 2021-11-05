@@ -1,28 +1,38 @@
 <template>
-    <div class="sect">
-        <div class="container">
-            <div class="row sect__body">
-                <div class="col-12">
-                    <div class="row sect__content">
-                        <div class="col-md-6 col-xl-5 order-1 order-md-1 sect__content--img">
-                            <img src="~/assets/images/about/about-community.jpg" alt="about abi-mission" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 col-xl-5 order-2 order-md-2 sect__content--text">
-                            <h3 class="title">Community</h3>
-                            <p class="body">Founded to accelerate the Africa’s Industrial Revolution, ABI is profoundly African. With ingenuity and drive, our graduates have led innovations at work place, launched new ventures, and contributed to national policies. </p>
-                            <p class="body">At the same time, and without the slightest sense of contradiction, ABI is profoundly global. Our community gains tremendous strength as a magnet for talent from around the world. Through teaching, research, and innovation, ABI’s exceptional community pursues its mission of service to Africa and the world.</p>
+    <div class="wrapper">
+        <div class="sect">
+            <div class="container">
+                <div class="row sect__body">
+                    <div class="col-12">
+                        <div class="row sect__content">
+                            <div class="col-md-6 col-xl-5 order-1 order-md-1 sect__content--img">
+                                <img src="~/assets/images/about/about-community.jpg" alt="about abi-mission" class="img-fluid">
+                            </div>
+                            <div class="col-md-6 col-xl-5 order-2 order-md-2 sect__content--text">
+                                <h3 class="title">Community</h3>
+                                <p class="body">Founded to accelerate the Africa’s Industrial Revolution, ABI is profoundly African. With ingenuity and drive, our graduates have led innovations at work place, launched new ventures, and contributed to national policies. </p>
+                                <p class="body">At the same time, and without the slightest sense of contradiction, ABI is profoundly global. Our community gains tremendous strength as a magnet for talent from around the world. Through teaching, research, and innovation, ABI’s exceptional community pursues its mission of service to Africa and the world.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- about section starts -->
+        <About />
+        <!-- about section ends -->
     </div>
 </template>
 
 <script>
-export default {
+    import About from '~/components/reusable/about/About.vue';
 
-}
+    export default {
+        components:{
+            About
+        }
+    }
 </script>
 
 <style lang="scss" scoped>

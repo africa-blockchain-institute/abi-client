@@ -3,7 +3,7 @@
         <div class="hero">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-10 hero__banner">
+                    <div class="col-md-8 col-xxl-10 hero__banner">
                         <h1 class="hero__banner--title">Building Blockchain Capacities in Africa for Digital Transformation </h1>
                         <nuxt-link to="/about-abi" class="hero__banner--btn btn">Explore</nuxt-link>
                     </div>
@@ -14,7 +14,7 @@
         <div class="info">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                         <p class="info__intro">
 							Africa Blockchain Institute is Africa’s foremost Blockchain Think-Tank that is reimagining the possibilities of Blockchain Education, extensive Evidence-Based Researches, and High-End Deployment solutions, for Digital Transformation in Africa. Our Programs are built with global standards, and facilitated by leading experts. We partner with organizations and individuals to address their unique needs, providing options that help them reach their goals.
                         </p>
@@ -175,41 +175,56 @@
 				<div class="row justify-content-center">
                     <div class="col-md-8 skills__head">
                         <h2 class="skills__head--title">Skills Companies Need Most in {{ new Date().getFullYear() }}</h2>
+                        <p class="skills__head--sub">ABI, 2021</p>
                     </div>
                 </div>
 			</div>
 
-			<div class="container">
-				<div class="row justify-content-center">
-                    <div class="col-md-4 col-lg-3 skills__list">
-						<h4 class="skills__list--header">Top Rated Soft Skills</h4>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 col-lg-4 skills__list">
+                        <img src="~/assets/images/home/soft-skills.png" alt="Soft skills, ABI" class="skills__list--img">
+
+                        <h4 class="skills__list--header">Top Rated Soft Skills</h4>
 
 						<ul class="skills__list--list">
-							<li><span class="fas fa-check-circle"></span>Creativity</li>
-							<li><span class="fas fa-check-circle"></span>Persuasion</li>
-							<li><span class="fas fa-check-circle"></span>Collaboration</li>
-							<li><span class="fas fa-check-circle"></span>Adaptability</li>
-							<li><span class="fas fa-check-circle"></span>Emotional Intelligence</li>
+							<li>Creativity</li>
+							<li>Persuasion</li>
+							<li>Collaboration</li>
+							<li>Adaptability</li>
+							<li>Emotional Intelligence</li>
 						</ul>
-					</div>
-                    <div class="col-md-4 col-lg-3 skills__list">
+                    </div>
+
+                    <div class="col-md-8 col-lg-6 offset-lg-1 skills__list">
+                        <img src="~/assets/images/home/hard-skills.png" alt="Soft skills, ABI" class="skills__list--img">
 						<h4 class="skills__list--header">Top Rated Hard Skills</h4>
 
-						<ul class="skills__list--list">
-							<li><span class="fas fa-check-circle"></span>Blockchain</li>
-							<li><span class="fas fa-check-circle"></span>Cloud Computing</li>
-							<li><span class="fas fa-check-circle"></span>Analytical Reasoning</li>
-							<li><span class="fas fa-check-circle"></span>Artificial Intelligence</li>
-							<li><span class="fas fa-check-circle"></span>UX Design</li>
-							<li><span class="fas fa-check-circle"></span>Business Analysis</li>
-							<li><span class="fas fa-check-circle"></span>Affiliate Marketing</li>
-							<li><span class="fas fa-check-circle"></span>Sales</li>
-							<li><span class="fas fa-check-circle"></span>Scientific Computing</li>
-							<li><span class="fas fa-check-circle"></span>Video Production</li>
-						</ul>
+                        <div class="row">
+                            <div class="col-6">
+                                <ul class="skills__list--list">
+                                    <li>Blockchain</li>
+                                    <li>Cloud Computing</li>
+                                    <li>Analytical Reasoning</li>
+                                    <li>Artificial Intelligence</li>
+                                    <li>UX Design</li>
+                                </ul>        
+                            </div>
+                            <div class="col-6">
+                                <ul class="skills__list--list">
+                                    <ul class="skills__list--list">
+                                        <li>Business Analysis</li>
+                                        <li>Affiliate Marketing</li>
+                                        <li>Sales</li>
+                                        <li>Scientific Computing</li>
+                                        <li>Video Production</li>
+                                    </ul>
+                                </ul>        
+                            </div>
+                        </div>
 					</div>
-				</div>
-			</div>
+                </div>
+            </div>
         </div>
 
         <div class="events">
@@ -264,7 +279,7 @@
                     <div class="col-md-4 find__img">
                         <img src="~/assets/images/home/talent.png" alt="Findthe best blockchain for your business">
                     </div>
-                    <div class="col-md-7 offset-md-1 find__text">
+                    <div class="col-md-6 offset-md-1 find__text">
                         <h3 class="find__text--title">Finding a Talent</h3>
                         <p class="find__text--sub">Get now a talent from our vibrant network of alumni. Post your opportunities here.</p>
                         <nuxt-link to="/top-talents" class="find__text--btn btn">Find Talent</nuxt-link>
@@ -358,8 +373,8 @@
 
 		.values{
 			padding: 2rem 1rem;
-			background-color: $secondary-light;
-			
+			background-color: $secondary-2;
+        	
 			&__head{
                 margin-bottom: 2rem;
 
@@ -367,12 +382,14 @@
                     text-align: center;
                     font-size: $font-hd;
                     font-weight: bold;
+                    color: white;
                 }
             }
 
 			&__key{
                 text-align: center;
                 margin-bottom: 1.5rem;
+                color: white;
 
                 &--img{
                     width: 5rem;
@@ -414,8 +431,9 @@
 		}
 
         .slogan{
-            background: $secondary-2;
+            background: url("~/assets/images/home/pattern.jpg");
             padding: 3rem 1rem;
+            background-size: cover;
 
             &__info{
                 font-size: $font-hd;
@@ -490,37 +508,51 @@
             padding: 2rem 1rem;
             
             &__head{
-                margin-bottom: 2rem;
+                margin-bottom: 3rem;
+                text-align: center;
 
                 &--title{
                     font-size: $font-hd;
                     font-weight: bold;
-                    text-align: center;
+                }
+
+                &--sub{
+                    font-size: .9rem;
                 }
             }
 
             &__list{
-                margin-bottom: 2rem;
+                margin-bottom: 4rem;
+                padding: 0rem 1rem;
+
+                &--img{
+                    width: 5rem;
+                    position: relative;
+                    top: -2.5rem;
+                    display: block;
+                    margin: 0 auto;
+                }
 
                 &--header{
-                    font-size: 1.1rem;
+                    font-size: 1rem;
                     font-weight: bold;
                     margin-bottom: 1rem;
                 }
 
                 &--list{
                     padding-left: 0;
-
                     li{
                         display: block;
                         margin-bottom: .5rem;
-
-                        span{
-                            margin-right: 1rem;
-                            font-size: 1.1rem;
-                            color: $secondary;
-                        }
                     }
+                }
+
+                &:nth-child(1){
+                    background: $secondary-light;
+                }
+
+                &:nth-child(2){
+                    background: $primary-light;
                 }
             }
         }
@@ -647,6 +679,7 @@
 
                 &__info{
                     font-size: $font-md;
+                    margin-bottom: 0;
                 }
             }
 
@@ -658,10 +691,13 @@
                 padding: 3rem 1rem;
 
                 &__text{
-                    margin-bottom: 1rem;
+                    &--title{
+                        font-size: $font-md;
+                    }
 
                     &--sub{
                         font-size: $font-rg;
+                        margin-bottom: 2rem;
                     }
                 }
             }
@@ -676,8 +712,8 @@
                     padding: 7rem 1rem;
 
                     &--title{
-                        font-size: 4rem;
-                        margin-bottom: 4rem;
+                        font-size: 3.5rem;
+                        margin-bottom: 3rem;
                     }
 
                     &--btn{
@@ -744,34 +780,42 @@
 
             .skills{
 				padding: 3rem 1rem;
-				
-				&__head{
-					margin-bottom: 3rem;
+		
+                &__head{
+                    margin-bottom: 3rem;
+                    text-align: center;
 
-					&--title{
-						font-size: $font-md;
-					}
-				}
+                    &--title{
+                        font-size: $font-md;
+                    }
 
-				&__list{
-					&--header{
-						font-size: 1.1rem;
-						margin-bottom: 1rem;
-					}
+                    &--sub{
+                        font-size: .9rem;
+                    }
+                }
 
-					&--list{
-						padding-left: 0;
+                &__list{
+                    margin-bottom: 2rem;
+                    padding: 0rem 3rem 1rem;
 
-						li{
-							margin-bottom: .75rem;
+                    &--img{
+                        width: 5rem;
+                        position: relative;
+                        top: -2.5rem;
+                    }
 
-							span{
-								margin-right: 1rem;
-								font-size: 1.1rem;
-							}
-						}
-					}
-				}
+                    &--header{
+                        font-size: 1.1rem;
+                        margin-bottom: 1rem;
+                    }
+
+                    &--list{
+                        li{
+                            display: block;
+                            margin-bottom: .5rem;
+                        }
+                    }
+                }
 			}
 
             .events{
@@ -800,6 +844,18 @@
 					}
 				}
 			}
+
+            .find{
+                padding: 3rem 1rem;
+
+                &__text{
+                    margin-bottom: 1rem;
+
+                    &--sub{
+                        font-size: 1.1rem;
+                    }
+                }
+            }
         }
     }
 
@@ -924,7 +980,7 @@
 				padding: 5rem 1rem;
 				
 				&__head{
-					margin-bottom: 3rem;
+					margin-bottom: 5rem;
 
 					&--title{
 						font-size: $font-md;
@@ -932,21 +988,9 @@
 				}
 
 				&__list{
-					&--header{
-						font-size: 1.1rem;
-						margin-bottom: 2rem;
-					}
-
 					&--list{
-						padding-left: 0;
-
 						li{
 							margin-bottom: .75rem;
-
-							span{
-								margin-right: 1rem;
-								font-size: 1.1rem;
-							}
 						}
 					}
 				}
@@ -988,7 +1032,6 @@
                     }
 
                     &--sub{
-                        font-size: $font-rg;
 						margin-bottom: 2rem;
                     }
                 }

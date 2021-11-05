@@ -3,8 +3,9 @@
         <div class="hero">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 hero__banner">
+                    <div class="col-md-10 col-lg-8 ml-auto hero__banner">
                         <h1 class="hero__banner--title">Blockchain Consulting &amp; <br> Solutions Development </h1>
+                        <p class="hero__banner--sub">ABI Enterprise helps clients explore every aspect of blockchain and build tailored solutions designed to deliver value. Our cutting-edge Blockchain Technology Capabilities lead the way to a disruptive future for numerous businesses striving for transparent, secure, decentralized and productive business solutions, that are market-ready and address real business issues.</p>
                         <nuxt-link to="/abi-consulting" class="hero__banner--btn btn">Bring ABI to your Business</nuxt-link>
                     </div>
                 </div>
@@ -42,7 +43,9 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-7">
+                        <span class="fas fa-quote-left slogan__quote--left"></span>
                         <h3 class="slogan__info">You have to find the right problem before you find the right solution.</h3>
+                        <!-- <span class="fas fa-quote-right slogan__quote--right"></span> -->
                     </div>
                 </div>
             </div>
@@ -144,7 +147,7 @@
                     <div class="col work__list" >
                         <div class="card h-100">
                             <div class="card-body">
-                                <img src="~/assets/images/enterprise/icons/data.png" class="work__list--img" alt="strategy assessment">
+                                <img src="~/assets/images/enterprise/icons/strategy.png" class="work__list--img" alt="strategy assessment">
                                 <h5 class="work__list--title"> Strategy assessment </h5>
                                 <p class="work__list--description">We'll assess your goals and evaluate blockchain's applicability and business impact to help you define and prioritize your transformation.</p>
                             </div>
@@ -218,7 +221,7 @@
                             <a class="nav-link tools__nav--link" id="pills-databases-tab" data-bs-toggle="pill" data-bs-target="#pills-databases" type="button" role="tab">Databases</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link tools__nav--link" id="pills-frontend-tab" data-bs-toggle="pill" data-bs-target="#pills-frontend" type="button" role="tab">Frontend</a>
+                            <a class="nav-link tools__nav--link" id="pills-frontend-tab" data-bs-toggle="pill" data-bs-target="#pills-frontend" type="button" role="tab">Frontend Technologies</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link tools__nav--link" id="pills-frontend-tab" data-bs-toggle="pill" data-bs-target="#pills-cloud" type="button" role="tab">Cloud Platforms</a>
@@ -411,7 +414,43 @@
                         description: "adipisci voluptates dicta ab,temporibus. Iste amet hic nihil magnam.",
                         lessons: "5",
                         duration: "1"
-                    }
+                    },
+                    {
+                        slug: "blockchain-developers",
+                        image: "enterprise/alu.jpg",
+                        category: "Blockchain",
+                        title: "Blockchain for Developers",
+                        description: "Lorem ipsum, sit adipisicing elit. soluta temporibus. Iste amet hic nihil magnam.",
+                        lessons: "13",
+                        duration: "2"
+                    },
+                    {
+                        slug: "enterprise-for-consultants",
+                        image: "enterprise/abi.jpg",
+                        category: "Enterprise",
+                        title: "Enterprise for Consultants",
+                        description: " eos  soluta temporibus. Iste amet hic nihil magnam.",
+                        lessons: "5",
+                        duration: "1"
+                    },
+                    {
+                        slug: "blockchain-developers",
+                        image: "enterprise/alu.jpg",
+                        category: "Blockchain",
+                        title: "Blockchain for Developers",
+                        description: "Lvoluptates dicta ab, quisquam eos accusantium soluta temporibus.",
+                        lessons: "13",
+                        duration: "2"
+                    },
+                    {
+                        slug: "enterprise-for-consultants",
+                        image: "enterprise/abi.jpg",
+                        category: "Enterprise",
+                        title: "Enterprise for Consultants",
+                        description: "adipisci voluptates dicta ab,temporibus. Iste amet hic nihil magnam.",
+                        lessons: "5",
+                        duration: "1"
+                    },
                 ]
             }
         }
@@ -424,15 +463,20 @@
             background: url("@/assets/images/enterprise/banner.jpg") center /cover;
 
             &__banner{
-                text-align: center;
+                // text-align: center;
                 padding: 4rem 1rem;
 
                 &--title{
                     font-size: $font-hd;
                     font-weight: bold;
                     color: #fff;
-                    line-height: 2rem;
-                    margin-bottom: 2rem;
+                    // line-height: 2rem;
+                    // margin-bottom: 2rem;
+                }
+
+                &--sub{
+                    font-size: $font-rg;
+                    color: #fff;
                 }
 
                 &--btn{
@@ -467,20 +511,30 @@
         }
 
         .slogan{
-            background: $secondary-2;
+            background: url("~/assets/images/home/pattern.jpg");
             padding: 3rem 1rem;
             text-align: center;
+            background-size: cover;
 
             &__info{
                 font-size: $font-hd;
                 color: #fff;
                 font-weight: 700;
             }
+
+            &__quote--left{
+                font-size: 5rem;
+                display: inline;
+                color: #fff;
+                position: absolute;
+                left: 20%;
+                opacity: 0.3;
+            }
         }
 
         .services{
             padding: 2rem 0 1rem;
-            background-color: $secondary-light;
+            background-color: $primary-light;
 
             &__head{
                 margin-bottom: 2rem;
@@ -559,7 +613,8 @@
 
         .work{
             padding: 2rem 0 1rem;
-            background: $primary-light;
+            background: $secondary-2;
+            color: white;
 
             &__head{
                 margin-bottom: 2rem;
@@ -721,8 +776,6 @@
 
                     &--title{
                         font-size: $font-md;
-                        line-height: 3rem;
-                        margin-bottom: 2rem;
                     }
 
                     &--btn{
@@ -825,12 +878,15 @@
         .wrapper{
             .hero{
                 &__banner{
-                    padding: 6rem 1rem;
+                    padding: 5rem 1rem;
 
                     &--title{
-                        font-size: $font-xl;
-                        line-height: 4rem;
-                        margin-bottom: 4rem;
+                        font-size: $font-lg;
+                    }
+
+                    &--sub{
+                        font-size: $font-rg;
+                        margin-bottom: 2rem;
                     }
 
                     &--btn{
@@ -1021,7 +1077,7 @@
                     }
 
                     &--sub{
-                        font-size: $font-rg;
+                        font-size: 1.1rem;
                         margin-bottom: 2rem;
                     }
                 }
@@ -1039,7 +1095,6 @@
                     &--title{
                         font-size: $font-xl;
                         line-height: 4rem;
-                        margin-bottom: 4rem;
                     }
 
                     &--btn{
@@ -1222,11 +1277,6 @@
                 &__text{
                     &--title{
                         font-size: $font-lg;
-                    }
-
-                    &--sub{
-                        font-size: $font-rg;
-                        margin-bottom: 2rem;
                     }
                 }
             }

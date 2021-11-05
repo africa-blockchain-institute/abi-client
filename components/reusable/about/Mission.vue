@@ -1,28 +1,38 @@
 <template>
-    <div class="sect">
-        <div class="container">
-            <div class="row sect__body">
-                <div class="col-12">
-                    <div class="row sect__content">
-                        <div class="col-md-6 col-xl-5 order-1 order-md-1 sect__content--img">
-                            <img src="~/assets/images/about/about-mission.jpg" alt="about abi-mission" class="img-fluid">
-                        </div>
-                        <div class="col-md-6 col-xl-5 order-2 order-md-2 sect__content--text">
-                            <h3 class="title">Our Mission</h3>
-                            <p class="body">We want to inspire and multiply the kind of technology disruption that furthers innovation, decentralization, and other areas of scholarship that will best serve Africa. </p>
-                            <p class="body">The Institute is committed to generating strategic programs, deploying solutions, and researching policies, by working with others in solving africa’s great challenges, using blockchain technology. ABI brings together leading experts in government, business, and academia, from all over the world to provide the highest quality research, and teachings, that push the boundaries of human knowledge.</p>
+    <div class="wrapper">
+        <div class="sect">
+            <div class="container">
+                <div class="row sect__body">
+                    <div class="col-12">
+                        <div class="row sect__content">
+                            <div class="col-md-6 col-xl-5 order-1 order-md-1 sect__content--img">
+                                <img src="~/assets/images/about/about-mission.jpg" alt="about abi-mission" class="img-fluid">
+                            </div>
+                            <div class="col-md-6 col-xl-5 order-2 order-md-2 sect__content--text">
+                                <h3 class="title">Our Mission</h3>
+                                <p class="body">We want to inspire and multiply the kind of technology disruption that furthers innovation, decentralization, and other areas of scholarship that will best serve Africa. </p>
+                                <p class="body">The Institute is committed to generating strategic programs, deploying solutions, and researching policies, by working with others in solving africa’s great challenges, using blockchain technology. ABI brings together leading experts in government, business, and academia, from all over the world to provide the highest quality research, and teachings, that push the boundaries of human knowledge.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- about section starts -->
+        <About />
+        <!-- about section ends -->
     </div>
 </template>
 
 <script>
-export default {
+    import About from '~/components/reusable/about/About.vue';
 
-}
+    export default {
+        components:{
+            About
+        }
+    }
 </script>
 
 <style lang="scss" scoped>
