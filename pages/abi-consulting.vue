@@ -1,14 +1,14 @@
 <template>
     <div class="wrapper">
         <!-- hero section starts -->
-        <Hero title="ABI Enterprise - Blockchain Consulting &amp; Solutions Development" image="enterprise" />
+        <Hero title="Bring ABI to your business" image="enterprise" />
         <!-- hero section ends -->
 
         <!-- intro section starts -->
         <div class="intro">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-7 text-center">
+                    <div class="col-md-10 text-center">
                         <p class="intro__text">ABI Enterprise helps clients explore every aspect of blockchain and build tailored solutions designed to deliver value. Our cutting-edge Blockchain Technology Capabilities lead the way to a disruptive future for numerous businesses striving for transparent, secure, decentralized and productive business solutions, that are market-ready and address real business issues.</p>
                     </div>
                 </div>

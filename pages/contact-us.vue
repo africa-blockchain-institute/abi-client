@@ -33,7 +33,7 @@
                                     <textarea class="form-control" id="message" rows="3" v-model="form.message" :class="{'is-invalid': errors.status }" placeholder="Enter your message" required></textarea>
                                     <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                 </div>
-                                <div class="small">For any question contact our 24/7 call center: <span class="fw-bold"> +250 783 632 405 </span></div>
+                                <div class="small">For any question, contact our 24/7 call center: <span class="fw-bold"> +250 783 632 405. </span></div>
                             </div>
 
                             <div class="row">

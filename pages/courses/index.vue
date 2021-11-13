@@ -12,7 +12,6 @@
                             <div class="card h-100">
                                 <img :src="require('~/assets/images/'+course.image)" class="card-img-top" :alt="course.title">
                                 <div class="card-header">
-                                    <span class="courses__list--category">{{ course.category }}</span>
                                     <h5 class="courses__list--title">{{ course.title }}</h5>
                                 </div>
                                 <div class="card-body">

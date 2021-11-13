@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper">
         <div class="header">
-            <h1 class="header__title">Login Here</h1>
-            <p class="header__sub">Fill in the credentials to your account to proceed.</p>
+            <h1 class="header__title">Forgot Password</h1>
+            <p class="header__sub">Please enter your email and we will send you a reset link.</p>
         </div>
 
         <div class="form">
@@ -13,53 +13,21 @@
                         <input type="email" v-model.trim="form.email" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" placeholder="e.g. johndoe@abi.com" id="email" required>
                         <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                     </div>
-                    <div class="col-12">
-                        <label for="password" class="form-label">Password<span>*</span> </label>
-                        <input type="password" v-model.trim="form.password" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" placeholder="**********" id="password" required>
-                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
-                    </div>
                 </div>
             </form>
-        </div>
-
-        <div class="extras">
-            <div class="row justify-content-end">
-                <div class="col-6 text-end">
-                    <nuxt-link to="/auth/forgot-password" class="">Forgot Password?</nuxt-link>
-                </div>
-            </div>
         </div>
 
         <div class="proceed">
             <div class="row">
                 <div class="col text-center">
-                    <button class="btn proceed__btn">Login</button>
+                    <button class="btn proceed__btn">Send Reset Link</button>
                 </div>
             </div>
         </div>
         
-        <div class="social">
-            <div class="row">
-                <div class="col-12 social__or">
-                    <p> or </p>
-                </div>
-            </div>
-
-            <div class="row">
-                <a href="/auth/google" class="btn">
-                    <img src="~/assets/images/auth/google.png" alt="ABI google auth login">
-                    Continue with Google 
-                </a>
-                <a href="/auth/google" class="btn">
-                    <img src="~/assets/images/auth/facebook.png" alt="ABI facebook auth login">
-                    Continue with Facebook 
-                </a>
-            </div>
-        </div>
-
         <div class="alt">
             <div class="col-12">
-                <p>Don’t have an account? <nuxt-link to="/auth/register">Register</nuxt-link> </p>
+                <p>Remembered your password? <nuxt-link to="/auth/login">Login</nuxt-link> </p>
             </div>
         </div>
     </div>
@@ -67,14 +35,13 @@
 
 <script>
     export default {
-        name: "login",
+        name: "forgot-password",
         layout: "auth",
 
         data(){
             return{
                 form:{
                     email: "",
-                    password: ""
                 }
             }
         },
@@ -233,6 +200,7 @@
             }
 
             .alt{
+                margin-top: 2rem;
                 p{
                     font-size: .9rem;
                 }

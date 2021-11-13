@@ -90,12 +90,15 @@
                                         <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                                                    Accordion Item #2
+                                                    Module 2: Setup and Installation
                                                 </button>
                                             </h2>
                                             <div id="collapseTwo" class="accordion-collapse collapse">
                                                 <div class="accordion-body">
-                                                    <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                                    <ul>
+                                                        <li><span>Lesson 1:</span> Introduction to Blockchain Enterprise</li>
+                                                        <li><span>Lesson 2:</span> Nomination</li>
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
@@ -119,7 +122,6 @@
                                <li class="enrol__body--list"> <span class="fas fa-list"></span> 13 Lectures </li>
                                <li class="enrol__body--list"> <span class="fas fa-clock"></span> 2 Hours </li>
                                <li class="enrol__body--list"> <span class="fas fa-poll"></span> All Levels </li>
-                               <li class="enrol__body--list"> <span class="fas fa-users"></span> 53 Students </li>
                                <li class="enrol__body--list"> <span class="fas fa-spell-check"></span> English </li>
                            </ul>
                        </div>

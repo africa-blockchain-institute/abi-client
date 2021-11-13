@@ -17,6 +17,10 @@
                             </li>
                         </ul>
                     </div>
+
+                    <div class="col-12 text-center page__arrow">
+                        <span class="fas fa-angle-down"></span>
+                    </div>
                 </div>
 
                 <div class="row">
@@ -75,14 +79,38 @@
                 margin: 2rem auto 1rem;
 
                 &--link{
+                    margin-right: .5rem;
                     a{
                         font-weight: bold;
                         color: $secondary-2;
                         padding: .5rem;
                         
                         &.active{
-                            color: $primary;
+                            color: $white;
+                            background-color: $primary;
+                            border-radius: .5rem;
                         }
+                    }
+                }
+            }
+
+            &__arrow{
+                .fas{
+                    font-size: 2rem;
+                    animation: updown 2s ease infinite;
+                }
+
+                @keyframes updown {
+                    0% {
+                        transform: translateY(-50%);
+                    }
+
+                    50% {
+                        transform: translateY(50%);
+                    }
+
+                    100% {
+                        transform: translateY(-50%);
                     }
                 }
             }
@@ -99,7 +127,9 @@
     }
 
     // Medium devices (tablets, 768px and up)
-    @media (min-width: 768px) {  }
+    @media (min-width: 768px) {  
+        
+    }
 
     // Large devices (desktops, 992px and up)
     @media (min-width: 992px) { 
@@ -112,6 +142,12 @@
                         a{
                             padding: .5rem 1.5rem;
                         }
+                    }
+                }
+
+                &__arrow{
+                    .fas{
+                        display: none;
                     }
                 }
 

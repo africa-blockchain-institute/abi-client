@@ -184,8 +184,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-4 col-lg-4 skills__list">
                         <img src="~/assets/images/home/soft-skills.png" alt="Soft skills, ABI" class="skills__list--img">
-
-                        <h4 class="skills__list--header">Top Rated Soft Skills</h4>
+                        <h4 class="skills__list--header soft">Top Rated Soft Skills</h4>
 
 						<ul class="skills__list--list">
 							<li>Creativity</li>
@@ -198,7 +197,7 @@
 
                     <div class="col-md-8 col-lg-6 offset-lg-1 skills__list">
                         <img src="~/assets/images/home/hard-skills.png" alt="Soft skills, ABI" class="skills__list--img">
-						<h4 class="skills__list--header">Top Rated Hard Skills</h4>
+						<h4 class="skills__list--header hard">Top Rated Hard Skills</h4>
 
                         <div class="row">
                             <div class="col-6">
@@ -537,6 +536,14 @@
                     font-size: 1rem;
                     font-weight: bold;
                     margin-bottom: 1rem;
+
+                    &.soft{
+                        color: $secondary;
+                    }
+
+                    &.hard{
+                        color: $primary;
+                    }
                 }
 
                 &--list{
@@ -799,7 +806,7 @@
                     padding: 0rem 3rem 1rem;
 
                     &--img{
-                        width: 5rem;
+                        width: 7rem;
                         position: relative;
                         top: -2.5rem;
                     }
@@ -988,6 +995,7 @@
 				}
 
 				&__list{
+
 					&--list{
 						li{
 							margin-bottom: .75rem;
