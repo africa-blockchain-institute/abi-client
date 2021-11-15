@@ -14,7 +14,7 @@
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 g-3 g-xxl-5">
                     <div class="col courses__list mb-2 mb-md-3" v-for="(course, index) in courses" :key="index">
-                        <nuxt-link :to="{ name: 'courses-slug', params: { slug: course.slug } }" >
+                        <nuxt-link :to="{ name: 'user-courses-slug', params: { slug: course.slug } }" >
                             <div class="card h-100">
                                 <img :src="require('~/assets/images/'+course.image)" class="card-img-top" :alt="course.title">
                                 <div class="card-header">

@@ -52,7 +52,7 @@
                                 </div>
 
                                 <div class="col-12 wrapper__overview">
-                                    <h2 class="wrapper__overview--title">Carrer Prospects</h2>
+                                    <h2 class="wrapper__overview--title">Career Prospects</h2>
                                     <p class="wrapper__overview--desc">
                                         The demand for Blockchain professionals has grown significantly and by 2025, 18% of the world’s GDP will be on Blockchain technologies. Take advantage of our Blockchain Essentials Certification to learn the fundamentals of Blockchain Technology. In this course, you will learn the limitations of the Internet for business and economic activity, and explain how Blockchain Technology represents the way forward. You’ll learn how Blockchain Technology empowers individuals, entrepreneurs, and government officials with the tools they need to help level the playing field and to participate in the value they create. You’ll also meet key players in the global Blockchain ecosystem, and consider your own role in stewarding the Blockchain revolution.
                                     </p>
