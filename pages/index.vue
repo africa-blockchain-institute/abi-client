@@ -103,6 +103,21 @@
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/risa.png" alt="risa">
 						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/unam.png" alt="risa">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/convexity.jpeg" alt="convexity">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/open_labs.png" alt="open_labs">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/juubix.jpeg" alt="juubix">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/global_health.jpeg" alt="global_health">
+						</div>
 					</div>
 				</div>
 			</div>

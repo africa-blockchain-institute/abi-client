@@ -12,6 +12,10 @@
 
     export default {
         name: "default",
+
+        head(){
+            
+        },
         
         data(){
             return {

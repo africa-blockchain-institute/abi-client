@@ -1,11 +1,11 @@
 export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
-		title: 'ABI Web App',
+		title: 'Africa Blockchain Institute - Pan African Institute founded on the premise to promote the adoption, development, and use of Blockchain Technology across Africa.',
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },
-			{ hid: 'description', name: 'description', content: 'Africa Blockchain Report 2021' },
+			{ hid: 'description', name: 'description', content: 'Africa Blockchain Institute - a Pan African Institute founded on the premise to promote the adoption, development, and use of Blockchain Technology across Africa.' },
 			{ name: 'format-detection', content: 'telephone=no' },
 		],
 		link: [

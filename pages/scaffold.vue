@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
     // Medium devices (tablets, 768px and up)
     @media (min-width: 768px) {  }
