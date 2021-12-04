@@ -38,6 +38,18 @@
     export default {
         name: "courses",
 
+        head(){
+            return{
+                title: 'Courses -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'Courses',
+                        content: 'Courses'
+                    }
+                ],
+            }
+        },
+
         data(){
             return {
                 courses: [

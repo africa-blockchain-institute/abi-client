@@ -144,6 +144,17 @@
 
 <script>
     export default {
+        head(){
+            return{
+                title: 'Course Title -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: '---',
+                        content: '---'
+                    }
+                ],
+            }
+        },
         data(){
             return{
                 currentTab: "Overview",

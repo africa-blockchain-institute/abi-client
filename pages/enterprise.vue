@@ -376,6 +376,18 @@
     export default {
         name: "Enterprise",
 
+        head(){
+            return{
+                title: 'Enterprise -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'Enterprise',
+                        content: 'Enterprise'
+                    }
+                ],
+            }
+        },
+
         data(){
             return{
                 mentions: [

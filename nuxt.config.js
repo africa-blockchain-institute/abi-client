@@ -28,7 +28,7 @@ export default {
 	],
 
 	loading: {
-        color: '#DE08B3',
+        color: '#198754',
         height: '2px',
     },
 
@@ -42,6 +42,9 @@ export default {
 	plugins: [
 		{ src: '~/plugins/axios.js' },
 		{ src: '~/plugins/disqus.js' },
+        { src: '~/plugins/filters.js' },
+		{ src: '~/plugins/vue-paginate.js' },
+        { src: "~/plugins/vue-quill-editor.js", ssr: false },
 		{ src: '~/plugins/mixins/user.js' },
         { src: '~/plugins/mixins/validation.js' },
 	],
@@ -59,6 +62,8 @@ export default {
 		'@nuxtjs/axios',
 		// https://go.nuxtjs.dev/pwa
 		'@nuxtjs/pwa',
+		'@nuxtjs/auth',
+        '@nuxtjs/toast',
 		'@nuxtjs/style-resources',
 		[ 
             'nuxt-sweetalert2', {
@@ -70,8 +75,8 @@ export default {
 
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
 	axios: {
-		// baseURL: "http://127.0.0.1:8080/api/v1",
-		baseURL: "https://africabi-api.herokuapp.com/api/v1"
+		baseURL: "http://127.0.0.1:8080/api/v1",
+		// baseURL: "https://africabi-api.herokuapp.com/api/v1"
 	},
 
 	auth:{
@@ -103,5 +108,10 @@ export default {
         scss: [
             '~assets/scss/main.scss',
         ]
+    },
+
+	toast: {
+        duration: '10000',
+        iconPack: 'fontawesome'
     },
 }

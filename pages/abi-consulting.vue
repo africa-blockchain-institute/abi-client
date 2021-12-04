@@ -98,6 +98,18 @@
     export default {
         name: "abi-consulting",
 
+        head(){
+            return{
+                title: 'ABI Consulting -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'ABI Consulting',
+                        content: 'ABI Consulting'
+                    }
+                ],
+            }
+        },
+
         data(){
             return {
                 form:{

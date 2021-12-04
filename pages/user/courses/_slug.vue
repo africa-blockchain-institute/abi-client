@@ -163,7 +163,13 @@
 
                         ]
                     }
-                ]
+                ],
+
+                pageConfig: {
+                    title: 'introduction to blockchain',
+                    slug: 'enterprise-for-consultants',
+                    identifier: this.$route.path,
+                }
             }
         },
 

@@ -6,7 +6,7 @@
         </div>
 
         <div class="form">
-            <form action="" @submit.prevent="submit()">
+            <form @submit.prevent="submit">
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <label for="email" class="form-label">Email Address<span>*</span> </label>
@@ -15,8 +15,14 @@
                     </div>
                     <div class="col-12">
                         <label for="password" class="form-label">Password<span>*</span> </label>
-                        <input type="password" v-model.trim="form.password" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" placeholder="**********" id="password" required>
-                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                        <input type="password" v-model.trim="form.password" class="form-control form-control-lg" placeholder="**********" id="password" required>
+                        <span class="password" :class="icon" @click="showPassword('password')"></span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col text-center proceed">
+                        <button class="btn proceed__btn"><span class="fas fa-spinner fa-spin" v-if="loading"></span> Login</button>
                     </div>
                 </div>
             </form>
@@ -26,14 +32,6 @@
             <div class="row justify-content-end">
                 <div class="col-6 text-end">
                     <nuxt-link to="/auth/forgot-password" class="">Forgot Password?</nuxt-link>
-                </div>
-            </div>
-        </div>
-
-        <div class="proceed">
-            <div class="row">
-                <div class="col text-center">
-                    <button class="btn proceed__btn">Login</button>
                 </div>
             </div>
         </div>
@@ -70,8 +68,23 @@
         name: "login",
         layout: "auth",
 
+        head(){
+            return{
+                title: 'Login -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'Login',
+                        content: 'Login'
+                    }
+                ],
+            }
+        },
+
         data(){
             return{
+                loading: false,
+                icon : 'fas fa-eye',
+
                 form:{
                     email: "",
                     password: ""
@@ -79,10 +92,55 @@
             }
         },
 
-        methods:{
-            submit(){
+        created(){
 
-            }
+        },
+
+        methods:{
+            async submit(){
+                this.loading = true
+                
+                try {
+                    //check for user
+                    const user = await this.$axios.$post(`/users/get-user`, { email: this.form.email})
+
+                    let destination;
+
+                    if(user.data.role == 'user'){
+                        destination = '/user/courses'
+                    }else if( user.data.role == 'instructor'){
+                        destination = '/instructor/courses'
+                    }else if(user.data.role == 'admin' ){
+                        destination = '/admin/courses'
+                    }
+
+                    let res = await this.$auth.loginWith('local', { data: this.form });
+                    this.loading = false;
+                    
+                    this.$auth.setUser(res.data.data.user);
+
+                    this.$toast.success('Successfully logged in', {
+                        icon : 'check',
+                    })
+
+                    this.$router.push({ path: destination });
+
+                } catch (err) {
+                    this.loading = false
+                }
+            },
+
+            showPassword(){
+                var x = document.getElementById("password");
+
+                if (x.type === "password") {
+                    x.type = "text";
+                    this.icon = "fas fa-eye-slash"
+                } else {
+                    x.type = "password";
+                    this.icon = "fas fa-eye"
+                }
+            },
         }
     }
 </script>
@@ -111,6 +169,15 @@
                 }
             }
 
+            .password {
+                position: relative;
+                top: -2rem;
+                right: 1.5rem;
+                float: right;
+                color: $grey-3;
+                cursor: pointer;
+            }
+
             .form-label{
                 @include form-label();
             }
@@ -131,7 +198,6 @@
         .proceed{
             .btn{
                 @include button();
-                margin-top: 1rem;
                 width: 100%;
             }
         }
@@ -215,12 +281,6 @@
                 }
             }
 
-            .proceed{
-                .btn{
-                    margin-top: 1rem;
-                }
-            }
-
             .social{
                 margin-top: 2rem;
                 &__or{
@@ -258,12 +318,6 @@
             .extras{
                 a{
                     font-size: .8rem;
-                }
-            }
-
-            .proceed{
-                .btn{
-                    margin-top: 2rem;
                 }
             }
 

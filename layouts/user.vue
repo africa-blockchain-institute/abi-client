@@ -6,10 +6,6 @@
                     <img src="/logo.png" alt="Africa blockchain institute Logo">
                 </nuxt-link>
 
-                <!-- <button class="navbar-toggler header__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button> -->
-
                 <div class="header__links justify-content-end">
                     <ul class="nav nav-tabs border-0">
                         <li class="nav-item dropdown">
@@ -30,10 +26,13 @@
         </nav>
 
         <Nuxt />
+        <Footer />
     </div>
 </template>
 
 <script>
+    import Footer from '@/components/nav/Footer';
+
     export default {
         head: {
             title: 'ABI - User Dashboard',
@@ -50,6 +49,10 @@
             return {
                 
             }
+        },
+
+        components: {
+            Footer
         },
 
         methods:{

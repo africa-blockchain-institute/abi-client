@@ -32,7 +32,7 @@
 
                     <div class="footer__sect--contact">
                         <p class="phone">+250 783 632 405 </p>
-                        <p class="email">info@fricablockchain.institute </p>
+                        <p class="email">info@africablockchain.institute </p>
                         <p class="address">KN 5 Airport Road, Kimihurura, Kigali, Rwanda</p>
                     </div>
                 </div>

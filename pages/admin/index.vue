@@ -1,22 +1,22 @@
 <template>
     <div class="wrapper">
-        <h1>Header First</h1>
+        
     </div>
 </template>
 
 <script>
     export default {
         head(){
-                return{
-                    title: 'Home -  Africa Blockchain Institute',
-                    meta: [
-                        {
-                            name: 'Home',
-                            content: 'Home'
-                        }
-                    ],
-                }
-            },
+            return{
+                title: 'Admin Dashboard -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'Admin Dashboard',
+                        content: 'Admin Dashboard'
+                    }
+                ],
+            }
+        },
     }
 </script>
 

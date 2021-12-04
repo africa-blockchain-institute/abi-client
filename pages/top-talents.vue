@@ -133,6 +133,18 @@
     export default {
         name: "top-talents",
 
+        head(){
+            return{
+                title: 'Top Talents -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'Top Talents',
+                        content: 'Top Talents'
+                    }
+                ],
+            }
+        },
+
         data(){
             return {
                 form:{

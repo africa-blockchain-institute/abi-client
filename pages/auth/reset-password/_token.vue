@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="header">
             <h1 class="header__title">Reset Password</h1>
-            <p class="header__sub">Choose a new password you can easily remember</p>
+            <p class="header__sub">Enter a new password you can easily remember</p>
         </div>
 
         <div class="form">
@@ -10,25 +10,24 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <label for="password" class="form-label">New Password<span>*</span> </label>
-                        <input type="password" v-model.trim="form.new_password" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" placeholder="**********" id="password" required>
+                        <input type="password"  v-model.trim="form.password" class="form-control form-control-lg" :class="{'is-invalid': errors.status }" id="password" placeholder="**********"  required>
+                        <span class="password" :class="icon" @click="showPassword('password')"></span>
                         <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                     </div>
 
                     <div class="col-12">
-                        <label for="c_password" class="form-label">New Password<span>*</span> </label>
-                        <input type="password" v-model.trim="form.c_new_password" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" placeholder="**********" id="c_password" required>
-                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                        <label for="c_password" class="form-label">Confirm Password<span>*</span> </label>
+                        <input type="password"  v-model.trim="form.passwordConfirm" class="form-control form-control-lg" :class="{'is-invalid': passwordErr }" id="c_password" placeholder="**********" required>
+                        <div class="invalid-feedback" v-if="passwordErr"> {{ passwordErr }} </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col proceed text-center">
+                        <button class="btn proceed__btn"><span class="fas fa-spinner fa-spin" v-if="loading"></span> Reset Password</button>
                     </div>
                 </div>
             </form>
-        </div>
-
-        <div class="proceed">
-            <div class="row">
-                <div class="col text-center">
-                    <button class="btn proceed__btn">Reset Password</button>
-                </div>
-            </div>
         </div>
         
         <div class="alt">
@@ -44,18 +43,66 @@
         name: "reset-password",
         layout: "auth",
 
+        head(){
+            return{
+                title: 'Reset Password -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'Reset Password',
+                        content: 'Reset Password'
+                    }
+                ],
+            }
+        },
+
         data(){
             return{
-                form:{
-                    new_password: "",
-                    c_new_password: "",
-                }
+                loading: false,
+                icon : 'fas fa-eye',
+
+                form : {
+                    password: '',
+                    passwordConfirm: ''
+                },
+                passwordErr: '' 
             }
         },
 
         methods:{
-            submit(){
+            showPassword(){
+                var x = document.getElementById("password");
 
+                if (x.type === "password") {
+                    x.type = "text";
+                    this.icon = "fas fa-eye-slash"
+                } else {
+                    x.type = "password";
+                    this.icon = "fas fa-eye"
+                }
+            },
+
+            async submit(){
+                this.loading = true
+                
+                try {
+                    if(this.form.password !== this.form.passwordConfirm ){
+                        this.passwordErr = "Passwords do not match";
+                        throw "Passwords do not match";
+                    }
+
+                    this.passwordErr = '';
+                    await this.$axios.$patch(`/auth/reset-password/${this.$route.params.token}`, this.form )
+                    
+                    this.$toast.success('Password Reset Successfully. You can proceed to login', {
+                        icon : 'check',
+                    })
+
+                    this.$router.push({ name: "auth-login" });
+                    this.loading = false
+
+                } catch (err) {
+                    this.loading = false
+                }
             }
         }
     }
@@ -85,6 +132,15 @@
                 }
             }
 
+            .password {
+                position: relative;
+                top: -2rem;
+                right: 1.5rem;
+                float: right;
+                color: $grey-3;
+                cursor: pointer;
+            }
+
             .form-label{
                 @include form-label();
             }
@@ -94,65 +150,11 @@
             }
         }
 
-        .extras{
-            a{
-                font-size: .75rem;
-                color: $secondary;
-                text-decoration: none;
-            }
-        }
-
         .proceed{
             .btn{
                 @include button();
                 margin-top: 1rem;
                 width: 100%;
-            }
-        }
-
-        .social{
-            margin-top: 2rem;
-            &__or{
-                text-align: center;
-
-                p{
-                    color: grey;
-
-                    &::before, &::after{
-                        content: " ";
-                        width: 7rem;
-                        height: .05rem;
-                        background-color: lightgray;
-                        display: inline-block;
-                        margin-bottom: .25rem;
-                    }
-                    
-                    &::before{
-                        margin-right: .5rem;
-                    }
-
-                    &::after{
-                        margin-left: .5rem;
-                    }
-                }
-            }
-
-            .btn{
-                @include button();
-                margin-bottom: 1rem;
-
-                background-color: $white;
-                color: grey;
-
-                &:hover{
-                    background-color: $secondary;
-                    color: $white;
-                }
-
-                img{
-                    width: 1.2rem;
-                    margin-right: .5rem;
-                }
             }
         }
 
@@ -183,29 +185,6 @@
                 }
             }
 
-            .extras{
-                a{
-                    font-size: .75rem;
-                }
-            }
-
-            .proceed{
-                .btn{
-                    margin-top: 1rem;
-                }
-            }
-
-            .social{
-                margin-top: 2rem;
-                &__or{
-                    p{
-                        &::before, &::after{
-                            width: 7rem;
-                        }
-                    }
-                }
-            }
-
             .alt{
                 margin-top: 2rem;
                 p{
@@ -227,29 +206,6 @@
 
                 &__sub{
                     font-size: .9rem;
-                }
-            }
-
-            .extras{
-                a{
-                    font-size: .8rem;
-                }
-            }
-
-            .proceed{
-                .btn{
-                    margin-top: 2rem;
-                }
-            }
-
-            .social{
-                margin-top: 2rem;
-                &__or{
-                    p{
-                        &::before, &::after{
-                            width: 10rem;
-                        }
-                    }
                 }
             }
 

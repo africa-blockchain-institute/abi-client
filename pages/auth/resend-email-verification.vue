@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper">
         <div class="header">
-            <h1 class="header__title">Forgot Password</h1>
-            <p class="header__sub">Please enter your email and we will send you a reset link.</p>
+            <h1 class="header__title">Resend Email Verification</h1>
+            <p class="header__sub">Please enter your email and we will send you another verification link.</p>
         </div>
 
         <div class="form">
@@ -17,7 +17,7 @@
 
                 <div class="row">
                     <div class="col proceed text-center">
-                        <button class="btn proceed__btn"><span class="fas fa-spinner fa-spin" v-if="loading"></span> Send Reset Link</button>
+                        <button class="btn proceed__btn"><span class="fas fa-spinner fa-spin" v-if="loading"></span>Resend Email Verification</button>
                     </div>
                 </div>
             </form>
@@ -25,7 +25,7 @@
         
         <div class="alt">
             <div class="col-12">
-                <p>Remembered your password? <nuxt-link to="/auth/login">Login</nuxt-link> </p>
+                <p>Already verified? <nuxt-link to="/auth/login">Login</nuxt-link> </p>
             </div>
         </div>
     </div>
@@ -33,16 +33,16 @@
 
 <script>
     export default {
-        name: "forgot-password",
+        name: "resend-verification-link",
         layout: "auth",
 
         head(){
             return{
-                title: 'Forgot Password -  Africa Blockchain Institute',
+                title: 'Resend Verification Link -  Africa Blockchain Institute',
                 meta: [
                     {
-                        name: 'Forgot Password',
-                        content: 'Forgot Password'
+                        name: 'Resend Verification Link',
+                        content: 'Resend Verification Link'
                     }
                 ],
             }
@@ -58,21 +58,22 @@
 
         methods:{
             async submit(){
-                this.loading = true;
+                this.loading = true
                 
                 try {
-                    const res = await this.$axios.$post('/auth/forgot-password', this.form);
-                    this.loading = false
-                    
-                    this.$toast.success('Password reset token has been sent to your email.', {
+                    await this.$axios.$post('/auth/resend-email-verification', this.form);
+
+                    this.$toast.success('Email Verification token has been sent to your mail. Please check your mail inbox or promotions to proceed.', {
                         icon : 'check',
                     })
+
+                    this.loading = false
 
                 } catch (err) {
                     this.loading = false
                 }
             }
-        }
+        },
     }
 </script>
 

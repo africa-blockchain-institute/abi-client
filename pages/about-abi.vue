@@ -46,6 +46,18 @@
     import Team from '~/components/reusable/about/Team.vue';
 
     export default {
+        head(){
+            return{
+                title: 'About Us -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'About-Us',
+                        content: 'About Us'
+                    }
+                ],
+            }
+        },
+
         data(){
             return{
                 currentTab: "Mission",

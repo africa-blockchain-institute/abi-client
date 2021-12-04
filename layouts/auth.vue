@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-md-5 auth__img" :style="{ backgroundImage: 'url('+ require('~/assets/images/auth/'+image+'.jpg')}">
                         <nuxt-link to="/"> <img src="/logo_1.png" alt="ABI logo" class="auth__img--logo"> </nuxt-link>
-                        <p class="auth__img--sub">Africa Blockchain Institute, a Pan African Institute founded on the premise to promote the adoption, development, and use of Blockchain Technology across Africa</p>
+                        <p class="auth__img--sub">Africa Blockchain Institute, a Pan African Institute founded on the premise to promote the adoption, development, and use of Blockchain Technology across Africa.</p>
                     </div>
                     <div class="col-md-7 auth__content">
                         <Nuxt />

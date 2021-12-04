@@ -16,6 +16,18 @@
     import Lists from '@/components/reusable/CardLists.vue';
 
     export default {
+        head(){
+            return{
+                title: 'Faculty -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'Faculty',
+                        content: 'Faculty'
+                    }
+                ],
+            }
+        },
+
         data(){
             return{
                 faculties: [

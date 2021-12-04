@@ -10,8 +10,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <label for="name" class="form-label">Name<span>*</span> </label>
-                        <input type="text" v-model.trim="form.name" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" placeholder="John Doe" id="name" required>
-                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                        <input type="text" v-model.trim="form.name" class="form-control form-control-lg" placeholder="John Doe" id="name" required>
                     </div>
                     <div class="col-12">
                         <label for="email" class="form-label">Email Address<span>*</span> </label>
@@ -20,19 +19,22 @@
                     </div>
                     <div class="col-12">
                         <label for="password" class="form-label">Create Password<span>*</span> </label>
-                        <input type="password" v-model.trim="form.password" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" placeholder="**********" id="password" required>
-                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                        <input type="password"  v-model.trim="form.password" class="form-control form-control-lg" :class="{'is-invalid': passwordErr }" placeholder="**********" id="password" required>
+                        <span class="password" :class="icon" @click="showPassword('password')"></span>
+                        <div class="invalid-feedback" v-if="passwordErr"> {{ passwordErr }} </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="c_password" class="form-label">Confirm Password</label>
+                        <input type="password"  v-model.trim="form.passwordConfirm" class="form-control form-control-lg" placeholder="**********" id="c_password" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col text-center proceed">
+                        <button class="btn proceed__btn"><span class="fas fa-spinner fa-spin" v-if="loading"></span> Register</button>
                     </div>
                 </div>
             </form>
-        </div>
-
-        <div class="proceed">
-            <div class="row">
-                <div class="col text-center">
-                    <button class="btn proceed__btn">Register</button>
-                </div>
-            </div>
         </div>
         
         <div class="social">
@@ -67,20 +69,69 @@
         name: "register",
         layout: "auth",
 
+        head(){
+            return{
+                title: 'Register -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'Register',
+                        content: 'Register'
+                    }
+                ],
+            }
+        },
+
         data(){
             return{
-                form:{
+                loading: false,
+                icon : 'fas fa-eye',
+                form : {
+                    email: '',
+                    password: '',
+                    passwordConfirm: '',
                     name: "",
-                    email: "",
-                    password: ""
-                }
+                },
+                passwordErr: '',
             }
         },
 
         methods:{
-            submit(){
+            async submit(){
+                this.loading = true;
+                
+                try {
+                    //check if passwords match 
+                    if(this.form.password !== this.form.passwordConfirm ){
+                        this.passwordErr = "Passwords do not match";
+                        throw "Passwords do not match";
+                    }
 
-            }
+                    this.passwordErr = '';
+                    const res = await this.$axios.$post('/auth/register', this.form) 
+                    this.loading = false
+                    
+                    this.$toast.success(`${res.msg}`, {
+                        icon : 'check',
+                    })
+
+                    this.$router.push({ name: "auth-email-verification" });
+
+                } catch (err) {
+                    this.loading = false
+                }
+            },
+
+            showPassword(){
+                var x = document.getElementById("password");
+
+                if (x.type === "password") {
+                    x.type = "text";
+                    this.icon = "fas fa-eye-slash"
+                } else {
+                    x.type = "password";
+                    this.icon = "fas fa-eye"
+                }
+            },
         }
     }
 </script>
@@ -109,6 +160,15 @@
                 }
             }
 
+            .password {
+                position: relative;
+                top: -2rem;
+                right: 1.5rem;
+                float: right;
+                color: $grey-3;
+                cursor: pointer;
+            }
+
             .form-label{
                 @include form-label();
             }
@@ -129,7 +189,6 @@
         .proceed{
             .btn{
                 @include button();
-                margin-top: 1rem;
                 width: 100%;
             }
         }
@@ -213,12 +272,6 @@
                 }
             }
 
-            .proceed{
-                .btn{
-                    margin-top: 1rem;
-                }
-            }
-
             .social{
                 margin-top: 2rem;
                 &__or{
@@ -256,12 +309,6 @@
             .extras{
                 a{
                     font-size: .8rem;
-                }
-            }
-
-            .proceed{
-                .btn{
-                    margin-top: 2rem;
                 }
             }
 

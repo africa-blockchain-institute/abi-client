@@ -307,6 +307,18 @@
 <script>
     export default {
 		name: "Home",
+
+        head(){
+            return{
+                title: 'Home -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'Home',
+                        content: 'Home page'
+                    }
+                ],
+            }
+        },
 		
         data(){
             return{

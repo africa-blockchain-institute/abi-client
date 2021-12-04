@@ -56,6 +56,18 @@
     export default {
         name: "contact-us",
 
+        head(){
+            return{
+                title: 'Contact Us -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'Contact Us',
+                        content: 'Contact Us'
+                    }
+                ],
+            }
+        },
+
         data(){
             return {
                 form:{
