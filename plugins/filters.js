@@ -22,12 +22,6 @@ Vue.filter("momentTz", function(value){
     return utcTime + moment.tz(value, moment.tz.guess()).format('Z z');
 })
 
-Vue.filter("coachMomentTz", function(value, timezone){
-    if(!value || !timezone) return "";
-    const utcTime = new Date(value).toUTCString();
-    return utcTime + moment.tz(value, timezone).format('Z z');
-})
-
 Vue.filter("capitalize", function(value){
     if (!value) return ''
     value = value.toString()
@@ -50,19 +44,4 @@ Vue.filter("convertTo12", function(time24){
     return ts;
 })
 
-//get UTC time from a date object
-Vue.filter("getUTCTime", function(value){
-    if (!value) return ''
-    const hour = (value.getUTCHours() > 9 ) ? value.getUTCHours() : `0${value.getUTCHours()}`
-    const minutes = (value.getUTCMinutes() > 9 ) ? value.getUTCMinutes() : `0${value.getUTCMinutes()}`
-    const convertedTime = `${hour}:${minutes}`;
-
-    return convertedTime;
-});
-
-//get regular  time from a date object
-Vue.filter("getTimeFromISO", function(value){
-    const time = value.match(/\d\d:\d\d/);
-    return time[0];
-});
 

@@ -8,7 +8,7 @@
                 </nuxt-link>
 
                 <div class="list-group sidebar__list">
-                    <nuxt-link to="/admin/courses" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active exact>
+                    <nuxt-link to="/admin/courses" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-user-graduate icon"></span>
                         <span class="name" :class="{ active: toggle }">Courses</span>
                     </nuxt-link>
@@ -16,7 +16,15 @@
                         <span class="fas fa-book icon"></span>
                         <span class="name" :class="{ active: toggle }">Resources</span>
                     </nuxt-link>
-                    <nuxt-link to="/admin/users" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active exact>
+                    <nuxt-link to="/admin/events" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
+                        <span class="fas fa-calendar icon"></span>
+                        <span class="name" :class="{ active: toggle }">Events</span>
+                    </nuxt-link>
+                    <nuxt-link to="/admin/mentions" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
+                        <span class="fas fa-vote-yea icon"></span>
+                        <span class="name" :class="{ active: toggle }">Media Mentions</span>
+                    </nuxt-link>
+                    <nuxt-link to="/admin/users" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-users icon"></span>
                         <span class="name" :class="{ active: toggle }">Users</span>
                     </nuxt-link>
@@ -47,15 +55,18 @@
 
 <script>
     import Footer from '@/components/nav/Footer';
+    import { mapGetters } from 'vuex';
 
     export default {
+        middleware: ['admin'],
+
         head: {
-            title: 'User Dashboard - Africa Blockchain Institute',
+            title: 'Admin Dashboard - Africa Blockchain Institute',
             meta: [
                 {
                     hid: 'description',
                     name: 'description',
-                    content: 'User Dashboard'
+                    content: 'Admin Dashboard'
                 }
             ],
         },
@@ -70,21 +81,22 @@
             Footer
         },
 
-        mounted(){
-            
+        computed:{
+            ...mapGetters({
+                user: 'loggedInUser'
+            })
         },
 
-        methods:{
-            toggleSidebar(){
-                // const sd = document.getElementById("sidebar");
-                // sd.classList.toggle("active");
-                
-                // const ct = document.getElementById("main");
-                // ct.classList.toggle("active");
-            },
-
+        methods : {
             logout(){
+                this.$auth.logout();
 
+                this.$router.push({path: '/'});
+
+                this.$toast.success('Successfully logged out', {
+                    icon : 'check',
+                    duration: 5000,
+                })
             }
         }
     }
@@ -209,10 +221,6 @@
     @media (max-width: 992px) { 
         .wrapper{
             .body{
-                .sidebar {
-                    
-                }
-
                 .content{
                     &__body{
                         padding: 5rem 1rem 3rem;

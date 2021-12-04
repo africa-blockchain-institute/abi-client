@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="wrapper__head d-flex justify-content-between">
-            <h1 class="wrapper__head--title">Create Resource</h1>
+            <h1 class="wrapper__head--title">Create Event</h1>
         </div>
 
         <div class="wrapper__body shadow">
@@ -12,37 +12,36 @@
                             <form class="row" @submit.prevent="submit">
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-4">
-                                        <label for="category" class="form-label">Resource Category<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.category" class="form-control form-control-lg" id="category" required>
-                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                                        <label for="title" class="form-label">Event Title<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.title" class="form-control form-control-lg" id="title" required>
                                     </div>
                                     <div class="col-12 col-md-4">
-                                        <label for="link" class="form-label">Resource Link<span>*</span> </label>
+                                        <label for="link" class="form-label">Event Link<span>*</span> </label>
                                         <input type="url" v-model.trim="form.link" class="form-control form-control-lg" id="link" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
-                                        <label for="title" class="form-label">Resource Title<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.title" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" id="title" required>
-                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-12 col-md-8">
                                         <div class="form-group">
-                                            <label class="form-label">Resource Image</label>
+                                            <label class="form-label">Event Image</label>
                                             <input class="form-control form-control-lg" type="file" ref="image"
                                             @change="uploadImage" :class="{'is-invalid': imageErr }" required>
                                             <div class="invalid-feedback">{{ this.imageErr }} </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="description" class="form-label">Event Description<span>*</span> </label>
+                                        <textarea  v-model.trim="form.description" class="form-control" rows="3" :class="{'is-invalid': errors.status }" id="description" required></textarea>
+                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                                    </div>
+                                </div>
+                                
                                 <div class="col-lg-8 mx-auto">
                                     <button type="submit" class="btn btn-primary" :disabled="status">
                                         <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span>
-                                        Create Resource
+                                        Create Event
                                     </button>
                                 </div>
                             </form>
@@ -60,11 +59,11 @@
 
         head(){
             return{
-                title: 'Create Resource -  Africa Blockchain Institute',
+                title: 'Create Event -  Africa Blockchain Institute',
                 meta: [
                     {
-                        name: 'Resources',
-                        content: 'Resources'
+                        name: 'Events',
+                        content: 'Events'
                     }
                 ],
             }
@@ -76,7 +75,7 @@
                 categories: {},
                 form : {
                     link: '',
-                    category: '',
+                    description: '',
                     image: '',
                     title: '',
                 },
@@ -95,18 +94,18 @@
                 try {
                     let formData = new FormData()
                     formData.append('link', this.form.link)
-                    formData.append('category', this.form.category)
+                    formData.append('description', this.form.description)
                     formData.append('title', this.form.title)
                     formData.append('image', this.form.image)
 
-                    await this.$axios.$post('/resources', formData)
+                    await this.$axios.$post('/events', formData)
                     this.loading = false;
 
-                    this.$toast.success("Resource created successfully", {
+                    this.$toast.success("Event created successfully", {
                         icon : 'check'
                     });
 
-                    this.$router.push({ name: "admin-resources" })
+                    this.$router.push({ name: "admin-events" })
 
                 } catch (err) {
                     this.loading = false;

@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper">
         <div class="wrapper__head d-flex justify-content-between">
-            <h1 class="wrapper__head--title">Resources</h1>
-            <nuxt-link to="/admin/resources/create" class="btn wrapper__head--btn">Add Resource</nuxt-link>
+            <h1 class="wrapper__head--title">Events</h1>
+            <nuxt-link to="/admin/events/create" class="btn wrapper__head--btn">Add event</nuxt-link>
         </div>
 
         <div class="wrapper__body shadow">
@@ -16,7 +16,7 @@
                                         <th scope="col">#</th>
                                         <th scope="col">Image</th>
                                         <th scope="col">Title</th>
-                                        <th scope="col">Category</th>
+                                        <th scope="col">Description</th>
                                         <th scope="col">Link</th>
                                         <th scope="col">Actions</th>
                                     </tr>
@@ -26,10 +26,10 @@
                                         <th>{{ index + 1 }}</th>
                                         <td><img :src="doc.image" :alt="doc.title" class="img"></td>
                                         <td>{{ doc.title }}</td>
-                                        <td>{{ doc.category }} </td>
+                                        <td>{{ doc.description | truncate }} </td>
                                         <td>{{ doc.link }} </td>
                                         <td class="">
-                                            <nuxt-link :to="{ name: 'admin-resources-id', params:{ id: doc._id} }" class="btn btn-primary">
+                                            <nuxt-link :to="{ name: 'admin-events-id', params:{ id: doc._id} }" class="btn btn-primary">
                                                 <span class="fas fa-edit"></span>
                                             </nuxt-link>
                                             <button class="btn btn-danger" @click="deleteDoc(doc._id)">
@@ -45,8 +45,8 @@
                     <div class="col-12" v-else>
                         <div class="wrapper__empty text-center">
                             <img src="~/assets/images/dashboard/empty.png" alt="Empty state" class="wrapper__empty--img">
-                            <h3 class="wrapper__empty--title">No Added Resource</h3>
-                            <nuxt-link to="/admin/resources/create" class="btn wrapper__empty--btn">Add Resource</nuxt-link>
+                            <h3 class="wrapper__empty--title">No Added Event</h3>
+                            <nuxt-link to="/admin/events/create" class="btn wrapper__empty--btn">Add Event</nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -67,11 +67,11 @@
 
         head(){
             return{
-                title: 'Resources -  Africa Blockchain Institute',
+                title: 'Events -  Africa Blockchain Institute',
                 meta: [
                     {
-                        name: 'Resources',
-                        content: 'Resources'
+                        name: 'Events',
+                        content: 'Events'
                     }
                 ],
             }
@@ -92,7 +92,7 @@
 
         methods:{
             async getDocs(){
-                let docs = await this.$axios.$get(`/resources?page=${this.page}&limit=${this.perPage}`)
+                let docs = await this.$axios.$get(`/events?page=${this.page}&limit=${this.perPage}`)
                 this.records = docs.records
                 this.docs = docs.data;
             },
@@ -108,8 +108,8 @@
                 }).then((result) => {
 
                     if (result.value) {
-                        this.$axios.$delete(`/resources/${id}`)
-                        this.$toast.success("Resource deleted successfully", {
+                        this.$axios.$delete(`/events/${id}`)
+                        this.$toast.success("Event deleted successfully", {
                             icon: "check"
                         })
 
@@ -155,9 +155,8 @@
                     color: white;
                     padding: .25rem .5rem;
                     box-shadow: none;
-                    font-size: .8rem;
                     margin-bottom: .25rem;
-
+                    font-size: .8rem;
                 }
             }
         }

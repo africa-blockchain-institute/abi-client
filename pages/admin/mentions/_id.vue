@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="wrapper__head d-flex justify-content-between">
-            <h1 class="wrapper__head--title">Create Resource</h1>
+            <h1 class="wrapper__head--title">Edit Mention -  {{title}}</h1>
         </div>
 
         <div class="wrapper__body shadow">
@@ -12,37 +12,29 @@
                             <form class="row" @submit.prevent="submit">
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-4">
-                                        <label for="category" class="form-label">Resource Category<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.category" class="form-control form-control-lg" id="category" required>
-                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                                        <label for="title" class="form-label">Mention Title<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.title" class="form-control form-control-lg" id="title" required>
                                     </div>
                                     <div class="col-12 col-md-4">
-                                        <label for="link" class="form-label">Resource Link<span>*</span> </label>
+                                        <label for="link" class="form-label">Mention Link<span>*</span> </label>
                                         <input type="url" v-model.trim="form.link" class="form-control form-control-lg" id="link" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
-                                        <label for="title" class="form-label">Resource Title<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.title" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" id="title" required>
-                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-12 col-md-8">
                                         <div class="form-group">
-                                            <label class="form-label">Resource Image</label>
+                                            <label class="form-label">Mention Image</label>
                                             <input class="form-control form-control-lg" type="file" ref="image"
-                                            @change="uploadImage" :class="{'is-invalid': imageErr }" required>
+                                            @change="uploadImage" :class="{'is-invalid': imageErr }">
                                             <div class="invalid-feedback">{{ this.imageErr }} </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-8 mx-auto">
-                                    <button type="submit" class="btn btn-primary" :disabled="status">
+                                    <button type="submit" class="btn btn-primary">
                                         <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span>
-                                        Create Resource
+                                        Edit Mention
                                     </button>
                                 </div>
                             </form>
@@ -60,11 +52,11 @@
 
         head(){
             return{
-                title: 'Create Resource -  Africa Blockchain Institute',
+                title: 'Edit '+ this.title +'- Africa Blockchain Institute',
                 meta: [
                     {
-                        name: 'Resources',
-                        content: 'Resources'
+                        name: 'Mentions',
+                        content: 'Mentions'
                     }
                 ],
             }
@@ -73,10 +65,9 @@
         data(){
             return {
                 loading: false,
-                categories: {},
+                title: "",
                 form : {
                     link: '',
-                    category: '',
                     image: '',
                     title: '',
                 },
@@ -86,27 +77,33 @@
         },
 
         created(){
+            this.getDoc()
         },
 
         methods:{
+            async getDoc(){
+                let mention = await this.$axios.$get(`/mentions/${this.$route.params.id}`)
+                this.title = mention.data.title;
+                this.form = mention.data
+            },
+
             async submit(){
                 this.loading = true;
 
                 try {
                     let formData = new FormData()
                     formData.append('link', this.form.link)
-                    formData.append('category', this.form.category)
                     formData.append('title', this.form.title)
                     formData.append('image', this.form.image)
 
-                    await this.$axios.$post('/resources', formData)
+                    await this.$axios.$patch(`/mentions/${this.$route.params.id}`, formData)
                     this.loading = false;
 
-                    this.$toast.success("Resource created successfully", {
+                    this.$toast.success("Mention updated successfully", {
                         icon : 'check'
                     });
 
-                    this.$router.push({ name: "admin-resources" })
+                    this.$router.push({ name: "admin-mentions" })
 
                 } catch (err) {
                     this.loading = false;
