@@ -32,8 +32,11 @@
 
 <script>
     import Footer from '@/components/nav/Footer';
+    import { mapGetters } from 'vuex';
 
     export default {
+        middleware: ['user'],
+
         head: {
             title: 'ABI - User Dashboard',
             meta: [
@@ -53,6 +56,12 @@
 
         components: {
             Footer
+        },
+
+        computed:{
+            ...mapGetters({
+                user: 'loggedInUser'
+            })
         },
 
         methods:{
@@ -106,6 +115,10 @@
                             font-size: 1.2rem;
                             color: white;
                         }
+                    }
+
+                    .dropdown-menu{
+                        z-index: 1030;
                     }
 
                     .dropdown-item {

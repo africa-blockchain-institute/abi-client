@@ -49,7 +49,7 @@
                     <img src="~/assets/images/auth/google.png" alt="ABI google auth login">
                     Continue with Google 
                 </a>
-                <a href="/auth/google" class="btn">
+                <a href="/auth/facebook" class="btn">
                     <img src="~/assets/images/auth/facebook.png" alt="ABI facebook auth login">
                     Continue with Facebook 
                 </a>
