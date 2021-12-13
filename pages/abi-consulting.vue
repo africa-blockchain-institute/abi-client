@@ -230,10 +230,6 @@
                         }
                     }
 
-                    .form-label{
-                        // font-size: .8rem;
-                    }
-
                     .btn{
                         @include button();
                     }
