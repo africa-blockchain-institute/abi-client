@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="website" class="form-label">Website<span>*</span> </label>
-                                    <input type="text" v-model="form.website" class="form-control form-control-lg" placeholder="e.g. www.africablockchain.institute" id="website" required>
+                                    <input type="url" v-model="form.website" class="form-control form-control-lg" placeholder="e.g. www.africablockchain.institute" id="website" required>
                                 </div>
                             </div>
                             

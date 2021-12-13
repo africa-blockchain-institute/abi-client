@@ -1044,10 +1044,6 @@
                 &__content{
                     &--sect{
                         margin-bottom: 1rem;
-
-                        img{
-                            // width: 80%;
-                        }
                     }
                 }
             }

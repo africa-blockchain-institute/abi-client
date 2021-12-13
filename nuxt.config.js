@@ -24,8 +24,11 @@ export default {
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
 	css: [
-		'@/assets/css/main.css'
-	],
+        'quill/dist/quill.snow.css',
+        'quill/dist/quill.bubble.css',
+        'quill/dist/quill.core.css',
+        "@/assets/css/main.css"
+    ],
 
 	loading: {
         color: '#198754',
@@ -45,6 +48,7 @@ export default {
         { src: '~/plugins/filters.js' },
 		{ src: '~/plugins/vue-paginate.js' },
         { src: "~/plugins/vue-quill-editor.js", ssr: false },
+        { src: "~/plugins/froala.js", ssr: false },
 		{ src: '~/plugins/mixins/user.js' },
         { src: '~/plugins/mixins/validation.js' },
 	],
