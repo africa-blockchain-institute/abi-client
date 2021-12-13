@@ -46,8 +46,8 @@
 
                             <div class="row justify-content-center">
                                 <div class="col-12">
-                                    <label for="webpage_url" class="form-label">If you have a Webpage/Demo, please provide the URL <span>*</span> </label>
-                                    <input type="url" v-model.trim="form.webpage_url" class="form-control form-control-lg" placeholder="https://www.domain.tld" id="webpage_url" required>
+                                    <label for="webpage_url" class="form-label">If you have a Webpage/Demo, please provide the URL</label>
+                                    <input type="url" v-model.trim="form.webpage_url" class="form-control form-control-lg" placeholder="https://www.domain.tld" id="webpage_url">
                                 </div>
                             </div>
                             

@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row justify-content-center text-center">
                 <div class="col-md-10 col-lg-8 hero__banner">
-                    <h1 class="hero__banner--title">Africa Blockchain <br> Incubation Program </h1>
+                    <h1 class="hero__banner--title">AFRICA BLOCKCHAIN <br> INCUBATION PROGRAM</h1>
                     <p class="hero__banner--sub">Please fill out as much details as possible.</p>
                 </div>
             </div>

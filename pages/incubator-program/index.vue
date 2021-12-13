@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-lg-8 hero__banner">
-                        <h1 class="hero__banner--title">Africa Blockchain <br> Incubation Program </h1>
+                        <h1 class="hero__banner--title">AFRICA BLOCKCHAIN <br> INCUBATION PROGRAM </h1>
                         <p class="hero__banner--sub">Egypt | Zimbabwe</p>
                         <nuxt-link to="/incubator-program/apply" class="hero__banner--btn btn">Apply Now</nuxt-link>
                     </div>
@@ -156,12 +156,15 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-8 partners__head">
-                        <h2 class="work__head--title">Amazing Partners</h2>
+                        <h2 class="work__head--title">Our Amazing Partners</h2>
                     </div>
                 </div>
-                <div class="row justify-content-center">
+                <div class="row justify-content-center align-items-center">
                     <div class="col-4 col-md-3 col-xl-2 partners__img">
                         <img src="~/assets/images/incubator/images/convexity.jpg" alt="" class="partners__img--img img-fluid">
+                    </div>
+                    <div class="col-4 col-md-3 col-xl-2 partners__img">
+                        <img src="~/assets/images/incubator/images/tech_london.png" alt="" class="partners__img--img img-fluid">
                     </div>
                     <div class="col-4 col-md-3 col-xl-2 partners__img">
                         <img src="~/assets/images/incubator/images/bbic.jpg" alt="" class="partners__img--img img-fluid">
@@ -633,7 +636,7 @@
             }
 
             .partners{
-                padding: 0 0 2rem;
+                padding: 3rem 0 5rem;
 
                 &__head{
                     &--title{
@@ -732,7 +735,7 @@
             }
 
             .partners{
-                padding: 0 0 3rem;
+                // padding: 0 0 3rem;
 
                 &__head{
                     &--title{

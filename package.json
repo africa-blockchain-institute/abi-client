@@ -1,7 +1,7 @@
 {
-  "name": "abi-client",
+  "name": "Africa Blockchain Institute",
   "version": "1.0.0",
-  "description": "Africa Blockchain Report 2021",
+  "description": "A Pan African Institute founded on the premise to promote the adoption, development, and use of Blockchain Technology across Africa.",
   "private": true,
   "scripts": {
     "dev": "nuxt",

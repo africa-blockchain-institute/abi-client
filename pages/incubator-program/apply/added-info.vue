@@ -26,7 +26,7 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label class="form-label">Upload Pitch Deck <span>*</span></label>
-                                        <input class="form-control form-control-lg" type="file" ref="image" :required="checkPitchDeck"
+                                        <input class="form-control form-control-lg" type="file" ref="doc" :required="checkPitchDeck"
                                         @change="uploadPitchDeck" :class="{'is-invalid': imageErr }">
                                         <div class="invalid-feedback">{{ this.imageErr }} </div>
                                     </div>
@@ -37,7 +37,7 @@
                                 <div class="col-12">
                                     <div class="form-group">
                                         <label class="form-label">Upload Additional Documentation <span>*</span></label>
-                                        <input class="form-control form-control-lg" type="file" ref="image" :required="checkAddedDoc"
+                                        <input class="form-control form-control-lg" type="file" ref="doc" :required="checkAddedDoc"
                                         @change="uploadAddedDoc" :class="{'is-invalid': imageErrDoc }">
                                         <div class="invalid-feedback">{{ this.imageErrDoc }} </div>
                                     </div>

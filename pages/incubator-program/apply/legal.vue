@@ -28,7 +28,7 @@
 
                             <div class="row justify-content-center">
                                 <div class="col-12">
-                                    <label for="legal_type" class="form-label">If you answered “Yes”, please specify the type <span>*</span> </label>
+                                    <label for="legal_type" class="form-label">If you answered “Yes”, please specify the type. </label>
                                     <textarea class="form-control" name="legal_type" id="legal_type" cols="30" rows="3" v-model="form.legal_type" placeholder="Kindly provide name and links."></textarea>
                                 </div>
                             </div>
