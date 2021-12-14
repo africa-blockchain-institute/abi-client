@@ -6,7 +6,8 @@
                     <div class="col-md-10 col-lg-8 hero__banner">
                         <h1 class="hero__banner--title">AFRICA BLOCKCHAIN <br> INCUBATION PROGRAM </h1>
                         <p class="hero__banner--sub">Egypt | Zimbabwe</p>
-                        <nuxt-link to="/incubator-program/apply" class="hero__banner--btn btn">Apply Now</nuxt-link>
+                        <!-- <nuxt-link to="/incubator-program/apply" class="hero__banner--btn btn">Apply Now</nuxt-link> -->
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEhdDsjesmwkzkH_hLPeTYmutkUyJytJVB1g_AxNVxMpH63A/viewform" target="blank" class="hero__banner--btn btn">Apply Now</a>
                     </div>
                 </div>
             </div>
@@ -179,7 +180,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-6 text-center footer__body">
                         <h2 class="footer__body--title">Blockchain is our passion, show us yours</h2>
-                        <nuxt-link to="/incubator-program/apply" class="footer__body--btn btn">Begin Your Application Now</nuxt-link>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEhdDsjesmwkzkH_hLPeTYmutkUyJytJVB1g_AxNVxMpH63A/viewform" target="blank" class="footer__body--btn btn">Begin Your Application Now</a>
                         <p class="footer__body--contact">Contact us at info@africablockchain.institute</p>
                     </div>
                 </div>

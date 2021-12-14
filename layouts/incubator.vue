@@ -11,7 +11,7 @@
                     <div class=" header__links justify-content-end" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <nuxt-link to="/incubator-program/apply" class="nav-link btn">Apply Now</nuxt-link>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdEhdDsjesmwkzkH_hLPeTYmutkUyJytJVB1g_AxNVxMpH63A/viewform" target="blank" class="nav-link btn">Apply Now</a>
                             </li>
                         </ul>
                     </div>
