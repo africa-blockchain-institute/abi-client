@@ -87,7 +87,7 @@
                             <div class="col-12 services__info--sub">
                                 <p class="title">More specifically:</p>
                                 <ul class="check">
-                                    <li><span class="fas fa-check-circle"></span> Citizen of Egypt and Zimbabwe. </li>
+                                    <li><span class="fas fa-check-circle"></span> Citizen of Egypt or Zimbabwe. </li>
                                     <li><span class="fas fa-check-circle"></span> Priorities are given to Female Applications. </li>
                                     <li><span class="fas fa-check-circle"></span> Must be between 20 - 35 years of age. </li>
                                     <li><span class="fas fa-check-circle"></span> Strong business case and market potential. </li>
