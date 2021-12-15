@@ -24,7 +24,7 @@
                             <h3 class="services__info--title">The Incubator Program</h3>
                             
                             <p class="services__info--text">This is a structured Incubator Program focused on grooming the African Blockchain StartUps, to spark creativity and ideas implementation around Distributed Ledger Technologies, insufficiently present in the Local Innovation and Entrepreneurship Landscape of Egypt and Zimbabwe. </p>
-                            <p class="services__info--text">Qualified candidates will be nurtured for through a structured 4-Month course of Workshops, Training, Development, Mentor Sessions and Community Events, through facilitating connections with Investors and leading Blockchain Experts.</p>
+                            <p class="services__info--text">Qualified candidates will be nurtured through a structured 4-Month course of Workshops, Training, Development, Mentor Sessions and Community Events, through facilitating connections with Investors and leading Blockchain Experts.</p>
                         </div>
                     </div>
                 </div>
