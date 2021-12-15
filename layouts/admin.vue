@@ -219,6 +219,8 @@
                 &__toggler{
                     padding: .75rem 2rem;
                     position: fixed;
+                    background: #fff;
+                    z-index: 20;
                     width: 100%;
                     
                     &--btn{

@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="wrapper__head d-flex justify-content-between">
-            <h1 class="wrapper__head--title">Edit Resource -  {{title}}</h1>
+            <h1 class="wrapper__head--title">Create Course</h1>
         </div>
 
         <div class="wrapper__body shadow">
@@ -11,27 +11,30 @@
                         <div class="wrapper__form">
                             <form class="row" @submit.prevent="submit">
                                 <div class="row justify-content-center">
-                                    <div class="col-12 col-md-4">
-                                        <label for="category" class="form-label">Resource Category<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.category" class="form-control form-control-lg" id="category" required>
-                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <label for="link" class="form-label">Resource Link<span>*</span> </label>
-                                        <input type="url" v-model.trim="form.link" class="form-control form-control-lg" id="link" required>
+                                    <div class="col-12 col-md-8">
+                                        <label for="title" class="form-label">Course Title<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.title" class="form-control form-control-lg" id="title" required>
                                     </div>
                                 </div>
+
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
-                                        <label for="title" class="form-label">Resource Title<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.title" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" id="title" required>
-                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                                        <label for="price" class="form-label">Course Price<span>*</span> </label>
+                                        <input type="number" v-model.trim="form.price" class="form-control form-control-lg" id="price" required>
                                     </div>
                                 </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="category" class="form-label">Course Category<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.category" class="form-control form-control-lg" id="category" required>
+                                    </div>
+                                </div>
+
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <div class="form-group">
-                                            <label class="form-label">Resource Image</label>
+                                            <label class="form-label">Course Poster Image <span>*</span></label>
                                             <input class="form-control form-control-lg" type="file" ref="image"
                                             @change="uploadImage" :class="{'is-invalid': imageErr }">
                                             <div class="invalid-feedback">{{ this.imageErr }} </div>
@@ -39,10 +42,62 @@
                                     </div>
                                 </div>
 
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="description" class="form-label">Course Description <span>*</span> </label>
+                                        <client-only>
+                                            <froala id="description" :tag="'textarea'" :config="froalaConfig" v-model="form.description" required></froala>
+                                        </client-only>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="requirements" class="form-label">Course Requirements <span>*</span> </label>
+                                        <client-only>
+                                            <froala id="requirements" :tag="'textarea'" :config="froalaConfig" v-model="form.requirements" required></froala>
+                                        </client-only>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="learning_outcome" class="form-label">Learning Outcome <span>*</span> </label>
+                                        <client-only>
+                                            <froala id="learning_outcome" :tag="'textarea'" :config="froalaConfig" v-model="form.learning_outcome" required></froala>
+                                        </client-only>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="certification" class="form-label">Certification </label>
+                                        <input type="text" v-model.trim="form.certification" class="form-control form-control-lg" id="certification" required>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="career_prospect" class="form-label">Career Prospect </label>
+                                        <input type="text" v-model.trim="form.career_prospect" class="form-control form-control-lg" id="career_prospect" required>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="project" class="form-label">Project <span>*</span> </label>
+                                        <client-only>
+                                            <froala id="project" :tag="'textarea'" :config="froalaConfig" v-model="form.project" required></froala>
+                                        </client-only>
+
+                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                                    </div>
+                                </div>
+
                                 <div class="col-lg-8 mx-auto">
                                     <button type="submit" class="btn btn-primary">
                                         <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span>
-                                        Edit Resource
+                                        Create Course
                                     </button>
                                 </div>
                             </form>
@@ -55,65 +110,84 @@
 </template>
 
 <script>
+
     export default {
         layout: 'admin',
 
         head(){
             return{
-                title: 'Edit '+ this.title +'- Africa Blockchain Institute',
+                title: 'Create Course -  Africa Blockchain Institute',
                 meta: [
                     {
-                        name: 'Resources',
-                        content: 'Resources'
+                        name: 'Courses',
+                        content: 'Courses'
                     }
                 ],
             }
         },
 
+        components:{
+
+        },
+
         data(){
             return {
                 loading: false,
-                title: "",
+                courses: {},
                 form : {
-                    link: '',
-                    category: '',
-                    image: '',
                     title: '',
+                    description: '',
+                    image: '',
+                    requirements: '',
+                    learning_outcome: '',
+                    price: '',
+                    category: '',
+                    certification: '',
+                    career_prospect: '',
+                    skill_level: 'All',
+                    language: 'English',
+                    project: '',
                 },
+
                 imageErr: null,
                 status: true,
+
+                froalaConfig:{
+                    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'superscript', 'subscript', 'insertLink'],
+                }
             }
         },
 
         created(){
-            this.getDoc()
         },
 
         methods:{
-            async getDoc(){
-                let resource = await this.$axios.$get(`/resources/${this.$route.params.id}`)
-                this.title = resource.data.title;
-                this.form = resource.data
-            },
-
             async submit(){
                 this.loading = true;
 
                 try {
                     let formData = new FormData()
-                    formData.append('link', this.form.link)
-                    formData.append('category', this.form.category)
                     formData.append('title', this.form.title)
+                    formData.append('description', this.form.description)
+                    formData.append('requirements', this.form.requirements)
                     formData.append('image', this.form.image)
+                    formData.append('learning_outcome', this.form.learning_outcome)
+                    formData.append('price', this.form.price)
+                    formData.append('category', this.form.category)
+                    formData.append('career_prospect', this.form.career_prospect)
+                    formData.append('certification', this.form.certification)
+                    formData.append('skill_level', this.form.skill_level)
+                    formData.append('language', this.form.language)
+                    formData.append('project', this.form.project)
 
-                    await this.$axios.$patch(`/resources/${this.$route.params.id}`, formData)
+                    await this.$axios.$post('/courses', formData)
                     this.loading = false;
 
-                    this.$toast.success("Resource updated successfully", {
+                    this.$toast.success("Courses created successfully", {
                         icon : 'check'
                     });
 
-                    this.$router.push({ name: "admin-resources" })
+                    this.$router.push({ name: "admin-courses" })
 
                 } catch (err) {
                     this.loading = false;
@@ -140,82 +214,3 @@
 </script>
 
 <style lang="scss" scoped>
-    .wrapper{
-        &__head{
-            margin: 1rem auto 2rem;
-            
-            &--title{
-                font-weight: bold;
-                font-size: $font-hd;
-            }
-
-            &--btn{
-                @include button();
-                padding: .5rem .75rem;
-            }
-        }
-
-        &__body{
-            padding: 2rem 0rem;
-        }
-
-        &__form{
-            .row{
-                .col-12{
-                    margin-bottom: 1rem;
-                }
-            }
-
-            .form-label{
-                @include form-label();
-                font-weight: bold;
-                font-size: $font-rg;
-            }
-
-            .form-control, .form-select{
-                box-shadow: none;
-            }
-
-            .btn{
-                @include button();
-            }
-        }
-    }
-
-    // Medium devices (tablets, 768px and up)
-    @media (min-width: 769px) {  
-        .wrapper{
-            &__head{
-                margin: 2rem auto 3rem;
-                
-                &--title{
-                    font-size: $font-md;
-                }
-
-                &--btn{
-                    padding: .75rem 2.5rem;
-                }
-            }
-
-            &__body{
-                padding: 3rem 2rem;
-            }
-
-            &__form{
-                .row{
-                    margin-bottom: 1rem;
-                }
-
-                .btn{
-                    @include button();
-                }
-            }
-        }
-    }
-
-    // Large devices (desktops, 992px and up)
-    @media (min-width: 992px) {  }
-
-    // XX-Large devices (larger desktops, 1400px and up)
-    @media (min-width: 1400px) {  }
-</style>

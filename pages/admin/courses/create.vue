@@ -13,32 +13,86 @@
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <label for="title" class="form-label">Course Title<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.title" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" id="title" required>
-                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                                        <input type="text" v-model.trim="form.title" class="form-control form-control-lg" id="title" required>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="price" class="form-label">Course Price<span>*</span> </label>
+                                        <input type="number" v-model.trim="form.price" class="form-control form-control-lg" id="price" required>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="category" class="form-label">Course Category<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.category" class="form-control form-control-lg" id="category" required>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <div class="form-group">
+                                            <label class="form-label">Course Poster Image <span>*</span></label>
+                                            <input class="form-control form-control-lg" type="file" ref="image"
+                                            @change="uploadImage" :class="{'is-invalid': imageErr }">
+                                            <div class="invalid-feedback">{{ this.imageErr }} </div>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <label for="description" class="form-label">Course Description <span>*</span> </label>
-                                        <div class="form-group">
-                                            <froala id="edit" :tag="'textarea'" :config="froalaConfig" v-model="form.description"></froala>
-                                        </div>
+                                        <client-only>
+                                            <froala id="description" :tag="'textarea'" :config="froalaConfig" v-model="form.description" required></froala>
+                                        </client-only>
                                     </div>
                                 </div>
 
-                                <!-- <div class="row justify-content-center">
+                                <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
-                                        <label for="description" class="form-label">Course Description <span>*</span> </label>
-                                        <div class="form-group">
-                                            <div class="quill-editor" required
-                                                :content="form.description"
-                                                v-quill:myQuillEditor="editorOption"
-                                                @change="descriptionChange($event)" >
-                                            </div>
-                                        </div>
+                                        <label for="requirements" class="form-label">Course Requirements <span>*</span> </label>
+                                        <client-only>
+                                            <froala id="requirements" :tag="'textarea'" :config="froalaConfig" v-model="form.requirements" required></froala>
+                                        </client-only>
                                     </div>
-                                </div> -->
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="learning_outcome" class="form-label">Learning Outcome <span>*</span> </label>
+                                        <client-only>
+                                            <froala id="learning_outcome" :tag="'textarea'" :config="froalaConfig" v-model="form.learning_outcome" required></froala>
+                                        </client-only>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="certification" class="form-label">Certification </label>
+                                        <input type="text" v-model.trim="form.certification" class="form-control form-control-lg" id="certification" required>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="career_prospect" class="form-label">Career Prospect </label>
+                                        <input type="text" v-model.trim="form.career_prospect" class="form-control form-control-lg" id="career_prospect" required>
+                                    </div>
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="project" class="form-label">Project <span>*</span> </label>
+                                        <client-only>
+                                            <froala id="project" :tag="'textarea'" :config="froalaConfig" v-model="form.project" required></froala>
+                                        </client-only>
+
+                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                                    </div>
+                                </div>
 
                                 <div class="col-lg-8 mx-auto">
                                     <button type="submit" class="btn btn-primary">
@@ -57,14 +111,12 @@
 
 <script>
 
-    // import VueFroala from 'vue-froala-wysiwyg';
-
     export default {
         layout: 'admin',
 
         head(){
             return{
-                title: 'Create Courss -  Africa Blockchain Institute',
+                title: 'Create Course -  Africa Blockchain Institute',
                 meta: [
                     {
                         name: 'Courses',
@@ -75,44 +127,33 @@
         },
 
         components:{
-            // frola: VueFroala,
+
         },
 
         data(){
             return {
                 loading: false,
                 courses: {},
-                editorOption: {
-                    modules: {
-                        toolbar: [
-                            ['bold', 'italic', 'underline', 'strike'],
-                            ['blockquote'],
-                            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
-                            [{ 'script': 'sub' }, { 'script': 'super' }],
-                            [{ 'indent': '-1' }, { 'indent': '+1' }],
-                            [{ 'header': [4, 5, 6, false] }],
-                        ],
-                        syntax: {
-                            highlight: text => hljs.highlightAuto(text).value
-                        }
-                    }
-                },
                 form : {
                     title: '',
                     description: '',
                     image: '',
                     requirements: '',
                     learning_outcome: '',
+                    price: '',
+                    category: '',
+                    certification: '',
+                    career_prospect: '',
+                    skill_level: 'All',
+                    language: 'English',
+                    project: '',
                 },
+
                 imageErr: null,
                 status: true,
 
                 froalaConfig:{
-                    events: {
-                        initialized: function () {
-                            console.log('initialized')
-                        }
-                    }
+                    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'superscript', 'subscript', 'insertLink'],
                 }
             }
         },
@@ -121,27 +162,23 @@
         },
 
         methods:{
-            descriptionChange({ editor, html, text }) {
-                this.form.description = html
-            },
-
-            requirementsChange({ editor, html, text }) {
-                this.form.requirements = html
-            },
-
-            learning_outcomeChange({ editor, html, text }) {
-                this.form.learning_outcome = html
-            },
-
             async submit(){
                 this.loading = true;
 
                 try {
                     let formData = new FormData()
-                    formData.append('link', this.form.link)
-                    formData.append('category', this.form.category)
                     formData.append('title', this.form.title)
+                    formData.append('description', this.form.description)
+                    formData.append('requirements', this.form.requirements)
                     formData.append('image', this.form.image)
+                    formData.append('learning_outcome', this.form.learning_outcome)
+                    formData.append('price', this.form.price)
+                    formData.append('category', this.form.category)
+                    formData.append('career_prospect', this.form.career_prospect)
+                    formData.append('certification', this.form.certification)
+                    formData.append('skill_level', this.form.skill_level)
+                    formData.append('language', this.form.language)
+                    formData.append('project', this.form.project)
 
                     await this.$axios.$post('/courses', formData)
                     this.loading = false;

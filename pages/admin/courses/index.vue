@@ -17,7 +17,7 @@
                                         <th scope="col">Image</th>
                                         <th scope="col">Title</th>
                                         <th scope="col">Category</th>
-                                        <th scope="col">Link</th>
+                                        <th scope="col">Price</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
@@ -27,7 +27,7 @@
                                         <td><img :src="doc.image" :alt="doc.title" class="img"></td>
                                         <td>{{ doc.title }}</td>
                                         <td>{{ doc.category }} </td>
-                                        <td>{{ doc.link }} </td>
+                                        <td>{{ doc.price | moneyFormat }} </td>
                                         <td class="">
                                             <nuxt-link :to="{ name: 'admin-courses-id', params:{ id: doc._id} }" class="btn btn-primary">
                                                 <span class="fas fa-edit"></span>
