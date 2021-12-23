@@ -30,16 +30,23 @@
 
         data(){
             return{
-                faculties: [
-                    { name: "John Doe", title: "MSC Phd.", position: "Faculty Head and Lead Instructor", image: 'faculty/faculty_1.jpg' },
-                    { name: "Horse Soey", title: "Just high School.", position: "Member and Support Coach", image: 'faculty/faculty_2.jpg'  },
-                    { name: "Female Doe", title: "B.Tech.", position: "Lead Instructor", image: 'faculty/faculty_1.jpg'  },
-                ]
+                faculties: []
             }
         },
 
         components: {
             Hero, Lists
+        },
+
+        created(){
+            this.getFaculties()
+        },
+
+        methods:{
+            async getFaculties(){
+                let faculties = await this.$axios.$get(`/teams/faculty`)
+                this.faculties = faculties.data;
+            },
         }
     }
 </script>

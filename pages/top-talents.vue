@@ -46,14 +46,22 @@
                             <div class="row justify-content-center">
                                 <div class="col-12 col-md-6">
                                     <label for="location_requirements" class="form-label">Location Requirements<span>*</span> </label>
-                                    <select name="location_requirements" id="location_requirements" class="form-select form-select-lg" v-model="form.location_requirements" required>
-                                        <option value="requirements">Location Requirements</option>
+                                    <select name="location_requirements" id="location_requirements" class="form-select form-select-lg form-control" v-model="form.location_requirements" required>
+                                        <option value="Remote">Remote</option>
+                                        <option value="Paid Relocation">Paid Relocation</option>
+                                        <option value="Visa Sponsor">Visa Sponsor</option>
+                                        <option value="Local Office">Local Office</option>
+                                        <option value="Others">Others</option>
                                     </select>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="engagement" class="form-label">Engagement<span>*</span> </label>
                                     <select name="engagement" id="engagement" class="form-select form-select-lg" v-model="form.engagement" required>
-                                        <option value="engagement">Engagement</option>
+                                        <option value="Full Time">Full Time</option>
+                                        <option value="Part Time">Part Time</option>
+                                        <option value="Contract">Contract</option>
+                                        <option value="Intern">Intern</option>
+                                        <option value="Others">Others</option>
                                     </select>
                                 </div>
                             </div>
@@ -81,7 +89,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-12 col-md-6">
                                     <label for="contact_person" class="form-label">Contact Person<span>*</span> </label>
-                                    <input type="text" v-model="form.contact_person" class="form-control form-control-lg" placeholder="e.g. +44 123 778 990" id="contact_person" required>
+                                    <input type="text" v-model="form.contact_person" class="form-control form-control-lg" placeholder="e.g. John Doe" id="contact_person" required>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="contact_number" class="form-label">Contact Phone Number<span>*</span> </label>
@@ -114,8 +122,10 @@
                             </div>
 
                             <div class="row">
-                                <div class="col text-center">
-                                    <button class="btn details__form--btn">Submit</button>
+                                <div class="col text-end">
+                                    <button class="btn details__form--btn">
+                                        <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span> Submit
+                                    </button>
                                 </div>
                             </div>
                         </form>
@@ -147,6 +157,7 @@
 
         data(){
             return {
+                loading: false,
                 form:{
                     job_title: "",
                     location_requirements: "",
@@ -169,31 +180,28 @@
             Hero
         },
 
-        created(){
-
-        },
-
         methods: {
             async submit(){
                 try {
+                    this.loading = true;
 
-                    // const res = await this.$axios.$post('/send-message', this.form);
+                    const res = await this.$axios.$post('/talents', this.form);
 
-                    // if(res.status == 'success'){
-                    //     this.$swal.fire({
-                    //         title: 'Thank you!',
-                    //         text: "Your message was sent successfully",
-                    //         type: 'success',
-                    //         showCancelButton: false,
-                    //         confirmButtonText: 'Download Now!'
-                    //     }).then((result) => {
-                    //         if (result.value) {
-                    //             return;
-                    //         }
-                    //     })
-                    // }
+                    if(res.status == 'success'){
+                        this.$swal.fire({
+                            title: 'Thank you!',
+                            text: "Your request was sent successfully! We'll get back to you soon.",
+                            type: 'success',
+                            showCancelButton: false,
+                        }).then((result) => {
+                            if (result.value) {
+                                return;
+                            }
+                        })
+                    }
 
                     this.form = "";
+                    this.loading = false
                 } catch (err) {
                     console.log(err)
                 }

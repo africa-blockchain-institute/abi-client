@@ -3,7 +3,7 @@
         <!-- board section starts -->
         <div class="team__header">
             <h2 class="team__header--title">Advisory Board</h2>          
-            <Lists :listings="team" />
+            <Lists :listings="advisory" />
         </div>
         <!-- board section ends -->
 
@@ -22,22 +22,30 @@
     export default {
         data(){
             return{
-                team: [
-                    { name: "John Doe", title: "MSC Phd.", position: "Faculty Head and Lead Instructor", image: 'faculty/faculty_1.jpg' },
-                    { name: "Horse Soey", title: "Just high School.", position: "Member and Support Coach", image: 'faculty/faculty_2.jpg'  },
-                    { name: "Female Doe", title: "B.Tech.", position: "Lead Instructor", image: 'faculty/faculty_1.jpg'  },
-                ],
-
-                leadership: [
-                    { name: "John Doe", title: "MSC Phd.", position: "Faculty Head and Lead Instructor", image: 'faculty/faculty_1.jpg' },
-                    { name: "Horse Soey", title: "Just high School.", position: "Member and Support Coach", image: 'faculty/faculty_2.jpg'  },
-                    { name: "Female Doe", title: "B.Tech.", position: "Lead Instructor", image: 'faculty/faculty_1.jpg'  },
-                ]
+                advisory: [],
+                leadership: []
             }
         },
 
         components: {
             Lists
+        },
+
+        created(){
+            this.getAdvisory();
+            this.getLeadership();
+        },
+
+        methods:{
+            async getAdvisory(){
+                let advisory = await this.$axios.$get(`/teams/advisory`)
+                this.advisory = advisory.data;
+            },
+
+            async getLeadership(){
+                let leadership = await this.$axios.$get(`/teams/leadership`)
+                this.leadership = leadership.data;
+            },
         }
     }
 </script>

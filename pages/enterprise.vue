@@ -45,7 +45,6 @@
                     <div class="col-md-7">
                         <span class="fas fa-quote-left slogan__quote--left"></span>
                         <h3 class="slogan__info">You have to find the right problem before you find the right solution.</h3>
-                        <!-- <span class="fas fa-quote-right slogan__quote--right"></span> -->
                     </div>
                 </div>
             </div>
@@ -121,11 +120,11 @@
 
                 <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-xl-3">
                     <div class="col media__list mb-3 mb-md-4" v-for="(mention, index) in mentions" :key="index">
-                        <a href="/" >
+                        <a :href="mention.link" target="blank">
                             <div class="card h-100">
-                                <img :src="require('~/assets/images/'+mention.image)" class="card-img-top" :alt="mention.description">
+                                <img :src="mention.image" class="card-img-top" :alt="mention.title">
                                 <div class="card-body">
-                                    <p class="media__list--description">{{ mention.description }} </p>
+                                    <p class="media__list--description">{{ mention.title }} </p>
                                 </div>
                             </div>
                         </a>
@@ -229,7 +228,7 @@
                     </ul>
                     <div class="tab-content tools__content justify-content-center" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-frameworks">
-                            <div class="row row-cols-3 row-cols-md-6 justify-content-center">
+                            <div class="row row-cols-3 row-cols-md-4 row-cols-lg-6 justify-content-center">
                                 <div class="col tools__content--sect">
                                     <img src="~/assets/images/enterprise/icons/frameworks/ethereum.png" alt="Ethereum">
                                 </div>
@@ -340,13 +339,13 @@
                 </div>
 
                 <div class="row row-cols-2 row-cols-md-4 row-cols-lg-4 g-xl-3">
-                    <div class="col resources__list" v-for="(mention, index) in mentions" :key="index">
-                        <a href="/" target="blank">
+                    <div class="col resources__list" v-for="(resource, index) in resources" :key="index">
+                        <a :href="resource.link" target="blank">
                             <div class="card h-100">
-                                <img :src="require('~/assets/images/'+mention.image)" class="card-img-top" :alt="mention.description">
+                                <img :src="resource.image" class="card-img-top" :alt="resource.description">
                                 <div class="card-body">
-                                    <span class="resources__list--category">{{ mention.category }} </span>
-                                    <p class="resources__list--title">{{ mention.title }} </p>
+                                    <span class="resources__list--category">{{ resource.category }} </span>
+                                    <p class="resources__list--title">{{ resource.title }} </p>
                                 </div>
                             </div>
                         </a>
@@ -390,81 +389,27 @@
 
         data(){
             return{
-                mentions: [
-                    {
-                        slug: "blockchain-developers",
-                        image: "enterprise/alu.jpg",
-                        category: "Blockchain",
-                        title: "Blockchain for Developers",
-                        description: "Lorem ipsum, sit adipisicing elit. soluta temporibus. Iste amet hic nihil magnam.",
-                        lessons: "13",
-                        duration: "2"
-                    },
-                    {
-                        slug: "enterprise-for-consultants",
-                        image: "enterprise/abi.jpg",
-                        category: "Enterprise",
-                        title: "Enterprise for Consultants",
-                        description: " eos  soluta temporibus. Iste amet hic nihil magnam.",
-                        lessons: "5",
-                        duration: "1"
-                    },
-                    {
-                        slug: "blockchain-developers",
-                        image: "enterprise/alu.jpg",
-                        category: "Blockchain",
-                        title: "Blockchain for Developers",
-                        description: "Lvoluptates dicta ab, quisquam eos accusantium soluta temporibus.",
-                        lessons: "13",
-                        duration: "2"
-                    },
-                    {
-                        slug: "enterprise-for-consultants",
-                        image: "enterprise/abi.jpg",
-                        category: "Enterprise",
-                        title: "Enterprise for Consultants",
-                        description: "adipisci voluptates dicta ab,temporibus. Iste amet hic nihil magnam.",
-                        lessons: "5",
-                        duration: "1"
-                    },
-                    {
-                        slug: "blockchain-developers",
-                        image: "enterprise/alu.jpg",
-                        category: "Blockchain",
-                        title: "Blockchain for Developers",
-                        description: "Lorem ipsum, sit adipisicing elit. soluta temporibus. Iste amet hic nihil magnam.",
-                        lessons: "13",
-                        duration: "2"
-                    },
-                    {
-                        slug: "enterprise-for-consultants",
-                        image: "enterprise/abi.jpg",
-                        category: "Enterprise",
-                        title: "Enterprise for Consultants",
-                        description: " eos  soluta temporibus. Iste amet hic nihil magnam.",
-                        lessons: "5",
-                        duration: "1"
-                    },
-                    {
-                        slug: "blockchain-developers",
-                        image: "enterprise/alu.jpg",
-                        category: "Blockchain",
-                        title: "Blockchain for Developers",
-                        description: "Lvoluptates dicta ab, quisquam eos accusantium soluta temporibus.",
-                        lessons: "13",
-                        duration: "2"
-                    },
-                    {
-                        slug: "enterprise-for-consultants",
-                        image: "enterprise/abi.jpg",
-                        category: "Enterprise",
-                        title: "Enterprise for Consultants",
-                        description: "adipisci voluptates dicta ab,temporibus. Iste amet hic nihil magnam.",
-                        lessons: "5",
-                        duration: "1"
-                    },
-                ]
+                mentions: [],
+                resources: [],
+
             }
+        },
+
+        created(){
+            this.getMediaMentions();
+            this.getResources()
+        },
+
+        methods:{
+            async getMediaMentions(){
+                let mentions = await this.$axios.$get(`/mentions`)
+                this.mentions = mentions.data;
+            },
+
+            async getResources(){
+                let resources = await this.$axios.$get(`/resources`)
+                this.resources = resources.data;
+            },
         }
     }
 </script>
@@ -482,8 +427,6 @@
                     font-size: $font-hd;
                     font-weight: bold;
                     color: #fff;
-                    // line-height: 2rem;
-                    // margin-bottom: 2rem;
                 }
 
                 &--sub{

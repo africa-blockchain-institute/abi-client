@@ -30,9 +30,9 @@
 
 @mixin form-control{
     padding-left: 1rem;
-    background: $white!important;
+    // background: $white!important;
     box-shadow: none;
-    font-size: .8rem;
+    font-size: .9rem;
     padding: .75rem;
 
     &:focus{

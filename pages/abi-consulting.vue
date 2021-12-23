@@ -30,19 +30,12 @@
                         <form action="" @submit.prevent="submit()">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-md-6">
-                                    <label for="fname" class="form-label">First Name<span>*</span> </label>
-                                    <input type="text" v-model="form.fname" class="form-control form-control-lg" placeholder="e.g. John" id="fname" required>
+                                    <label for="name" class="form-label">Name<span>*</span> </label>
+                                    <input type="text" v-model="form.name" class="form-control form-control-lg" placeholder="e.g. John Doe" id="name" required>
                                 </div>
                                 <div class="col-12 col-md-6">
-                                    <label for="lname" class="form-label">Last Name<span>*</span> </label>
-                                    <input type="text" v-model="form.lname" class="form-control form-control-lg" placeholder="e.g. Doe" id="lname" required>
-                                </div>
-                            </div>
-                            <div class="row justify-content-center">
-                                <div class="col-12">
                                     <label for="email" class="form-label">Email<span>*</span> </label>
-                                    <input type="email" v-model.trim="form.email" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" placeholder="e.g. johndoe@abi.com" id="email" required>
-                                    <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                                    <input type="email" v-model.trim="form.email" class="form-control form-control-lg" placeholder="e.g. johndoe@abi.com" id="email" required>
                                 </div>
                             </div>
 
@@ -79,8 +72,8 @@
                             </div>
 
                             <div class="row">
-                                <div class="col text-center">
-                                    <button class="btn details__form--btn">Submit</button>
+                                <div class="col text-end">
+                                    <button class="btn details__form--btn"><span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span> Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -112,10 +105,15 @@
 
         data(){
             return {
+                loading: false,
+
                 form:{
-                    fname: "",
-                    lname: "",
+                    name: "",
                     email: "",
+                    phone_number: "",
+                    company_name: "",
+                    job_title: "",
+                    hear_about_us: "",
                     message: ""
                 }
             }
@@ -132,24 +130,25 @@
         methods: {
             async submit(){
                 try {
+                    this.loading = true;
 
-                    // const res = await this.$axios.$post('/send-message', this.form);
+                    const res = await this.$axios.$post('/consultations', this.form);
 
-                    // if(res.status == 'success'){
-                    //     this.$swal.fire({
-                    //         title: 'Thank you!',
-                    //         text: "Your message was sent successfully",
-                    //         type: 'success',
-                    //         showCancelButton: false,
-                    //         confirmButtonText: 'Download Now!'
-                    //     }).then((result) => {
-                    //         if (result.value) {
-                    //             return;
-                    //         }
-                    //     })
-                    // }
+                    if(res.status == 'success'){
+                        this.$swal.fire({
+                            title: 'Thank you!',
+                            text: "Your request was sent successfully! We'll get back to you shortly.",
+                            type: 'success',
+                            showCancelButton: false,
+                        }).then((result) => {
+                            if (result.value) {
+                                return;
+                            }
+                        })
+                    }
 
                     this.form = "";
+                    this.loading = false
                 } catch (err) {
                     console.log(err)
                 }

@@ -6,8 +6,12 @@
                     <h4 class="footer__sect--header">Subscribe To Our Newsletter</h4>
 
                     <div class="input-group footer__sect--subscribe">
-                        <input type="email" class="form-control form-control-lg" placeholder="Enter your email address" aria-label="enter your email address" aria-describedby="subscribe">
-                        <button class="btn" type="button" id="subscribe"><span class="fas fa-envelope"></span> </button>
+                        <input type="email" class="form-control form-control-lg" :class="{'is-invalid': errors.status }" v-model="form.email" placeholder="Enter your email address" aria-label="enter your email address" aria-describedby="subscribe" required>
+                        <button class="btn" type="button" id="subscribe" @click="submit()">
+                            <span class="fas fa-envelope" v-if="!loading"></span>
+                            <span class="fas fa-spinner fa-spin" v-else></span>
+                        </button>
+                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                     </div>
 
                     <div class="footer__sect--social">
@@ -50,6 +54,48 @@
 <script>
     export default {
 
+        data(){
+            return{
+                loading: false,
+
+                form:{
+                    email: ""
+                }
+            }
+        },
+
+        created(){
+        },
+
+        methods: {
+            async submit(){
+                try {
+                    this.loading = true;
+                    const res = await this.$axios.$post('/subscribers/email-subscriber', this.form);
+
+                    if(res.status == 'success'){
+                        this.$swal.fire({
+                            title: 'Thank you!',
+                            text: "You've succesfully subscribed!",
+                            type: 'success',
+                            showCancelButton: false,
+                        }).then((result) => {
+                            if (result.value) {
+                                return;
+                            }
+                        })
+                    }
+
+                    this.form = "";
+                    this.loading = false;
+
+                } catch (err) {
+                    console.log(err)
+                    this.form = "";
+                    this.loading = false;
+                }
+            }
+        }
     }
 </script>
 

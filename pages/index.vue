@@ -161,33 +161,13 @@
                     </div>
                 </div>
 
-                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-xl-3">
-                    <div class="col insights__list">
-                        <a href="/" target="blank">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-xl-3" v-if="insights.length > 0">
+                    <div class="col insights__list" v-for="(insight, index) in insights" :key="index">
+                        <a :href="insight.link" target="blank">
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <h5 class="insights__list--title">How to invest in Blockchain Technology</h5>
-									<p class="insights__list--text"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores minus quia sed maiores dolore atque exercitationem. </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col insights__list">
-                        <a href="/" target="blank">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="insights__list--title">Blockchain Opportunities in the Accounting Sector</h5>
-									<p class="insights__list--text"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores minus quia sed maiores dolore atque exercitationem. </p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col insights__list">
-                        <a href="/" target="blank">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="insights__list--title">Insights Title</h5>
-									<p class="insights__list--text"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores minus quia sed maiores dolore atque exercitationem. </p>
+                                    <h5 class="insights__list--title">{{ insight.title }}</h5>
+									<p class="insights__list--text">Click to read post on our Medium Channel.</p>
                                 </div>
                             </div>
                         </a>
@@ -279,35 +259,19 @@
                     </div>
                 </div>
 
-                <div class="row row-cols-1 row-cols-md-2 g-lg-5">
-                    <div class="col events__list">
-                        <div class="card">
+                <div class="row row-cols-1 row-cols-md-2 g-lg-5" v-if="events.length > 0">
+                    <div class="col events__list" v-for="(event, index) in events" :key="index">
+                        <div class="card h-100">
                             <div class="row align-items-end">
                                 <div class="col-md-4 events__img">
-                                    <img src="~/assets/images/home/events-2.jpg" class="img-fluid rounded-start" alt="">
+                                    <img :src="event.image" class="img-fluid rounded-start" :alt="event.title">
                                 </div>
                                 <div class="col-md-8 events__info">
                                     <div class="card-body">
-                                        <h5 class="events__info--title">Campus Blockchain Hackathon</h5>
-                                        <p class="events__info--text">Giving  students of higher institutions in Africa early exposure to opportunities in  Blockchain/DLT Digital Innovations.</p>
-                                        <nuxt-link to="/" class="events__info--link"> View Details </nuxt-link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col events__list">
-                        <div class="card">
-                            <div class="row align-items-end">
-                                <div class="col-md-4 events__img">
-                                    <img src="~/assets/images/home/events-1.jpg" class="img-fluid rounded-start" alt="">
-                                </div>
-                                <div class="col-md-8 events__info">
-                                    <div class="card-body">
-                                        <h5 class="events__info--title">Made in Rwanda - An Incubation Program</h5>
-                                        <p class="events__info--text">For Founders pursuing commercial opportunities predicated on the application of Blockchain Technology.</p>
-                                        <nuxt-link to="/" class="events__info--link"> View Details </nuxt-link>
+                                        <h5 class="events__info--title">{{ event.title }} </h5>
+                                        <p class="events__info--text">{{ event.description }}</p>
+                                        <p class="events__info--text fw-bold">Date: {{ event.schedule | formatDate }}</p>
+                                        <a :href="event.link" class="events__info--link" target="blank"> View More Details </a>
                                     </div>
                                 </div>
                             </div>
@@ -352,45 +316,27 @@
 		
         data(){
             return{
-                mentions: [
-                    {
-                        slug: "blockchain-developers",
-                        image: "enterprise/alu.jpg",
-                        category: "Blockchain",
-                        title: "Blockchain for Developers",
-                        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab, quisquam eos accusantium soluta temporibus. Iste amet hic nihil magnam.",
-                        lessons: "13",
-                        duration: "2"
-                    },
-                    {
-                        slug: "enterprise-for-consultants",
-                        image: "enterprise/abi.jpg",
-                        category: "Enterprise",
-                        title: "Enterprise for Consultants",
-                        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab, quisquam eos accusantium soluta temporibus. Iste amet hic nihil magnam.",
-                        lessons: "5",
-                        duration: "1"
-                    },
-                    {
-                        slug: "blockchain-developers",
-                        image: "enterprise/alu.jpg",
-                        category: "Blockchain",
-                        title: "Blockchain for Developers",
-                        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab, quisquam eos accusantium soluta temporibus. Iste amet hic nihil magnam.",
-                        lessons: "13",
-                        duration: "2"
-                    },
-                    {
-                        slug: "enterprise-for-consultants",
-                        image: "enterprise/abi.jpg",
-                        category: "Enterprise",
-                        title: "Enterprise for Consultants",
-                        description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab, quisquam eos accusantium soluta temporibus. Iste amet hic nihil magnam.",
-                        lessons: "5",
-                        duration: "1"
-                    }
-                ]
+                insights: [],
+                events: [],
+
             }
+        },
+
+        created(){
+            this.getInsights();
+            this.getEvents();
+        },
+
+        methods:{
+            async getInsights(){
+                let insights = await this.$axios.$get(`/posts`);
+                this.insights = insights.data;
+            },
+
+            async getEvents(){
+                let events = await this.$axios.$get(`/events//upcoming-two-events`);
+                this.events = events.data;
+            },
         }
     }
 </script>

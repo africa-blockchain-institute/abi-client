@@ -9,7 +9,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-8 details__form">
-                        <form action="" @submit.prevent="sendMessage()">
+                        <form @submit.prevent="sendMessage()">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-md-6">
                                     <label for="fname" class="form-label">First Name<span>*</span> </label>
@@ -23,8 +23,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-12">
                                     <label for="email" class="form-label">Email<span>*</span> </label>
-                                    <input type="email" v-model.trim="form.email" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" placeholder="e.g. johndoe@abi.com" id="email" required>
-                                    <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                                    <input type="email" v-model.trim="form.email" class="form-control form-control-lg" placeholder="e.g. johndoe@abi.com" id="email" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
@@ -37,8 +36,8 @@
                             </div>
 
                             <div class="row">
-                                <div class="col text-center">
-                                    <button class="btn details__form--btn">Send Message</button>
+                                <div class="col text-end">
+                                    <button class="btn details__form--btn"> <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span> Send Message</button>
                                 </div>
                             </div>
                         </form>
@@ -70,6 +69,8 @@
 
         data(){
             return {
+                loading: false,
+                
                 form:{
                     fname: "",
                     lname: "",
@@ -83,23 +84,18 @@
             Hero
         },
 
-        created(){
-
-        },
-
         methods: {
             async sendMessage(){
                 try {
-
-                    const res = await this.$axios.$post('/send-message', this.form);
+                    this.loading= true;
+                    const res = await this.$axios.$post('/auth/send-message', this.form);
 
                     if(res.status == 'success'){
                         this.$swal.fire({
                             title: 'Thank you!',
-                            text: "Your message was sent successfully",
+                            text: "Your message was sent successfully!",
                             type: 'success',
                             showCancelButton: false,
-                            confirmButtonText: 'Download Now!'
                         }).then((result) => {
                             if (result.value) {
                                 return;
@@ -108,6 +104,8 @@
                     }
 
                     this.form = "";
+                    this.loading = false;
+
                 } catch (err) {
                     console.log(err)
                 }

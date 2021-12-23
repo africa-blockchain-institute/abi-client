@@ -4,7 +4,7 @@
             <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 g-xl-4">
                 <div class="col listings__list" v-for="(list, index) in listings" :key="index">
                     <div class="card h-100">
-                        <img :src="require('~/assets/images/'+list.image)" class="card-img-top" alt="">
+                        <img :src="list.image" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="listings__list--name">{{ list.name }}</h5>
                             <span class="listings__list--title">{{ list.title }} </span>
