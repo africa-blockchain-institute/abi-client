@@ -22,6 +22,12 @@
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
+                                        <label for="schedule" class="form-label">Event Date<span>*</span> </label>
+                                        <input type="date" v-model.trim="form.schedule" class="form-control form-control-lg" id="schedule" required>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
                                         <div class="form-group">
                                             <label class="form-label">Event Image</label>
                                             <input class="form-control form-control-lg" type="file" ref="image"
@@ -78,6 +84,7 @@
                     description: '',
                     image: '',
                     title: '',
+                    schedule: '',
                 },
                 imageErr: null,
                 status: true,
@@ -97,6 +104,7 @@
                     formData.append('description', this.form.description)
                     formData.append('title', this.form.title)
                     formData.append('image', this.form.image)
+                    formData.append('schedule', this.form.schedule)
 
                     await this.$axios.$post('/events', formData)
                     this.loading = false;

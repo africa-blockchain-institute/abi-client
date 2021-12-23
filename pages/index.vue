@@ -65,16 +65,16 @@
                 </div>
 			</div>
 			<div class="container">
-				<div class="col-md-8 mx-auto">
-					<div class="row row-cols-3 row-cols-md-5 row-cols-lg-6 justify-content-center trust__content">
+				<div class="col-md-10 mx-auto">
+					<div class="row row-cols-3 row-cols-md-5 row-cols-lg-6 justify-content-center trust__content align-items-center">
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/ibm.png" alt="ibm">
+							<img src="~/assets/images/home/organizations/au.png" alt="au">
 						</div>
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/and.png" alt="and">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/au.png" alt="au">
+							<img src="~/assets/images/home/organizations/ibm.png" alt="ibm">
 						</div>
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/codeln.png" alt="codeln">
@@ -113,10 +113,40 @@
 							<img src="~/assets/images/home/organizations/open_labs.png" alt="open_labs">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/juubix.jpeg" alt="juubix">
+							<img src="~/assets/images/home/organizations/juubix.png" alt="juubix">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/global_health.jpeg" alt="global_health">
+							<img src="~/assets/images/home/organizations/algorand.png" alt="algorand">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/alu.png" alt="African leadership university">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/freeton.png" alt="freeton">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/gba.png" alt="governement blockchain association">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/kleros.png" alt="kleros">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/maker.png" alt="maker">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/wouessi.png" alt="wouessi">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/rousseau_cooper.png" alt="rousseau cooper">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/tech_london.png" alt="tech london">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/ton_labs.png" alt="ton labs">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/bbic.jpg" alt="black women">
 						</div>
 					</div>
 				</div>

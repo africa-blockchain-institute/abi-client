@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper">
         <div class="wrapper__head d-flex justify-content-between">
-            <h1 class="wrapper__head--title">Events</h1>
-            <nuxt-link to="/admin/events/create" class="btn wrapper__head--btn">Add event</nuxt-link>
+            <h1 class="wrapper__head--title">Teams</h1>
+            <nuxt-link to="/admin/teams/create" class="btn wrapper__head--btn">Add Team Member</nuxt-link>
         </div>
 
         <div class="wrapper__body shadow">
@@ -15,10 +15,10 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Image</th>
+                                        <th scope="col">Name</th>
                                         <th scope="col">Title</th>
-                                        <th scope="col">Description</th>
-                                        <th scope="col">Link</th>
-                                        <th scope="col">Scheduled</th>
+                                        <th scope="col">Category</th>
+                                        <th scope="col">Position</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
@@ -26,12 +26,12 @@
                                     <tr class="wrapper__table--row" v-for="(doc, index) in docs" :key="doc.id">
                                         <th>{{ index + 1 }}</th>
                                         <td><img :src="doc.image" :alt="doc.title" class="img"></td>
+                                        <td>{{ doc.name }}</td>
                                         <td>{{ doc.title }}</td>
-                                        <td>{{ doc.description | truncate }} </td>
-                                        <td>{{ doc.link }} </td>
-                                        <td>{{ doc.schedule | formatDate }} </td>
+                                        <td>{{ doc.category | capitalize }} </td>
+                                        <td>{{ doc.position }} </td>
                                         <td class="">
-                                            <nuxt-link :to="{ name: 'admin-events-id', params:{ id: doc._id} }" class="btn btn-primary">
+                                            <nuxt-link :to="{ name: 'admin-teams-id', params:{ id: doc._id} }" class="btn btn-primary">
                                                 <span class="fas fa-edit"></span>
                                             </nuxt-link>
                                             <button class="btn btn-danger" @click="deleteDoc(doc._id)">
@@ -47,8 +47,8 @@
                     <div class="col-12" v-else>
                         <div class="wrapper__empty text-center">
                             <img src="~/assets/images/dashboard/empty.png" alt="Empty state" class="wrapper__empty--img">
-                            <h3 class="wrapper__empty--title">No Added Event</h3>
-                            <nuxt-link to="/admin/events/create" class="btn wrapper__empty--btn">Add Event</nuxt-link>
+                            <h3 class="wrapper__empty--title">No Added Team member</h3>
+                            <nuxt-link to="/admin/teams/create" class="btn wrapper__empty--btn">Add Team</nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -69,11 +69,11 @@
 
         head(){
             return{
-                title: 'Events -  Africa Blockchain Institute',
+                title: 'Teams -  Africa Blockchain Institute',
                 meta: [
                     {
-                        name: 'Events',
-                        content: 'Events'
+                        name: 'Teams',
+                        content: 'Teams'
                     }
                 ],
             }
@@ -94,7 +94,7 @@
 
         methods:{
             async getDocs(){
-                let docs = await this.$axios.$get(`/events?page=${this.page}&limit=${this.perPage}`)
+                let docs = await this.$axios.$get(`/teams?page=${this.page}&limit=${this.perPage}`)
                 this.records = docs.records
                 this.docs = docs.data;
             },
@@ -110,8 +110,8 @@
                 }).then((result) => {
 
                     if (result.value) {
-                        this.$axios.$delete(`/events/${id}`)
-                        this.$toast.success("Event deleted successfully", {
+                        this.$axios.$delete(`/teams/${id}`)
+                        this.$toast.success("Team deleted successfully", {
                             icon: "check"
                         })
 
@@ -157,8 +157,9 @@
                     color: white;
                     padding: .25rem .5rem;
                     box-shadow: none;
-                    margin-bottom: .25rem;
                     font-size: .8rem;
+                    margin-bottom: .25rem;
+
                 }
             }
         }

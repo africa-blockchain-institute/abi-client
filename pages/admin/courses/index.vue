@@ -29,8 +29,11 @@
                                         <td>{{ doc.category }} </td>
                                         <td>{{ doc.price | moneyFormat }} </td>
                                         <td class="">
-                                            <nuxt-link :to="{ name: 'admin-courses-id', params:{ id: doc._id} }" class="btn btn-primary">
-                                                <span class="fas fa-edit"></span>
+                                            <nuxt-link :to="{ name: 'admin-courses-lessons-slug', params:{ slug: doc.slug} }" class="btn btn-warning">
+                                                <span class="fas fa-eye"></span> View Lessons
+                                            </nuxt-link>
+                                            <nuxt-link :to="{ name: 'admin-courses-slug', params:{ slug: doc.slug} }" class="btn btn-primary">
+                                                <span class="fas fa-edit"></span> Edit Info
                                             </nuxt-link>
                                             <button class="btn btn-danger" @click="deleteDoc(doc._id)">
                                                 <span class="fas fa-trash"></span>

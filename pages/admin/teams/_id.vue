@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="wrapper__head d-flex justify-content-between">
-            <h1 class="wrapper__head--title">Edit Event -  {{title}}</h1>
+            <h1 class="wrapper__head--title">Edit Team Member -  {{title}}</h1>
         </div>
 
         <div class="wrapper__body shadow">
@@ -12,42 +12,44 @@
                             <form class="row" @submit.prevent="submit">
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-4">
-                                        <label for="title" class="form-label">Event Title<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.title" class="form-control form-control-lg" id="title" required>
+                                        <label for="name" class="form-label">Team Member name<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.name" class="form-control form-control-lg" id="name" required>
                                     </div>
                                     <div class="col-12 col-md-4">
-                                        <label for="link" class="form-label">Event Link<span>*</span> </label>
-                                        <input type="url" v-model.trim="form.link" class="form-control form-control-lg" id="link" required>
+                                        <label for="category" class="form-label">Team Member Category<span>*</span> </label>
+                                        <select class="form-control form-control-lg" name="category" id="category" v-model.trim="form.category" required>
+                                            <option value="advisory">Advisory</option>
+                                            <option value="leadership">Leadership</option>
+                                            <option value="faculty">Faculty</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
-                                    <div class="col-12 col-md-8">
-                                        <label for="schedule" class="form-label">Event Date<span>*</span> </label>
-                                        <input type="date" v-model.trim="form.schedule" class="form-control form-control-lg" id="schedule">
+                                    <div class="col-12 col-md-4">
+                                        <label for="title" class="form-label">Team Member Title<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.title" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" id="title" required>
+                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <label for="position" class="form-label">Team Member Position<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.position" class="form-control form-control-lg" id="position" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <div class="form-group">
-                                            <label class="form-label">Event Image</label>
+                                            <label class="form-label">Team Member Image</label>
                                             <input class="form-control form-control-lg" type="file" ref="image"
                                             @change="uploadImage" :class="{'is-invalid': imageErr }">
                                             <div class="invalid-feedback">{{ this.imageErr }} </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-12 col-md-8">
-                                        <label for="description" class="form-label">Event Description<span>*</span> </label>
-                                        <textarea  v-model.trim="form.description" class="form-control" rows="3" :class="{'is-invalid': errors.status }" id="description" required></textarea>
-                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
-                                    </div>
-                                </div>
 
                                 <div class="col-lg-8 mx-auto">
                                     <button type="submit" class="btn btn-primary">
                                         <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span>
-                                        Edit Event
+                                        Edit Team Member
                                     </button>
                                 </div>
                             </form>
@@ -68,8 +70,8 @@
                 title: 'Edit '+ this.title +'- Africa Blockchain Institute',
                 meta: [
                     {
-                        name: 'Events',
-                        content: 'Events'
+                        name: 'teams',
+                        content: 'teams'
                     }
                 ],
             }
@@ -80,11 +82,11 @@
                 loading: false,
                 title: "",
                 form : {
-                    link: '',
-                    description: '',
+                    position: '',
+                    category: '',
                     image: '',
                     title: '',
-                    schedule: '',
+                    name: '',
                 },
                 imageErr: null,
                 status: true,
@@ -97,9 +99,9 @@
 
         methods:{
             async getDoc(){
-                let event = await this.$axios.$get(`/events/${this.$route.params.id}`)
-                this.title = event.data.title;
-                this.form = event.data
+                let team = await this.$axios.$get(`/teams/${this.$route.params.id}`)
+                this.title = team.data.name;
+                this.form = team.data
             },
 
             async submit(){
@@ -107,20 +109,20 @@
 
                 try {
                     let formData = new FormData()
-                    formData.append('link', this.form.link)
-                    formData.append('description', this.form.description)
+                    formData.append('position', this.form.position)
+                    formData.append('name', this.form.name)
+                    formData.append('category', this.form.category)
                     formData.append('title', this.form.title)
                     formData.append('image', this.form.image)
-                    formData.append('schedule', this.form.schedule)
 
-                    await this.$axios.$patch(`/events/${this.$route.params.id}`, formData)
+                    await this.$axios.$patch(`/teams/${this.$route.params.id}`, formData)
                     this.loading = false;
 
-                    this.$toast.success("Event updated successfully", {
+                    this.$toast.success("Team updated successfully", {
                         icon : 'check'
                     });
 
-                    this.$router.push({ name: "admin-events" })
+                    this.$router.push({ name: "admin-teams" })
 
                 } catch (err) {
                     this.loading = false;

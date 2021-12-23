@@ -28,6 +28,10 @@
                         <span class="fas fa-users icon"></span>
                         <span class="name" :class="{ active: toggle }">Users</span>
                     </nuxt-link>
+                    <nuxt-link to="/admin/teams" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
+                        <span class="fas fa-user-plus icon"></span>
+                        <span class="name" :class="{ active: toggle }">Teams</span>
+                    </nuxt-link>
                     <nuxt-link to="/admin/talents" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-search icon"></span>
                         <span class="name" :class="{ active: toggle }">Find Talents</span>
@@ -36,10 +40,6 @@
                         <span class="fas fa-warehouse icon"></span>
                         <span class="name" :class="{ active: toggle }">Bring ABI </span>
                     </nuxt-link>
-                    <!-- <nuxt-link to="/admin/subscribers" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
-                        <span class="fas fa-user-plus icon"></span>
-                        <span class="name" :class="{ active: toggle }">Subscribers</span>
-                    </nuxt-link> -->
                     <nuxt-link to="/admin/payments" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-money-check icon"></span>
                         <span class="name" :class="{ active: toggle }">Payments</span>
