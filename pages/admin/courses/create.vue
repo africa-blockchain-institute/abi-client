@@ -36,7 +36,7 @@
                                         <div class="form-group">
                                             <label class="form-label">Course Poster Image <span>*</span></label>
                                             <input class="form-control form-control-lg" type="file" ref="image"
-                                            @change="uploadImage" :class="{'is-invalid': imageErr }">
+                                            @change="uploadImage" :class="{'is-invalid': imageErr }" required>
                                             <div class="invalid-feedback">{{ this.imageErr }} </div>
                                         </div>
                                     </div>
@@ -183,7 +183,7 @@
                     await this.$axios.$post('/courses', formData)
                     this.loading = false;
 
-                    this.$toast.success("Courses created successfully", {
+                    this.$toast.success("Course created successfully", {
                         icon : 'check'
                     });
 

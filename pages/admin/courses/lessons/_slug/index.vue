@@ -1,8 +1,8 @@
 <template>
     <div class="wrapper">
         <div class="wrapper__head d-flex justify-content-between">
-            <h1 class="wrapper__head--title">Lessons</h1>
-            <nuxt-link to="/admin/courses/create" class="btn wrapper__head--btn">Add Lesson</nuxt-link>
+            <h1 class="wrapper__head--title">"{{title}}" Lessons</h1> {{  }}
+            <nuxt-link :to="{ name: 'admin-courses-lessons-slug-create', params:{ slug: `${this.$route.params.slug}` }}" class="btn wrapper__head--btn">Add Lesson</nuxt-link>
         </div>
 
         <div class="wrapper__body shadow">
@@ -14,10 +14,9 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Image</th>
+                                        <th scope="col">Video Preview</th>
                                         <th scope="col">Title</th>
-                                        <th scope="col">Category</th>
-                                        <th scope="col">Price</th>
+                                        <th scope="col">Duration</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
@@ -26,14 +25,13 @@
                                         <th>{{ index + 1 }}</th>
                                         <td><img :src="doc.image" :alt="doc.title" class="img"></td>
                                         <td>{{ doc.title }}</td>
-                                        <td>{{ doc.category }} </td>
-                                        <td>{{ doc.price | moneyFormat }} </td>
+                                        <td>{{ doc.duration | secondsToHours }} Hour(s) </td>
                                         <td class="">
-                                            <nuxt-link :to="{ name: 'admin-courses-lessons', params:{ id: doc._id} }" class="btn btn-warning">
+                                            <!-- <nuxt-link :to="{ name: 'admin-courses-lessons', params:{ id: doc._id} }" class="btn btn-warning">
                                                 <span class="fas fa-eye"></span> View Lessons
-                                            </nuxt-link>
-                                            <nuxt-link :to="{ name: 'admin-courses-id', params:{ id: doc._id} }" class="btn btn-primary">
-                                                <span class="fas fa-edit"></span> Edit Info
+                                            </nuxt-link> -->
+                                            <nuxt-link :to="{ name: 'admin-courses-lessons-slug-id', params:{ slug: title, id: doc.id } }" class="btn btn-primary">
+                                                <span class="fas fa-edit"></span> Edit Lesson
                                             </nuxt-link>
                                             <button class="btn btn-danger" @click="deleteDoc(doc._id)">
                                                 <span class="fas fa-trash"></span>
@@ -48,8 +46,8 @@
                     <div class="col-12" v-else>
                         <div class="wrapper__empty text-center">
                             <img src="~/assets/images/dashboard/empty.png" alt="Empty state" class="wrapper__empty--img">
-                            <h3 class="wrapper__empty--title">No Added Course</h3>
-                            <nuxt-link to="/admin/courses/create" class="btn wrapper__empty--btn">Add Course</nuxt-link>
+                            <h3 class="wrapper__empty--title">No Lessons </h3>
+                            <nuxt-link :to="{ name: 'admin-courses-lessons-slug', params:{ slug: `${this.$route.params.slug}` }}" class="btn wrapper__empty--btn">Add Course</nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -70,7 +68,7 @@
 
         head(){
             return{
-                title: 'Courses -  Africa Blockchain Institute',
+                title: 'Course Lessons -  Africa Blockchain Institute',
                 meta: [
                     {
                         name: 'Courses',
@@ -97,9 +95,9 @@
 
         methods:{
             async getDocs(){
-                let docs = await this.$axios.$get(`/courses?page=${this.page}&limit=${this.perPage}`)
-                this.records = docs.records
+                let docs = await this.$axios.$get(`/courses/${this.$route.params.slug}/lessons`)
                 this.docs = docs.data;
+                this.title = this.$route.params.slug;
             },
 
             deleteDoc(id){
@@ -113,8 +111,8 @@
                 }).then((result) => {
 
                     if (result.value) {
-                        this.$axios.$delete(`/courses/${id}`)
-                        this.$toast.success("Course deleted successfully", {
+                        this.$axios.$delete(`/courses/${this.$route.params.slug}/lessons/${id}`)
+                        this.$toast.success("Lesson deleted successfully", {
                             icon: "check"
                         })
 

@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="wrapper__head d-flex justify-content-between">
-            <h1 class="wrapper__head--title">Create Course</h1>
+            <h1 class="wrapper__head--title">Edit "{{ form.title }}" Course</h1>
         </div>
 
         <div class="wrapper__body shadow">
@@ -97,7 +97,7 @@
                                 <div class="col-lg-8 mx-auto">
                                     <button type="submit" class="btn btn-primary">
                                         <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span>
-                                        Create Course
+                                        Edit Course
                                     </button>
                                 </div>
                             </form>
@@ -116,7 +116,7 @@
 
         head(){
             return{
-                title: 'Create Course -  Africa Blockchain Institute',
+                title: 'Edit Course -  Africa Blockchain Institute',
                 meta: [
                     {
                         name: 'Courses',
@@ -159,6 +159,7 @@
         },
 
         created(){
+            this.getCourse();
         },
 
         methods:{
@@ -180,10 +181,10 @@
                     formData.append('language', this.form.language)
                     formData.append('project', this.form.project)
 
-                    await this.$axios.$post('/courses', formData)
+                    await this.$axios.$patch(`/courses/${this.form.id}`, formData)
                     this.loading = false;
 
-                    this.$toast.success("Courses created successfully", {
+                    this.$toast.success("Course updated successfully", {
                         icon : 'check'
                     });
 
@@ -209,8 +210,93 @@
                     this.imageErr = "File Must be of an Image format (PNG, JPG, JPEG)"
                 }
             },
+
+            async getCourse(){
+                let doc = await this.$axios.$get(`/courses/${this.$route.params.slug}`);
+                this.form = doc.data
+            },
         }
     }
 </script>
 
 <style lang="scss" scoped>
+    .wrapper{
+        &__head{
+            margin: 1rem auto 2rem;
+            
+            &--title{
+                font-weight: bold;
+                font-size: $font-hd;
+            }
+
+            &--btn{
+                @include button();
+                padding: .5rem .75rem;
+            }
+        }
+
+        &__body{
+            padding: 2rem 0rem;
+        }
+
+        &__form{
+            .row{
+                .col-12{
+                    margin-bottom: 1rem;
+                }
+            }
+
+            .form-label{
+                @include form-label();
+                font-weight: bold;
+                font-size: $font-rg;
+            }
+
+            .form-control, .form-select{
+                box-shadow: none;
+            }
+
+            .btn{
+                @include button();
+            }
+        }
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 769px) {  
+        .wrapper{
+            &__head{
+                margin: 2rem auto 3rem;
+                
+                &--title{
+                    font-size: $font-md;
+                }
+
+                &--btn{
+                    padding: .75rem 2.5rem;
+                }
+            }
+
+            &__body{
+                padding: 3rem 2rem;
+            }
+
+            &__form{
+                .row{
+                    margin-bottom: 1rem;
+                }
+
+                .btn{
+                    @include button();
+                }
+            }
+        }
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) {  }
+
+    // XX-Large devices (larger desktops, 1400px and up)
+    @media (min-width: 1400px) {  }
+
+</style>

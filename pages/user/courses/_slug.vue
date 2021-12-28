@@ -247,6 +247,7 @@
 
             &--desc{
                 font-size: .9rem;   
+                overflow: auto;
             }
 
             &--check{
@@ -477,6 +478,7 @@
 
                 &--desc{
                     font-size: $font-rg;   
+                    margin-bottom: 2rem;
                 }
 
                 &--check{

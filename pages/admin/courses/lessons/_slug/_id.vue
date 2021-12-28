@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="wrapper__head d-flex justify-content-between">
-            <h1 class="wrapper__head--title">Add Lesson</h1>
+            <h1 class="wrapper__head--title">Edit "{{ form.title }}" Lesson</h1>
         </div>
 
         <div class="wrapper__body shadow">
@@ -22,7 +22,7 @@
                                         <div class="form-group">
                                             <label class="form-label">Lesson Video <span>*</span></label>
                                             <input class="form-control form-control-lg" type="file" ref="lesson"
-                                            @change="uploadVideo" :class="{'is-invalid': videoErr }" required>
+                                            @change="uploadVideo" :class="{'is-invalid': videoErr }">
                                             <div class="invalid-feedback">{{ this.videoErr }} </div>
                                         </div>
                                     </div>
@@ -33,7 +33,7 @@
                                 <div class="col-lg-8 mx-auto">
                                     <button type="submit" class="btn btn-primary">
                                         <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span>
-                                        Add Lesson
+                                        Edit Lesson
                                     </button>
                                 </div>
                             </form>
@@ -80,6 +80,7 @@
         },
 
         created(){
+            this.getLesson();
         },
 
         methods:{
@@ -92,10 +93,10 @@
                     formData.append('title', this.form.title)
                     formData.append('lesson', this.form.lesson)
 
-                    await this.$axios.$post(`/courses/${this.$route.params.slug}/lessons`, formData)
+                    await this.$axios.$patch(`/courses/${this.$route.params.slug}/lessons/${this.$route.params.id}`, formData)
                     this.loading = false;
 
-                    this.$toast.success("Lesson added successfully.", {
+                    this.$toast.success("Lesson edited successfully.", {
                         icon : 'check'
                     });
 
@@ -116,6 +117,11 @@
                 }else {
                     this.videoErr = "File Must be of an video format (MP4)"
                 }
+            },
+
+            async getLesson(){
+                let doc = await this.$axios.$get(`/courses/${this.$route.params.slug}/lessons/${this.$route.params.id}`);
+                this.form = doc.data
             },
         }
     }

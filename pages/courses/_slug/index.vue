@@ -213,7 +213,8 @@
             }
 
             &--desc{
-                font-size: .9rem;   
+                font-size: .9rem;
+                overflow: auto;
             }
 
             &--check{
@@ -348,9 +349,10 @@
             }
 
             &__overview{
+                margin-bottom: 2rem;
+
                 &--title{
-                    font-size: $font-hd;
-                    font-weight: bold;
+                    // font-size: $font-hd;
                 }
 
                 &--desc{
