@@ -5,7 +5,7 @@
                 <div class="col-md-7 col-lg-7 order-2 order-md-1 wrapper__body">
                     <div class="row">
                         <div class="col-12 wrapper__head">
-                            <h3 class="wrapper__head--title">Blockchain Enterprise</h3>
+                            <h3 class="wrapper__head--title">{{ course.title }}</h3>
 
                             <ul class="nav wrapper__head--links">
                                 <li class="nav-item link">
@@ -20,45 +20,34 @@
                         <div class="tab-pane fade show active" id="pills-overview" role="tabpanel">
                             <div class="row">
                                 <div class="col-12 wrapper__overview">
+                                    <video controls width="100%" height="auto">
+                                        <source src="~assets/videos/formulas.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+
+                                <div class="col-12 wrapper__overview">
                                     <h2 class="wrapper__overview--title">Course Description</h2>
-                                    <p class="wrapper__overview--desc">
-                                        The demand for Blockchain professionals has grown significantly and by 2025, 18% of the world’s GDP will be on Blockchain technologies. Take advantage of our Blockchain Essentials Certification to learn the fundamentals of Blockchain Technology. In this course, you will learn the limitations of the Internet for business and economic activity, and explain how Blockchain Technology represents the way forward. You’ll learn how Blockchain Technology empowers individuals, entrepreneurs, and government officials with the tools they need to help level the playing field and to participate in the value they create. You’ll also meet key players in the global Blockchain ecosystem, and consider your own role in stewarding the Blockchain revolution.
-                                    </p>
-                                    <p class="wrapper__overview--desc">
-                                        This course has been designed in such a way that you will get a thorough understanding of how the Blockchain Technology is being used as a solution to various problems around the world, and across several industries. At the end, you will get more clarity and will be able to master all the important topics related to Blockchain.
-                                    </p>
+                                    <div class="wrapper__overview--desc" v-html="course.description"> </div>
                                 </div>
                                 
                                 <div class="col-12 wrapper__overview">
                                     <h2 class="wrapper__overview--title">Requirements</h2>
-                                    <p class="wrapper__overview--desc">
-                                        The demand for Blockchain professionals has grown significantly and by 2025, 18% of the world’s GDP will be on Blockchain technologies. Take advantage of our Blockchain Essentials Certification to learn the fundamentals of Blockchain Technology. In this course, you will learn the limitations of the Internet for business and economic activity, and explain how Blockchain Technology represents the way forward. You’ll learn how Blockchain Technology empowers individuals, entrepreneurs, and government officials with the tools they need to help level the playing field and to participate in the value they create. You’ll also meet key players in the global Blockchain ecosystem, and consider your own role in stewarding the Blockchain revolution.
-                                    </p>
+                                    <div class="wrapper__overview--desc" v-html="course.requirements"> </div>
                                 </div>
                                 
                                 <div class="col-12 wrapper__overview">
                                     <h2 class="wrapper__overview--title">Learning Outcomes</h2>
-                                    <ul class="wrapper__overview--check">
-                                        <li><span class="fas fa-check-circle"></span> The demand for Blockchain professionals has grown significantly and by 2025, </li>
-                                        <li><span class="fas fa-check-circle"></span> Take advantage of our Blockchain Essentials Certification to learn the fundamentals of Blockchain Technology. </li>
-                                    </ul>
+                                    <div class="wrapper__overview--desc" v-html="course.learning_outcome"> </div>
                                 </div>
 
-                                <div class="col-12 wrapper__overview">
+                                <div class="col-12 wrapper__overview" v-if="course.certification">
                                     <h2 class="wrapper__overview--title">Certification</h2>
-                                    <p class="wrapper__overview--desc">
-                                        The demand for Blockchain professionals has grown significantly and by 2025, 18% of the world’s GDP will be on Blockchain technologies. Take advantage of our Blockchain Essentials Certification to learn the fundamentals of Blockchain Technology. In this course, you will learn the limitations of the Internet for business and economic activity, and explain how Blockchain Technology represents the way forward. You’ll learn how Blockchain Technology empowers individuals, entrepreneurs, and government officials with the tools they need to help level the playing field and to participate in the value they create. You’ll also meet key players in the global Blockchain ecosystem, and consider your own role in stewarding the Blockchain revolution.
-                                    </p>
+                                   <div class="wrapper__overview--desc" v-html="course.certification"> </div>
                                 </div>
 
-                                <div class="col-12 wrapper__overview">
+                                <div class="col-12 wrapper__overview" v-if="course.career_prospect">
                                     <h2 class="wrapper__overview--title">Career Prospects</h2>
-                                    <p class="wrapper__overview--desc">
-                                        The demand for Blockchain professionals has grown significantly and by 2025, 18% of the world’s GDP will be on Blockchain technologies. Take advantage of our Blockchain Essentials Certification to learn the fundamentals of Blockchain Technology. In this course, you will learn the limitations of the Internet for business and economic activity, and explain how Blockchain Technology represents the way forward. You’ll learn how Blockchain Technology empowers individuals, entrepreneurs, and government officials with the tools they need to help level the playing field and to participate in the value they create. You’ll also meet key players in the global Blockchain ecosystem, and consider your own role in stewarding the Blockchain revolution.
-                                    </p>
-                                    <p class="wrapper__overview--desc">
-                                        The demand for Blockchain professionals has grown significantly and by 2025, 18% of the world’s GDP will be on Blockchain technologies. Take advantage of our Blockchain Essentials Certification to learn the fundamentals of Blockchain Technology. In this course, you will learn the limitations of the Internet for business and economic activity, and explain how Blockchain Technology represents the way forward. You’ll learn how Blockchain Technology empowers individuals, entrepreneurs, and government officials with the tools they need to help level the playing field and to participate in the value they create. You’ll also meet key players in the global Blockchain ecosystem, and consider your own role in stewarding the Blockchain revolution.
-                                    </p>
+                                    <div class="wrapper__overview--desc" v-html="course.career_prospect"> </div>
                                 </div>
                             </div>
                         </div>
@@ -75,19 +64,18 @@
                                         <div class="accordion-item shadow-sm">
                                             <h2 class="accordion-header">
                                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" :data-bs-target="'#'+tab">
-                                                    Module 1: Introduction to Blockchain
+                                                    Lesson Modules
                                                 </button>
                                             </h2>
                                             <div :id="tab" class="accordion-collapse collapse show">
                                                 <div class="accordion-body">
-                                                    <ul>
-                                                        <li><span>Lesson 1:</span> Introduction to Blockchain Enterprise</li>
-                                                        <li><span>Lesson 2:</span> Nomination</li>
+                                                    <ul v-for="(lesson, index) in course.lessons" :key="index">
+                                                        <li><span>Lesson {{index+1}}:</span> {{ lesson.title }}</li>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="accordion-item">
+                                        <!-- <div class="accordion-item">
                                             <h2 class="accordion-header">
                                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
                                                     Module 2: Setup and Installation
@@ -101,7 +89,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -109,33 +97,32 @@
                     </div>
                 </div>
 
-                <div class="col-md-5 col-lg-4 order-1 order-md-2 sticky-md-top wrapper__enrol">
-                   <div class="card border-0 shadow">
+                <div class="col-md-5 col-lg-4 order-1 order-md-2 wrapper__enrol">
+                   <div class="card border-0 shadow sticky-lg-top">
                        <div class="enrol__head">
-                           <h2 class="enrol__head--price">$350</h2>
+                           <h2 class="enrol__head--price"> {{ course.price | moneyFormat }} </h2>
                            <button class="enrol__head--enrol btn">Take Course Now</button>
                        </div>
                        <div class="enrol__body">
                            <ul>
                                <li class="enrol__body--list"> <span class="fas fa-globe"></span> Online </li>
                                <li class="enrol__body--list"> <span class="fas fa-map-marker-alt"></span> Self Paced </li>
-                               <li class="enrol__body--list"> <span class="fas fa-list"></span> 13 Lectures </li>
-                               <li class="enrol__body--list"> <span class="fas fa-clock"></span> 2 Hours </li>
+                               <li class="enrol__body--list"> <span class="fas fa-list"></span> {{ course.lessons_count }} Lectures </li>
+                               <li class="enrol__body--list"> <span class="fas fa-clock"></span> {{ course.lessons_count | secondsToHours }} Hours </li>
                                <li class="enrol__body--list"> <span class="fas fa-poll"></span> All Levels </li>
                                <li class="enrol__body--list"> <span class="fas fa-spell-check"></span> English </li>
                            </ul>
                        </div>
                    </div>
 
-                   <div class="share">
+                   <!-- <div class="share">
                        <h3 class="share__title">Share this course</h3>
-
                        <div>
                            <a href="#"> <span class="fab fa-facebook"></span> </a>
                            <a href="#"> <span class="fab fa-twitter"></span> </a>
                            <a href="#"> <span class="fab fa-linkedin"></span> </a>
                        </div>
-                   </div>
+                   </div> -->
                 </div>
             </div>
         </div>
@@ -155,26 +142,28 @@
                 ],
             }
         },
+
         data(){
             return{
+                course: {},
                 currentTab: "Overview",
                 tabs: [
                     "Overview", "Curriculum"
                 ],
 
                 tab: "collapseOne",
-
-                modules:[
-                    {
-                        "Introduction to Blockchain": [
-
-                        ]
-                    }
-                ]
             }
         },
 
-        computed: {
+        created(){
+            this.getCourse();
+        },
+
+        methods: {
+            async getCourse(){
+                let doc = await this.$axios.$get(`/courses/${this.$route.params.slug}`);
+                this.course = doc.data
+            },
         }
     }
 </script>
@@ -201,11 +190,14 @@
                     a{
                         display: inline;
                         font-weight: bold;
-                        color: $secondary-2;
-                        padding: .5rem;
+                        padding: .5rem 1rem;
+                        color: $dark;
+                        border-radius: .5rem;
+                        margin-right: 1rem;
                         
                         &.active{
-                            color: $primary;
+                            background: $primary;
+                            color: $white;
                         }
                     }
                 }
@@ -283,6 +275,7 @@
             .card{
                 padding: 2rem;
                 margin-bottom: 2rem;
+                top: 1rem;
             }
 
             .enrol{
@@ -399,7 +392,7 @@
                     &-body{
                         ul{
                             li{
-                                margin-bottom: .5rem;
+                                margin-bottom: 1rem;
                                 font-size: $font-rg;
                             }
                         }

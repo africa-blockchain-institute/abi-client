@@ -9,7 +9,7 @@ export default {
 			{ name: 'format-detection', content: 'telephone=no' },
 		],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: './favicon.png' },
+			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 			{ rel:"preconnect", href: "https://fonts.gstatic.com"},
 			{ rel:'stylesheet', href: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" },
 			{ rel:"stylesheet", href: "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300&display=swap"},
@@ -18,7 +18,7 @@ export default {
 		script : [
 			{ src: "https://code.jquery.com/jquery-3.3.1.slim.min.js", },
 			{ src: "https://kit.fontawesome.com/24b54c8fdd.js", type: 'text/javascript' },
-			{ src: "//code.tidio.co/bvlgrr2nu3l3g6zzvkejcdavzcyseijl.js", type: 'text/javascript' },
+			// { src: "//code.tidio.co/bvlgrr2nu3l3g6zzvkejcdavzcyseijl.js", type: 'text/javascript' },
 			{ src: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js", }
 		]
 	},
@@ -92,7 +92,26 @@ export default {
                     user: { url: '/users/me', method: 'get', propertyName: 'data' },
                     logout: { url: '/auth/logout', method: 'post' },
                 },
-            }
+            },
+
+			facebook: {
+				endpoints: {
+					user: 'https://graph.facebook.com/v6.0/me?fields=id,name,picture{url}'
+				},
+				clientId: '978156392736676',
+				scope: ['public_profile', 'email']
+			},
+
+			google: {
+				clientId: '398761984032-prs55rm4sp4eu5uhtna93h2qa7dm03as.apps.googleusercontent.com',
+				codeChallengeMethod: '',
+				responseType: 'code',
+				endpoints: {
+					login: { url: '/auth/google/callback', method: 'post', propertyName: 'token' },
+                    user: { url: '/users/me', method: 'get', propertyName: 'data' },
+                    logout: { url: '/auth/logout', method: 'post' },
+				},
+			},
         },
     
         redirect: false

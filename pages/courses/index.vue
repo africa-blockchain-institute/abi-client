@@ -10,17 +10,17 @@
                     <div class="col courses__list mb-2 mb-md-3" v-for="(course, index) in courses" :key="index">
                         <nuxt-link :to="{ name: 'courses-slug', params: { slug: course.slug } }" >
                             <div class="card h-100">
-                                <img :src="require('~/assets/images/'+course.image)" class="card-img-top" :alt="course.title">
+                                <img :src="course.image" class="card-img-top" :alt="course.title">
                                 <div class="card-header">
                                     <h5 class="courses__list--title">{{ course.title }}</h5>
                                 </div>
                                 <div class="card-body">
                                     <div class="mb-3">
-                                        <p class="courses__list--description">{{ course.description }} </p>
+                                        <p class="courses__list--description" v-html="course.description"> </p>
                                     </div>
                                     <div class="d-flex justify-content-between">
-                                        <p class="courses__list--lessons"> <span class="fas fa-list"></span> {{ course.lessons }} lessons </p>
-                                        <p class="courses__list--duration"> <span class="fas fa-clock"></span> {{ course.duration }} hours </p>
+                                        <p class="courses__list--lessons"> <span class="fas fa-list"></span> {{ course.lessons_count }} lessons </p>
+                                        <p class="courses__list--duration"> <span class="fas fa-clock"></span> {{ course.duration | secondsToHours }} hours</p>
                                     </div>
                                 </div>
                             </div>
@@ -52,35 +52,7 @@
 
         data(){
             return {
-                courses: [
-                    {
-                        slug: "blockchain-developers",
-                        image: "courses/developer.jpg",
-                        category: "Blockchain",
-                        title: "Blockchain for Developers and to make longer, and even more longer and",
-                        description: "Lorem ipsum dolor, voluptates dicta ab, quisquam eos accusantium soluta temporibus. Iste amet hic nihil magnam.",
-                        lessons: "13",
-                        duration: "2"
-                    },
-                    {
-                        slug: "enterprise-for-consultants",
-                        image: "courses/enterprise.jpg",
-                        category: "Enterprise",
-                        title: "Enterprise for Consultants",
-                        description: "Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab. Iste amet hic nihil magnam.",
-                        lessons: "5",
-                        duration: "1"
-                    },
-                    {
-                        slug: "enterprise-for-consultants",
-                        image: "courses/legal.jpg",
-                        category: "Enterprise",
-                        title: "For Legal Professionals",
-                        description: "Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab. Iste amet hic nihil magnam.",
-                        lessons: "5",
-                        duration: "1"
-                    }
-                ]
+                courses: []
             }
         },
 
@@ -89,8 +61,16 @@
         },
 
         created(){
-
+            this.getCourses();
         },
+
+        methods:{
+            async getCourses(){
+                let docs = await this.$axios.$get(`/courses?page=${this.page}&limit=${this.perPage}`)
+                this.records = docs.records;
+                this.courses = docs.data;
+            },
+        }
     }
 </script>
 

@@ -44,14 +44,14 @@
             </div>
 
             <div class="row">
-                <a href="/auth/google" class="btn">
+                <button @click="loginWithGoogle()" class="btn">
                     <img src="~/assets/images/auth/google.png" alt="ABI google auth login">
                     Continue with Google 
-                </a>
-                <a href="/auth/facebook" class="btn">
+                </button>
+                <button @click="loginWithFacebook()" class="btn">
                     <img src="~/assets/images/auth/facebook.png" alt="ABI facebook auth login">
                     Continue with Facebook 
-                </a>
+                </button>
             </div>
         </div>
 
@@ -92,10 +92,6 @@
             }
         },
 
-        created(){
-
-        },
-
         methods:{
             async submit(){
                 this.loading = true
@@ -128,6 +124,60 @@
                 } catch (err) {
                     this.loading = false
                 }
+            },
+
+            async loginWithFacebook(){
+
+                const res = await this.$auth.loginWith('facebook');
+
+                console.log(res);
+
+                throw "";
+                this.$auth.setUser(res.data.data.user);
+
+                let destination;
+                
+                if(user.data.role == 'user'){
+                    destination = '/user/courses'
+                }else if( user.data.role == 'instructor'){
+                    destination = '/instructor/courses'
+                }else if(user.data.role == 'admin' ){
+                    destination = '/admin/courses'
+                }
+
+                this.$toast.success('Successfully logged in', {
+                    icon : 'check',
+                })
+
+                this.$router.push({ path: destination });
+            
+            },
+
+            async loginWithGoogle(){
+
+                const res = await this.$auth.loginWith('google');
+
+                console.log(res);
+
+                throw "";
+                this.$auth.setUser(res.data.data.user);
+
+                let destination;
+                
+                if(user.data.role == 'user'){
+                    destination = '/user/courses'
+                }else if( user.data.role == 'instructor'){
+                    destination = '/instructor/courses'
+                }else if(user.data.role == 'admin' ){
+                    destination = '/admin/courses'
+                }
+
+                this.$toast.success('Successfully logged in', {
+                    icon : 'check',
+                })
+
+                this.$router.push({ path: destination });
+            
             },
 
             showPassword(){

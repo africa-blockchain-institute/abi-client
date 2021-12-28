@@ -16,20 +16,19 @@
                     <div class="col courses__list mb-2 mb-md-3" v-for="(course, index) in courses" :key="index">
                         <nuxt-link :to="{ name: 'user-courses-slug', params: { slug: course.slug } }" >
                             <div class="card h-100">
-                                <img :src="require('~/assets/images/'+course.image)" class="card-img-top" :alt="course.title">
+                                <img :src="course.image" class="card-img-top" :alt="course.title">
                                 <div class="card-header">
                                     <h5 class="courses__list--title">{{ course.title }}</h5>
                                 </div>
                                 <div class="card-body">
                                     <div class="mb-3">
-                                        <p class="courses__list--description">{{ course.description }} </p>
+                                        <div class="courses__list--description" v-html="course.description"></div>
                                     </div>
-
                                     <div>
                                         <div class="progress" style="height: 5px;">
-                                            <div class="progress-bar courses__list--progress" role="progressbar" style="width: 25%;"></div>
+                                            <div class="progress-bar courses__list--progress" role="progressbar" :style="{ width: getLessonCount(course.id, course.lessons_count)+'%' } "></div>
                                         </div>
-                                        <small class="courses__list--completed"> 30% Completed</small>
+                                        <small class="courses__list--completed">{{ getLessonCount(course.id, course.lessons_count) }}% Completed </small>
                                     </div>
                                 </div>
                             </div>
@@ -42,6 +41,9 @@
 </template>
 
 <script>
+
+    import { mapGetters } from 'vuex';
+
     export default {
         layout: 'user',
 
@@ -60,35 +62,52 @@
 
         data(){
             return{
-                courses: [
-                    {
-                        slug: "blockchain-developers",
-                        image: "courses/developer.jpg",
-                        category: "Blockchain",
-                        title: "Blockchain for Developers and to make longer, and even more longer and",
-                        description: "Lorem ipsum dolor, voluptates dicta ab, quisquam eos accusantium soluta temporibus. Iste amet hic nihil magnam.",
-                        lessons: "13",
-                        duration: "2"
-                    },
-                    {
-                        slug: "enterprise-for-consultants",
-                        image: "courses/enterprise.jpg",
-                        category: "Enterprise",
-                        title: "Enterprise for Consultants",
-                        description: "Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab. Iste amet hic nihil magnam.",
-                        lessons: "5",
-                        duration: "1"
-                    },
-                    {
-                        slug: "enterprise-for-consultants",
-                        image: "courses/legal.jpg",
-                        category: "Enterprise",
-                        title: "For Legal Professionals",
-                        description: "Asperiores dolor natus sunt odio amet doloremque iure adipisci voluptates dicta ab. Iste amet hic nihil magnam.",
-                        lessons: "5",
-                        duration: "1"
-                    }
-                ]
+                courses: [],
+                lessons: [],
+                count: 0
+            }
+        },
+
+        created(){
+            this.getDocs();
+        },
+
+        computed:{
+            ...mapGetters({
+                user: 'loggedInUser'
+            })
+        },
+
+        // async asyncData({params, store, $axios}) {
+        //     const user = (store.state.auth.user.me) ? store.state.auth.user.me : store.state.auth.user;
+        //     let docs = await $axios.$get(`/users/${user.id}`)
+
+        //     return{
+        //         courses: docs.data.courses,
+        //         lessons: docs.data.lessons
+        //     }
+        // },
+
+        methods:{
+            async getDocs(){
+                const user = (this.user.me) ? this.user.me : this.user;
+                let docs = await this.$axios.$get(`/users/${user.id}`)
+                this.courses = docs.data.courses;
+                this.lessons = docs.data.lessons;
+            },
+
+            getLessonCount(course_id, lessons_count){
+                let lessonPercentCompleted;
+
+                this.lessons.forEach(el => {
+                    const [curr] = Object.keys(el);
+                    if(curr == course_id){
+                        lessonPercentCompleted = Math.ceil((el[course_id].length / lessons_count ) * 100);
+                        return;
+                    } 
+                });
+
+                return lessonPercentCompleted;
             }
         }
     }

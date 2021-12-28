@@ -5,12 +5,13 @@
                 <div class="col-md-7 col-lg-8 col-xxl-7 order-2 order-md-1 wrapper__body">
                     <div class="row">
                         <div class="col-12 wrapper__title">
-                            <h2 class="wrapper__title--head">Blockchain for Developers</h2>
+                            <h2 class="wrapper__title--head">{{ course.title  }} </h2>
                         </div>
 
                         <div class="col-12 wrapper__video">
                             <video controls width="100%" height="auto">
                                 <source src="~assets/videos/formulas.mp4" type="video/mp4">
+                                <!-- <source :src="ongoing_lesson" type="video/mp4"> -->
                             </video>
                         </div>
                     </div>
@@ -31,44 +32,27 @@
                                 <div class="row">
                                     <div class="col-12 wrapper__overview">
                                         <h2 class="wrapper__overview--title">Course Description</h2>
-                                        <p class="wrapper__overview--desc">
-                                            The demand for Blockchain professionals has grown significantly and by 2025, 18% of the world’s GDP will be on Blockchain technologies. Take advantage of our Blockchain Essentials Certification to learn the fundamentals of Blockchain Technology. In this course, you will learn the limitations of the Internet for business and economic activity, and explain how Blockchain Technology represents the way forward. You’ll learn how Blockchain Technology empowers individuals, entrepreneurs, and government officials with the tools they need to help level the playing field and to participate in the value they create. You’ll also meet key players in the global Blockchain ecosystem, and consider your own role in stewarding the Blockchain revolution.
-                                        </p>
-                                        <p class="wrapper__overview--desc">
-                                            This course has been designed in such a way that you will get a thorough understanding of how the Blockchain Technology is being used as a solution to various problems around the world, and across several industries. At the end, you will get more clarity and will be able to master all the important topics related to Blockchain.
-                                        </p>
+                                        <div class="wrapper__overview--desc" v-html="course.description"></div>
                                     </div>
                                     
                                     <div class="col-12 wrapper__overview">
                                         <h2 class="wrapper__overview--title">Requirements</h2>
-                                        <p class="wrapper__overview--desc">
-                                            The demand for Blockchain professionals has grown significantly and by 2025, 18% of the world’s GDP will be on Blockchain technologies. Take advantage of our Blockchain Essentials Certification to learn the fundamentals of Blockchain Technology. In this course, you will learn the limitations of the Internet for business and economic activity, and explain how Blockchain Technology represents the way forward. You’ll learn how Blockchain Technology empowers individuals, entrepreneurs, and government officials with the tools they need to help level the playing field and to participate in the value they create. You’ll also meet key players in the global Blockchain ecosystem, and consider your own role in stewarding the Blockchain revolution.
-                                        </p>
+                                        <div class="wrapper__overview--desc" v-html="course.requirements"></div>
                                     </div>
                                     
                                     <div class="col-12 wrapper__overview">
                                         <h2 class="wrapper__overview--title">Learning Outcomes</h2>
-                                        <ul class="wrapper__overview--check">
-                                            <li><span class="fas fa-check-circle"></span> The demand for Blockchain professionals has grown significantly and by 2025, </li>
-                                            <li><span class="fas fa-check-circle"></span> Take advantage of our Blockchain Essentials Certification to learn the fundamentals of Blockchain Technology. </li>
-                                        </ul>
+                                        <div class="wrapper__overview--desc" v-html="course.learning_outcome"></div>
                                     </div>
 
                                     <div class="col-12 wrapper__overview">
                                         <h2 class="wrapper__overview--title">Certification</h2>
-                                        <p class="wrapper__overview--desc">
-                                            The demand for Blockchain professionals has grown significantly and by 2025, 18% of the world’s GDP will be on Blockchain technologies. Take advantage of our Blockchain Essentials Certification to learn the fundamentals of Blockchain Technology. In this course, you will learn the limitations of the Internet for business and economic activity, and explain how Blockchain Technology represents the way forward. You’ll learn how Blockchain Technology empowers individuals, entrepreneurs, and government officials with the tools they need to help level the playing field and to participate in the value they create. You’ll also meet key players in the global Blockchain ecosystem, and consider your own role in stewarding the Blockchain revolution.
-                                        </p>
+                                        <div class="wrapper__overview--desc" v-html="course.certification"></div>
                                     </div>
 
                                     <div class="col-12 wrapper__overview">
                                         <h2 class="wrapper__overview--title">Career Prospects</h2>
-                                        <p class="wrapper__overview--desc">
-                                            The demand for Blockchain professionals has grown significantly and by 2025, 18% of the world’s GDP will be on Blockchain technologies. Take advantage of our Blockchain Essentials Certification to learn the fundamentals of Blockchain Technology. In this course, you will learn the limitations of the Internet for business and economic activity, and explain how Blockchain Technology represents the way forward. You’ll learn how Blockchain Technology empowers individuals, entrepreneurs, and government officials with the tools they need to help level the playing field and to participate in the value they create. You’ll also meet key players in the global Blockchain ecosystem, and consider your own role in stewarding the Blockchain revolution.
-                                        </p>
-                                        <p class="wrapper__overview--desc">
-                                            The demand for Blockchain professionals has grown significantly and by 2025, 18% of the world’s GDP will be on Blockchain technologies. Take advantage of our Blockchain Essentials Certification to learn the fundamentals of Blockchain Technology. In this course, you will learn the limitations of the Internet for business and economic activity, and explain how Blockchain Technology represents the way forward. You’ll learn how Blockchain Technology empowers individuals, entrepreneurs, and government officials with the tools they need to help level the playing field and to participate in the value they create. You’ll also meet key players in the global Blockchain ecosystem, and consider your own role in stewarding the Blockchain revolution.
-                                        </p>
+                                        <div class="wrapper__overview--desc" v-html="course.career_prospect"></div>
                                     </div>
                                 </div>
                             </div>
@@ -97,8 +81,8 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-12">
-
+                                    <div class="col-12 wrapper__overview">
+                                        <div class="wrapper__overview--desc" v-html="course.project"></div>
                                     </div>
                                 </div>
                             </div>
@@ -109,31 +93,17 @@
                 <div class="col-md-5 col-lg-4 col-xxl-4 order-1 order-md-2 wrapper__list">
                    <div class="card border-0 shadow sticky-md-top">
                         <div class="text-start border-0 card-header">
-                            <h6 class="title">Blockchain for Developers </h6>
-                            <small class="time">2/4 | 25 Minutes </small>
+                            <h6 class="title">{{ course.title }} </h6>
+                            <small class="time">{{ user_lessons.length }}/{{ course.lessons_count }} | {{ course.duration | secondsToHours  }} Hours </small>
                         </div>
                         <div class="card-body">
-                            <ul class="list-group">
+                            <ul class="list-group" v-for="(lesson, index) in course.lessons" :key="index">
                                 <li class="text-break">
                                     <label class="wrap">
-                                        <input type="checkbox" checked>
+                                        <input type="checkbox" :checked="checkCompletedLesson(lesson.id)" disabled>
                                         <span class="checkmark"></span>
                                     </label>
-                                    <nuxt-link to="#" class="text-break"><span>1. </span> Introduction to cryptocurrency alone and myself</nuxt-link>
-                                </li>
-                                <li>
-                                    <label class="wrap">
-                                        <input type="checkbox" checked>
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <nuxt-link to="#" class=""><span>2. </span>History of the blockchain</nuxt-link>
-                                </li>
-                                <li>
-                                    <label class="wrap">
-                                        <input type="checkbox">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <nuxt-link to="#" class=""><span>3. </span> Alternates and secondary platforms</nuxt-link>
+                                    <nuxt-link :to="lesson.url" class="text-break"><span>{{ index + 1 }}.</span> {{ lesson.title }} </nuxt-link>
                                 </li>
                             </ul>
                         </div>
@@ -145,6 +115,8 @@
 </template>
 
 <script>
+    import { mapGetters } from 'vuex';
+
     export default {
         layout: 'user',
 
@@ -157,28 +129,70 @@
 
                 tab: "collapseOne",
 
-                modules:[
-                    {
-                        "Introduction to Blockchain": [
-
-                        ]
-                    }
-                ],
-
                 pageConfig: {
                     title: 'introduction to blockchain',
                     slug: 'enterprise-for-consultants',
                     identifier: this.$route.path,
-                }
+                },
+
+                course: [],
+                user_lessons: [],
+                ongoing_lesson: "",
             }
         },
 
-        computed: {
+        computed:{
+            ...mapGetters({
+                user: 'loggedInUser'
+            })
         },
 
         created(){
-            console.log(this.$route.path)
-        }
+            this.getCourse();
+            this.getLessons();
+        },
+
+        mounted(){
+            this.checkCompletedLesson();
+        },
+
+        methods: {
+            async getCourse(){
+                let doc = await this.$axios.$get(`/courses/${this.$route.params.slug}`);
+                this.course = doc.data;
+
+                //you should get this from the local storage;
+                this.ongoing_lesson = this.course.lessons[0].url;
+
+                console.log(this.ongoing_lesson);
+            },
+
+            async getLessons(){
+                const user = (this.user.me) ? this.user.me : this.user;
+                let docs = await this.$axios.$get(`/users/${user.id}`)
+                
+                docs.data.lessons.find(el => {
+                    const [curr] = Object.keys(el);
+
+                    if(curr == this.course.id ){
+                        this.user_lessons = el[curr];
+                    }
+                });
+            },
+
+            checkCompletedLesson(lesson_id){
+                let checkCompleted;
+
+                this.user_lessons.find(el => {
+                    if( el.lesson_id == lesson_id && el.completed == true ){
+                        checkCompleted = true
+                        return;
+                    }
+                })
+
+                return checkCompleted;
+            }
+        },
     }
 </script>
 

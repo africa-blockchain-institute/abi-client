@@ -16,6 +16,11 @@ Vue.filter("formatDateTime", function(value){
     return new Date(value).toString();
 })
 
+Vue.filter("secondsToHours", function(value){
+    if(!value) return "";
+    return Math.ceil(value / 60 / 60);
+})
+
 Vue.filter("capitalize", function(value){
     if (!value) return ''
     value = value.toString()
