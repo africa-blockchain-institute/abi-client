@@ -36,3 +36,15 @@ body {
     background-color: #1974AB;
     color: #fff;
 }
+
+.video-js{
+    width: 100%;
+}
+
+.video-js button.vjs-big-play-button{
+    background-color: #F68634;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}

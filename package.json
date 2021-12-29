@@ -23,7 +23,8 @@
     "vue-disqus": "^4.0.1",
     "vue-froala-wysiwyg": "^4.0.7",
     "vue-pagination-2": "^3.0.91",
-    "vue-quill-editor": "^3.0.6"
+    "vue-quill-editor": "^3.0.6",
+    "vue-video-player": "^5.0.2"
   },
   "devDependencies": {
     "@vue/test-utils": "^1.2.1",

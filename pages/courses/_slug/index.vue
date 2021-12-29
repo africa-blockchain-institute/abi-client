@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col-md-7 col-lg-7 order-2 order-md-1 wrapper__body">
+                <div class="col-md-8 col-lg-8 order-2 order-md-1 wrapper__body">
                     <div class="row">
                         <div class="col-12 wrapper__head">
                             <h3 class="wrapper__head--title">{{ course.title }}</h3>
@@ -20,9 +20,10 @@
                         <div class="tab-pane fade show active" id="pills-overview" role="tabpanel">
                             <div class="row">
                                 <div class="col-12 wrapper__overview">
-                                    <video controls width="100%" height="auto">
-                                        <source src="~assets/videos/formulas.mp4" type="video/mp4">
-                                    </video>
+                                    <div class="wrapper__video--video"
+                                        :playsinline="playsinline"
+                                        v-video-player:myVideoPlayer="playerOptions">
+                                    </div>
                                 </div>
 
                                 <div class="col-12 wrapper__overview">
@@ -97,7 +98,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-5 col-lg-4 order-1 order-md-2 wrapper__enrol">
+                <div class="col-md-4 col-lg-4 order-1 order-md-2 wrapper__enrol">
                    <div class="card border-0 shadow sticky-lg-top">
                        <div class="enrol__head">
                            <h2 class="enrol__head--price"> {{ course.price | moneyFormat }} </h2>
@@ -150,8 +151,22 @@
                 tabs: [
                     "Overview", "Curriculum"
                 ],
-
                 tab: "collapseOne",
+
+                // component options
+                playsinline: true,
+                
+                // videojs options
+                playerOptions: {
+                    muted: false,
+                    language: 'en',
+                    playbackRates: [0.7, 1.0, 1.5, 2.0],
+                    sources: [{
+                        type: "video/mp4",
+                        src: ""
+                    }],
+                    poster: ""
+                }
             }
         },
 
@@ -163,6 +178,9 @@
             async getCourse(){
                 let doc = await this.$axios.$get(`/courses/${this.$route.params.slug}`);
                 this.course = doc.data
+
+                this.playerOptions.sources[0].src = this.course.preview;
+                this.playerOptions.poster = this.course.image;
             },
         }
     }
@@ -207,8 +225,12 @@
         &__overview{
             margin-bottom: 1rem;
 
+            &--video{
+                width: 100%!important;
+            }
+
             &--title{
-                font-size: $font-hd;
+                font-size: 1.2rem;
                 font-weight: bold;
             }
 
@@ -350,10 +372,6 @@
 
             &__overview{
                 margin-bottom: 2rem;
-
-                &--title{
-                    // font-size: $font-hd;
-                }
 
                 &--desc{
                     font-size: $font-rg;   

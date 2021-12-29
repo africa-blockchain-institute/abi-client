@@ -2,17 +2,19 @@
     <div class="wrapper">
         <div class="container">
             <div class="row justify-content-between">
-                <div class="col-md-7 col-lg-8 col-xxl-7 order-2 order-md-1 wrapper__body">
+                <div class="col-md-7 col-lg-8 order-2 order-md-1 wrapper__body">
                     <div class="row">
                         <div class="col-12 wrapper__title">
                             <h2 class="wrapper__title--head">{{ course.title  }} </h2>
                         </div>
 
                         <div class="col-12 wrapper__video">
-                            <video controls width="100%" height="auto">
-                                <source src="~assets/videos/formulas.mp4" type="video/mp4">
-                                <!-- <source :src="ongoing_lesson" type="video/mp4"> -->
-                            </video>
+                            <div class="wrapper__video--video"
+                                :playsinline="playsinline"
+                                @play="onPlayerPlay($event)"
+                                @ended="onPlayerEnded($event)"
+                                v-video-player:myVideoPlayer="playerOptions">
+                            </div>
                         </div>
                     </div>
 
@@ -90,7 +92,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-5 col-lg-4 col-xxl-4 order-1 order-md-2 wrapper__list">
+                <div class="col-md-5 col-lg-4 order-1 order-md-2 wrapper__list">
                    <div class="card border-0 shadow sticky-md-top">
                         <div class="text-start border-0 card-header">
                             <h6 class="title">{{ course.title }} </h6>
@@ -98,12 +100,12 @@
                         </div>
                         <div class="card-body">
                             <ul class="list-group" v-for="(lesson, index) in course.lessons" :key="index">
-                                <li class="text-break">
+                                <li class="text-break" @click="switchNextLesson(lesson.url, lesson.id)">
                                     <label class="wrap">
                                         <input type="checkbox" :checked="checkCompletedLesson(lesson.id)" disabled>
                                         <span class="checkmark"></span>
                                     </label>
-                                    <nuxt-link :to="lesson.url" class="text-break"><span>{{ index + 1 }}.</span> {{ lesson.title }} </nuxt-link>
+                                    <p class="text-break"><span>{{ index + 1 }}.</span> {{ lesson.title }} </p>
                                 </li>
                             </ul>
                         </div>
@@ -119,6 +121,18 @@
 
     export default {
         layout: 'user',
+
+        head(){
+            return{
+                title: 'User Courses -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'User Courses',
+                        content: 'User Courses'
+                    }
+                ],
+            }
+        },
 
         data(){
             return{
@@ -137,7 +151,22 @@
 
                 course: [],
                 user_lessons: [],
-                ongoing_lesson: "",
+                lesson_id: "",
+
+                // component options
+                playsinline: true,
+                
+                // videojs options
+                playerOptions: {
+                    muted: false,
+                    language: 'en',
+                    playbackRates: [0.7, 1.0, 1.5, 2.0],
+                    sources: [{
+                        type: "video/mp4",
+                        src: ""
+                    }],
+                    poster: "",
+                }
             }
         },
 
@@ -162,9 +191,9 @@
                 this.course = doc.data;
 
                 //you should get this from the local storage;
-                this.ongoing_lesson = this.course.lessons[0].url;
-
-                console.log(this.ongoing_lesson);
+                this.playerOptions.sources[0].src = doc.data.lessons[0].url;
+                this.playerOptions.poster = doc.data.image;
+                this.lesson_id = doc.data.lessons[0].id;
             },
 
             async getLessons(){
@@ -188,10 +217,34 @@
                         checkCompleted = true
                         return;
                     }
-                })
+                });
 
                 return checkCompleted;
-            }
+            },
+
+            switchNextLesson(url, lesson_id){
+                this.playerOptions.sources[0].src = url;
+                this.playerOptions.autoplay = true;
+                this.lesson_id = lesson_id;
+            },
+
+            async onPlayerEnded(player){
+                const user = (this.user.me) ? this.user.me : this.user;
+
+                const userInfo = {
+                    course_title: this.$route.params.slug,
+                    user_id: user.id,
+                    lesson_id: this.lesson_id
+                }
+
+                const res = await this.$axios.$post(`/users/courses/update-user-lesson`, userInfo);
+
+                this.getLessons();
+                this.checkCompletedLesson(userInfo.lesson_id);
+            },
+
+            async onPlayerPlay(player) {
+            },
         },
     }
 </script>
@@ -310,15 +363,17 @@
                             display: block;
                             margin-bottom: .65rem;
 
-                            a {
+                            p {
                                 color: $dark;
                                 text-decoration: none;
                                 font-size: .9rem;
                                 position: relative;
                                 left: 2rem;
                                 bottom: .2rem;
+                                margin-bottom: 0;
+                                cursor: pointer;
 
-                                &:hover {
+                                &:hover, &.active {
                                     color: $primary;
                                 }
                             }
@@ -473,12 +528,11 @@
                 margin-bottom: 2rem;
 
                 &--title{
-                    font-size: $font-hd;
+                    font-size: 1.2rem;
                 }
 
                 &--desc{
                     font-size: $font-rg;   
-                    margin-bottom: 2rem;
                 }
 
                 &--check{
