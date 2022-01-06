@@ -48,6 +48,7 @@ export default {
 		{ src: '~/plugins/disqus.js' },
         { src: '~/plugins/filters.js' },
 		{ src: '~/plugins/vue-paginate.js' },
+		{ src: '~/plugins/vue-paystack.js',  ssr: false },
         { src: "~/plugins/vue-player.js", ssr: false },
         { src: "~/plugins/vue-quill-editor.js", ssr: false },
         { src: "~/plugins/froala.js", ssr: false },

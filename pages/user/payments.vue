@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <div class="payments">
+        <div class="payments bg-danger">
             <div class="container">
                 <div class="col-12">
                     <div class="card shadow">
@@ -72,7 +72,7 @@
 
         data(){
             return{
-
+                payments: {},
             }
         }
     }
@@ -90,6 +90,8 @@
         }
 
         .payments{
+            margin-bottom: 1rem;
+
             .card{
                 padding: 2rem 0;
             }
@@ -112,6 +114,7 @@
             }
 
             .payments{
+                margin-bottom: 3rem;
                 .card{
                     padding: 2rem 3rem;
                 }

@@ -100,9 +100,31 @@
 
                 <div class="col-md-4 col-lg-4 order-1 order-md-2 wrapper__enrol">
                    <div class="card border-0 shadow sticky-lg-top">
-                       <div class="enrol__head">
+                       <div class="enrol__head" v-if="userHasCourse">
                            <h2 class="enrol__head--price"> {{ course.price | moneyFormat }} </h2>
-                           <button class="enrol__head--enrol btn">Take Course Now</button>
+                           <!-- <button class="enrol__head--enrol btn" @click="makePayment()"  v-if="this.$auth.loggedIn">Take Course Now Pay</button> -->
+
+                           <client-only v-if="this.$auth.loggedIn">
+                                <paystack
+                                    :email="email"
+                                    :amount="course.price * 100"
+                                    :paystackkey="paystackkey"
+                                    :reference="reference"
+                                    :currency="'NGN'"
+                                    :callback="callback"
+                                    :close="close"
+                                    :embed="false"
+                                    class="enrol__head--enrol btn"
+                                >
+                                    Make Payment
+                                </paystack>
+                           </client-only>
+                           <nuxt-link to="/auth/login" class="enrol__head--enrol btn" v-else>Take Course Now Login</nuxt-link>
+                       
+                       </div>
+                       <div class="enrol__head" v-else>
+                           <h2 class="enrol__head--price"> {{ course.price | moneyFormat }} </h2>
+                           <nuxt-link :to="{ name: 'user-courses-slug', params: { slug: course.slug }}" class="enrol__head--enrol btn">Continue to Course</nuxt-link>
                        </div>
                        <div class="enrol__body">
                            <ul>
@@ -131,14 +153,16 @@
 </template>
 
 <script>
+    import { mapGetters } from "vuex";
+
     export default {
         head(){
             return{
-                title: 'Course Title -  Africa Blockchain Institute',
+                title: `${this.course.title} -  Africa Blockchain Institute`,
                 meta: [
                     {
-                        name: '---',
-                        content: '---'
+                        name: this.course.title,
+                        content: this.course.title
                     }
                 ],
             }
@@ -166,21 +190,91 @@
                         src: ""
                     }],
                     poster: ""
-                }
+                },
+
+                paystackkey: "",
+                email: "", 
+                amount: "",
+                userId: ""
+            }
+        },
+
+        computed:{
+            ...mapGetters({
+                user: 'loggedInUser'
+            }),
+
+            reference(){
+                let text = "ABI-";
+                let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        
+                for( let i=0; i < 10; i++ )
+                text += possible.charAt(Math.floor(Math.random() * possible.length));
+        
+                return text;
             }
         },
 
         created(){
             this.getCourse();
+            this.getUserInfo();
         },
 
         methods: {
             async getCourse(){
                 let doc = await this.$axios.$get(`/courses/${this.$route.params.slug}`);
-                this.course = doc.data
+                this.course = doc.data;
 
                 this.playerOptions.sources[0].src = this.course.preview;
                 this.playerOptions.poster = this.course.image;
+            },
+
+            userHasCourse(){
+                const user = (this.user.me) ? this.user.me : this.user;
+                const status = user.courses.includes(this.course.id);
+                return status;
+            },
+
+            getUserInfo(){
+                const user = (this.user.me) ? this.user.me : this.user;
+
+                this.paystackkey = "pk_test_b52d30d2d1d47f54ca33ddf4f987ff6bde510e93";
+                this.email = user.email;
+                this.userId = user.id;
+            },
+
+            async callback(response) {
+                const userInfo = {
+                    email: this.email, 
+                    amount: this.course.price * 100,
+                    reference: response.reference,
+                    course: this.course.id,
+                    user: this.userId
+                }
+
+                const doc = await this.$axios.$post(`/payments`, userInfo);
+
+                if(doc.status == "success"){
+                    this.$toast.success("Course purchased successfully.", {
+                        icon : 'check'
+                    });
+
+                    this.$router.push({ name: "user-courses" })
+                }
+            },
+
+            close: function(){
+                this.$swal.fire({
+                    title: 'Transaction Cancelled!',
+                    text: "You've cancelled the transaction by closing the payment checkout!",
+                    type: 'warning',
+                    confirmButtonText: 'Okay!'
+
+                }).then((result) => {
+                    if (result.value) {
+                        
+                    }
+                })
             },
         }
     }
