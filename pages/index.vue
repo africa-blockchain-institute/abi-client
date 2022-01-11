@@ -251,7 +251,7 @@
             </div>
         </div>
 
-        <div class="events">
+        <div class="events" v-if="events.length > 0">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 events__head">

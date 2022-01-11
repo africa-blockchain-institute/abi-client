@@ -10,12 +10,12 @@
             </div>
         </div>
 
-        <div class="payments bg-danger">
+        <div class="payments">
             <div class="container">
                 <div class="col-12">
                     <div class="card shadow">
                         <div  class="table-responsive">
-                            <table class="table table-striped">
+                            <table class="table">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
@@ -25,24 +25,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Blockchain Developer Course</td>
-                                        <td>23/12/2021</td>
-                                        <td>$210.00</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Enterprise Developer Course</td>
-                                        <td>23/10/2021</td>
-                                        <td>$320.00</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Blockchain Developer Course</td>
-                                        <td>13/12/2021</td>
-                                        <td>$70.00</td>
-                                    </tr>
+                                    <tr v-for="(payment, index) in payments" :key="index">
+                                        <th scope="row">{{ index+1 }}</th>
+                                        <td>{{ payment.course.title }}</td>
+                                        <td> {{ payment.createdAt | formatDateUTC }} </td>
+                                        <td>{{ payment.amount | moneyFormat }} </td>
+                                    </tr> 
                                 </tbody>
                             </table>
                         </div>
@@ -74,6 +62,17 @@
             return{
                 payments: {},
             }
+        },
+
+        created(){
+            this.getUserPayments();
+        },
+
+        methods:{
+            async getUserPayments(){
+                let doc = await this.$axios.$get(`/users/payments`);
+                this.payments = doc.data;
+            },
         }
     }
 </script>

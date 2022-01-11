@@ -2,7 +2,7 @@
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <nuxt-link to="/" class="navbar-brand header__logo">
+                <nuxt-link to="/user/courses" class="navbar-brand header__logo">
                     <img src="/logo.png" alt="Africa blockchain institute Logo">
                 </nuxt-link>
 
@@ -66,7 +66,7 @@
 
         methods:{
             logout(){
-
+                this.$auth.logout();
             }
         }
     }

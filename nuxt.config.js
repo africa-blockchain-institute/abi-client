@@ -1,3 +1,5 @@
+import redirectSSL from 'redirect-ssl'
+
 export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
@@ -11,7 +13,7 @@ export default {
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 			{ rel:"preconnect", href: "https://fonts.gstatic.com"},
-			{ rel:'stylesheet', href: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" },
+			{ rel:'stylesheet', href: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" },
 			{ rel:"stylesheet", href: "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;0,800;1,300&display=swap"},
 				
 		],
@@ -19,7 +21,7 @@ export default {
 			{ src: "https://code.jquery.com/jquery-3.3.1.slim.min.js", },
 			{ src: "https://kit.fontawesome.com/24b54c8fdd.js", type: 'text/javascript' },
 			{ src: "//code.tidio.co/bvlgrr2nu3l3g6zzvkejcdavzcyseijl.js", type: 'text/javascript' },
-			{ src: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js", }
+			{ src: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" }
 		]
 	},
 
@@ -140,4 +142,10 @@ export default {
         duration: '5000',
         iconPack: 'fontawesome'
     },
+
+	serverMiddleware: [
+        redirectSSL.create({
+            enabled: process.env.NODE_ENV === 'production'
+        }),
+    ],
 }
