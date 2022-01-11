@@ -165,9 +165,11 @@
                     <div class="col insights__list" v-for="(insight, index) in insights" :key="index">
                         <a :href="insight.link" target="blank">
                             <div class="card h-100">
+                                <img :src="insight.image" :alt="insight.title" class="img-fluid card-img-top">
                                 <div class="card-body">
                                     <h5 class="insights__list--title">{{ insight.title }}</h5>
-									<p class="insights__list--text">Click to read post on our Medium Channel.</p>
+									<!-- <p class="insights__list--text">Click to read post on our Medium Channel.</p> -->
+									<p class="insights__list--text">{{ insight.description }}</p>
                                 </div>
                             </div>
                         </a>
