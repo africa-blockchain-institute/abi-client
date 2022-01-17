@@ -51,6 +51,7 @@ export default {
         { src: '~/plugins/filters.js' },
 		{ src: '~/plugins/vue-paginate.js' },
 		{ src: '~/plugins/vue-paystack.js',  ssr: false },
+		{ src: '~/plugins/vue-flutterwave.js',  ssr: false },
         { src: "~/plugins/vue-player.js", ssr: false },
         { src: "~/plugins/vue-quill-editor.js", ssr: false },
         { src: "~/plugins/froala.js", ssr: false },
@@ -148,4 +149,9 @@ export default {
             enabled: process.env.NODE_ENV === 'production'
         }),
     ],
+
+	publicRuntimeConfig: {
+		appUrl: process.env.NODE_ENV === 'production' ? 'https://africablockchain.institute' : 'http://127.0.0.1:3000',
+		flwPublicKey: "FLWPUBK_TEST-4b40a5f0241d96e8fe02d9ca468660ca-X"
+	}
 }

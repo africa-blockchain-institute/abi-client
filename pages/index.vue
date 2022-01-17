@@ -153,7 +153,7 @@
 			</div>
 		</div>
 
-        <div class="insights">
+        <div class="insights" v-if="false">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-7 insights__head">
@@ -202,7 +202,7 @@
 				<div class="row justify-content-center">
                     <div class="col-md-8 skills__head">
                         <h2 class="skills__head--title">Skills Companies Need Most in {{ new Date().getFullYear() }}</h2>
-                        <p class="skills__head--sub">ABI, 2021</p>
+                        <p class="skills__head--sub">ABI, {{ new Date().getFullYear() }} </p>
                     </div>
                 </div>
 			</div>

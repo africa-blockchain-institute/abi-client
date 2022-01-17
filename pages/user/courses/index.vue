@@ -36,7 +36,7 @@
                     </div>
                 </div>
 
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 g-3 g-xxl-5" v-else>
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3 g-3 g-xxl-5" v-if="loading">
                     <div class="col courses__list mb-2 mb-md-3">
                         <div class="card" aria-hidden="true">
                             <svg> <rect width="100%" height="100%" fill="#868e96"></rect> </svg>
@@ -81,6 +81,12 @@
                     </div>
                 </div>
 
+                <div class="row" v-if="courses.length == 0 && !loading">
+                    <div class="col-12 justify-content-center text-center courses__empty">
+                        <img src="~/assets/images/empty.png" alt="" class="courses__empty--img">
+                        <h1 class="courses__empty--title">No course enrolled</h1>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -110,7 +116,8 @@
             return{
                 courses: [],
                 lessons: [],
-                count: 0
+                count: 0,
+                loading: true
             }
         },
 
@@ -140,6 +147,7 @@
                 let docs = await this.$axios.$get(`/users/${user.id}`)
                 this.courses = docs.data.courses;
                 this.lessons = docs.data.lessons;
+                this.loading = false;
             },
 
             getLessonCount(course_id, lessons_count){
@@ -220,6 +228,19 @@
                     font-size: $font-sm;
                     font-weight: bold;
                     color: $secondary;
+                }
+            }
+
+            &__empty{
+                &--img{
+                    width: 7rem;
+                    display: inline-block;
+                    margin-bottom: 2rem;
+                }
+
+                &--title{
+                    font-weight: bold;
+                    font-size: $font-hd;
                 }
             }
         }

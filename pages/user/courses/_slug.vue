@@ -124,11 +124,11 @@
 
         head(){
             return{
-                title: 'User Courses -  Africa Blockchain Institute',
+                title: `${this.course.title} -  Africa Blockchain Institute`,
                 meta: [
                     {
-                        name: 'User Courses',
-                        content: 'User Courses'
+                        name: `${this.course.title}`,
+                        content: `${this.course.title}`
                     }
                 ],
             }
@@ -149,7 +149,7 @@
                     identifier: this.$route.path,
                 },
 
-                course: [],
+                course: {},
                 user_lessons: [],
                 lesson_id: "",
 
@@ -177,6 +177,7 @@
         },
 
         created(){
+            this.checkUser();
             this.getCourse();
             this.getLessons();
         },
@@ -186,6 +187,16 @@
         },
 
         methods: {
+            async checkUser(){
+                const user = (this.user.me) ? this.user.me : this.user;
+
+                let status = await this.$axios.$post(`/users/courses/check-user`, { user: user.id, slug: `${this.$route.params.slug}` });
+                
+                if(status.data == false){
+                    this.$router.push({ name: "user-courses" });
+                }
+            },
+
             async getCourse(){
                 let doc = await this.$axios.$get(`/courses/${this.$route.params.slug}`);
                 this.course = doc.data;

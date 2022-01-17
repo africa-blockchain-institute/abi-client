@@ -67,6 +67,8 @@
         methods:{
             logout(){
                 this.$auth.logout();
+                this.$router.push({ path: "/" });
+                // location.reload();
             }
         }
     }

@@ -6,6 +6,8 @@
 
 <script>
     export default {
+        layout: 'admin',
+        
         head(){
             return{
                 title: 'Admin Dashboard -  Africa Blockchain Institute',

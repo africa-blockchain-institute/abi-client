@@ -18,18 +18,21 @@
                         <li class="nav-item">
                             <nuxt-link class="nav-link" to="/faculty" nuxt-link-active exact>Faculty</nuxt-link>
                         </li>
-                        <!-- <li class="nav-item">
+                        <li class="nav-item">
                             <nuxt-link class="nav-link" to="/courses" nuxt-link-active>Courses</nuxt-link>
-                        </li> -->
+                        </li>
                         <li class="nav-item">
                             <nuxt-link class="nav-link" to="/enterprise" nuxt-link-active exact>Enterprise</nuxt-link>
                         </li>
                         <li class="nav-item">
                             <nuxt-link class="nav-link" to="/contact-us" nuxt-link-active exact>Contact Us</nuxt-link>
                         </li>
-                        <!-- <li class="nav-item">
+                        <li class="nav-item" v-if="$auth.loggedIn">
+                            <nuxt-link class="nav-link btn" to="/user/courses">Dashboard</nuxt-link>
+                        </li>
+                        <li class="nav-item" v-else>
                             <nuxt-link class="nav-link btn" to="/auth/login">Login</nuxt-link>
-                        </li> -->
+                        </li>
                     </ul>
                 </div>
             </div>
