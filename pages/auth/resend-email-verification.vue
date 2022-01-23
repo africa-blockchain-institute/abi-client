@@ -25,7 +25,7 @@
         
         <div class="alt">
             <div class="col-12">
-                <p>Already verified? <nuxt-link to="/auth/login">Login</nuxt-link> </p>
+                <p>Already verified? <nuxt-link to="/login">Login</nuxt-link> </p>
             </div>
         </div>
     </div>

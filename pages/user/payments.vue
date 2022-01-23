@@ -20,16 +20,18 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col" class="text-nowrap">Course Title</th>
-                                        <th scope="col" class="text-nowrap">Date</th>
+                                        <th scope="col" class="text-nowrap">Reference</th>
                                         <th scope="col" class="text-nowrap">Amount Paid</th>
+                                        <th scope="col" class="text-nowrap">Date</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr v-for="(payment, index) in payments" :key="index">
                                         <th scope="row">{{ index+1 }}</th>
                                         <td>{{ payment.course.title }}</td>
-                                        <td> {{ payment.createdAt | formatDateUTC }} </td>
+                                        <td>{{ payment.tx_ref }}</td>
                                         <td>{{ payment.amount | moneyFormat }} </td>
+                                        <td> {{ payment.createdAt | formatDateUTC }} </td>
                                     </tr> 
                                 </tbody>
                             </table>

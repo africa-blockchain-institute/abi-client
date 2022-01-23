@@ -13,6 +13,7 @@
                                 <img class="avatar-img rounded-circle" :src="user.image" :alt="user.name">
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="navbarDropdown">
+                                <li><nuxt-link class="dropdown-item" to="/courses">All Courses</nuxt-link></li>
                                 <li><nuxt-link class="dropdown-item" to="/user/courses">My Courses</nuxt-link></li>
                                 <li><nuxt-link class="dropdown-item" to="/user/profile">Profile</nuxt-link></li>
                                 <li><nuxt-link class="dropdown-item" to="/user/payments">Payments</nuxt-link></li>
@@ -67,7 +68,7 @@
         methods:{
             logout(){
                 this.$auth.logout();
-                this.$router.push({ path: "/auth/login" });
+                this.$router.push({ path: "/login" });
             }
         }
     }

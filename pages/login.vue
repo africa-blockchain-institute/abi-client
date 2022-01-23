@@ -92,6 +92,10 @@
             }
         },
 
+        mounted(){
+            this.sendUserToCourse();
+        },
+
         methods:{
             async submit(){
                 this.loading = true
@@ -157,16 +161,14 @@
                 this.loading = true;
 
                 try {
-                 
                     const res = await this.$auth.loginWith('google');
                     this.loading = false;
 
-                    this.$toast.success('Successfully logged in.', {
-                        icon : 'check',
-                    });
-                    
-                    this.$router.push({ path: "/user/courses" });
-                   
+                    if(this.$auth.strategy == "google"){
+                        this.$toast.success('Successfully logged in.', {
+                            icon : 'check',
+                        });
+                    }
                 } catch (err) {
                     console.log(err);   
                 }
@@ -183,6 +185,21 @@
                     this.icon = "fas fa-eye"
                 }
             },
+
+            sendUserToCourse(){
+                if(this.$auth.loggedIn){
+
+                    this.$toast.success('Successfully logged in.', {
+                        icon : 'check',
+                    });
+
+                    if(this.$auth.user.role == "user"){
+                        this.$router.push({ path: "/user/courses" });
+                    }else{
+                        this.$router.push({ path: "/admin/courses" });
+                    }
+                }
+            }
         }
     }
 </script>

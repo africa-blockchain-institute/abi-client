@@ -32,7 +32,7 @@
         
         <div class="alt">
             <div class="col-12">
-                <p>Remembered your password? <nuxt-link to="/auth/login">Login</nuxt-link> </p>
+                <p>Remembered your password? <nuxt-link to="/login">Login</nuxt-link> </p>
             </div>
         </div>
     </div>

@@ -114,7 +114,6 @@
 
                 this.$toast.success('Successfully logged out', {
                     icon : 'check',
-                    duration: 5000,
                 })
             }
         }

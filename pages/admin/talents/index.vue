@@ -31,7 +31,7 @@
                                         <td>{{ doc.createdAt | formatDate }} </td>
                                         <td class="">
                                             <nuxt-link :to="{ name: 'admin-talents-id', params:{ id: doc._id} }" class="btn btn-primary">
-                                                <span class="fas fa-edit"></span>
+                                                <span class="fas fa-eye"></span>
                                             </nuxt-link>
                                         </td>
                                     </tr>

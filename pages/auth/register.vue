@@ -58,7 +58,7 @@
 
         <div class="alt">
             <div class="col-12">
-                <p>Already have an account? <nuxt-link to="/auth/login">login</nuxt-link> </p>
+                <p>Already have an account? <nuxt-link to="/login">login</nuxt-link> </p>
             </div>
         </div>
     </div>

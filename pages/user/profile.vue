@@ -194,7 +194,6 @@
 
                 .avatar{
                     position: relative;
-                    background: red;
                     width: 7rem;
                     height: 7rem;
                     border-radius: 50%;

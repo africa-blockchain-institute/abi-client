@@ -113,7 +113,7 @@
                                     Make Payment
                                 </button>
                            </client-only>
-                           <nuxt-link to="/auth/login" class="enrol__head--enrol btn" v-else>Purchase Course</nuxt-link>
+                           <nuxt-link to="/login" class="enrol__head--enrol btn" v-else>Purchase Course</nuxt-link>
                        </div>
                       
                        <div class="enrol__body">

@@ -31,7 +31,7 @@
                             <nuxt-link class="nav-link btn" to="/user/courses">Dashboard</nuxt-link>
                         </li>
                         <li class="nav-item" v-else>
-                            <nuxt-link class="nav-link btn" to="/auth/login">Login</nuxt-link>
+                            <nuxt-link class="nav-link btn" to="/login">Login</nuxt-link>
                         </li>
                     </ul>
                 </div>

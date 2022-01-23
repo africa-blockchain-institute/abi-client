@@ -13,28 +13,26 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Job Title</th>
-                                        <th scope="col">Company Name</th>
-                                        <th scope="col">Submitted On</th>
-                                        <th scope="col">Actions</th>
+                                        <th scope="col" class="text-nowrap">User Email</th>
+                                        <th scope="col" class="text-nowrap">Reference</th>
+                                        <th scope="col" class="text-nowrap">Amount Paid</th>
+                                        <th scope="col" class="text-nowrap">Date</th>
+                                        <th scope="col" class="text-nowrap">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="wrapper__table--row" v-for="(doc, index) in docs" :key="doc.id">
-                                        <th>{{ index + 1 }}</th>
-                                        <td>{{ doc.name }} </td>
-                                        <td>{{ doc.email }} </td>
-                                        <td>{{ doc.job_title }}</td>
-                                        <td>{{ doc.company_name }} </td>
-                                        <td>{{ doc.createdAt | formatDate }} </td>
+                                    <tr v-for="(payment, index) in docs" :key="index">
+                                        <th scope="row">{{ index+1 }}</th>
+                                        <td>{{ payment.email }}</td>
+                                        <td>{{ payment.tx_ref }}</td>
+                                        <td> {{ payment.createdAt | formatDateUTC }} </td>
+                                        <td>{{ payment.amount | moneyFormat }} </td>
                                         <td class="">
-                                            <nuxt-link :to="{ name: 'admin-consultations-id', params:{ id: doc._id} }" class="btn btn-primary">
+                                            <nuxt-link :to="{ name: 'admin-payments-id', params:{ id: payment._id} }" class="btn btn-primary">
                                                 <span class="fas fa-eye"></span>
                                             </nuxt-link>
                                         </td>
-                                    </tr>
+                                    </tr> 
                                 </tbody>
                             </table>
                         </div>
@@ -43,7 +41,7 @@
                     <div class="col-12" v-else>
                         <div class="wrapper__empty text-center">
                             <img src="~/assets/images/dashboard/empty.png" alt="Empty state" class="wrapper__empty--img">
-                            <h3 class="wrapper__empty--title">No consultation Records</h3>
+                            <h3 class="wrapper__empty--title">No Payment Records</h3>
                         </div>
                     </div>
                 </div>
@@ -89,7 +87,7 @@
 
         methods:{
             async getDocs(){
-                let docs = await this.$axios.$get(`/consultations?page=${this.page}&limit=${this.perPage}`)
+                let docs = await this.$axios.$get(`/payments?page=${this.page}&limit=${this.perPage}`)
                 this.records = docs.records
                 this.docs = docs.data;
             },

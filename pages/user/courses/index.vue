@@ -151,7 +151,7 @@
             },
 
             getLessonCount(course_id, lessons_count){
-                let lessonPercentCompleted;
+                let lessonPercentCompleted = 0;
 
                 this.lessons.forEach(el => {
                     const [curr] = Object.keys(el);

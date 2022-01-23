@@ -8,14 +8,14 @@
         <div class="proceed">
             <div class="row">
                 <div class="col text-center">
-                    <nuxt-link to="/auth/login" class="btn proceed__btn">Login</nuxt-link>
+                    <nuxt-link to="/login" class="btn proceed__btn">Login</nuxt-link>
                 </div>
             </div>
         </div>
         
         <div class="alt">
             <div class="col-12">
-                <p>Remembered your password? <nuxt-link to="/auth/login">Login</nuxt-link> </p>
+                <p>Remembered your password? <nuxt-link to="/login">Login</nuxt-link> </p>
             </div>
         </div>
     </div>
