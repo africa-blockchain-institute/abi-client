@@ -271,7 +271,7 @@
                         <div class="tab-pane fade" id="pills-databases">
                             <div class="row row-cols-3 row-cols-md-6 justify-content-center">
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/databases/mongodb.png" alt="mongodb">
+                                    <img src="~/assets/images/enterprise/icons/databases/mongodbnosql.png" alt="mongodb">
                                 </div>
                                 <div class="col tools__content--sect">
                                     <img src="~/assets/images/enterprise/icons/databases/ipfs.png" alt="ipfs">
