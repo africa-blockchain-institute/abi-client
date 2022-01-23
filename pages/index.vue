@@ -148,6 +148,9 @@
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/bbic.jpg" alt="black women">
 						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/brighter.jpeg" alt="black women">
+						</div>
 					</div>
 				</div>
 			</div>
