@@ -45,14 +45,14 @@
             </div>
 
             <div class="row">
-                <a href="/auth/google" class="btn">
+                <button @click="loginWithGoogle()" class="btn" type="button">
                     <img src="~/assets/images/auth/google.png" alt="ABI google auth login">
                     Continue with Google 
-                </a>
-                <a href="/auth/facebook" class="btn">
+                </button>
+                <!-- <a href="/auth/facebook" class="btn">
                     <img src="~/assets/images/auth/facebook.png" alt="ABI facebook auth login">
                     Continue with Facebook 
-                </a>
+                </a> -->
             </div>
         </div>
 
@@ -130,6 +130,26 @@
                 } else {
                     x.type = "password";
                     this.icon = "fas fa-eye"
+                }
+            },
+
+            async loginWithGoogle(){
+                this.loading = true;
+
+                try {
+                    await this.$auth.loginWith('google');
+                    this.loading = false;
+
+                    if(this.loading == false){
+                        this.$toast.success('Successfully logged in.', {
+                            icon : 'check',
+                        });
+                    }
+
+                    this.$router.push({ path: "/user/courses" });
+                   
+                } catch (err) {
+                    console.log(err);   
                 }
             },
         }

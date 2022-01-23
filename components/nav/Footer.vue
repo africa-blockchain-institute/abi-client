@@ -11,7 +11,7 @@
                             <span class="fas fa-envelope" v-if="!loading"></span>
                             <span class="fas fa-spinner fa-spin" v-else></span>
                         </button>
-                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                        <div class="invalid-feedback" v-if="mcErr"> {{ mcErr }} </div>
                     </div>
 
                     <div class="footer__sect--social">
@@ -60,7 +60,9 @@
 
                 form:{
                     email: ""
-                }
+                },
+
+                mcErr: ""
             }
         },
 
@@ -90,10 +92,19 @@
                     this.loading = false;
 
                 } catch (err) {
-                    console.log(err)
+                    console.log(err);
+                    this.mcErr = "Failed to subscribe. Please try again later."
                     this.form = "";
                     this.loading = false;
+                    
+                    this.timeOut();
                 }
+            },
+
+            timeOut(){
+                return setTimeout( ()=>{
+                    this.mcErr = ""
+                }, 5000)
             }
         }
     }

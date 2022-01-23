@@ -44,14 +44,14 @@
             </div>
 
             <div class="row">
-                <button @click="loginWithGoogle()" class="btn">
+                <button @click="loginWithGoogle()" class="btn" type="button">
                     <img src="~/assets/images/auth/google.png" alt="ABI google auth login">
                     Continue with Google 
                 </button>
-                <button @click="loginWithFacebook()" class="btn">
+                <!-- <button @click="loginWithFacebook()" class="btn">
                     <img src="~/assets/images/auth/facebook.png" alt="ABI facebook auth login">
                     Continue with Facebook 
-                </button>
+                </button> -->
             </div>
         </div>
 
@@ -113,7 +113,7 @@
                     let res = await this.$auth.loginWith('local', { data: this.form });
                     this.loading = false;
                     
-                    this.$auth.setUser(res.data.data.user);
+                    // this.$auth.setUser(res.data.data.user);
 
                     this.$toast.success('Successfully logged in', {
                         icon : 'check',
@@ -154,30 +154,22 @@
             },
 
             async loginWithGoogle(){
+                this.loading = true;
 
-                const res = await this.$auth.loginWith('google');
+                try {
+                 
+                    const res = await this.$auth.loginWith('google');
+                    this.loading = false;
 
-                console.log(res);
-
-                throw "";
-                this.$auth.setUser(res.data.data.user);
-
-                let destination;
-                
-                if(user.data.role == 'user'){
-                    destination = '/user/courses'
-                }else if( user.data.role == 'instructor'){
-                    destination = '/instructor/courses'
-                }else if(user.data.role == 'admin' ){
-                    destination = '/admin/courses'
+                    this.$toast.success('Successfully logged in.', {
+                        icon : 'check',
+                    });
+                    
+                    this.$router.push({ path: "/user/courses" });
+                   
+                } catch (err) {
+                    console.log(err);   
                 }
-
-                this.$toast.success('Successfully logged in', {
-                    icon : 'check',
-                })
-
-                this.$router.push({ path: destination });
-            
             },
 
             showPassword(){

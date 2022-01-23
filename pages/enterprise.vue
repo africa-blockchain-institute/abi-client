@@ -220,92 +220,98 @@
                             <a class="nav-link tools__nav--link" id="pills-databases-tab" data-bs-toggle="pill" data-bs-target="#pills-databases" type="button" role="tab">Databases</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link tools__nav--link" id="pills-frontend-tab" data-bs-toggle="pill" data-bs-target="#pills-frontend" type="button" role="tab">Frontend Technologies</a>
+                            <a class="nav-link tools__nav--link" id="pills-frontend-tab" data-bs-toggle="pill" data-bs-target="#pills-cloud" type="button" role="tab">Cloud Platforms</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link tools__nav--link" id="pills-frontend-tab" data-bs-toggle="pill" data-bs-target="#pills-cloud" type="button" role="tab">Cloud Platforms</a>
+                            <a class="nav-link tools__nav--link" id="pills-others-tab" data-bs-toggle="pill" data-bs-target="#pills-others" type="button" role="tab">Other Tools</a>
                         </li>
                     </ul>
                     <div class="tab-content tools__content justify-content-center" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-frameworks">
                             <div class="row row-cols-3 row-cols-md-4 row-cols-lg-6 justify-content-center">
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/frameworks/ethereum.png" alt="Ethereum">
+                                    <img src="~/assets/images/enterprise/icons/frameworks/angular.png" alt="angular">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/frameworks/bitcoin.png" alt="Bitcoin">
+                                    <img src="~/assets/images/enterprise/icons/frameworks/react.png" alt="react">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/frameworks/polkadot.png" alt="polkadot">
+                                    <img src="~/assets/images/enterprise/icons/frameworks/truffle.png" alt="truffle">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/frameworks/quorum.png" alt="Quorum">
-                                </div>
-                                <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/frameworks/multichain.png" alt="multichain">
-                                </div>
-                                <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/frameworks/hyper_ledger.png" alt="Hyper Ledger">
+                                    <img src="~/assets/images/enterprise/icons/frameworks/vue.png" alt="vue">
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="pills-programming" role="tabpanel" aria-labelledby="pills-programming-tab">
+                        <div class="tab-pane fade" id="pills-programming">
                             <div class="row row-cols-3 row-cols-md-6 justify-content-center">
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/programming/asp_net.png" alt="ASP Net">
+                                    <img src="~/assets/images/enterprise/icons/programming/solidity.png" alt="javascript">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/programming/c.png" alt="c language">
+                                    <img src="~/assets/images/enterprise/icons/programming/javascript.png" alt="javascript">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/programming/c++.png" alt="c++ language">
+                                    <img src="~/assets/images/enterprise/icons/programming/java.png" alt="java">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/programming/php.png" alt="php">
+                                    <img src="~/assets/images/enterprise/icons/programming/c++.png" alt="c++">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/programming/java.png" alt="java language">
+                                    <img src="~/assets/images/enterprise/icons/programming/rust.png" alt="rust">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/programming/python.png" alt="python language">
+                                    <img src="~/assets/images/enterprise/icons/programming/go.png" alt="go">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/programming/nodejs.png" alt="nodejs language">
+                                    <img src="~/assets/images/enterprise/icons/programming/python.png" alt="python">
                                 </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="pills-databases">
                             <div class="row row-cols-3 row-cols-md-6 justify-content-center">
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/databases/couchDB.png" alt="couchDB">
+                                    <img src="~/assets/images/enterprise/icons/databases/mongodb.png" alt="mongodb">
                                 </div>
                                 <div class="col tools__content--sect">
                                     <img src="~/assets/images/enterprise/icons/databases/ipfs.png" alt="ipfs">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/databases/mongoDB.png" alt="mongoDB">
+                                    <img src="~/assets/images/enterprise/icons/databases/postgres.png" alt="postgres">
+                                </div>
+                                <div class="col tools__content--sect">
+                                    <img src="~/assets/images/enterprise/icons/databases/mysql.png" alt="mysql">
+                                </div>
+                                <div class="col tools__content--sect">
+                                    <img src="~/assets/images/enterprise/icons/databases/filecoin.png" alt="filecoin">
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="pills-frontend">
+                        <div class="tab-pane fade" id="pills-others">
                             <div class="row row-cols-3 row-cols-md-6 justify-content-center">
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/frontend/wms.png" alt="wms">
+                                    <img src="~/assets/images/enterprise/icons/others/wms.png" alt="wms">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/frontend/apache.png" alt="apache">
+                                    <img src="~/assets/images/enterprise/icons/others/open-zeppelin.png" alt="open-zeppelin">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/frontend/kafka.png" alt="kafka">
+                                    <img src="~/assets/images/enterprise/icons/others/clu.png" alt="clu">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/frontend/metamask.png" alt="metamask">
+                                    <img src="~/assets/images/enterprise/icons/others/embark.png" alt="embark">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/frontend/docker.png" alt="docker">
+                                    <img src="~/assets/images/enterprise/icons/others/hardhat.png" alt="hardhat">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/frontend/metamask.png" alt="metamask">
+                                    <img src="~/assets/images/enterprise/icons/others/ganache.png" alt="ganache">
+                                </div>
+                                <div class="col tools__content--sect">
+                                    <img src="~/assets/images/enterprise/icons/others/metamask.png" alt="metamask">
+                                </div>
+                                <div class="col tools__content--sect">
+                                    <img src="~/assets/images/enterprise/icons/others/sdk.png" alt="sdk">
                                 </div>
                             </div>
                         </div>
@@ -315,13 +321,7 @@
                                     <img src="~/assets/images/enterprise/icons/cloud/aws.png" alt="aws">
                                 </div>
                                 <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/cloud/kaleido.png" alt="kaleido">
-                                </div>
-                                <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/cloud/eth_bass.png" alt="aws">
-                                </div>
-                                <div class="col tools__content--sect">
-                                    <img src="~/assets/images/enterprise/icons/cloud/ibm.png" alt="ibm">
+                                    <img src="~/assets/images/enterprise/icons/cloud/azure.png" alt="azure">
                                 </div>
                             </div>
                         </div>

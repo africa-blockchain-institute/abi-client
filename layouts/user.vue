@@ -10,7 +10,7 @@
                     <ul class="nav nav-tabs border-0">
                         <li class="nav-item dropdown">
                             <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <span class="avatar">OA</span>
+                                <img class="avatar-img rounded-circle" :src="user.image" :alt="user.name">
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="navbarDropdown">
                                 <li><nuxt-link class="dropdown-item" to="/user/courses">My Courses</nuxt-link></li>
@@ -67,8 +67,7 @@
         methods:{
             logout(){
                 this.$auth.logout();
-                this.$router.push({ path: "/" });
-                // location.reload();
+                this.$router.push({ path: "/auth/login" });
             }
         }
     }
@@ -108,14 +107,16 @@
 
                 &.dropdown{
                     .nav-link{
-                        background: $primary;
+                        width: 3.5rem;
+                        height: 3.5rem;
                         border-radius: 50%;
-                        padding: .6rem .6rem;
+                        padding: .5rem;
                         border: 1px solid white;
+                        text-align: center;
 
-                        .avatar{
-                            font-size: 1.2rem;
-                            color: white;
+                        .avatar-img{
+                            width: 2.5rem;
+                            height: 2.5rem;
                         }
                     }
 
@@ -135,7 +136,7 @@
         .header{
             &__logo{
                 img{
-                    width: 10rem;
+                    width: 9rem;
                 }
             }
 

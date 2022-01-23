@@ -144,8 +144,8 @@
                 tab: "collapseOne",
 
                 pageConfig: {
-                    title: 'introduction to blockchain',
-                    slug: 'enterprise-for-consultants',
+                    title: '',
+                    slug: '',
                     identifier: this.$route.path,
                 },
 
@@ -205,6 +205,9 @@
                 this.playerOptions.sources[0].src = doc.data.lessons[0].url;
                 this.playerOptions.poster = doc.data.image;
                 this.lesson_id = doc.data.lessons[0].id;
+
+                this.pageConfig.title = this.course.title;
+                this.pageConfig.slug = this.course.slug;
             },
 
             async getLessons(){

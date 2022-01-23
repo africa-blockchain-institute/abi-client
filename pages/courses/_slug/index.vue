@@ -100,7 +100,6 @@
 
                 <div class="col-md-4 col-lg-4 order-1 order-md-2 wrapper__enrol">
                    <div class="card border-0 shadow sticky-lg-top">
-                        
                         <div class="enrol__head" v-if="checkUserHasCourse">
                            <h2 class="enrol__head--price"> {{ course.price | moneyFormat }} </h2>
                            <nuxt-link :to="{ name: 'user-courses-slug', params: { slug: course.slug }}" class="enrol__head--enrol btn">Continue to Course</nuxt-link>
@@ -197,7 +196,7 @@
                         email: "",
                     } ,
                     customizations: {
-                        title: 'Africa BLockchain Institute',
+                        title: 'Africa Blockchain Institute',
                         description: "",
                         logo: 'https://abi-api-assets.s3.us-east-2.amazonaws.com/general/logo.png'
                     },
@@ -213,6 +212,7 @@
         },
 
         created(){
+            this.checkUser();
             this.getCourse();
             this.getUserInfo();
         },

@@ -72,7 +72,7 @@ export default {
 		'@nuxtjs/axios',
 		// https://go.nuxtjs.dev/pwa
 		'@nuxtjs/pwa',
-		'@nuxtjs/auth',
+		'@nuxtjs/auth-next',
         '@nuxtjs/toast',
 		'@nuxtjs/style-resources',
 		[ 
@@ -91,13 +91,20 @@ export default {
 
 	auth:{
 		strategies: {
-            local: {
-                endpoints: {
-                    login: { url: '/auth/login', method: 'post', propertyName: 'token' },
-                    user: { url: '/users/me', method: 'get', propertyName: 'data' },
-                    logout: { url: '/auth/logout', method: 'post' },
-                },
-            },
+			local: {
+				token: {
+					property: 'token',
+					global: true,
+				},
+				user: {
+					property: 'data.me',
+				},
+				endpoints: {
+					login: { url: '/auth/login', method: 'post' },
+					logout: { url: '/auth/logout', method: 'post' },
+					user: { url: '/users/me', method: 'get' }
+				}
+			},
 
 			facebook: {
 				endpoints: {
@@ -112,14 +119,19 @@ export default {
 				codeChallengeMethod: '',
 				responseType: 'code',
 				endpoints: {
-					login: { url: '/auth/google/callback', method: 'post', propertyName: 'token' },
-                    user: { url: '/users/me', method: 'get', propertyName: 'data' },
-                    logout: { url: '/auth/logout', method: 'post' },
+					token: 'http://127.0.0.1:8080/api/v1/auth/google-raw',
+					userInfo: 'http://127.0.0.1:8080/api/v1/users/me',
 				},
+				user: {
+					// autoFetch: false
+					property: 'data.me'
+				},
+				token: {
+					property: 'token',
+					global: true
+				}
 			},
         },
-    
-        redirect: false
 	},
 
 	// PWA module configuration: https://go.nuxtjs.dev/pwa

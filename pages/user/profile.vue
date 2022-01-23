@@ -16,7 +16,16 @@
                     <div class="row">
                         <div class="col-md-2 profile__avatar">
                             <div class="avatar">
-                                <span>OS</span>
+                                 <a href="#" class="mx-auto">
+                                    <span class="fas fa-camera" @click="$refs.image.click()" ></span>
+                                    <input type="file" ref="image" @change="uploadImage" class="d-none">
+                                    <img 
+                                        :alt="form.name"
+                                        :src="form.image"
+                                        @click="$refs.image.click()"
+                                        class="rounded-circle avatar-img">
+                                </a>
+                                <small class="text-danger" v-if="imageErr">{{ imageErr }} </small>
                             </div>
                         </div>
                         <div class="col-md-9 profile__form">
@@ -91,7 +100,10 @@
                     phone: "",
                     country: "",
                     profession: "",
-                }
+                    image: "",
+                },
+
+                imageErr: ''
             }
         },
 
@@ -117,21 +129,43 @@
                 this.loading = true;
 
                 try {
-                    const current_user = (this.user.me) ? this.user.me : this.user;
 
-                    await this.$axios.$patch(`/users/${current_user.id}`, this.form)
+                    const formData = new FormData();
+
+                    formData.append('image', this.form.image)
+                    formData.append('name', this.form.name)
+                    formData.append('phone', this.form.phone)
+                    formData.append('country', this.form.country)
+                    formData.append('profession', this.form.profession)
+
+                    await this.$axios.$patch(`/users/update-me`, formData)
                     this.loading = false;
 
                     this.$toast.success("User profile updated successfully", {
                         icon : 'check'
                     });
 
+                    this.getUser();
                 } catch (err) {
                     this.loading = false;
                 }
             },
 
+             uploadImage(e){
+                const image = this.$refs.image.files[0];                
+                this.imageErr = ''
 
+                if(image.type.startsWith('image')){
+                    if(image.size <= 1000000){
+                        this.form.image = image
+                        this.status = false
+                    }else {
+                        this.imageErr = "Image Size Must be less than 1mb"
+                    }
+                }else {
+                    this.imageErr = "File Must be of an Image format (PNG, JPG, JPEG)"
+                }
+            },
         }
     }
 </script>
@@ -159,19 +193,35 @@
                 margin: 0 auto 2rem;
 
                 .avatar{
-                    background: $primary;
-                    width: 5rem;
-                    height: 5rem;
+                    position: relative;
+                    background: red;
+                    width: 7rem;
+                    height: 7rem;
                     border-radius: 50%;
                     margin: 0 auto;
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    cursor: pointer;
 
-                    span{
-                        font-size: 2rem;
-                        color: white;
-                        font-weight: bold;
+                    &-img{
+                        width: 5rem;
+                        height: 5rem;
+                    }
+
+                    .fas{
+                        position: absolute;
+                        font-size: 1.5rem;
+                        bottom: 1rem;
+                        right: .5rem;
+                        color: $secondary;
+                        transition: all .5s;
+                    }
+
+                    &:hover{
+                        .fas{
+                            bottom: 1.2rem;
+                        }
                     }
                 }
             }
