@@ -6,7 +6,6 @@
                     <div class="col-md-10 col-lg-8 hero__banner">
                         <h1 class="hero__banner--title">AFRICA BLOCKCHAIN <br> INCUBATION PROGRAM </h1>
                         <p class="hero__banner--sub">Egypt | Zimbabwe</p>
-                        <!-- <nuxt-link to="/incubator-program/apply" class="hero__banner--btn btn">Apply Now</nuxt-link> -->
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSefUa4XoY1xOBKiBQYI42rii4LgjBSsylVBapNwZBy0U0kmLA/viewform?usp=sf_link" target="blank" class="hero__banner--btn btn">Apply Now</a>
                     </div>
                 </div>

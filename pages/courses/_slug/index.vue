@@ -20,10 +20,13 @@
                         <div class="tab-pane fade show active" id="pills-overview" role="tabpanel">
                             <div class="row">
                                 <div class="col-12 wrapper__overview">
-                                    <div class="wrapper__video--video"
+                                    <div class="wrapper__video--video">
+                                        <img :src="course.image" :alt="course.title">
+                                    </div>
+                                    <!-- <div class="wrapper__video--video"
                                         :playsinline="playsinline"
                                         v-video-player:myVideoPlayer="playerOptions">
-                                    </div>
+                                    </div> -->
                                 </div>
 
                                 <div class="col-12 wrapper__overview">

@@ -35,9 +35,9 @@
                                             <nuxt-link :to="{ name: 'admin-courses-slug', params:{ slug: doc.slug} }" class="btn btn-primary">
                                                 <span class="fas fa-edit"></span> Edit Course
                                             </nuxt-link>
-                                            <nuxt-link :to="{ name: 'admin-courses-slug-add-preview', params:{ slug: doc.slug} }" class="btn btn-success">
+                                            <!-- <nuxt-link :to="{ name: 'admin-courses-slug-add-preview', params:{ slug: doc.slug} }" class="btn btn-success">
                                                 <span class="fas fa-plus"></span> Course Preview
-                                            </nuxt-link>
+                                            </nuxt-link> -->
                                             <button class="btn btn-danger" @click="deleteDoc(doc._id)">
                                                 <span class="fas fa-trash"></span>
                                             </button>

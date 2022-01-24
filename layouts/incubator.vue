@@ -3,10 +3,9 @@
         <header class="header">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container">
-                    <nuxt-link to="/incubator-program" class="navbar-brand header__logo">
+                    <nuxt-link to="/" class="navbar-brand header__logo">
                         <img src="/logo.png" alt="Africa blockchain institute Logo">
                     </nuxt-link>
-
 
                     <div class=" header__links justify-content-end" id="navbarNav">
                         <ul class="navbar-nav">

@@ -29,7 +29,7 @@
                                         <td>{{ doc.name }}</td>
                                         <td>{{ doc.title }}</td>
                                         <td>{{ doc.category | capitalize }} </td>
-                                        <td>{{ doc.position }} </td>
+                                        <td>{{ doc.position || '-' }} </td>
                                         <td class="">
                                             <nuxt-link :to="{ name: 'admin-teams-id', params:{ id: doc._id} }" class="btn btn-primary">
                                                 <span class="fas fa-edit"></span>

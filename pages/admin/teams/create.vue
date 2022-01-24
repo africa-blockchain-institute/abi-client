@@ -32,7 +32,7 @@
                                     </div>
                                     <div class="col-12 col-md-4">
                                         <label for="position" class="form-label">Team Member Position<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.position" class="form-control form-control-lg" id="position" required>
+                                        <input type="text" v-model.trim="form.position" class="form-control form-control-lg" id="position">
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
