@@ -246,32 +246,9 @@
 
                         this.$router.push({ name: "user-courses" });
                         location.reload();
-                    }else {
-                        this.$swal.fire({
-                            title: 'Transaction Verification Failed!',
-                            text: "Transaction could not be verified at this moment",
-                            type: 'warning',
-                            confirmButtonText: 'Okay!'
-
-                        }).then((result) => {
-                            if (result.value) {
-                                this.$router.push({ name: "user-courses" });
-                            }
-                        })
                     }
-                }else{
-                    this.$swal.fire({
-                        title: 'Transaction Failed!',
-                        text: "Transaction was not successful",
-                        type: 'warning',
-                        confirmButtonText: 'Okay!'
-
-                    }).then((result) => {
-                        if (result.value) {
-                            this.$router.push({ name: "user-courses" });
-                        }
-                    });
                 }
+                
             },
 
             async getCourse(){
