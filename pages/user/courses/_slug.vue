@@ -25,6 +25,7 @@
                                     <a class="nav-link active" id="pills-overview-tab" data-bs-toggle="pill" data-bs-target="#pills-overview" type="button" role="tab">Overview</a>
                                     <a class="nav-link" id="pills-conversation-tab" data-bs-toggle="pill" data-bs-target="#pills-conversation" type="button" role="tab">Conversation</a>
                                     <a class="nav-link" id="pills-project-tab" data-bs-toggle="pill" data-bs-target="#pills-project" type="button" role="tab">Project</a>
+                                    <a class="nav-link" id="pills-certification-tab" data-bs-toggle="pill" data-bs-target="#pills-certification" type="button" role="tab" v-if="checkCompleted" >Certification</a>
                                 </li>
                             </ul>
                         </div>
@@ -85,6 +86,28 @@
                                 <div class="row">
                                     <div class="col-12 wrapper__overview">
                                         <div class="wrapper__overview--desc" v-html="course.project"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-certification" role="tabpanel" v-if="checkCompleted">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h2 class="wrapper__project--title">Certification</h2>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-12 wrapper__overview">
+                                        <div class="wrapper__overview--desc">
+                                            <p> Having Completed the <b> {{ course.title | capitalize }} </b> you've earned the certification. </p>
+                                            <p> Click the button below to get your certificate directly into your email address.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 wrapper__overview">
+                                        <div class="wrapper__overview--desc text-center">
+                                            <button class="btn wrapper__overview--btn" @click="getCertificate()">Get Certification</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -152,6 +175,7 @@
                 course: {},
                 user_lessons: [],
                 lesson_id: "",
+                checkCompleted: false,
 
                 // component options
                 playsinline: true,
@@ -184,12 +208,12 @@
 
         mounted(){
             this.checkCompletedLesson();
+            this.checkUserHasCompletedLessons();
         },
 
         methods: {
             async checkUser(){
                 const user = (this.user.me) ? this.user.me : this.user;
-
                 let status = await this.$axios.$post(`/users/courses/check-user`, { user: user.id, slug: `${this.$route.params.slug}` });
                 
                 if(status.data == false){
@@ -259,6 +283,55 @@
 
             async onPlayerPlay(player) {
             },
+
+            async checkUserHasCompletedLessons(){
+                try {
+                    let doc = await this.$axios.$get(`/users/courses/check-user-completed-course/${this.$route.params.slug}`);
+                    this.checkCompleted = doc.data;
+                } catch (err) {
+                    console.log(err);
+                }
+            },
+
+            async getCertificate(){
+                try {    
+                    const user = (this.user.me) ? this.user.me : this.user;
+
+                    const userInfo = {
+                        course_title: this.$route.params.slug,
+                        user_id: user.id,
+                    }
+
+                    let doc = await this.$axios.$post(`/users/courses/get-certificate`, userInfo);
+
+                    this.$swal.fire({
+                        title: 'Certificate Awarded!',
+                        text: "Your certificate has been sent to your email address.",
+                        type: 'success',
+                        confirmButtonText: 'Okay!'
+
+                    }).then((result) => {
+                        if (result.value) {
+                            
+                        }
+                    })
+
+                } catch (err) {
+                    console.log(err);
+
+                    this.$swal.fire({
+                        title: 'Certificate Award Failed!',
+                        text: "certificate can not be awarded at this time. Please try later.",
+                        type: 'error',
+                        confirmButtonText: 'Okay!'
+
+                    }).then((result) => {
+                        if (result.value) {
+                            
+                        }
+                    })
+                }
+            }
         },
     }
 </script>
@@ -292,11 +365,10 @@
                         margin-right: .5rem;
                         padding: .5rem .75rem;
                         
-                        
                         &.active{
                             color: #fff;
                             border-radius: .5rem;
-                            background: $primary;
+                            background: $secondary;
                         }
                     }
                 }
@@ -329,6 +401,10 @@
                         color: $secondary;
                     }
                 }
+            }
+
+            &--btn{
+                @include button();
             }
         }
 
@@ -428,7 +504,7 @@
 
                                 /* When the checkbox is checked, add a blue background */
                                 input:checked ~ .checkmark {
-                                    background-color: $primary;
+                                    background-color: $secondary;
                                 }
 
                                 /* Create the checkmark/indicator (hidden when not checked) */

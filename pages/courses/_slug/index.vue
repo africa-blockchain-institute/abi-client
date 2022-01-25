@@ -333,7 +333,7 @@
                         margin-right: 1rem;
                         
                         &.active{
-                            background: $primary;
+                            background: $secondary;
                             color: $white;
                         }
                     }

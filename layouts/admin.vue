@@ -114,6 +114,7 @@
 
                 this.$toast.success('Successfully logged out', {
                     icon : 'check',
+                    duration: 5000,
                 })
             }
         }
@@ -136,6 +137,7 @@
                 background: $secondary-2;
                 color: #fff;
                 transition: all .3s;
+                overflow: scroll;
 
                 &.active {
                     min-width: 80px;

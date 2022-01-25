@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="wrapper__head d-flex justify-content-between">
-            <h1 class="wrapper__head--title">Bring ABI</h1>
+            <h1 class="wrapper__head--title">Payments</h1>
         </div>
 
         <div class="wrapper__body shadow">
