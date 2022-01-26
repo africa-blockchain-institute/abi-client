@@ -156,7 +156,7 @@
 			</div>
 		</div>
 
-        <div class="insights" v-if="false">
+        <div class="insights" v-if="insights.length > 0">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-7 insights__head">
@@ -164,15 +164,16 @@
                     </div>
                 </div>
 
-                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-xl-3" v-if="insights.length > 0">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-xl-3">
                     <div class="col insights__list" v-for="(insight, index) in insights" :key="index">
                         <a :href="insight.link" target="blank">
                             <div class="card h-100">
-                                <img :src="insight.image" :alt="insight.title" class="img-fluid card-img-top">
+                                <!-- <img :src="insight.image" :alt="insight.title" class="img-fluid card-img-top"> -->
                                 <div class="card-body">
-                                    <h5 class="insights__list--title">{{ insight.title }}</h5>
+                                    <h5 class="insights__list--title mb-3">{{ insight.title }}</h5>
 									<!-- <p class="insights__list--text">Click to read post on our Medium Channel.</p> -->
-									<p class="insights__list--text">{{ insight.description }}</p>
+									<!-- <p class="insights__list--text">{{ insight.description }}</p> -->
+                                    <button class="btn btn-sm insights__list--btn">Read Insight</button>
                                 </div>
                             </div>
                         </a>
@@ -323,7 +324,6 @@
             return{
                 insights: [],
                 events: [],
-
             }
         },
 
@@ -336,6 +336,8 @@
             async getInsights(){
                 let insights = await this.$axios.$get(`/posts`);
                 this.insights = insights.data;
+
+                console.log(insights);
             },
 
             async getEvents(){
@@ -498,6 +500,13 @@
                 &--text{
                     font-size: $font-rg;
 					margin-bottom: 0;
+                }
+
+                &--btn{
+                    @include button();
+                    padding: .35rem .5rem;
+                    // background: $secondary;
+                    // color: #fff;
                 }
             }
 
