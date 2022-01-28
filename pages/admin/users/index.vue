@@ -16,6 +16,8 @@
                                         <th scope="col">Image</th>
                                         <th scope="col">Name</th>
                                         <th scope="col">Email</th>
+                                        <th scope="col">Country</th>
+                                        <th scope="col">Profession</th>
                                         <th scope="col">Joined On</th>
                                         <th scope="col">Actions</th>
                                     </tr>
@@ -26,6 +28,8 @@
                                         <td><img :src="doc.image" :alt="doc.title" class="img"></td>
                                         <td>{{ doc.name }}</td>
                                         <td>{{ doc.email }} </td>
+                                        <td>{{ doc.country || '-' }} </td>
+                                        <td>{{ doc.profession || '-' }} </td>
                                         <td>{{ doc.createdAt | formatDate }} </td>
                                         <td class="">
                                             <nuxt-link :to="{ name: 'admin-users-id', params:{ id: doc._id} }" class="btn btn-primary">

@@ -137,17 +137,16 @@
                 this.loading = true;
 
                 try {
-                    await this.$auth.loginWith('google');
+                    const res = await this.$auth.loginWith('google');
                     this.loading = false;
 
-                    if(this.loading == false){
+                    if(this.$auth.strategy == "google"){
                         this.$toast.success('Successfully logged in.', {
                             icon : 'check',
                         });
                     }
 
                     this.$router.push({ path: "/user/courses" });
-                   
                 } catch (err) {
                     console.log(err);   
                 }

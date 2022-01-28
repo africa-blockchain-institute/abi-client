@@ -317,8 +317,6 @@
                     })
 
                 } catch (err) {
-                    console.log(err);
-
                     this.$swal.fire({
                         title: 'Certificate Award Failed!',
                         text: "certificate can not be awarded at this time. Please try later.",

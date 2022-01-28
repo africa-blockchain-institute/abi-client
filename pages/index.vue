@@ -336,8 +336,6 @@
             async getInsights(){
                 let insights = await this.$axios.$get(`/posts`);
                 this.insights = insights.data;
-
-                console.log(insights);
             },
 
             async getEvents(){

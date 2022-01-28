@@ -82,8 +82,6 @@
             async getDoc(){
                 let consultation = await this.$axios.$get(`/consultations/${this.$route.params.id}`)
                 this.consultation = consultation.data;
-
-                console.log(this.consultation)
             },
         }
     }

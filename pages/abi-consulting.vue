@@ -59,6 +59,10 @@
                                     <label for="hear_about_us" class="form-label">How did you hear about us?<span>*</span> </label>
                                     <select name="hear_about_us" id="hear_about_us" class="form-select form-select-lg" v-model="form.hear_about_us" required>
                                         <option value="Social Media">Social Media</option>
+                                        <option value="From Friend / Referral">From Friend / Referral</option>
+                                        <option value="Our Website">Our Website</option>
+                                        <option value="Our Programs and Events">Our Programs and Events</option>
+                                        <option value="Online Search">Online Search</option>
                                     </select>
                                 </div>
                             </div>

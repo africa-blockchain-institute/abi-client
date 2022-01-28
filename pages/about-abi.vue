@@ -99,7 +99,7 @@
                         
                         &.active{
                             color: $white;
-                            background-color: $primary;
+                            background-color: $secondary;
                             border-radius: .5rem;
                         }
                     }

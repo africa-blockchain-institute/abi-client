@@ -99,7 +99,7 @@
         methods:{
             async submit(){
                 this.loading = true
-                
+
                 try {
                     //check for user
                     const user = await this.$axios.$post(`/users/get-user`, { email: this.form.email})
@@ -134,8 +134,6 @@
 
                 const res = await this.$auth.loginWith('facebook');
 
-                console.log(res);
-
                 throw "";
                 this.$auth.setUser(res.data.data.user);
 
@@ -169,6 +167,8 @@
                             icon : 'check',
                         });
                     }
+
+                    this.$router.push({ path: "/user/courses" });
                 } catch (err) {
                     console.log(err);   
                 }

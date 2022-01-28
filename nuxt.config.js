@@ -164,6 +164,8 @@ export default {
 
 	publicRuntimeConfig: {
 		appUrl: process.env.NODE_ENV === 'production' ? 'https://africablockchain.institute' : 'http://127.0.0.1:3000',
-		flwPublicKey: "FLWPUBK_TEST-4b40a5f0241d96e8fe02d9ca468660ca-X"
+		flwPublicKey: "FLWPUBK_TEST-4b40a5f0241d96e8fe02d9ca468660ca-X",
+		flwPublicKeyLive: "FLWPUBK-43d213fafa97b6ae15ded3fe5cad4f9f-X",
+		flwSecretKey: "FLWSECK_TEST-07ca0fc094f26d24d65a2175bf5a4dcd-X"
 	}
 }

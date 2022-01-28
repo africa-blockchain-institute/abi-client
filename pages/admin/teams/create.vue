@@ -31,7 +31,7 @@
                                         <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                     </div>
                                     <div class="col-12 col-md-4">
-                                        <label for="position" class="form-label">Team Member Organization<span>*</span> </label>
+                                        <label for="position" class="form-label">Team Member Organization </label>
                                         <input type="text" v-model.trim="form.position" class="form-control form-control-lg" id="position">
                                     </div>
                                 </div>

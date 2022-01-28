@@ -52,7 +52,6 @@
                     const message = await this.$axios.$post('/auth/email-verification', {token});
 
                     this.message = message;
-                    console.log(this.message)
                 } catch (err) { 
                     console.log(this.err);
                     this.err = err;

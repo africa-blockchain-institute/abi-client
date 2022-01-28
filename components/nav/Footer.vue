@@ -27,8 +27,8 @@
                     <ul class="footer__sect--links ps-0">
                         <li><nuxt-link to="/about-abi" class="link">About ABI</nuxt-link> </li>
                         <li><nuxt-link to="/faculty" class="link">Faculty</nuxt-link> </li>
-                        <li><nuxt-link to="/enterprise" class="link">Enterprise</nuxt-link> </li>
                         <li><nuxt-link to="/courses" class="link">Courses</nuxt-link> </li>
+                        <li><nuxt-link to="/enterprise" class="link">Enterprise</nuxt-link> </li>
                     </ul>
                 </div>
                 <div class="col-md-4 footer__sect">

@@ -51,33 +51,22 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12" v-if="1 > 0">
+                            <div class="col-12" v-if="courses.length > 0">
                                 <div class="table-responsive user__table">
                                     <table class="table align-middle">
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Course Title</th>
-                                                <th scope="col">Enrolled On</th>
-                                                <th scope="col">Status</th>
+                                                <th scope="col">Course(s) Enrolled</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <!-- <tr class="wrapper__table--row" v-for="(doc, index) in docs" :key="doc.id"> -->
-                                            <tr class="user__table--row">
-                                                <th>{{  1 }}</th>
-                                                <td>Blockchain Technology</td>
-                                                <td>{{ new Date() | formatDate }}</td>
-                                                <td> <span class="badge bg-warning">Ongoing</span> </td>
+                                            <tr class="user__table--row" v-for="(doc, index) in courses" :key="doc.id">
+                                                <th>{{ index+1 }}</th>
+                                                <td>{{ doc.title }} </td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
-                            </div>
-
-                            <div class="col-12" v-else>
-                                <div class="wrapper__empty text-center">
-                                    <h3 class="wrapper__empty--title">No course(s) yet</h3>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +95,8 @@
 
         data(){
             return {
-                user: {}
+                user: {},
+                courses: {},
             }
         },
 
@@ -118,8 +108,7 @@
             async getDoc(){
                 let user = await this.$axios.$get(`/users/${this.$route.params.id}`)
                 this.user = user.data;
-
-                console.log(this.user)
+                this.courses = user.data.courses;
             },
         }
     }
