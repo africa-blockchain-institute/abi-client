@@ -349,6 +349,7 @@
 <style lang="scss" scoped>
     .wrapper{
         .hero{
+            background-color: #000D2C;
             background: url("@/assets/images/home/banner.jpg") center /cover;
 
             &__banner{
