@@ -418,7 +418,7 @@
     .wrapper{
         .hero{
             background-image: url("@/assets/images/enterprise/banner.jpg");
-            background-position: center;
+            background-position: center center;
             background-size: cover;
             background-color: #000D2C;
 
