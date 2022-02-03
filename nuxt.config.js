@@ -3,7 +3,7 @@ import redirectSSL from 'redirect-ssl'
 export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
-		title: 'Africa Blockchain Institute - Pan African Institute founded on the premise to promote the adoption, development, and use of Blockchain Technology across Africa.',
+		title: 'Africa Blockchain Institute',
 		meta: [
 			{ charset: 'utf-8' },
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' },

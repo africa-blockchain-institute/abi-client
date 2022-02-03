@@ -3,7 +3,7 @@
         <div class="enterprise">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10 col-lg-8 mx-auto enterprise__banner">
+                    <div class="col-12 col-md-10 col-lg-8 mx-auto enterprise__banner">
                         <h1 class="enterprise__banner--title">Blockchain Consulting &amp; Solutions Development </h1>
                         <p class="enterprise__banner--sub">ABI Enterprise helps clients explore every aspect of blockchain and build tailored solutions designed to deliver value. Our cutting-edge Blockchain Technology Capabilities lead the way to a disruptive future for numerous businesses striving for transparent, secure, decentralized and productive business solutions, that are market-ready and address real business issues.</p>
                         <nuxt-link to="/abi-consulting" class="enterprise__banner--btn btn">Bring ABI to your Business</nuxt-link>
@@ -417,7 +417,7 @@
 <style lang="scss" scoped>
     .wrapper{
         .enterprise{
-            background-image: url("@/assets/images/enterprise/banner.jpg") !important;
+            background-image: url("@/assets/images/enterprise/hero-banner.jpg") !important;
             background-position: center center;
             background-size: cover;
             background-color: #000D2C !important;
@@ -425,7 +425,7 @@
             &__banner{
                 text-align: center;
                 padding: 3rem 1rem;
-                // background-color: #000D2C;
+                background: #000D2C;
 
                 &--title{
                     font-size: $font-hd;
@@ -732,6 +732,7 @@
             .enterprise{
                 &__banner{
                     padding: 4rem 1rem;
+                    background: transparent;
 
                     &--title{
                         font-size: $font-md;
