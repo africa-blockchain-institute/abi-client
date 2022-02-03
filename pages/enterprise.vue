@@ -417,10 +417,10 @@
 <style lang="scss" scoped>
     .wrapper{
         .hero{
-            background-image: url("@/assets/images/enterprise/banner.jpg");
+            background-image: url("@/assets/images/enterprise/banner.jpg") !important;
             background-position: center center;
             background-size: cover;
-            background-color: #000D2C;
+            background-color: #000D2C !important;
 
             &__banner{
                 text-align: center;
