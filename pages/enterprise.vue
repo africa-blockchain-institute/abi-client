@@ -1,12 +1,12 @@
 <template>
     <div class="wrapper">
-        <div class="hero">
+        <div class="enterprise">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10 col-lg-8 mx-auto hero__banner">
-                        <h1 class="hero__banner--title">Blockchain Consulting &amp; Solutions Development </h1>
-                        <p class="hero__banner--sub">ABI Enterprise helps clients explore every aspect of blockchain and build tailored solutions designed to deliver value. Our cutting-edge Blockchain Technology Capabilities lead the way to a disruptive future for numerous businesses striving for transparent, secure, decentralized and productive business solutions, that are market-ready and address real business issues.</p>
-                        <nuxt-link to="/abi-consulting" class="hero__banner--btn btn">Bring ABI to your Business</nuxt-link>
+                    <div class="col-md-10 col-lg-8 mx-auto enterprise__banner">
+                        <h1 class="enterprise__banner--title">Blockchain Consulting &amp; Solutions Development </h1>
+                        <p class="enterprise__banner--sub">ABI Enterprise helps clients explore every aspect of blockchain and build tailored solutions designed to deliver value. Our cutting-edge Blockchain Technology Capabilities lead the way to a disruptive future for numerous businesses striving for transparent, secure, decentralized and productive business solutions, that are market-ready and address real business issues.</p>
+                        <nuxt-link to="/abi-consulting" class="enterprise__banner--btn btn">Bring ABI to your Business</nuxt-link>
                     </div>
                 </div>
             </div>
@@ -416,7 +416,7 @@
 
 <style lang="scss" scoped>
     .wrapper{
-        .hero{
+        .enterprise{
             background-image: url("@/assets/images/enterprise/banner.jpg") !important;
             background-position: center center;
             background-size: cover;
@@ -424,7 +424,8 @@
 
             &__banner{
                 text-align: center;
-                padding: 4rem 1rem;
+                padding: 3rem 1rem;
+                // background-color: #000D2C;
 
                 &--title{
                     font-size: $font-hd;
@@ -728,16 +729,12 @@
     // Medium devices (tablets, 768px and up)
     @media (min-width: 768px) {  
         .wrapper{
-            .hero{
+            .enterprise{
                 &__banner{
                     padding: 4rem 1rem;
 
                     &--title{
                         font-size: $font-md;
-                    }
-
-                    &--btn{
-                        @include button();
                     }
                 }
             }
@@ -834,7 +831,7 @@
     // Large devices (desktops, 992px and up)
     @media (min-width: 992px) {  
         .wrapper{
-            .hero{
+            .enterprise{
                 &__banner{
                     padding: 5rem 1rem;
 
@@ -845,10 +842,6 @@
                     &--sub{
                         font-size: $font-rg;
                         margin-bottom: 2rem;
-                    }
-
-                    &--btn{
-                        @include button();
                     }
                 }
             }
@@ -1042,17 +1035,13 @@
     // XX-Large devices (larger desktops, 1400px and up)
     @media (min-width: 1400px) {  
         .wrapper{
-            .hero{
+            .enterprise{
                 &__banner{
                     padding: 6rem 1rem;
 
                     &--title{
                         font-size: $font-xl;
                         line-height: 4rem;
-                    }
-
-                    &--btn{
-                        @include button();
                     }
                 }
             }
