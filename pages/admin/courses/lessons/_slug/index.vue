@@ -14,7 +14,7 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Video Preview</th>
+                                        <!-- <th scope="col">Video Preview</th> -->
                                         <th scope="col">Title</th>
                                         <th scope="col">Duration</th>
                                         <th scope="col">Actions</th>
@@ -23,7 +23,7 @@
                                 <tbody>
                                     <tr class="wrapper__table--row" v-for="(doc, index) in docs" :key="doc.id">
                                         <th>{{ index + 1 }}</th>
-                                        <td><img :src="doc.image" :alt="doc.title" class="img"></td>
+                                        <!-- <td><img :src="doc.image" :alt="doc.title" class="img"></td> -->
                                         <td>{{ doc.title }}</td>
                                         <td>{{ doc.duration | secondsToHours }} Hour(s) </td>
                                         <td class="">
@@ -47,7 +47,7 @@
                         <div class="wrapper__empty text-center">
                             <img src="~/assets/images/dashboard/empty.png" alt="Empty state" class="wrapper__empty--img">
                             <h3 class="wrapper__empty--title">No Lessons </h3>
-                            <nuxt-link :to="{ name: 'admin-courses-lessons-slug', params:{ slug: `${this.$route.params.slug}` }}" class="btn wrapper__empty--btn">Add Course</nuxt-link>
+                            <nuxt-link :to="{ name: 'admin-courses-lessons-slug-create', params:{ slug: `${this.$route.params.slug}` }}" class="btn wrapper__empty--btn">Add Lesson</nuxt-link>
                         </div>
                     </div>
                 </div>

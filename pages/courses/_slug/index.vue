@@ -21,7 +21,7 @@
                             <div class="row">
                                 <div class="col-12 wrapper__overview">
                                     <div class="wrapper__video--video">
-                                        <img :src="course.image" :alt="course.title">
+                                        <img :src="course.image" :alt="course.title" class="img-fluid">
                                     </div>
                                     <!-- <div class="wrapper__video--video"
                                         :playsinline="playsinline"
