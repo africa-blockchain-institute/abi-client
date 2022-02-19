@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="wrapper__head d-flex justify-content-between">
-            <h1 class="wrapper__head--title">Edit "{{ form.title }}" Course</h1>
+            <h1 class="wrapper__head--title">Create Course</h1>
         </div>
 
         <div class="wrapper__body shadow">
@@ -36,7 +36,7 @@
                                         <div class="form-group">
                                             <label class="form-label">Course Poster Image <span>*</span></label>
                                             <input class="form-control form-control-lg" type="file" ref="image"
-                                            @change="uploadImage" :class="{'is-invalid': imageErr }">
+                                            @change="uploadImage" :class="{'is-invalid': imageErr }" required>
                                             <div class="invalid-feedback">{{ this.imageErr }} </div>
                                         </div>
                                     </div>
@@ -45,21 +45,27 @@
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <label for="description" class="form-label">Course Description <span>*</span> </label>
-                                        <textarea id="description" v-model="form.description" required class="form-control" rows="3" ></textarea>
+                                        <client-only>
+                                            <froala id="description" :tag="'textarea'" :config="froalaConfig" v-model="form.description" required></froala>
+                                        </client-only>
                                     </div>
                                 </div>
 
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <label for="requirements" class="form-label">Course Requirements <span>*</span> </label>
-                                        <textarea id="requirements" v-model="form.requirements" required class="form-control" rows="3" ></textarea>
+                                        <client-only>
+                                            <froala id="requirements" :tag="'textarea'" :config="froalaConfig" v-model="form.requirements" required></froala>
+                                        </client-only>
                                     </div>
                                 </div>
 
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <label for="learning_outcome" class="form-label">Learning Outcome <span>*</span> </label>
-                                        <textarea id="learning_outcome" v-model="form.learning_outcome" required class="form-control" rows="3" ></textarea>
+                                        <client-only>
+                                            <froala id="learning_outcome" :tag="'textarea'" :config="froalaConfig" v-model="form.learning_outcome" required></froala>
+                                        </client-only>
                                     </div>
                                 </div>
 
@@ -79,16 +85,19 @@
 
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
-                                        <label for="project" class="form-label">Course Project <span>*</span> </label>
-                                        <textarea id="project" v-model="form.project" required class="form-control" rows="3" ></textarea>
+                                        <label for="project" class="form-label">Project <span>*</span> </label>
+                                        <client-only>
+                                            <froala id="project" :tag="'textarea'" :config="froalaConfig" v-model="form.project" required></froala>
+                                        </client-only>
+
+                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                     </div>
-                                    <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                 </div>
 
                                 <div class="col-lg-8 mx-auto">
                                     <button type="submit" class="btn btn-primary">
                                         <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span>
-                                        Edit Course
+                                        Create Course
                                     </button>
                                 </div>
                             </form>
@@ -107,7 +116,7 @@
 
         head(){
             return{
-                title: 'Edit Course -  Africa Blockchain Institute',
+                title: 'Create Course -  Africa Blockchain Institute',
                 meta: [
                     {
                         name: 'Courses',
@@ -150,7 +159,6 @@
         },
 
         created(){
-            this.getCourse();
         },
 
         methods:{
@@ -172,10 +180,10 @@
                     formData.append('language', this.form.language)
                     formData.append('project', this.form.project)
 
-                    await this.$axios.$patch(`/courses/${this.form.id}`, formData)
+                    await this.$axios.$post('/courses', formData)
                     this.loading = false;
 
-                    this.$toast.success("Course updated successfully", {
+                    this.$toast.success("Course created successfully", {
                         icon : 'check'
                     });
 
@@ -200,11 +208,6 @@
                 }else {
                     this.imageErr = "File Must be of an Image format (PNG, JPG, JPEG)"
                 }
-            },
-
-            async getCourse(){
-                let doc = await this.$axios.$get(`/courses/${this.$route.params.slug}`);
-                this.form = doc.data
             },
         }
     }
@@ -289,5 +292,4 @@
 
     // XX-Large devices (larger desktops, 1400px and up)
     @media (min-width: 1400px) {  }
-
 </style>

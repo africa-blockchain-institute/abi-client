@@ -53,7 +53,7 @@ export default {
 		{ src: '~/plugins/vue-paystack.js',  ssr: false },
 		{ src: '~/plugins/vue-flutterwave.js',  ssr: false },
         { src: "~/plugins/vue-player.js", ssr: false },
-        { src: "~/plugins/vue-quill-editor.js", ssr: false },
+        // { src: "~/plugins/vue-quill-editor.js", ssr: false },
         { src: "~/plugins/froala.js", ssr: false },
 		{ src: '~/plugins/mixins/user.js' },
         { src: '~/plugins/mixins/validation.js' },

@@ -42,30 +42,33 @@
                                     </div>
                                 </div>
 
-                                <div class="row justify-content-center">
+                                <!-- <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <label for="description" class="form-label">Course Description <span>*</span> </label>
                                         <client-only>
                                             <froala id="description" :tag="'textarea'" :config="froalaConfig" v-model="form.description" required></froala>
                                         </client-only>
                                     </div>
+                                </div> -->
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="description" class="form-label">Course Description <span>*</span> </label>
+                                        <textarea id="description" v-model="form.description" required class="form-control" rows="3" ></textarea>
+                                    </div>
                                 </div>
 
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <label for="requirements" class="form-label">Course Requirements <span>*</span> </label>
-                                        <client-only>
-                                            <froala id="requirements" :tag="'textarea'" :config="froalaConfig" v-model="form.requirements" required></froala>
-                                        </client-only>
+                                        <textarea id="requirements" v-model="form.requirements" required class="form-control" rows="3" ></textarea>
                                     </div>
                                 </div>
 
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <label for="learning_outcome" class="form-label">Learning Outcome <span>*</span> </label>
-                                        <client-only>
-                                            <froala id="learning_outcome" :tag="'textarea'" :config="froalaConfig" v-model="form.learning_outcome" required></froala>
-                                        </client-only>
+                                        <textarea id="learning_outcome" v-model="form.learning_outcome" required class="form-control" rows="3" ></textarea>
                                     </div>
                                 </div>
 
@@ -85,13 +88,10 @@
 
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
-                                        <label for="project" class="form-label">Project <span>*</span> </label>
-                                        <client-only>
-                                            <froala id="project" :tag="'textarea'" :config="froalaConfig" v-model="form.project" required></froala>
-                                        </client-only>
-
-                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                                        <label for="project" class="form-label">Course Project <span>*</span> </label>
+                                        <textarea id="project" v-model="form.project" required class="form-control" rows="3" ></textarea>
                                     </div>
+                                    <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                 </div>
 
                                 <div class="col-lg-8 mx-auto">
@@ -154,7 +154,7 @@
 
                 froalaConfig:{
                     toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'superscript', 'subscript', 'insertLink'],
-                }
+                },
             }
         },
 
