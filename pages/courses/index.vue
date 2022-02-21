@@ -10,7 +10,8 @@
                     <div class="col courses__list mb-2 mb-md-3" v-for="(course, index) in courses" :key="index">
                         <nuxt-link :to="{ name: 'courses-slug', params: { slug: course.slug } }" >
                             <div class="card h-100">
-                                <img :src="course.image" class="card-img-top" :alt="course.title">
+                                <!-- <img :src="course.image" class="card-img-top" :alt="course.title"> -->
+                                <img src="~/assets/images/courses/legal.jpg" class="card-img-top" :alt="course.title">
                                 <div class="card-header">
                                     <h5 class="courses__list--title">{{ course.title }}</h5>
                                 </div>
@@ -147,7 +148,7 @@
                         background: transparent;
 
                         top: 45%;
-                        transform: translateY(-40%);
+                        transform: translateY(-45%);
                     }
 
                     &-body{
