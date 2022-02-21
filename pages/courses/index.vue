@@ -16,7 +16,8 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="mb-3">
-                                        <p class="courses__list--description" v-html="course.description"> </p>
+                                        <!-- <p class="courses__list--description" v-html="course.description"> </p> -->
+                                        <p class="courses__list--description" :inner-html.prop="course.description | truncate"> </p>
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <p class="courses__list--lessons"> <span class="fas fa-list"></span> {{ course.lessons_count }} lessons </p>
@@ -141,10 +142,12 @@
 
                     &-header{
                         position: absolute;
-                        bottom: 9rem;
                         border: 0;
                         color: white;
                         background: transparent;
+
+                        top: 45%;
+                        transform: translateY(-40%);
                     }
 
                     &-body{
@@ -206,10 +209,6 @@
                     }
 
                     .card {
-                        &-header{
-                            bottom: 9.5rem;
-                        }
-
                         &-body{
                             padding: 1.5rem;
                         }

@@ -36,7 +36,7 @@ Vue.filter("moneyFormat", function(value){
 Vue.filter("truncate", function(value){
     if (!value) return ''
     value = value.replace(/(<([^>]+)>)/ig, '');
-    return value.length > 120 ? value.substring(0, 120) + '...' : value;
+    return value.length > 150 ? value.substring(0, 150) + '...' : value;
 })
 
 
