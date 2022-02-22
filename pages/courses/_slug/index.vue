@@ -124,7 +124,7 @@
                                <li class="enrol__body--list"> <span class="fas fa-globe"></span> Online </li>
                                <li class="enrol__body--list"> <span class="fas fa-map-marker-alt"></span> Self Paced </li>
                                <li class="enrol__body--list"> <span class="fas fa-list"></span> {{ course.lessons_count }} Lectures </li>
-                               <li class="enrol__body--list"> <span class="fas fa-clock"></span> {{ course.lessons_count | secondsToHours }} Hours </li>
+                               <li class="enrol__body--list"> <span class="fas fa-clock"></span> {{ course.duration | secondsToHours }} Hour(s) </li>
                                <li class="enrol__body--list"> <span class="fas fa-poll"></span> All Levels </li>
                                <li class="enrol__body--list"> <span class="fas fa-spell-check"></span> English </li>
                            </ul>

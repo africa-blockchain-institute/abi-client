@@ -21,8 +21,8 @@
                                         <p class="courses__list--description" :inner-html.prop="course.description | truncate"> </p>
                                     </div>
                                     <div class="d-flex justify-content-between">
-                                        <p class="courses__list--lessons"> <span class="fas fa-list"></span> {{ course.lessons_count }} lessons </p>
-                                        <p class="courses__list--duration"> <span class="fas fa-clock"></span> {{ course.duration | secondsToHours }} hours</p>
+                                        <p class="courses__list--lessons"> <span class="fas fa-list"></span> {{ course.lessons_count }} Lectures </p>
+                                        <p class="courses__list--duration"> <span class="fas fa-clock"></span> {{ course.duration | secondsToHours }} Hour(s)</p>
                                     </div>
                                 </div>
                             </div>
