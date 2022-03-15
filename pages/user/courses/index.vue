@@ -23,7 +23,6 @@
                                 <div class="card-body">
                                     <div class="mb-3">
                                         <p class="courses__list--description" :inner-html.prop="course.description | truncate"> </p>
-                                        <!-- <div class="courses__list--description" v-html="course.description"></div> -->
                                     </div>
                                     <div>
                                         <div class="progress" style="height: 5px;">
@@ -196,10 +195,12 @@
 
                     &-header{
                         position: absolute;
-                        bottom: 9rem;
                         border: 0;
                         color: white;
                         background: transparent;
+
+                        top: 45%;
+                        transform: translateY(-45%);
                     }
 
                     &-body{
@@ -276,10 +277,6 @@
 
                 &__list{
                     .card {
-                        &-header{
-                            bottom: 9.5rem;
-                        }
-
                         &-body{
                             padding: 1.5rem;
                         }
