@@ -119,8 +119,10 @@ export default {
 				codeChallengeMethod: '',
 				responseType: 'code',
 				endpoints: {
-					token: 'http://127.0.0.1:8080/api/v1/auth/google/callback',
-					userInfo: 'http://127.0.0.1:8080/api/v1/users/me',
+					// token: 'http://127.0.0.1:8080/api/v1/auth/google/callback',
+					// userInfo: 'http://127.0.0.1:8080/api/v1/users/me',
+					token: 'https://africablockchain.institute/api/v1/auth/google/callback',
+					userInfo: 'https://africablockchain.institute/api/v1/users/me',
 				},
 				user: {
 					// autoFetch: false

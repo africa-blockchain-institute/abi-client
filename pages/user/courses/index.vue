@@ -22,7 +22,8 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="mb-3">
-                                        <div class="courses__list--description" v-html="course.description"></div>
+                                        <p class="courses__list--description" :inner-html.prop="course.description | truncate"> </p>
+                                        <!-- <div class="courses__list--description" v-html="course.description"></div> -->
                                     </div>
                                     <div>
                                         <div class="progress" style="height: 5px;">
