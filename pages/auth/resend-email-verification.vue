@@ -17,7 +17,7 @@
 
                 <div class="row">
                     <div class="col proceed text-center">
-                        <button class="btn proceed__btn"><span class="fas fa-spinner fa-spin" v-if="loading"></span>Resend Email Verification</button>
+                        <button class="btn proceed__btn"><span class="fas fa-spinner fa-spin" v-if="loading"></span> Resend Email Verification</button>
                     </div>
                 </div>
             </form>
@@ -50,6 +50,8 @@
 
         data(){
             return{
+                loading: false,
+
                 form:{
                     email: "",
                 }
@@ -67,7 +69,8 @@
                         icon : 'check',
                     })
 
-                    this.loading = false
+                    this.loading = false;
+                    this.$router.push({ name: "login" });
 
                 } catch (err) {
                     this.loading = false
