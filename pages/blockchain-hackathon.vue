@@ -16,7 +16,7 @@
                     <div class="col-10 hero__desc">
                         <img src="~/assets/images/hackathon/icons/abh.png" class="hero__desc--logo" alt="africa blockchain hackathon logo" />
                         <p class="hero__desc--text">Climate Action & Green Hydrogen</p>
-                        <a href="" class="btn hero__desc--btn">Explore Hackathon</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNrBqmxFmjPUIykQT_rlRI3mFlPo2plLt7ziZO0Wyczj9Z3w/viewform" class="btn hero__desc--btn">Explore Hackathon</a>
                     </div>
                 </div>
             </div>
@@ -129,7 +129,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 tracks__head">
-                        <h2 class="tracks__head--title">Tracks</h2>
+                        <h2 class="tracks__head--title">Hackathon Tracks</h2>
                     </div>
                 </div>
 
@@ -232,7 +232,7 @@
                             <p class="body">Online.</p>
                         </div>
 
-                        <a href="/" target="_blank" class="btn duration__content--btn">Register for the Hackathon</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNrBqmxFmjPUIykQT_rlRI3mFlPo2plLt7ziZO0Wyczj9Z3w/viewform" target="_blank" class="btn duration__content--btn">Register for the Hackathon</a>
                     </div>
 
                     <div class="col-md-6 col-xl-5 duration__content--img px-lg-5">
@@ -256,12 +256,12 @@
                 <div class="row justify-content-center partners__content align-items-center">
                     <div class="col-6 col-md-4 col-lg-3 partners__content--sect">
                         <div class="card shadow-sm">
-                            <img src="~/assets/images/hackathon/icons/green_hydrogen_logo.png" alt="au">
+                            <img src="~/assets/images/hackathon/icons/green_hydrogen_logo.png" alt="green_hydrogen_logo">
                         </div>
                     </div>
                     <div class="col-6 col-md-4 col-lg-3 partners__content--sect">
                         <div class="card shadow-sm">
-                            <img src="~/assets/images/hackathon/icons/nghri.png" alt="au">
+                            <img src="~/assets/images/hackathon/icons/nghri.png" alt="nghri">
                         </div>
                     </div>
                 </div>
@@ -275,7 +275,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-7 text-center">
                         <p class="text-center cta__text">We are proud of this Hackathon Program which will create Hundreds of African Blockchain Companies in coming years!</p>
-                        <a href="/" target="_blank" class="btn cta__btn">Register for the Hackathon</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNrBqmxFmjPUIykQT_rlRI3mFlPo2plLt7ziZO0Wyczj9Z3w/viewform" target="_blank" class="btn cta__btn">Register for the Hackathon</a>
                     </div>
                 </div>
 			</div>
@@ -1003,7 +1003,7 @@
                     }
 
                     img{
-                        width: 12rem;
+                        width: 15rem;
                     }
                 }
 
@@ -1013,7 +1013,7 @@
                     }
 
                     &--text {
-                        font-size: $font-hd;
+                        font-size: $font-lg;
                         margin-bottom: 3rem
                     }
 
@@ -1068,11 +1068,11 @@
 
                     &--detail{
                         .number{
-                            font-size: $font-md;
+                            font-size: $font-lg;
                         }
                         
                         .desc{
-                            font-size: 1.25rem;
+                            font-size: $font-hd;
                         }
                     }
                 }
@@ -1211,6 +1211,12 @@
                 &__content{
                     .card {
                         padding: 2rem 2.5rem;
+                        
+                        img {
+                            width: 80%;
+                            margin: 0 auto;
+                            display: inline-block;
+                        }
                     }
                 }
             }
