@@ -16,7 +16,7 @@
                     <div class="col-10 hero__desc">
                         <img src="~/assets/images/hackathon/icons/abh.png" class="hero__desc--logo" alt="africa blockchain hackathon logo" />
                         <p class="hero__desc--text">Climate Action & Green Hydrogen</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNrBqmxFmjPUIykQT_rlRI3mFlPo2plLt7ziZO0Wyczj9Z3w/viewform" class="btn hero__desc--btn">Explore Hackathon</a>
+                        <a href="#feature" class="btn hero__desc--btn">Explore Hackathon</a>
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
         <!-- hero section ends -->
 
         <!-- feature section ends -->
-        <div class="feature">
+        <div class="feature" id="feature">
             <div class="container justify-content-center">
                 <div class="row feature__content">
                     <div class="col-md-6 col-xl-5 order-1 order-md-1 feature__content--img px-lg-5">
@@ -985,7 +985,53 @@
     }
 
     // X-Large devices (large desktops, 1200px and up)
-    @media (min-width: 1200px) {  }
+    @media (min-width: 1200px) {  
+        .wrapper {
+            .hero{
+                &__logos{
+                    img{
+                        width: 15rem;
+                    }
+                }
+
+                &__desc{
+                    &--logo{
+                        width: 80%;
+                    }
+
+                    &--text {
+                        font-size: $font-lg;
+                        margin-bottom: 3rem
+                    }
+
+                    &--btn{
+                        padding: 1rem 1.5rem;
+                        font-size: $font-hd;
+                    }
+                }
+            }
+
+            .highlight {
+
+                &__sect {
+                    &--icon{
+                        margin-right: 1.5rem;
+                        width: 5rem;
+                    }
+
+                    &--detail{
+                        .number{
+                            font-size: $font-md;
+                        }
+                        
+                        .desc{
+                            font-size: $font-hd;
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     // XX-Large devices (larger desktops, 1400px and up)
     @media (min-width: 1400px) {
