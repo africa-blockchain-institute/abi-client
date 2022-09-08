@@ -7,6 +7,10 @@
                         <h1 class="hero__banner--title">Building Blockchain Capacities in Africa for Digital Transformation </h1>
                         <nuxt-link to="/about-abi" class="hero__banner--btn btn">Explore</nuxt-link>
                     </div>
+
+                    <div class="hero__title">
+                        <div class="hero__title--head"></div>
+                    </div>
                 </div>
             </div>
         </div>
