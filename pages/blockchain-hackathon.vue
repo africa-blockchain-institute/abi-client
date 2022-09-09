@@ -226,7 +226,7 @@
                     <div class="col-md-6 col-xl-5 duration__content--text px-lg-5">
                         <div class=" mb-lg-5">
                             <h3 class="title">Duration</h3>
-                            <p class="body">October 10th - November 2022.</p>
+                            <p class="body">October 17th - November 2022.</p>
                             
                             <h3 class="title">Venue</h3>
                             <p class="body">Online.</p>
