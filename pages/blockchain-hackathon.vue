@@ -3,7 +3,7 @@
         <!-- hero section starts-->
         <div class="hero">
             <div class="container">
-                <div class="row h-100 position-relative justify-content-center">
+                <div class="row position-relative justify-content-center">
                     <div class="col-10 hero__logos">
                         <a href="https://africablockchain.institute/" target="blank">
                             <img src="~/assets/icons/abi.png" alt="ABI logo">
@@ -32,7 +32,8 @@
                     </div>
                     <div class="col-md-6 col-xl-5 order-2 order-md-2 feature__content--text px-lg-5">
                         <h3 class="title">Africa Blockchain Hackathon</h3>
-                        <p class="body">The Africa Blockchain Hackathon is an initiative of Africa Blockchain Institute (ABI), to give young professionals, students, tech enthusiasts, policy makers, artists, amongst others, early exposure to the career and business opportunities being presented by the Blockchain/DLT Digital Innovations. The Hackathon creates a structured and sustainable community that nurtures and empowers awesome developers by providing and democratizing access to knowledge, capital, and mentorship.</p>
+                        <p class="body">The Africa Blockchain Hackathon is an initiative of Africa Blockchain Institute (ABI), this time in partnership with University of Namibia, to give young professionals, students, tech enthusiasts, policy makers, artists, amongst others, early exposure to the career and business opportunities being presented by the Blockchain/DLT Digital Innovations. The Hackathon creates a structured and sustainable community that nurtures and empowers awesome developers by providing and democratizing access to knowledge, capital, and mentorship.</p>
+                        <p class="body">We are hosting this year's Hackathon with sole focus on Climate Action & Green Hydrogen. Climate Change is pivotal to our existence on earth, the best we can do as Humans is to make the world a better place, by reducing greenhouse gas emissions, strengthening blockchain sustainability, and using environmental friendly energy.</p>
                     </div>
                 </div>
                     
@@ -304,7 +305,20 @@
 
 <script>
     export default {
+        name: "blockchain-hackathon",
         layout: "vacuous",
+
+        head(){
+            return{
+                title: 'Blockchain Hackathon -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'Blockchain Hackathon',
+                        content: 'Africa Blockchain Hackathon (2nd Edition)'
+                    }
+                ],
+            }
+        },
     }
 </script>
 
