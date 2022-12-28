@@ -7,22 +7,10 @@
                 </div>
             </div>
             <div class="row justify-content-center align-items-center">
-                <div class="col-4 col-md-3 col-xl-2 px-md-4 partners__img" v-for="(partner, index) in partners" :key="index">
+                <div class="col-4 col-md-3 col-xl-2 px-md-4 px-lg-5 partners__img" v-for="(partner, index) in partners" :key="index">
                     <img :src="partner.image" :alt="partner.name" class="partners__img--img img-fluid">
                 </div>
             </div>
-
-            <!-- <div class="row justify-content-center align-items-center">
-                <div class="col-4 col-md-3 col-xl-2 px-md-4 partners__img">
-                    <img src="~/assets/images/incubator/images/convexity.jpg" alt="" class="partners__img--img img-fluid">
-                </div>
-                <div class="col-4 col-md-3 col-xl-2 px-md-4 partners__img">
-                    <img src="~/assets/images/incubator/images/tech_london.png" alt="" class="partners__img--img img-fluid">
-                </div>
-                <div class="col-4 col-md-3 col-xl-2 px-md-4 partners__img">
-                    <img src="~/assets/images/incubator/images/bbic.jpg" alt="" class="partners__img--img img-fluid">
-                </div>
-            </div> -->
         </div>
     </div>
 </template>
@@ -41,8 +29,7 @@
 
         methods:{
             async getPartners(){
-                let docs = await this.$axios.$get(`/partners`)
-                console.log(docs.data);
+                let docs = await this.$axios.$get(`/partners`);
                 this.records = docs.records;
                 this.partners = docs.data;
             },

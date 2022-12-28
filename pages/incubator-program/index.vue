@@ -9,6 +9,7 @@
         <Benefit />
         <Eligibility />
         <Partners />
+        <Testimonials />
         <Footer />
     </div>
 </template>
@@ -21,6 +22,7 @@
     import Eligibility from '~/components/incubator/Eligibility.vue';
     import Partners from '~/components/incubator/Partners.vue';
     import Footer from '~/components/incubator/Footer.vue';
+    import Testimonials from '~/components/incubator/Testimonials.vue';
 
     export default {
         name: "Incubator-Program",
@@ -39,7 +41,14 @@
         },
 
         components:{
-            Hero, Outline, Timeline, Benefit, Eligibility, Partners, Footer
+            Hero,
+            Outline,
+            Timeline,
+            Benefit,
+            Eligibility,
+            Partners,
+            Footer,
+            Testimonials
         },
 
         data(){

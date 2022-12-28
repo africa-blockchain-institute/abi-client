@@ -8,7 +8,7 @@
                 </div>
             </div>
 
-            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 justify-cotent-center list__content">
+            <div class="row row-cols-2 row-cols-md-3 justify-cotent-center list__content">
                 <div class="col list__content--sect">
                     <div class="card h-100">
                         <img src="~/assets/images/incubator/icons/blockchain1.png" alt="">
@@ -30,14 +30,6 @@
                         <img src="~/assets/images/incubator/icons/platform1.png" alt="">
                         <h3>Platform Support</h3>
                         <p>Product development support from leading blockchain platform providers.</p>
-                    </div>
-                </div>
-
-                <div class="col list__content--sect">
-                    <div class="card h-100">
-                        <img src="~/assets/images/incubator/icons/economists1.png" alt="">
-                        <h3>Access to Economists</h3>
-                        <p>Marketplace and incentive design advice from world-leading economists.</p>
                     </div>
                 </div>
 
@@ -69,7 +61,7 @@
             <div class="row">
                 <div class="col-12 col-lg-7 mx-auto text-center list__cost">
                     <h3 class="list__cost--title">Costs to Participate</h3>
-                    <p class="list__cost--text">There are a number of scholarships to participate in this program. However, if you are unable to secure one of the scholarships, and you can still participate, but you will be responsible for covering the cost of participation in the program.</p>
+                    <p class="list__cost--text">There are a number of scholarships to participate in this program. However, if you are unable to secure one of the scholarships, you can still participate, but you will be responsible for covering the cost of participation in the program.</p>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVB0VI5XqOob3vow9jOz2IEmT6gN0GLl0NyzgH9A0Dqnfctw/viewform" target="blank" class="list__cost--btn btn">Apply Now</a>
                 </div>
             </div>
@@ -226,7 +218,13 @@
             &__content{
                 &--sect{
                     .card {
-                        padding: 1.5rem;
+                        padding: 3rem;
+                    }
+
+                    img {
+                        width: 3rem;
+                        height: 3rem;
+                        margin-bottom: 1.5rem;
                     }
 
                     h3 {
@@ -248,4 +246,3 @@
         }
     }
 </style>
-<!-- It's a beautiful thing if clearly defined and accepted by both parties with the sole goal of working toward marriage. -->

@@ -19,12 +19,12 @@
                     </div>
                     
                     <div class="timeline__text--sub">
-                        <p>Incubation Program </p>
+                        <p>Incubation Program (Virtual) </p>
                         <h3>1st March 2023 - 16th June 2023</h3>
                     </div>
                     
                     <div class="timeline__text--sub">
-                        <p>Demo Day</p>
+                        <p>Demo Day (In-Person at Kigali, Rwanda)</p>
                         <h3>June 2023</h3>
                     </div>
 
