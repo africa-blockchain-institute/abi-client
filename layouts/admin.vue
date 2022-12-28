@@ -44,6 +44,14 @@
                         <span class="fas fa-money-check icon"></span>
                         <span class="name" :class="{ active: toggle }">Payments</span>
                     </nuxt-link>
+                    <nuxt-link to="/admin/partners" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
+                        <span class="fas fa-hands icon"></span>
+                        <span class="name" :class="{ active: toggle }">Partners</span>
+                    </nuxt-link>
+                    <nuxt-link to="/admin/messages" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
+                        <span class="fas fa-envelope icon"></span>
+                        <span class="name" :class="{ active: toggle }">Message</span>
+                    </nuxt-link>
                     <a href="#" @click="logout()" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-sign-out-alt icon"></span>
                         <span class="name" :class="{ active: toggle }">Logout</span>

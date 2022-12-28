@@ -113,8 +113,6 @@
             async getDoc(){
                 let talent = await this.$axios.$get(`/talents/${this.$route.params.id}`)
                 this.talent = talent.data;
-
-                console.log(this.talent)
             },
         }
     }

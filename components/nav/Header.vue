@@ -47,7 +47,7 @@
                 >Enterprise</nuxt-link
               >
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a
                 class="nav-link"
                 href="https://www.careers.africablockchain.institute/"
@@ -60,7 +60,7 @@
                 href="https://africablockchain.institute/blockchain-report"
                 >Research</a
               >
-            </li>
+            </li> -->
             <li class="nav-item">
               <nuxt-link
                 class="nav-link"

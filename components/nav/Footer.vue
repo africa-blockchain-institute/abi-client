@@ -24,12 +24,23 @@
                 <div class="col-md-4 footer__sect">
                     <h4 class="footer__sect--header">Quick Links</h4>
 
-                    <ul class="footer__sect--links ps-0">
-                        <li><nuxt-link to="/about-abi" class="link">About ABI</nuxt-link> </li>
-                        <li><nuxt-link to="/faculty" class="link">Faculty</nuxt-link> </li>
-                        <li><nuxt-link to="/courses" class="link">Courses</nuxt-link> </li>
-                        <li><nuxt-link to="/enterprise" class="link">Enterprise</nuxt-link> </li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="footer__sect--links ps-0">
+                                <li><nuxt-link to="/about-abi" class="link">About ABI</nuxt-link> </li>
+                                <li><nuxt-link to="/faculty" class="link">Faculty</nuxt-link> </li>
+                                <li><nuxt-link to="/courses" class="link">Courses</nuxt-link> </li>
+                                <li><nuxt-link to="/enterprise" class="link">Enterprise</nuxt-link> </li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="footer__sect--links ps-0">
+                                <li><a href="https://www.careers.africablockchain.institute/" class="link">Careers</a> </li>
+                                <li><nuxt-link to="/blockchain-report" class="link">Research</nuxt-link> </li>
+                                <li><nuxt-link to="/incubator-program" class="link">Incubator Program</nuxt-link> </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4 footer__sect">
                     <h4 class="footer__sect--header">Contact Us</h4>
@@ -92,7 +103,6 @@
                     this.loading = false;
 
                 } catch (err) {
-                    console.log(err);
                     this.mcErr = "Failed to subscribe. Please try again later."
                     this.form = "";
                     this.loading = false;

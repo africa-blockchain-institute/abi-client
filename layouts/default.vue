@@ -1,5 +1,6 @@
 <template>
     <div>
+        <SliderMsg />
         <Header />
         <Nuxt />
         <Footer />
@@ -9,6 +10,7 @@
 <script>
     import Header from '@/components/nav/Header'
     import Footer from '@/components/nav/Footer'
+    import SliderMsg from '~/components/nav/SliderMsg.vue';
 
     export default {
         name: "default",
@@ -23,7 +25,7 @@
             }
         },
         
-        components : { Header, Footer },
+        components : { Header, Footer, SliderMsg },
     }
 </script>
 

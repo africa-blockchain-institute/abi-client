@@ -1,16 +1,16 @@
 <template>
     <div>
         <header class="header">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
                     <nuxt-link to="/" class="navbar-brand header__logo">
-                        <img src="/logo.png" alt="Africa blockchain institute Logo">
+                        <img src="/logo_1.png" alt="Africa blockchain institute Logo">
                     </nuxt-link>
 
                     <div class=" header__links justify-content-end" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSefUa4XoY1xOBKiBQYI42rii4LgjBSsylVBapNwZBy0U0kmLA/viewform?usp=sf_link" target="blank" class="nav-link btn">Apply Now</a>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSefUa4XoY1xOBKiBQYI42rii4LgjBSsylVBapNwZBy0U0kmLA/viewform?usp=sf_link" target="blank" class="nav-link btn">Become a Mentor</a>
                             </li>
                         </ul>
                     </div>
@@ -38,9 +38,11 @@
 
 <style lang="scss" scoped>
     .header{
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, rgba(20, 27, 86, 0.9) 27.29%, rgba(20, 27, 86, 0.9) 51.62%);
+        
         &__logo{
             img{
-                width: 9rem;
+                width: 7rem;
             }
         }
 
@@ -51,7 +53,8 @@
 
                 .btn{
                     @include button();
-                    // padding: .5rem 1rem;
+                    padding: .5rem .9rem;
+                    font-size: $font-sm;
                 }
             }
         }
@@ -61,7 +64,7 @@
         .header{
             &__logo{
                 img{
-                    width: 10rem;
+                    width: 9rem;
                 }
             }
 
@@ -71,6 +74,11 @@
                 .nav-item{
                     margin-right: 1rem;
                     margin-bottom: 0;
+
+                    .btn{
+                        padding: .75rem 1.2rem;
+                        font-size: $font-rg;
+                    }
 
                     &:last-child{
                         margin-right: 0;
