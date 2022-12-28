@@ -8,7 +8,7 @@
                 </div>
             </div>
 
-            <div class="row row-cols-2 row-cols-md-3 justify-cotent-center list__content">
+            <div class="row row-cols-2 row-cols-md-3 row-cols-md-4 justify-cotent-center list__content">
                 <div class="col list__content--sect">
                     <div class="card h-100">
                         <img src="~/assets/images/incubator/icons/blockchain1.png" alt="">
@@ -218,14 +218,9 @@
             &__content{
                 &--sect{
                     .card {
-                        padding: 3rem;
+                        padding: 2rem 1.5rem;
                     }
 
-                    img {
-                        width: 3rem;
-                        height: 3rem;
-                        margin-bottom: 1.5rem;
-                    }
 
                     h3 {
                         font-size: $font-hd;
