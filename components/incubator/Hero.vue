@@ -5,7 +5,7 @@
                 <div class="col-lg-5 col-xxl-5 hero__text">
                     <h1 class="hero__text--title">Africa Blockchain Incubation Program 2023</h1>
                     <p class="hero__text--sub">We are excited to announce the launch of the Africa Blockchain Incubation Program 2023, designed to support and nurture the next generation of blockchain innovators on the continent. This is the 3rd edition of the program that has successfully incubated different blockchain startups from across Africa. </p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSefUa4XoY1xOBKiBQYI42rii4LgjBSsylVBapNwZBy0U0kmLA/viewform?usp=sf_link" target="blank" class="hero__idea--btn btn">Register Now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVB0VI5XqOob3vow9jOz2IEmT6gN0GLl0NyzgH9A0Dqnfctw/viewform" target="blank" class="hero__idea--btn btn">Register Now</a>
                 </div>
                 <div class="col-md-6 col-xxl-6 hero__img">
                     <img src="~/assets/images/incubator/images/hero.png" alt="" class="img-fluid">
@@ -16,7 +16,7 @@
                 <div class="col-lg-7 mx-auto text-center hero__idea">
                     <h3 class="hero__idea--title">Do you have a groundbreaking idea? </h3>
                     <p class="hero__idea--text">Do you have a groundbreaking idea for using blockchain technology to solve a real-world problem? Are you passionate about driving positive change in your community through the power of decentralization?</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSefUa4XoY1xOBKiBQYI42rii4LgjBSsylVBapNwZBy0U0kmLA/viewform?usp=sf_link" target="blank" class="hero__idea--btn btn">Apply Now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVB0VI5XqOob3vow9jOz2IEmT6gN0GLl0NyzgH9A0Dqnfctw/viewform" target="blank" class="hero__idea--btn btn">Apply Now</a>
                 </div>
             </div>
         </div>

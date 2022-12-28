@@ -47,18 +47,6 @@
                 partners: [],
             }
         },
-
-        created(){
-            // this.getPartners();
-        },
-
-        methods:{
-            async getPartners(){
-                let docs = await this.$axios.$get(`/partners`)
-                this.records = docs.records;
-                this.partners = docs.data;
-            },
-        }
     }
 </script>
 

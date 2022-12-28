@@ -70,7 +70,7 @@
                 <div class="col-12 col-lg-7 mx-auto text-center list__cost">
                     <h3 class="list__cost--title">Costs to Participate</h3>
                     <p class="list__cost--text">There are a number of scholarships to participate in this program. However, if you are unable to secure one of the scholarships, and you can still participate, but you will be responsible for covering the cost of participation in the program.</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSefUa4XoY1xOBKiBQYI42rii4LgjBSsylVBapNwZBy0U0kmLA/viewform?usp=sf_link" target="blank" class="list__cost--btn btn">Apply Now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVB0VI5XqOob3vow9jOz2IEmT6gN0GLl0NyzgH9A0Dqnfctw/viewform" target="blank" class="list__cost--btn btn">Apply Now</a>
                 </div>
             </div>
         </div>

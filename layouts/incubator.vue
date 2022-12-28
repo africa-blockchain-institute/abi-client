@@ -10,7 +10,7 @@
                     <div class=" header__links justify-content-end" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSefUa4XoY1xOBKiBQYI42rii4LgjBSsylVBapNwZBy0U0kmLA/viewform?usp=sf_link" target="blank" class="nav-link btn">Become a Mentor</a>
+                                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfwtEcKZDGabK-0XhjN_tbMGgFXIA0k8cpS177BWa98aCcN0g/viewform" target="blank" class="nav-link btn">Become a Mentor</a>
                             </li>
                         </ul>
                     </div>
