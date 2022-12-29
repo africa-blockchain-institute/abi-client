@@ -29,6 +29,9 @@
                 <div class="col-4 col-md-3 col-xl-2 px-md-3 px-lg-5 testimonials__logo">
                     <img src="~/assets/images/incubator/images/santech.png" alt="" class="testimonials__logo--img img-fluid">
                 </div>
+                <div class="col-4 col-md-3 col-xl-2 px-md-3 px-lg-5 testimonials__logo">
+                    <img src="~/assets/images/incubator/images/bfcc.jpeg" alt="" class="testimonials__logo--img img-fluid">
+                </div>
             </div>
 
             <div class="row testimonials__row">
