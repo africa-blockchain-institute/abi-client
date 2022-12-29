@@ -8,8 +8,8 @@
         <Timeline />
         <Benefit />
         <Eligibility />
-        <Partners />
         <Testimonials />
+        <Partners />
         <Footer />
     </div>
 </template>

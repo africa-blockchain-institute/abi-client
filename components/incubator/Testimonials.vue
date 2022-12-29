@@ -35,32 +35,16 @@
             </div>
 
             <div class="row testimonials__row">
-                <div class="col-lg-6 testimonials__participants">
+                <div class="col-lg-10 mx-auto testimonials__participants">
                     <div class="card shadow border-0 mb-3">
-                        <div class="row align-items-end g-0">
-                            <div class="col-md-3 col-lg-4 d-none d-md-block">
-                                <img src="~/assets/images/incubator/images/participant_1.jpg" class="img-fluid rounded-start" alt="">
+                        <div class="row align-items-center g-0">
+                            <div class="col-md-3 col-lg-4">
+                                <img src="~/assets/images/incubator/images/testimonial_collage.png" class="img-fluid rounded-start" alt="">
                             </div>
                             <div class="col-md-9 col-lg-8">
                                 <div class="card-body">
                                     <p class="testimonials__participants--text">What I found greatly valuable about the Incubation program was the opportunity to learn from our mentors and network with important stakeholders in the investment and web3 space.</p>
-                                    <h4 class="testimonials__participants--author">Incubation Program Participant</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 testimonials__participants">
-                    <div class="card shadow border-0 mb-3">
-                        <div class="row align-items-end g-0">
-                            <div class="col-md-3 col-lg-4 d-none d-md-block">
-                                <img src="~/assets/images/incubator/images/participant_2.jpg" class="img-fluid rounded-start" alt="">
-                            </div>
-                            <div class="col-md-8 col-lg-8">
-                                <div class="card-body">
-                                    <p class="testimonials__participants--text">It was really helpful to learn about the prospects of blockchain technology and how the same could improve our business</p>
-                                    <h4 class="testimonials__participants--author">Incubation Program Participant</h4>
+                                    <h4 class="testimonials__participants--author">Vusa Chimanikire, <br> Co-Founder, Tigere Housing.</h4>
                                 </div>
                             </div>
                         </div>
@@ -146,7 +130,22 @@
             }
 
             &__row {
-                margin-top: 5rem;
+                margin-top: 6rem;
+            }
+
+            &__participants {
+                &--text{
+                    font-size: $font-rg;
+                    font-size: 1.2rem;
+                }
+
+                &--author{
+                    font-size: $font-rg;
+                }
+
+                .card-body{
+                    padding: 3rem;
+                }
             }
         }
     }
