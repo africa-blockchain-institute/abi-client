@@ -47,14 +47,14 @@
         padding: 2rem 0;
 
         &__img{
-            display: none;
+            margin-bottom: 1rem;
         }
 
         &__text{
             color: $white;
 
             &--title{
-                font-size: $font-md;
+                font-size: $font-hd;
                 font-weight: 800;
                 line-height: 1.2;
                 margin-bottom: 1rem;
