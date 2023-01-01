@@ -38,6 +38,7 @@
                                 <li><a href="https://www.careers.africablockchain.institute/" class="link">Careers</a> </li>
                                 <li><nuxt-link to="/blockchain-report" class="link">Research</nuxt-link> </li>
                                 <li><nuxt-link to="/incubator-program" class="link">Incubator Program</nuxt-link> </li>
+                                <li><nuxt-link to="/mentor-program" class="link">Mentorship Program</nuxt-link> </li>
                             </ul>
                         </div>
                     </div>

@@ -7,13 +7,13 @@
                         <img src="/logo_1.png" alt="Africa blockchain institute Logo">
                     </nuxt-link>
 
-                    <div class=" header__links justify-content-end" id="navbarNav">
+                    <!-- <div class="header__links justify-content-end" id="navbarNav">
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfwtEcKZDGabK-0XhjN_tbMGgFXIA0k8cpS177BWa98aCcN0g/viewform" target="blank" class="nav-link btn">Become a Mentor</a>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </nav>
         </header>

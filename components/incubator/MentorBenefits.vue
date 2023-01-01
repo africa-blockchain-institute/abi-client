@@ -1,17 +1,16 @@
 <template>
-    <div class="eligibility">
+    <div class="benefits">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-7 col-lg-5 offset-lg-1 eligibility__text">
-                    <h2 class="eligibility__text--title">{{title}}</h2>
-                    <p class="eligibility__text--sub">{{ sub  }}</p>
-                    <div class="eligibility__text--item" v-for="(item, index) in list" :key="index">
+                <div class="col-md-5 col-lg-4 offset-lg-1 benefits__img">
+                    <img src="~/assets/images/incubator/images/benefit_mentor.jpg" class="img-fluid">
+                </div>
+                <div class="col-md-7 col-lg-5 offset-lg-1 benefits__text">
+                    <h2 class="benefits__text--title">Benefits</h2>
+                    <div class="benefits__text--item" v-for="(item, index) in list" :key="index">
                         <img src="~assets/images/incubator/icons/tick_1.png" alt="">
                         <h4>{{ item }}</h4>
                     </div> 
-                </div>
-                <div class="col-md-5 col-lg-4 offset-lg-1 eligibility__img">
-                    <img :src="require(`~/assets/images/incubator/images/${image}`)" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -20,42 +19,40 @@
 
 <script>
     export default {
-        name: 'Outline',
+        name: 'Mentor-Benefits',
 
-        props: {
-            image: {
-                type: String,
-            },
-            title: {
-                type: String,
-            },
-            sub: {
-                type: String,
-            },
-            list: {
-                type: Array,
+        data() {
+            return {
+                list: [
+                    "An opportunity to help contribute to new solutions in the blockchain space in Africa",
+                    "An opportunity to connect with other professionals and experts in the blockchain space in Africa",
+                    "A shareable certificate of serving as a mentor for the Africa Blockchain Institute",
+                    "An appreciation stipend"
+                ]
             }
-        }
+        },
     }
 </script>
 
 <style lang="scss" scoped>
-    .eligibility {
-        margin: 3rem 1rem;
-
+    .benefits {
+        padding: 2rem 1rem;
+        background: linear-gradient(180deg, rgba(20, 27, 86, 0.9) 3.09%, rgba(20, 27, 86, 0.9) 100%);
+        background-image: url("@/assets/images/incubator/images/footer_bg.jpg") !important;
+       
         &__img{
-            display: none;
+            margin-bottom: 2rem;
         }
 
         &__text{
             &--title{
                 font-size: $font-hd;
                 font-weight: 800;
-                margin-bottom: 1.2rem;
-            }
-
-            &--sub{
-                margin-bottom: 1.2rem;
+                margin-bottom: 1.5rem;
+                background: linear-gradient(91.49deg, #F68634 12.11%, #6DE0F6 35.56%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
             }
 
             &--item{
@@ -72,6 +69,7 @@
                 h4 {
                     font-size: $font-rg;
                     font-weight: bold;
+                    color: $white;
                 }
             }
         }
@@ -79,18 +77,14 @@
 
     // Medium devices (tablets, 768px and up)
     @media (min-width: 768px) {  
-        .eligibility {
-            margin: 5rem 1rem;
+        .benefits {
+            padding: 5rem 1rem;
 
             &__img{
                 display: block;
             }
 
             &__text{
-                &--sub{
-                    margin-bottom: 1.5rem;
-                }
-
                 &--item{
                     margin-bottom: 1rem;
                     
@@ -113,10 +107,11 @@
 
     // XX-Large devices (larger desktops, 1400px and up)
     @media (min-width: 1400px) {  
-        .eligibility {
+        .benefits {
             &__text{
                 &--title{
                     font-size: $font-md;
+                    margin-bottom: 2rem;
                 }
             }
         }

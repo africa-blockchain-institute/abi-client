@@ -4,15 +4,14 @@
             <div class="row">
                 <div class="col-12 col-lg-7 mx-auto text-center footer__info">
                     <h3 class="footer__info--title">How to Apply</h3>
-                    <p class="footer__info--text">To apply, click on the button below by January 31, 2023. Note that only one application is expected per team.</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVB0VI5XqOob3vow9jOz2IEmT6gN0GLl0NyzgH9A0Dqnfctw/viewform" target="blank" class="footer__info--btn btn">Apply Now</a>
+                    <p class="footer__info--text">{{ footer_text }}</p>
+                    <a :href="link" target="blank" class="footer__info--btn btn">Apply Now</a>
                 </div>
             </div>
             
             <div class="row justify-content-center">
                 <div class="col-10 footer__content">
                     <hr />
-                    <!-- <h1 class="footer__content--title">Stay Connected</h1> -->
                     <div class="footer__content--links">
                         <a href="https://twitter.com/AfricaBlockInst" target="blank" class="icon"><span class="fab fa-twitter"></span></a>
                         <a href="https://www.linkedin.com/company/africablockinst" target="blank" class="icon"><span class="fab fa-linkedin"></span></a>
@@ -26,6 +25,14 @@
  </template>
  
  <script>
+        export default {
+            props: ['footer_text', 'link'],
+
+            data(){
+                return{
+                }
+            }
+        }
  </script>
  
  <style lang="scss" scoped>
@@ -33,7 +40,6 @@
         background: linear-gradient(180deg, rgba(20, 27, 86, 0.9) 3.09%, rgba(20, 27, 86, 0.9) 100%);
         background-image: url("@/assets/images/incubator/images/footer_bg.jpg") !important;
         color: $white;
-        margin: 3rem 0 0;
         padding: 3rem 0;
 
         &__info{
@@ -84,8 +90,7 @@
      // Large devices (desktops, 992px and up)
     @media (min-width: 992px) {  
         .footer {
-            margin: 5rem 0 0;
-            padding: 3rem 0;
+            padding: 5rem 0;
 
             &__info{
                 &--title {

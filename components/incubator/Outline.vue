@@ -3,32 +3,16 @@
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-4 outline__img">
-                    <img src="~/assets/images/incubator/images/outline.jpg" alt="" class="img-fluid">
+                    <img :src="require(`~/assets/images/incubator/images/${image}`)" alt="" class="img-fluid">
                 </div>
                 <div class="col-lg-7 outline__text">
-                    <h1 class="outline__text--title">The Africa Blockchain Incubation Program</h1>
-                    <p class="outline__text--sub">The Africa Blockchain Incubation Program is a four-month intensive program designed to help participants develop and launch their blockchain projects. Selected participants will receive training, mentorship, and resources to help bring their ideas to fruition.</p>
+                    <h1 class="outline__text--title">{{ title }}</h1>
+                    <p class="outline__text--sub">{{ sub  }}</p>
                     
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="outline__text--item">
-                                <img src="~assets/images/incubator/icons/tick_1.png" alt="">
-                                <h4>Access to a network of industry experts and mentors</h4>
-                            </div>
-                            <div class="outline__text--item">
-                                <img src="~assets/images/incubator/icons/tick_1.png" alt="">
-                                <h4>Training sessions on blockchain technology and business/entrepreneurship</h4>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="outline__text--item">
-                                <img src="~assets/images/incubator/icons/tick_1.png" alt="">
-                                <h4>Opportunities to pitch to potential investors</h4>
-                            </div>
-                            <div class="outline__text--item">
-                                <img src="~assets/images/incubator/icons/tick_1.png" alt="">
-                                <h4>Regular check-ins and progress reviews with program mentors</h4>
-                            </div>
+                        <div class="col-md-6 outline__text--item" v-for="(item, index) in list" :key="index">
+                            <img src="~assets/images/incubator/icons/tick_1.png" alt="">
+                            <h4>{{ item }} </h4>
                         </div>
                     </div>
                 </div>
@@ -40,6 +24,21 @@
 <script>
     export default {
         name: 'Outline',
+
+        props: {
+            image: {
+                type: String,
+            },
+            title: {
+                type: String,
+            },
+            sub: {
+                type: String,
+            },
+            list: {
+                type: Array,
+            }
+        }
     }
 </script>
 
@@ -107,6 +106,11 @@
 
                 &--sub{
                     margin-bottom: 2rem;
+                }
+
+                &--item{
+                    margin-bottom: 1.5rem;
+                    padding-right: 1rem;
                 }
             }
         }

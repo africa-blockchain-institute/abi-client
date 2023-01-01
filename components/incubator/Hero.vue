@@ -3,20 +3,21 @@
         <div class="container">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-5 col-xxl-5 hero__text">
-                    <h1 class="hero__text--title">Africa Blockchain Incubation Program 2023</h1>
-                    <p class="hero__text--sub">We are excited to announce the launch of the Africa Blockchain Incubation Program 2023, designed to support and nurture the next generation of blockchain innovators on the continent. This is the 3rd edition of the program that has successfully incubated different blockchain startups from across Africa. </p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVB0VI5XqOob3vow9jOz2IEmT6gN0GLl0NyzgH9A0Dqnfctw/viewform" target="blank" class="hero__idea--btn btn">Register Now</a>
+                    <h4 class="hero__text--call">{{ call_text }}</h4>
+                    <h1 class="hero__text--title">{{ title }}</h1>
+                    <p class="hero__text--sub">{{ subtitle }} </p>
+                    <a :href="link" target="blank" class="hero__idea--btn btn">Register Now</a>
                 </div>
                 <div class="col-md-6 col-xxl-6 hero__img">
-                    <img src="~/assets/images/incubator/images/hero.png" alt="" class="img-fluid">
-                </div>
+                    <img :src="require(`~/assets/images/incubator/images/${hero_image}`)" alt="" class="img-fluid">
+                  </div>
             </div>
 
             <div class="row">
                 <div class="col-lg-7 mx-auto text-center hero__idea">
-                    <h3 class="hero__idea--title">Do you have a groundbreaking idea? </h3>
-                    <p class="hero__idea--text">Do you have a groundbreaking idea for using blockchain technology to solve a real-world problem? Are you passionate about driving positive change in your community through the power of decentralization?</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdVB0VI5XqOob3vow9jOz2IEmT6gN0GLl0NyzgH9A0Dqnfctw/viewform" target="blank" class="hero__idea--btn btn">Apply Now</a>
+                    <h3 class="hero__idea--title">{{ idea_title }} </h3>
+                    <p class="hero__idea--text">{{ idea_subtitle  }} </p>
+                    <a :href="link" target="blank" class="hero__idea--btn btn">Apply Now</a>
                 </div>
             </div>
         </div>
@@ -25,7 +26,32 @@
 
 <script>
     export default {
-        name: 'Incubator-Program'
+        name: 'Incubator-Program',
+
+        props: {
+            title: {
+                type: String,
+                default: 'Africa Blockchain Incubation Program 2023'
+            },
+            subtitle: {
+                type: String,
+            },
+            link: {
+                type: String,
+            },
+            hero_image: {
+                type: String,
+            },
+            call_text: {
+                type: String,
+            },
+            idea_title: {
+                type: String,
+            },
+            idea_subtitle: {
+                type: String,
+            },
+        }
     }
 </script>
 
@@ -50,6 +76,12 @@
 
             &--sub {
                 font-size: $font-rg;
+                line-height: 1.5;
+            }
+
+            &--call {
+                font-size: 1rem;
+                font-weight: bold;
                 line-height: 1.5;
             }
         }
