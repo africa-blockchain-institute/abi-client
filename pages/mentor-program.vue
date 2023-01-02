@@ -22,6 +22,7 @@
             :title="eligibility_title" 
             :sub="eligibility_sub" 
             :list="eligibility_list"
+            :disp="true"
         />
 
         <MentorBenefits />

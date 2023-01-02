@@ -27,7 +27,7 @@
                     "An opportunity to help contribute to new solutions in the blockchain space in Africa",
                     "An opportunity to connect with other professionals and experts in the blockchain space in Africa",
                     "A shareable certificate of serving as a mentor for the Africa Blockchain Institute",
-                    "An appreciation stipend"
+                    "An appreciation stipend",
                 ]
             }
         },
@@ -68,7 +68,6 @@
             
                 h4 {
                     font-size: $font-rg;
-                    font-weight: bold;
                     color: $white;
                 }
             }

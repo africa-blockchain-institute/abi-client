@@ -8,7 +8,18 @@
                     <div class="eligibility__text--item" v-for="(item, index) in list" :key="index">
                         <img src="~assets/images/incubator/icons/tick_1.png" alt="">
                         <h4>{{ item }}</h4>
-                    </div> 
+                    </div>
+
+                    <div v-if="disp">
+                        <div class="eligibility__text--item">
+                            <img src="~assets/images/incubator/icons/tick_1.png" alt="">
+                            <h4>Incubation Program: <b>March - June 2023 </b></h4>
+                        </div>
+                        <div class="eligibility__text--item">
+                            <img src="~assets/images/incubator/icons/tick_1.png" alt="">
+                            <h4>Deadline for Mentorship Application: <b>6th February 2023 </b></h4>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-5 col-lg-4 offset-lg-1 eligibility__img">
                     <img :src="require(`~/assets/images/incubator/images/${image}`)" class="img-fluid">
@@ -34,6 +45,9 @@
             },
             list: {
                 type: Array,
+            },
+            disp: {
+                type: Boolean,
             }
         }
     }
@@ -71,7 +85,6 @@
             
                 h4 {
                     font-size: $font-rg;
-                    font-weight: bold;
                 }
             }
         }
