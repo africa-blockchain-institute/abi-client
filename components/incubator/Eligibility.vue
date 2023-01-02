@@ -2,7 +2,7 @@
     <div class="eligibility">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-7 col-lg-5 offset-lg-1 eligibility__text">
+                <div class="col-md-7 col-lg-5 offset-lg-1 order-2 order-md-1 eligibility__text">
                     <h2 class="eligibility__text--title">{{title}}</h2>
                     <p class="eligibility__text--sub">{{ sub  }}</p>
                     <div class="eligibility__text--item" v-for="(item, index) in list" :key="index">
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5 col-lg-4 offset-lg-1 eligibility__img">
+                <div class="col-md-5 col-lg-4 offset-lg-1 order-1 order-md-2 eligibility__img">
                     <img :src="require(`~/assets/images/incubator/images/${image}`)" class="img-fluid">
                 </div>
             </div>
