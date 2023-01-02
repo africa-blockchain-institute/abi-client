@@ -49,7 +49,8 @@
         padding: 3rem 0;
 
         &__img{
-            display: none;
+            display: block;
+            margin-bottom: 1rem;
         }
 
         &__text{

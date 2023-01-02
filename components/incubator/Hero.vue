@@ -87,7 +87,6 @@
         }
 
         &__img{
-            // display: none;
             margin: 0 auto;
             margin-bottom: 2rem;
         }

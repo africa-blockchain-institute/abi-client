@@ -81,7 +81,6 @@
                 
                 h4 {
                     font-size: $font-rg;
-                    font-weight: bold;
                 }
             }
         }

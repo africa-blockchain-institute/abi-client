@@ -58,7 +58,8 @@
         margin: 3rem 1rem;
 
         &__img{
-            display: none;
+            display: block;
+            margin-bottom: 1rem;
         }
 
         &__text{
