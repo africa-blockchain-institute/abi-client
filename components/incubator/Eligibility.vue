@@ -11,13 +11,14 @@
                     </div>
 
                     <div v-if="disp">
+                        <h5 class="fw-bold mb-3 mt-md-3">Program Timeline</h5>
                         <div class="eligibility__text--item">
                             <img src="~assets/images/incubator/icons/tick_1.png" alt="">
-                            <h4>Incubation Program: <b>March - June 2023 </b></h4>
+                            <h4>Incubation Program: <br> <b>March - June 2023 </b></h4>
                         </div>
                         <div class="eligibility__text--item">
                             <img src="~assets/images/incubator/icons/tick_1.png" alt="">
-                            <h4>Deadline for Mentorship Application: <b>6th February 2023 </b></h4>
+                            <h4>Deadline for Mentorship Application: <br> <b>6th February 2023 </b></h4>
                         </div>
                     </div>
                 </div>
