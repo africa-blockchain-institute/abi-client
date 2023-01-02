@@ -25,6 +25,7 @@
         />
 
         <MentorBenefits />
+        <Testimonials />
         <Footer :footer_text="footer_text" :link="link" />
     </div>
 </template>
@@ -35,6 +36,7 @@
     import Eligibility from '~/components/incubator/Eligibility.vue';
     import MentorBenefits from '~/components/incubator/MentorBenefits.vue';
     import Footer from '~/components/incubator/Footer.vue';
+    import Testimonials from '~/components/incubator/Testimonials.vue';
 
     export default {
         name: "Mentorship-Program",
@@ -57,7 +59,8 @@
             Outline,
             Eligibility,
             MentorBenefits,
-            Footer
+            Footer,
+            Testimonials
         },
 
         data(){
