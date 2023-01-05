@@ -1,23 +1,23 @@
 <template>
-    <div class="hero">
+    <div class="heroinc">
         <div class="container">
             <div class="row justify-content-between align-items-center">
-                <div class="col-lg-5 col-xxl-5 hero__text">
-                    <h4 class="hero__text--call">{{ call_text }}</h4>
-                    <h1 class="hero__text--title">{{ title }}</h1>
-                    <p class="hero__text--sub">{{ subtitle }} </p>
-                    <a :href="link" target="blank" class="hero__idea--btn btn">Register Now</a>
+                <div class="col-lg-5 col-xxl-5 heroinc__text">
+                    <h4 class="heroinc__text--call">{{ call_text }}</h4>
+                    <h1 class="heroinc__text--title">{{ title }}</h1>
+                    <p class="heroinc__text--sub">{{ subtitle }} </p>
+                    <a :href="link" target="blank" class="heroinc__idea--btn btn">Register Now</a>
                 </div>
-                <div class="col-md-6 col-xxl-6 hero__img">
+                <div class="col-md-6 col-xxl-6 heroinc__img">
                     <img :src="require(`~/assets/images/incubator/images/${hero_image}`)" alt="" class="img-fluid">
                   </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-7 mx-auto text-center hero__idea">
-                    <h3 class="hero__idea--title">{{ idea_title }} </h3>
-                    <p class="hero__idea--text">{{ idea_subtitle  }} </p>
-                    <a :href="link" target="blank" class="hero__idea--btn btn">Apply Now</a>
+                <div class="col-lg-7 mx-auto text-center heroinc__idea">
+                    <h3 class="heroinc__idea--title">{{ idea_title }} </h3>
+                    <p class="heroinc__idea--text">{{ idea_subtitle  }} </p>
+                    <a :href="link" target="blank" class="heroinc__idea--btn btn">Apply Now</a>
                 </div>
             </div>
         </div>
@@ -56,7 +56,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .hero {
+    .heroinc {
         padding: 2rem 0;
 
         &__text {
@@ -112,7 +112,7 @@
 
     // Medium devices (tablets, 768px and up)
     @media (min-width: 768px) {  
-        .hero {
+        .heroinc {
             padding: 3rem 0;
 
             &__text {
@@ -133,7 +133,7 @@
 
     // Large devices (desktops, 992px and up)
     @media (min-width: 992px) {  
-        .hero {
+        .heroinc {
             padding: 4rem 0 2rem;
 
             &__text {
@@ -158,7 +158,7 @@
 
     // XX-Large devices (larger desktops, 1400px and up)
     @media (min-width: 1400px) {  
-        .hero {
+        .heroinc {
             padding: 5rem 0 2rem;
 
             &__idea{

@@ -225,7 +225,7 @@
     }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .wrapper {
         .hero{
             padding: 2rem 0 3rem;

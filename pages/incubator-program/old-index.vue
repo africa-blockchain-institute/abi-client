@@ -232,7 +232,7 @@
 <style lang="scss" scoped>
     .wrapper{
         .hero{
-            background: url("@/assets/images/incubator/images/hero_banner.jpg") center /cover;
+            // background: url("@/assets/images/incubator/images/hero_banner.jpg") center /cover;
 
             &__banner{
                 padding: 4rem 1rem;

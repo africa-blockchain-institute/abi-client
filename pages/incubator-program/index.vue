@@ -108,8 +108,8 @@
 <style lang="scss" scoped>
     .wrapper{
         .banner {
-            background-image: url("@/assets/images/incubator/images/hero_bg.jpg") ;
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, rgba(20, 27, 86, 0.9) 27.29%, rgba(20, 27, 86, 0.9) 51.62%);
+            background-image: url("@/assets/images/incubator/images/hero_bg.jpg") !important;
         }
     }
 
