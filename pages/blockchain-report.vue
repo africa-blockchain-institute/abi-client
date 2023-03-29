@@ -15,7 +15,7 @@
                     
                     <div class="col-10 hero__desc">
                         <h1 class="hero__desc--text">AFRICA BLOCKCHAIN REPORT </h1>
-                        <h4 class="hero__desc--sub">(2nd EDITION)</h4>
+                        <!-- <h4 class="hero__desc--sub">(2nd EDITION)</h4> -->
 
                         <p class="hero__desc--tagline">...accelerating Blockchain Innovation across the Continent</p>
                         <a href="#details" class="btn hero__desc--btn">Download Report</a>
@@ -128,6 +128,7 @@
                                         <option value="" disabled>Select Edition</option>
                                         <option value="1st">1st Edition</option>
                                         <option value="2nd">2nd Edition</option>
+                                        <option value="3rd">3rd Edition</option>
                                     </select>
                                 </div>
                             </div>
@@ -207,9 +208,11 @@
                         }).then((result) => {
                             if (result.value) {
                                 if (this.form.edition == "1st") {
-                                    return window.open('https://african-blockchain.s3.us-east-2.amazonaws.com/algorand/AFRICA+Blockchain+Report+2021-2.pdf', '_blank')
+                                    return window.open('https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+2021-2.pdf', '_blank')
                                 } else if (this.form.edition == "2nd") {
                                     return window.open("https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+II+-+2022.pdf", '_blank')
+                                } else if (this.form.edition == "3rd") {
+                                    return window.open("https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+III+-+2023.pdf", '_blank')
                                 }
                             }
                         })
