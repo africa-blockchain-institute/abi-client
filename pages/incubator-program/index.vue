@@ -481,6 +481,7 @@
         // timeline section
         .timeline {
             padding: 2rem 0;
+            background: #F0F3FF;
 
             &__head {
                 text-align: center;
