@@ -364,7 +364,7 @@
 
 <style lang="scss" scoped>
     .wrapper{
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: 'Space Grotesk', sans-serif !important;
         .hero{
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, rgba(20, 27, 86, 0.9) 27.29%, rgba(20, 27, 86, 0.9) 51.62%);
             background-image: url("@/assets/images/incubator24/bg-1.jpg") !important;
@@ -390,22 +390,26 @@
                         font-size: 1.5rem;
                         font-weight: 700;
                         margin-bottom: 0rem;
+                        font-family: 'Space Grotesk', sans-serif;
                     }
 
                     &--sub {
                         font-size: 1.5rem;
                         margin-bottom: 1rem;
+                        font-family: 'Space Grotesk', sans-serif;
                     }
 
                     &--desc {
                         font-size: 1rem;
                         margin-bottom: 2rem;
+                        font-family: 'Space Grotesk', sans-serif;
                     }
 
                     &--btn {
                         @include button();
                         padding: .75rem 1.2rem;
                         font-size: $font-rg;
+                        font-family: 'Space Grotesk', sans-serif;
                     }
                 }
 
