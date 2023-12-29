@@ -44,7 +44,7 @@ export default {
 
     methods: {
         startCountdown() {
-            const futureDate = new Date("2024-01-01T00:00:59"); // Set your future date here
+            const futureDate = new Date("2024-01-31T00:00:00"); // Set your future date here
             const currentTime = new Date();
             const timeDifference = futureDate - currentTime;
             if (timeDifference > 0) {

@@ -13,8 +13,8 @@
                 <div class="container">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-md-7 col-lg-6 order-2 order-md-1 banner__text">
-                            <h1 class="banner__text--title">Africa Blockchain Incubation Program, 2024: </h1>
-                            <h3 class="banner__text--sub"> Nurturing Innovators Continent-wide </h3>
+                            <h1 class="banner__text--title">Africa Blockchain <br class="d-none d-lg-block"> Incubation Program, 2024: </h1>
+                            <h3 class="banner__text--sub"> Nurturing Innovators <br class="d-none d-lg-block"> Continent-wide. </h3>
                             <p class="banner__text--desc">
                                 Do you have a ground-breaking idea for using blockchain technology to solve a real-world problem? Are you passionate about driving positive change in your community through the power of decentralization? If so, we encourage you to apply to be a part of our program.
                             </p>
@@ -31,7 +31,7 @@
 
             <div class="about">
                 <div class="container">
-                    <div class="row justify-content-center bg-inf">
+                    <div class="row justify-content-center">
                         <div class="col-11 col-md-10 col-lg-9 about__header">
                             <p class="about__header--text">
                                 The Africa Blockchain Incubation Program is a 6-month incubator program designed to support and nurture the next generation of blockchain innovators on the continent. This is the 4th edition of the program that has successfully incubated different blockchain startups from across Africa.
@@ -39,13 +39,13 @@
                         </div>
                     </div>
 
-                    <div class="row justify-content-center align-items-center bg-warnin">
+                    <div class="row justify-content-center align-items-center">
                         <div class="col-8 col-md-5 col-lg-4 about__image">
                             <img src="~/assets/images/incubator24/about.jpg" alt="About the Program" class="img-fluid about__image--img">
                         </div>
 
                         <div class="col-md-7 col-lg-6 offset-lg-1 about__body">
-                            <h2 class="about__body--title">ABOUT: Africa Blockchain Incubation Program </h2>
+                            <h2 class="about__body--title">ABOUT: Africa Blockchain <br class="d-none d-lg-block"> Incubation Program </h2>
                             <p class="about__body--text">The Incubation Program is focused on fostering innovation, and elevate Africa's role in the global blockchain landscape. Selected participants will receive training, mentorship, and resources to help bring their ideas to fruition. </p>
                             
                             <div class="row">
@@ -103,7 +103,7 @@
                     </div>
                 </div>
 
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 g-md-2 gy-md-4 gy-lg-5 justify-content-center">
                     <div class="col benefits__list">
                         <div class="card h-100">
                             <div class="benefits__list--icon icon">
@@ -175,8 +175,6 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
 
@@ -280,7 +278,7 @@
                 </div>
             </div>
 
-            <div class="partners">
+            <!-- <div class="partners">
                 <div class="row justify-content-center">
                     <div class="col-md-8 partners__head">
                         <h1 class="partners__head--title">Our Amazing Partners</h1>
@@ -292,7 +290,7 @@
                         <img src="~/assets/images/incubator24/bfcc.png" alt="bfcc logo" class="partners__logos--img">
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <!-- testimonials section ends -->
         
@@ -311,7 +309,6 @@
                     </div>
                 </div>
 
-
                 <div class="row">
                     <div class="apply__social">
                         <a href="https://web.facebook.com/Africa-Blockchain-Institute-103445117670312" class="apply__social--link">
@@ -323,7 +320,7 @@
                         <a href="https://twitter.com/AfricaBlockInst" class="apply__social--link">
                             <img src="~/assets/images/incubator24/x.svg" />
                         </a>
-                        <a mailto="info@africablockchaininstitute.com" class="apply__social--link">
+                        <a href="mailto:incubation@africablockchaininstitute.com" class="apply__social--link">
                             <img src="~/assets/images/incubator24/email.svg" />
                         </a>
                     </div>
@@ -367,6 +364,7 @@
 
 <style lang="scss" scoped>
     .wrapper{
+        font-family: 'Space Grotesk', sans-serif;
         .hero{
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, rgba(20, 27, 86, 0.9) 27.29%, rgba(20, 27, 86, 0.9) 51.62%);
             background-image: url("@/assets/images/incubator24/bg-1.jpg") !important;
@@ -962,17 +960,18 @@
             .hero{
                 // banner section
                 .banner {
-                    padding: 2rem 0 3rem;
+                    padding: 3rem 0;
 
                     &__text {
                         &--title {
-                            font-size: 2rem;
+                            font-size: 2.2rem;
                             margin-bottom: 0rem;
                         }
 
                         &--sub {
-                            font-size: 1.5rem;
+                            font-size: 2.3rem;
                             margin-bottom: 1rem;
+                            font-weight: 100;
                         }
 
                         &--desc {
@@ -995,10 +994,10 @@
 
                 // about section
                 .about {
-                    padding: 2rem 0 3rem;
+                    padding: 3rem 0;
 
                     &__header {
-                        margin-bottom: 2rem;
+                        margin-bottom: 3rem;
 
                         &--text {
                             font-size: 1.3rem;
@@ -1007,7 +1006,7 @@
 
                     &__body {
                         &--title {
-                            font-size: 1.5rem;
+                            font-size: 1.7rem;
                         }
 
                         &--text {
@@ -1052,11 +1051,20 @@
                     margin-bottom: 2rem;
 
                     &--title {
-                        font-size: 1.7rem;
+                        font-size: 2rem;
                     }
 
                     &--text {
                         font-size: 1.1rem;
+                    }
+                }
+
+                .about {
+
+                    &__body {
+                        &--title {
+                            font-size: 2rem;
+                        }
                     }
                 }
             }
@@ -1068,7 +1076,7 @@
                     margin-bottom: 2rem;
 
                     &--title {
-                        font-size: 1.5rem;
+                        font-size: 2rem;
                     }
 
                     &--desc {
@@ -1083,6 +1091,12 @@
             }
 
             .testimonials {
+                &__head {
+                    &--title {
+                        font-size: 2rem;
+                    }
+                }
+
                 .gallery {
                     margin: 2rem auto;
 
@@ -1107,7 +1121,7 @@
 
                     &__head {
                         &--title {
-                            font-size: 1.5rem;
+                            font-size: 2rem;
                         }
                     }
 
@@ -1126,7 +1140,7 @@
 
                 &__head {
                     &--title {
-                        font-size: 1.5rem;
+                        font-size: 2rem;
                     }
 
                     &--desc {
@@ -1153,6 +1167,16 @@
     @media (min-width: 1400px) {  
         .wrapper{
             .hero{
+                .navbar{
+                    padding: 2rem 0;
+
+                    &__logo{
+                        img{
+                            width: 12rem;
+                        }
+                    }
+                }
+
                 // banner section
                 .banner {
                     padding: 3rem 0;
@@ -1163,8 +1187,9 @@
                         }
 
                         &--sub {
-                            font-size: 2rem;
+                            font-size: 2.5rem;
                             margin-bottom: 1rem;
+                            font-weight: thin;
                         }
 
                         &--desc {
@@ -1213,6 +1238,17 @@
                 }
             }
 
+            .benefits {
+                .about {
+                    &__body {
+                        &--title {
+                            font-size: 2rem;
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+            }
+
             // testimonials section
             .testimonials {
                 padding: 3rem 0;
@@ -1225,9 +1261,9 @@
 
                 &__logos {
                     &--img {
-                        width: 8rem;
+                        width: 7rem;
                         margin: 0 1.5rem;
-                        margin-bottom: 2rem;
+                        margin-bottom: 1rem;
                     }
                 }
             }
