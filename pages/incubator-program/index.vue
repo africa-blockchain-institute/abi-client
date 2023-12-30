@@ -19,7 +19,7 @@
                                 Do you have a ground-breaking idea for using blockchain technology to solve a real-world problem? Are you passionate about driving positive change in your community through the power of decentralization? If so, we encourage you to apply to be a part of our program.
                             </p>
 
-                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeq8ah5HGjSmoqtvE7xDSFbTShgwi-IUP4WA3WCHbHUxHHtWQ/viewform" target="blank" class="btn banner__text--btn">Register Now</a>                        
+                            <a href="#apply" target="blank" class="btn banner__text--btn">Register Now</a>                        
                         </div>
 
                         <div class="col-md-5 offset-lg-1 order-1 order-md-2 banner__image">
@@ -219,7 +219,7 @@
                     <div class="col-md-6 col-lg-6 col-xl-5 order-2 order-md-1 participate__text">
                         <h1 class="participate__text--title">Costs to Participate</h1>
                         <p class="participate__text--desc">There are a number of scholarships to participate in this program. However, if you are unable to secure one of the scholarships, and you can still participate, but you will be responsible for covering the cost of participation in the program.</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeq8ah5HGjSmoqtvE7xDSFbTShgwi-IUP4WA3WCHbHUxHHtWQ/viewform" target="blank" class="btn participate__text--btn">Register Now</a>                        
+                        <a href="#apply" target="blank" class="btn participate__text--btn">Register Now</a>                        
                     </div>
 
                     <div class="col-md-5 col-lg-5 col-xl-5 order-1 order-md-2 participate__image">
@@ -272,7 +272,7 @@
                 <div class="col-11 col-md-10 col-lg-7 review text-center">
                     <p class="review__text">Participating in the ABI Incubation Program has been a remarkable experience. The program has an extensive curriculum with great mentorship and access to resources for early-stage start-ups. The hands-on experience and practical learning have impacted our business strategy and decision-making, which has significantly accelerated our navigation through the entrepreneurial stage. I would strongly recommend the ABI Incubation Program to early-stage enterprises. The program combines mentorship, networking, and resources to provide participants with the help they require to succeed in various markets. </p>
                     <h2 class="review__author">Mercy Kiprono <br> Toropal</h2>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeq8ah5HGjSmoqtvE7xDSFbTShgwi-IUP4WA3WCHbHUxHHtWQ/viewform" target="blank" class="btn review__btn">Register Now</a>                        
+                    <!-- <a href="#apply" target="blank" class="btn review__btn">Register Now</a>                         -->
                 </div>
             </div>
 
@@ -293,7 +293,7 @@
         <!-- testimonials section ends -->
         
         <!-- apply section starts -->
-        <div class="apply">
+        <div class="apply" id="apply">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-md-9 col-xl-7 apply__head">
@@ -318,7 +318,7 @@
                         <a href="https://twitter.com/AfricaBlockInst" class="apply__social--link">
                             <img src="~/assets/images/incubator24/x.svg" />
                         </a>
-                        <a href="mailto:incubation@africablockchaininstitute.com" class="apply__social--link">
+                        <a href="mailto:incubation@africablockchain.institute" class="apply__social--link">
                             <img src="~/assets/images/incubator24/email.svg" />
                         </a>
                     </div>
