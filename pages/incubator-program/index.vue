@@ -241,22 +241,19 @@
 
                 <div class="row justify-content-center">
                     <div class="testimonials__logos">
-                        <img src="~/assets/images/incubator24/algorand.png" alt="algorand logo" class="testimonials__logos--img">
-                        <img src="~/assets/images/incubator24/nghri.png" alt="nghri logo" class="testimonials__logos--img">
-                        <img src="~/assets/images/incubator24/bfcc.png" alt="bfcc logo" class="testimonials__logos--img">
-                        <img src="~/assets/images/incubator24/crunch-network.png" alt="crunch-network logo" class="testimonials__logos--img">
+                        <img src="~/assets/images/incubator24/umojalands.png" alt="umojalands logo" class="testimonials__logos--img">
+                        <img src="~/assets/images/incubator24/reitfast.png" alt="reitfast logo" class="testimonials__logos--img">
                         <img src="~/assets/images/incubator24/tigere.png" alt="tigere logo" class="testimonials__logos--img">
-                        <img src="~/assets/images/incubator24/santech.png" alt="santech logo" class="testimonials__logos--img">
-                        <img src="~/assets/images/incubator24/gh2-1.png" alt="gh2-1 logo" class="testimonials__logos--img">
+                        <img src="~/assets/images/incubator24/mint-condition.png" alt="mint-condition logo" class="testimonials__logos--img">
+                        <img src="~/assets/images/incubator24/toropal.png" alt="toropal logo" class="testimonials__logos--img">
+                        <img src="~/assets/images/incubator24/bfcc.png" alt="bfcc logo" class="testimonials__logos--img">
                         <img src="~/assets/images/incubator24/konnadex.png" alt="konnadex logo" class="testimonials__logos--img">
                         <img src="~/assets/images/incubator24/kwdg.png" alt="kwdg logo" class="testimonials__logos--img">
-                        <img src="~/assets/images/incubator24/mint-condition.png" alt="mint-condition logo" class="testimonials__logos--img">
-                        <img src="~/assets/images/incubator24/pharma-link.png" alt="pharma-link logo" class="testimonials__logos--img">
-                        <img src="~/assets/images/incubator24/reitfast.png" alt="reitfast logo" class="testimonials__logos--img">
-                        <img src="~/assets/images/incubator24/toropal.png" alt="toropal logo" class="testimonials__logos--img">
-                        <img src="~/assets/images/incubator24/tswaanda.png" alt="tswaanda logo" class="testimonials__logos--img">
+                        <img src="~/assets/images/incubator24/santech.png" alt="santech logo" class="testimonials__logos--img">
                         <img src="~/assets/images/incubator24/nihe.png" alt="tswaanda logo" class="testimonials__logos--img">
-                        <img src="~/assets/images/incubator24/umojalands.png" alt="umojalands logo" class="testimonials__logos--img">
+                        <img src="~/assets/images/incubator24/pharma-link.png" alt="pharma-link logo" class="testimonials__logos--img">
+                        <img src="~/assets/images/incubator24/tswaanda.png" alt="tswaanda logo" class="testimonials__logos--img">
+                        <img src="~/assets/images/incubator24/crunch-network.png" alt="crunch-network logo" class="testimonials__logos--img">
                     </div>
                 </div>
             </div>
