@@ -98,6 +98,7 @@ export default {
                 color: #fff;
                 font-size: .6rem;
                 margin-bottom: 0;
+                font-family: 'Inter', sans-serif;
             }
         }
     }

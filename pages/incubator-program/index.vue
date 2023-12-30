@@ -264,6 +264,7 @@
                     <img src="~/assets/images/incubator24/gallery-2.jpg" alt="gallery" class="gallery__images">
                     <img src="~/assets/images/incubator24/gallery-3.jpg" alt="gallery" class="gallery__images">
                     <img src="~/assets/images/incubator24/gallery-4.jpg" alt="gallery" class="gallery__images">
+                    <img src="~/assets/images/incubator24/gallery-5.jpg" alt="gallery" class="gallery__images">
                 </div>
             </div>
 
@@ -393,20 +394,20 @@
                     &--sub {
                         font-size: 1.5rem;
                         margin-bottom: 1rem;
-                        font-family: 'Space Grotesk', sans-serif;
+                        font-family: 'Inter', sans-serif;
                     }
 
                     &--desc {
                         font-size: 1rem;
                         margin-bottom: 2rem;
-                        font-family: 'Space Grotesk', sans-serif;
+                        font-family: 'Inter', sans-serif;
                     }
 
                     &--btn {
                         @include button();
                         padding: .75rem 1.2rem;
                         font-size: $font-rg;
-                        font-family: 'Space Grotesk', sans-serif;
+                        font-family: 'Inter', sans-serif;
                     }
                 }
 
@@ -432,6 +433,7 @@
 
                     &--text {
                         font-size: 1rem;
+                        font-family: 'Inter', sans-serif;
                     }
                 }
 
@@ -454,6 +456,7 @@
                         font-size: 1rem;
                         margin-bottom: 2rem;
                         color: lightgray;
+                        font-family: 'Inter', sans-serif;
                     }
                 }
 
@@ -472,6 +475,7 @@
                     &--detail {
                         font-size: 1rem;
                         margin-bottom: 0;
+                        font-family: 'Inter', sans-serif;
                     }
                 }
             }
@@ -512,6 +516,7 @@
 
                 &--text {
                     font-size: 1rem;
+                    font-family: 'Inter', sans-serif;
                 }
             }
 
@@ -556,6 +561,7 @@
 
                 &--text {
                     font-size: 1rem;
+                    font-family: 'Inter', sans-serif;
                 }
             }
 
@@ -589,6 +595,7 @@
                         font-size: 1rem;
                         margin-bottom: 2rem;
                         color: lightgray;
+                        font-family: 'Inter', sans-serif;
                     }
                 }
 
@@ -629,9 +636,11 @@
                 &--desc {
                     font-size: 1rem;
                     margin-bottom: 1rem;
+                    font-family: 'Inter', sans-serif;
                 }
 
                 &--btn {
+                    font-family: 'Inter', sans-serif;
                     @include button();
                     padding: .75rem 1.2rem;
                     font-size: $font-rg;
@@ -691,6 +700,7 @@
                 &__text {
                     font-size: 1rem;
                     margin-bottom: 1rem;
+                    font-family: 'Inter', sans-serif;
                 }
 
                 &__author {
@@ -700,6 +710,7 @@
                 }
 
                 &__btn{
+                    font-family: 'Inter', sans-serif;
                     @include button();
                     padding: .75rem 1.2rem;
                     font-size: $font-rg;
@@ -753,6 +764,7 @@
                 }
                 
                 &--desc {
+                    font-family: 'Inter', sans-serif;
                     color: #fff;
                     font-size: 1rem;
                     margin-bottom: 1rem;
@@ -763,6 +775,7 @@
                 }
 
                 &--btn {
+                    font-family: 'Inter', sans-serif;
                     @include button();
                     padding: .75rem 1.2rem;
                     font-size: $font-rg;
@@ -1102,7 +1115,7 @@
                     margin: 2rem auto;
 
                     &__images {
-                        width: 22%;
+                        width: 18%;
                         margin: 1rem .5rem;
 
                         &:first-child {
