@@ -109,7 +109,7 @@
                             <div class="benefits__list--icon icon">
                                 <img src="~/assets/images/incubator24/technology.svg" alt="benefits of program">
                             </div>
-                            <div class="benefits__list--body bg-warnin">
+                            <div class="benefits__list--body">
                                 <h1 class="benefits__list--title">Blockchain Technology</h1>
                                 <p class="benefits__list--text">Participants will be provided with overall insight into blockchain technology and connections with the industry.</p>
                             </div>
@@ -296,7 +296,7 @@
         <div class="apply" id="apply">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-8 col-lg-6 bg-danger apply__head">
+                    <div class="col-12 col-md-8 col-lg-6 apply__head">
                         <h1 class="apply__head--title">How to Apply</h1>
                         <p class="apply__head--desc"> To apply, click on the button below by January 31, 2024. Note that only one application is expected per team.</p>
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSeq8ah5HGjSmoqtvE7xDSFbTShgwi-IUP4WA3WCHbHUxHHtWQ/viewform" class="btn apply__head--btn" target="blank">Register Now</a>                        
