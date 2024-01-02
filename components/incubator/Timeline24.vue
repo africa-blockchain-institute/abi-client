@@ -68,11 +68,11 @@
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         border-radius: 4px;
-        padding: 5rem;
+        padding: 5rem 11rem;
         margin: 0 auto 1rem auto;
         overflow: hidden;
     }
-
+    
     .tl:after {
         content: "";
         position: absolute;
@@ -110,7 +110,7 @@
 
         display: flex;
         align-items: center;
-        padding-right: 3rem;
+        padding-right: 3.5rem;
     }
 
     
@@ -194,7 +194,7 @@
         transform: rotate(45deg);
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1200px) {
         .tl {
             padding: 15px;
         }

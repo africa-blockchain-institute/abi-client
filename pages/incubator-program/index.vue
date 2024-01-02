@@ -19,7 +19,7 @@
                                 Do you have a ground-breaking idea for using blockchain technology to solve a real-world problem? Are you passionate about driving positive change in your community through the power of decentralization? If so, we encourage you to apply to be a part of our program.
                             </p>
 
-                            <a href="#apply" target="blank" class="btn banner__text--btn">Register Now</a>                        
+                            <a href="#apply" class="btn banner__text--btn">Register Now</a>                        
                         </div>
 
                         <div class="col-md-5 offset-lg-1 order-1 order-md-2 banner__image">
@@ -32,9 +32,9 @@
             <div class="about">
                 <div class="container">
                     <div class="row justify-content-center">
-                        <div class="col-11 col-md-10 col-lg-9 about__header">
+                        <div class="col-11 col-md-8 col-lg-7 about__header">
                             <p class="about__header--text">
-                                The Africa Blockchain Incubation Program is a 6-month incubator program designed to support and nurture the next generation of blockchain innovators on the continent. This is the 4th edition of the program that has successfully incubated different blockchain startups from across Africa.
+                                The Africa Blockchain Incubation Program offers intensive four-month support for selected participants to develop and launch blockchain projects, providing training, mentorship, and resources for idea realization.
                             </p>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
         <div class="benefits">
             <div class="container mb-3 mb-lg-5">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-10 col-xl-8 benefits__head">
+                    <div class="col-12 col-md-9 col-xl-7 benefits__head">
                         <h1 class="benefits__head--title">Reap the Benefits: Africa Blockchain Incubation 2024 Awaits You!</h1>
                         <p class="benefits__head--text">The Africa Blockchain Incubation Program is designed to support and nurture the next generation of blockchain innovators on the continent. This is the 4th edition of the program that has successfully incubated different blockchain start-ups from across Africa.</p>
                     </div>
@@ -219,7 +219,7 @@
                     <div class="col-md-6 col-lg-6 col-xl-5 order-2 order-md-1 participate__text">
                         <h1 class="participate__text--title">Costs to Participate</h1>
                         <p class="participate__text--desc">There are a number of scholarships to participate in this program. However, if you are unable to secure one of the scholarships, and you can still participate, but you will be responsible for covering the cost of participation in the program.</p>
-                        <a href="#apply" target="blank" class="btn participate__text--btn">Register Now</a>                        
+                        <a href="#apply" class="btn participate__text--btn">Register Now</a>                        
                     </div>
 
                     <div class="col-md-5 col-lg-5 col-xl-5 order-1 order-md-2 participate__image">
@@ -269,10 +269,10 @@
             </div>
 
             <div class="row justify-content-center">
-                <div class="col-11 col-md-10 col-lg-7 review text-center">
+                <div class="col-11 col-md-8 col-lg-7 review text-center">
                     <p class="review__text">Participating in the ABI Incubation Program has been a remarkable experience. The program has an extensive curriculum with great mentorship and access to resources for early-stage start-ups. The hands-on experience and practical learning have impacted our business strategy and decision-making, which has significantly accelerated our navigation through the entrepreneurial stage. I would strongly recommend the ABI Incubation Program to early-stage enterprises. The program combines mentorship, networking, and resources to provide participants with the help they require to succeed in various markets. </p>
                     <h2 class="review__author">Mercy Kiprono <br> Toropal</h2>
-                    <!-- <a href="#apply" target="blank" class="btn review__btn">Register Now</a>                         -->
+                    <!-- <a href="#apply" class="btn review__btn">Register Now</a>                         -->
                 </div>
             </div>
 
@@ -296,10 +296,10 @@
         <div class="apply" id="apply">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-md-9 col-xl-7 apply__head">
+                    <div class="col-12 col-md-8 col-lg-6 bg-danger apply__head">
                         <h1 class="apply__head--title">How to Apply</h1>
-                        <p class="apply__head--desc">To apply, click on the button below by January 31, 2024. Note that only one application is expected per team.</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeq8ah5HGjSmoqtvE7xDSFbTShgwi-IUP4WA3WCHbHUxHHtWQ/viewform" target="blank" class="btn apply__head--btn">Register Now</a>                        
+                        <p class="apply__head--desc"> To apply, click on the button below by January 31, 2024. Note that only one application is expected per team.</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeq8ah5HGjSmoqtvE7xDSFbTShgwi-IUP4WA3WCHbHUxHHtWQ/viewform" class="btn apply__head--btn" target="blank">Register Now</a>                        
                     </div>
 
                     <div class="col-10 col-md-9 mx-auto">
@@ -401,6 +401,8 @@
                         font-size: 1rem;
                         margin-bottom: 2rem;
                         font-family: 'Inter', sans-serif;
+                        color: lightgray;
+                        font-weight: 300;
                     }
 
                     &--btn {
@@ -433,6 +435,7 @@
 
                     &--text {
                         font-size: 1rem;
+                        font-weight: 400;
                         font-family: 'Inter', sans-serif;
                     }
                 }
@@ -457,6 +460,7 @@
                         margin-bottom: 2rem;
                         color: lightgray;
                         font-family: 'Inter', sans-serif;
+                        font-weight: 400;
                     }
                 }
 
@@ -475,6 +479,8 @@
                     &--detail {
                         font-size: 1rem;
                         margin-bottom: 0;
+                        
+                        font-weight: 500;
                         font-family: 'Inter', sans-serif;
                     }
                 }
@@ -516,6 +522,8 @@
 
                 &--text {
                     font-size: 1rem;
+                    font-weight: 400;
+                    color: lightgray;
                     font-family: 'Inter', sans-serif;
                 }
             }
@@ -1052,7 +1060,7 @@
 
                     &--title {
                         font-size: 2rem;
-                        margin-bottom: 1rem;
+                        margin-bottom: .5rem;
                     }
                 }
             }
@@ -1073,11 +1081,34 @@
                     }
                 }
 
+                
+                &__list {              
+                    &--body {
+                        padding: .25rem 2rem 1rem;
+                    }
+
+                    &--title {
+                        font-size: 1.3rem;
+                    }
+
+                    &--text {
+                        font-size: 1rem;
+                    }
+                }
+
                 .about {
 
                     &__body {
                         &--title {
                             font-size: 2rem;
+                        }
+                    }
+
+                    &__perks {
+
+                        &--detail {
+                            font-size: 1.1rem;
+                            margin-bottom: .5rem;
                         }
                     }
                 }
@@ -1125,6 +1156,15 @@
                 }
 
                 .review {
+                    &__text {
+                        font-size: 1.2rem;
+                    }
+
+                    &__author {
+                        font-size: 1.2rem;
+                        margin-bottom: 2rem;
+                    }
+
                     &__btn{
                         padding: .75rem 2rem;
                     }
@@ -1231,11 +1271,12 @@
 
                     &__body {
                         &--title {
-                            font-size: 2rem;
+                            font-size: 2.3rem;
                         }
 
                         &--text {
-                            font-size: 1.3rem;
+                            font-size: 1.2rem;
+                            font-weight: 400;
                             margin-bottom: 2rem;
                         }
                     }
@@ -1246,13 +1287,25 @@
                         }
 
                         &--detail {
-                            font-size: 1rem;
+                            font-size: 1.1rem;
                         }
                     }
                 }
             }
 
             .benefits {
+                &__head {
+                    margin-bottom: 3rem;
+
+                    &--title {
+                        font-size: 2.3rem;
+                    }
+
+                    &--text {
+                        font-size: 1.1rem;
+                        
+                    }
+                }
                 .about {
                     &__body {
                         &--title {
@@ -1269,7 +1322,7 @@
 
                 &__head {
                     &--title {
-                        font-size: 2rem;
+                        font-size: 2.3rem;
                     }
                 }
 
@@ -1280,6 +1333,33 @@
                         margin-bottom: 1rem;
                     }
                 }
+            }
+
+            .apply {
+                padding: 4rem 0;
+                
+                &__head {
+                    &--title {
+                        font-size: 2.5rem;
+                    }
+
+                    &--desc {
+                        font-size: 1.1rem;
+                        margin-bottom: 2rem;
+                    }
+
+                    &--btn {
+                        padding: .75rem 1.5rem;
+                    }
+                }
+
+                &__social {
+                    &--link {
+                        img {
+                            margin: 0 .75rem;
+                        }
+                    }
+                }   
             }
         }
     }
