@@ -2,9 +2,7 @@
     <div class="container">
         <div class="tl">
             <div class="tl-row">
-                <div class="tl-time">
-                    1st – 31st January 2024
-                </div>
+                <div class="tl-time"> 1st – 31st April 2024 </div>
                 <div class="tl-content shadow">
                     <div class="tl-shape"></div>
                     <div class="tl-text">
@@ -15,7 +13,7 @@
             </div>
 
             <div class="tl-row">
-                <div class="tl-time"> 1st - 28th February 2024 </div>
+                <div class="tl-time"> 1st - 31st May 2024 </div>
                 <div class="tl-content shadow">
                     <div class="tl-shape"></div>
                     <div class="tl-text">
@@ -26,7 +24,7 @@
             </div>
 
             <div class="tl-row">
-                <div class="tl-time"> 1st March 2024 - 30th June 2024 </div>
+                <div class="tl-time"> 1st June 2024 - 30th September 2024 </div>
                 <div class="tl-content shadow">
                     <div class="tl-shape"></div>
                     <div class="tl-text">
@@ -37,7 +35,7 @@
             </div>
 
             <div class="tl-row">
-                <div class="tl-time"> June 2024 </div>
+                <div class="tl-time"> September 2024 </div>
                 <div class="tl-content shadow">
                     <div class="tl-shape"></div>
                     <div class="tl-text">
@@ -48,7 +46,7 @@
             </div>
 
             <div class="tl-row">
-                <div class="tl-time"> July 2024 </div>
+                <div class="tl-time"> October 2024 </div>
                 <div class="tl-content shadow">
                     <div class="tl-shape"></div>
                     <div class="tl-text">
