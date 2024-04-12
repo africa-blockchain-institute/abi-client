@@ -299,7 +299,8 @@
                     <div class="col-12 col-md-8 col-lg-6 apply__head">
                         <h1 class="apply__head--title">How to Apply</h1>
                         <p class="apply__head--desc"> To apply, click on the button below by January 31, 2024. Note that only one application is expected per team.</p>
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeq8ah5HGjSmoqtvE7xDSFbTShgwi-IUP4WA3WCHbHUxHHtWQ/viewform" class="btn apply__head--btn" target="blank">Register Now</a>                        
+                        <!-- <a href="https://docs.google.com/forms/d/e/1FAIpQLSeq8ah5HGjSmoqtvE7xDSFbTShgwi-IUP4WA3WCHbHUxHHtWQ/viewform" class="btn apply__head--btn" target="blank">Register Now</a>                         -->
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScXSnGDFAzMDDXPAzGVZo8kF6UQd8J1cfd8aoDJ7rV9n0T6SA/viewform" class="btn apply__head--btn" target="blank">Register Now</a>                        
                     </div>
 
                     <div class="col-10 col-md-9 mx-auto">
