@@ -23,49 +23,63 @@
           id="navbarNav"
         >
           <ul class="navbar-nav">
-            <li class="nav-item" v-for="link in navLinks" :key="link.path">
-              <nuxt-link class="nav-link" :to="link.path" nuxt-link-active exact
-                >{{ link.name }}</nuxt-link
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/about-abi" nuxt-link-active exact
+                >About ABI</nuxt-link
+              >
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/faculty" nuxt-link-active exact
+                >Faculty</nuxt-link
+              >
+            </li>
+            <li class="nav-item">
+              <nuxt-link class="nav-link" to="/courses" nuxt-link-active
+                >Courses</nuxt-link
+              >
+            </li>
+            <li class="nav-item">
+              <nuxt-link
+                class="nav-link"
+                to="/enterprise"
+                nuxt-link-active
+                exact
+                >Enterprise</nuxt-link
               >
             </li>
             <!-- <li class="nav-item">
-              <nuxt-link class="nav-link" to="/program" nuxt-link-active exact
-                >Program</nuxt-link
+              <a
+                class="nav-link"
+                href="https://www.careers.africablockchain.institute/"
+                >Careers</a
               >
-            </li> -->
-          </ul>
-        </div>
-
-        <div
-          class="collapse navbar-collapse header__links justify-content-end"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                EN
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">FR</a></li>
-                <li><a class="dropdown-item" href="#">ES</a></li>
-              </ul>
             </li>
             <li class="nav-item">
-              <nuxt-link class="nav-link btn" to="/donate"
-                >Donate</nuxt-link
+              <a
+                class="nav-link"
+                href="https://africablockchain.institute/blockchain-report"
+                >Research</a
+              >
+            </li> -->
+            <li class="nav-item">
+              <nuxt-link
+                class="nav-link"
+                to="/contact-us"
+                nuxt-link-active
+                exact
+                >Contact Us</nuxt-link
               >
             </li>
-            <!-- <li class="nav-item" v-if="$auth.loggedIn">
+            <li class="nav-item" v-if="$auth.loggedIn">
               <nuxt-link class="nav-link btn" to="/user/courses"
                 >Dashboard</nuxt-link
               >
             </li>
             <li class="nav-item" v-else>
               <nuxt-link class="nav-link btn" to="/login">Login</nuxt-link>
-            </li> -->
+            </li>
           </ul>
         </div>
-
       </div>
     </nav>
   </header>
@@ -74,20 +88,7 @@
 <script>
 export default {
   data() {
-    return {
-      navLinks: [
-        { name: "About ABI", path: "/about-abi" },
-        { name: "Program", path: "/program" },
-        { name: "Research", path: "/research" },
-        { name: "Enterprise", path: "/enterprise" },
-        { name: "Insights", path: "/insights" },
-        { name: "Our Impact", path: "/our-impact" },
-        { name: "Contact Us", path: "/contact-us" },
-      ],
-      isMobile: false,
-      isCollapsed: true,
-      loading: false,
-    };
+    return {};
   },
 
   mounted() {
@@ -152,7 +153,7 @@ export default {
       img {
         width: 10rem;
       }
-
+      
     }
 
     &__links {
