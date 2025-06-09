@@ -1,17 +1,31 @@
 <template>
     <footer class="footer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 footer__sect">
-                    <h4 class="footer__sect--header">Subscribe To Our Newsletter</h4>
+            <div class="row footer__subscribe">
+                <div class="col-12 col-md-6">
+                    <h2 class="footer__subscribe--header">Subscribe to Our Newsletter</h2>
+                </div>
 
-                    <div class="input-group footer__sect--subscribe">
-                        <input type="email" class="form-control form-control-lg" :class="{'is-invalid': errors.status }" v-model="form.email" placeholder="Enter your email address" aria-label="enter your email address" aria-describedby="subscribe" required>
+                <div class="col-12 col-md-5 offset-md-1">
+                    <div class="input-group footer__subscribe--form">
+                        <input type="email" class="form-control form-control-lg" 
+                            :class="{'is-invalid': errors.status }" 
+                            v-model="form.email" placeholder="Enter your email address"
+                            aria-label="enter your email address" aria-describedby="subscribe" required
+                        >
                         <button class="btn" type="button" id="subscribe" @click="submit()">
-                            <span class="fas fa-envelope" v-if="!loading"></span>
+                            <span class="fas fa-paper-plane" v-if="!loading"></span>
                             <span class="fas fa-spinner fa-spin" v-else></span>
                         </button>
                         <div class="invalid-feedback" v-if="mcErr"> {{ mcErr }} </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4 footer__sect">
+                    <div class="footer__sect--logo">
+                        <img src="/logo_1.png" alt="Africa Blockchain Institute Logo" class="img-fluid">
                     </div>
 
                     <div class="footer__sect--social">
@@ -19,6 +33,8 @@
                         <a href="https://twitter.com/AfricaBlockInst" target="blank" class="icon"><span class="fab fa-twitter"></span></a>
                         <a href="https://www.linkedin.com/company/africablockinst" target="blank" class="icon thin"><span class="fab fa-linkedin"></span></a>
                         <a href="https://web.facebook.com/Africa-Blockchain-Institute-103445117670312" target="blank" class="icon thin"><span class="fab fa-facebook-square"></span></a>
+                        <a href="#" target="blank" class="icon thin"><span class="fab fa-youtube"></span></a>
+                        <a href="#" target="blank" class="icon thin"><span class="fab fa-medium"></span></a>
                     </div>
                 </div>
                 <div class="col-md-4 footer__sect">
@@ -47,9 +63,9 @@
                     <h4 class="footer__sect--header">Contact Us</h4>
 
                     <div class="footer__sect--contact">
-                        <p class="phone">+250 783 632 405 </p>
-                        <p class="email">info@africablockchain.institute </p>
-                        <p class="address">KN 5 Airport Road, Kimihurura, Kigali, Rwanda</p>
+                        <p class="address"><span class="fas fa-map-marker"></span> KN 5 Airport Road, Kimihurura, Kigali, Rwanda</p>
+                        <p class="email"><span class="fas fa-envelope"></span> info@africablockchain.institute </p>
+                        <p class="phone"><span class="fas fa-phone"></span> +250 783 632 405 </p>
                     </div>
                 </div>
             </div>
@@ -57,6 +73,10 @@
             <div class="row">
                 <div class="col-12 footer__copy">
                     <p> &copy; {{ new Date().getFullYear() }} Africa Blockchain Institute | All rights reserved. </p>
+                    <p> 
+                        <nuxt-link class="link" to="/privacy-policy">Privacy Policy</nuxt-link> |
+                        <nuxt-link class="link" to="/terms-of-service">Terms of Service</nuxt-link>
+                    </p>
                 </div>
             </div>
         </div>
@@ -124,20 +144,19 @@
 <style lang="scss" scoped>
     .footer{
         background-color: $secondary-2;
-        padding: 2rem 1rem;
+        padding: 3rem 1rem 2rem;
 
-        &__sect{
-            padding-top: 1rem;
-            margin-bottom: 1rem;
+        &__subscribe {
+            margin-bottom: 2rem;
 
-            &--header{
-                font-size: 1rem;
-                color: $secondary;
+            &--header {
+                font-size: $font-hd;
+                color: $white;
                 font-weight: bold;
                 margin-bottom: 1rem;
             }
 
-            &--subscribe{
+            &--form{
                 width: 100%;
 
                 .form-control{
@@ -161,33 +180,39 @@
                     }
                 }
             }
+        }
+
+        &__sect{
+            padding-top: 1rem;
+            margin-bottom: 2rem;
+
+            &--header{
+                font-size: 1rem;
+                color: $white;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+
+            &--logo{
+                width: 70%;
+                margin-bottom: 2rem;
+            }
             
             &--social{
                 margin-top: 2rem;
 
                 .icon{
-                    background-color: $secondary;
-                    padding: .2rem .55rem;
-                    border-radius: 50%;
-                    margin-right: .5rem;
+                    margin-right: 1.2rem;
                     display: inline-block;
                     transition: .2s all;
 
                     .fab, .fas{
                         color: $white;
-                        font-size: .9rem;
-                    }
-
-                    &.thin{
-                        padding: .2rem .6rem;
+                        font-size: 1.2rem;
                     }
 
                     &:hover{
-                        background-color: $white;
-
-                        .fab, .fas{
-                            color: $secondary;
-                        }
+                        color: $white;
                     }
                 } 
             }
@@ -213,24 +238,62 @@
                 p {
                     color: $white;
                     font-size: .9rem;
+
+                    .fas{
+                        margin-right: .5rem;
+                    }
                 }
             }
         }
 
         &__copy{
-            margin-top: 2rem;
+            margin-top: 1rem;
             text-align: center;
 
             p{
                 color: $white;
                 font-size: .9rem;
+
+                .link{
+                    color: $white;
+                    text-decoration: none;
+                    
+                    &:hover{
+                        color: $secondary;
+                    }
+                }
             }
         }
     }
 
     @media (min-width: 992px) { 
         .footer{
-            padding: 3rem 1rem 2rem;
+            padding: 5rem 1rem 2rem;
+
+            &__subscribe {
+                margin-bottom: 3rem;
+                align-items: center;
+
+                &--header {
+                    font-size: $font-xl;
+                    margin-bottom: 3rem
+                }
+
+                &--form{
+                    .form-control{
+                        padding: 1rem;
+                        font-size: 1.2rem;
+                    }
+
+                    .btn{
+                        padding: .5rem 1.5rem;
+
+                        .fas {
+                            font-size: 1.2rem;
+                        }
+                    }
+                }
+            }
 
             &__sect{
                 padding-top: 1rem;
@@ -240,15 +303,16 @@
                     margin-bottom: 1rem;
                 }
 
-                &--subscribe{
-                    width: 80%;
-
-                    .form-control{
-                        padding: .9rem 1rem;
-                        font-size: .9rem;
-                    }
+                &--logo{
+                    width: 60%;
+                    margin-bottom: 3rem;
                 }
-                
+            }
+
+            &__copy{
+                margin-top: 2rem;
+                display: flex;
+                justify-content: space-between;
             }
         }   
     }
@@ -256,46 +320,48 @@
     // XX-Large devices (larger desktops, 1400px and up)
     @media (min-width: 1400px) { 
         .footer{
-            padding: 4rem 1rem 2rem;
-
             &__sect{
                 padding-top: 1rem;
 
                 &--header{
-                    font-size: 1rem;
+                    font-size: 1.2rem;
                     margin-bottom: 1rem;
                 }
 
-                &--subscribe{
-                    width: 70%;
-
-                    .form-control{
-                        padding: .9rem 1rem;
-                        font-size: .9rem;
-                    }
+                &--logo{
+                    width: 50%;
                 }
-                
+
+
                 &--social{
                     margin-top: 2rem;
 
                     .icon{
-                        padding: .2rem .55rem;
-                        border-radius: 50%;
-                        margin-right: .75rem;
+                        margin-right: 1.5rem;
 
                         .fab, .fas{
-                            font-size: .9rem;
+                            font-size: 1.5rem;
                         }
+                    } 
+                }
 
-                        &.thin{
-                            padding: .2rem .6rem;
+                &--links{
+                    li {
+                        margin-bottom: 1rem;
+
+                        a{
+                            font-size: 1rem;
                         }
                     }
                 }
 
-                &--links{
-                    li{
-                        margin-bottom: .5rem;
+                &--contact{
+                    p {
+                        font-size: 1rem;
+
+                        .fas{
+                            margin-right: .5rem;
+                        }
                     }
                 }
             }
