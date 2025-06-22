@@ -37,22 +37,22 @@
 
 				<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 -xl-3">
 					<div class="col values__key">
-						<img src="~/assets/images/home/innovation.png" alt="Leading Innovation" class="values__key--img">
+						<img src="~/assets/images/home-v1/innovation.png" alt="Leading Innovation" class="values__key--img">
 						<h4 class="values__key--title">Leading Innovation</h4>
 						<p class="values__key--text"> We are driven by the passion to create innovative and leading training programs. </p>
 					</div>
 					<div class="col values__key">
-						<img src="~/assets/images/home/impact.png" alt="Global Impact" class="values__key--img">
+						<img src="~/assets/images/home-v1/impact.png" alt="Global Impact" class="values__key--img">
 						<h4 class="values__key--title">Global Impact</h4>
 						<p class="values__key--text"> The scalability of our training programs span to be highly impactful not only in Africa, but the world at large. </p>
 					</div>
 					<div class="col values__key">
-						<img src="~/assets/images/home/scholarship.png" alt="Scholarship" class="values__key--img">
+						<img src="~/assets/images/home-v1/scholarship.png" alt="Scholarship" class="values__key--img">
 						<h4 class="values__key--title">Scholarship</h4>
 						<p class="values__key--text"> We support our best students with financial resources and investments opportunities in turning ideas into reality. </p>
 					</div>
 					<div class="col values__key">
-						<img src="~/assets/images/home/society.png" alt="improving Society" class="values__key--img">
+						<img src="~/assets/images/home-v1/society.png" alt="improving Society" class="values__key--img">
 						<h4 class="values__key--title">Improving Society</h4>
 						<p class="values__key--text"> We are committed to ethical, socio-economic, and sustainable projects. </p>
 					</div>
@@ -72,88 +72,88 @@
 				<div class="col-md-10 mx-auto">
 					<div class="row row-cols-3 row-cols-md-5 row-cols-lg-6 justify-content-center trust__content align-items-center">
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/au.png" alt="au">
+							<img src="~/assets/images/home-v1/organizations/au.png" alt="au">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/and.png" alt="and">
+							<img src="~/assets/images/home-v1/organizations/and.png" alt="and">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/ibm.png" alt="ibm">
+							<img src="~/assets/images/home-v1/organizations/ibm.png" alt="ibm">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/codeln.png" alt="codeln">
+							<img src="~/assets/images/home-v1/organizations/codeln.png" alt="codeln">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/forbes.png" alt="forbes">
+							<img src="~/assets/images/home-v1/organizations/forbes.png" alt="forbes">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/ghana-tech.png" alt="ghana tech hub">
+							<img src="~/assets/images/home-v1/organizations/ghana-tech.png" alt="ghana tech hub">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/ict.png" alt="ict">
+							<img src="~/assets/images/home-v1/organizations/ict.png" alt="ict">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/jelurida.png" alt="jelurida">
+							<img src="~/assets/images/home-v1/organizations/jelurida.png" alt="jelurida">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/microsoft.png" alt="microsoft">
+							<img src="~/assets/images/home-v1/organizations/microsoft.png" alt="microsoft">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/mest.png" alt="mest">
+							<img src="~/assets/images/home-v1/organizations/mest.png" alt="mest">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/oracle.png" alt="oracle">
+							<img src="~/assets/images/home-v1/organizations/oracle.png" alt="oracle">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/risa.png" alt="risa">
+							<img src="~/assets/images/home-v1/organizations/risa.png" alt="risa">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/unam.png" alt="risa">
+							<img src="~/assets/images/home-v1/organizations/unam.png" alt="risa">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/convexity.jpeg" alt="convexity">
+							<img src="~/assets/images/home-v1/organizations/convexity.jpeg" alt="convexity">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/open_labs.png" alt="open_labs">
+							<img src="~/assets/images/home-v1/organizations/open_labs.png" alt="open_labs">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/juubix.png" alt="juubix">
+							<img src="~/assets/images/home-v1/organizations/juubix.png" alt="juubix">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/algorand.png" alt="algorand">
+							<img src="~/assets/images/home-v1/organizations/algorand.png" alt="algorand">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/alu.png" alt="African leadership university">
+							<img src="~/assets/images/home-v1/organizations/alu.png" alt="African leadership university">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/freeton.png" alt="freeton">
+							<img src="~/assets/images/home-v1/organizations/freeton.png" alt="freeton">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/gba.png" alt="governement blockchain association">
+							<img src="~/assets/images/home-v1/organizations/gba.png" alt="governement blockchain association">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/kleros.png" alt="kleros">
+							<img src="~/assets/images/home-v1/organizations/kleros.png" alt="kleros">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/maker.png" alt="maker">
+							<img src="~/assets/images/home-v1/organizations/maker.png" alt="maker">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/wouessi.png" alt="wouessi">
+							<img src="~/assets/images/home-v1/organizations/wouessi.png" alt="wouessi">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/rousseau_cooper.png" alt="rousseau cooper">
+							<img src="~/assets/images/home-v1/organizations/rousseau_cooper.png" alt="rousseau cooper">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/tech_london.png" alt="tech london">
+							<img src="~/assets/images/home-v1/organizations/tech_london.png" alt="tech london">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/ton_labs.png" alt="ton labs">
+							<img src="~/assets/images/home-v1/organizations/ton_labs.png" alt="ton labs">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/bbic.jpg" alt="black women">
+							<img src="~/assets/images/home-v1/organizations/bbic.jpg" alt="black women">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/brighter.jpeg" alt="black women">
+							<img src="~/assets/images/home-v1/organizations/brighter.jpeg" alt="black women">
 						</div>
 					</div>
 				</div>
@@ -218,7 +218,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-4 col-lg-4 skills__list">
-                        <img src="~/assets/images/home/soft-skills.png" alt="Soft skills, ABI" class="skills__list--img">
+                        <img src="~/assets/images/home-v1/soft-skills.png" alt="Soft skills, ABI" class="skills__list--img">
                         <h4 class="skills__list--header soft">Top Rated Soft Skills</h4>
 
 						<ul class="skills__list--list">
@@ -231,7 +231,7 @@
                     </div>
 
                     <div class="col-md-8 col-lg-6 offset-lg-1 skills__list">
-                        <img src="~/assets/images/home/hard-skills.png" alt="Soft skills, ABI" class="skills__list--img">
+                        <img src="~/assets/images/home-v1/hard-skills.png" alt="Soft skills, ABI" class="skills__list--img">
 						<h4 class="skills__list--header hard">Top Rated Hard Skills</h4>
 
                         <div class="row">
@@ -295,7 +295,7 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-4 find__img">
-                        <img src="~/assets/images/home/talent.png" alt="Findthe best blockchain for your business">
+                        <img src="~/assets/images/home-v1/talent.png" alt="Findthe best blockchain for your business">
                     </div>
                     <div class="col-md-6 offset-md-1 find__text">
                         <h3 class="find__text--title">Finding a Talent</h3>
@@ -353,7 +353,7 @@
 <style lang="scss" scoped>
     .wrapper{
         .hero{
-            background-image: url("@/assets/images/home/banner.jpg") !important;
+            background-image: url("@/assets/images/home-v1/banner.jpg") !important;
             background-size: cover;
             background-color: #000D2C;
 
@@ -444,7 +444,7 @@
 		}
 
         .slogan{
-            background: url("~/assets/images/home/pattern.jpg");
+            background: url("~/assets/images/home-v1/pattern.jpg");
             padding: 3rem 1rem;
             background-size: cover;
 

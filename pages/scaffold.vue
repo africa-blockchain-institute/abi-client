@@ -22,12 +22,12 @@
 
 <style lang="scss" scoped>
 
-    // Medium devices (tablets, 768px and up)
-    @media (min-width: 768px) {  }
+    // Medium devices (tablets, 767px and up)
+    @media (min-width: 767px) {  }
 
-    // Large devices (desktops, 992px and up)
-    @media (min-width: 992px) {  }
+    // Large devices (desktops, 991px and up)
+    @media (min-width: 991px) {  }
 
-    // XX-Large devices (larger desktops, 1400px and up)
-    @media (min-width: 1400px) {  }
+    // XX-Large devices (larger desktops, 1439px and up)
+    @media (min-width: 1439px) {  }
 </style>

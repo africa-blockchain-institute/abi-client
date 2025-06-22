@@ -470,7 +470,7 @@
         }
 
         .slogan{
-            background: url("~/assets/images/home/pattern.jpg");
+            background: url("~/assets/images/home-v1/pattern.jpg");
             padding: 3rem 1rem;
             text-align: center;
             background-size: cover;

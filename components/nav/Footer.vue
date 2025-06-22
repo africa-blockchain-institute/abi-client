@@ -161,7 +161,8 @@
 
                 .form-control{
                     padding: .9rem 1rem;
-                    background: $white!important;
+                    color: $white;
+                    background: #FFFFFF33;
                     box-shadow: none;
                     border: 0;
                     font-size: .9rem;
@@ -306,6 +307,12 @@
                 &--logo{
                     width: 60%;
                     margin-bottom: 3rem;
+                }
+
+                &--contact {
+                    p {
+                        margin-bottom: 1rem;
+                    }
                 }
             }
 
