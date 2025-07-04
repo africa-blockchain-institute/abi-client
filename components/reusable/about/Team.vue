@@ -1,17 +1,11 @@
-<template>
+<template>     
     <div class="team">
         <!-- board section starts -->
-        <div class="team__header">
-            <h2 class="team__header--title">Advisory Board</h2>          
-            <Lists :listings="advisory" />
-        </div>
+        <Lists :listings="advisory" title="Our Advisory" />
         <!-- board section ends -->
-
-        <!-- leadership section ends -->
-        <div class="team__header">
-            <h2 class="team__header--title">Leadership Team</h2>          
-            <Lists :listings="leadership" />
-        </div>
+        
+        <!-- leadership section ends -->       
+        <Lists :listings="leadership" title="Our Team" />
         <!-- leadership section ends -->
     </div>
 </template>
@@ -23,7 +17,21 @@
         data(){
             return{
                 advisory: [],
-                leadership: []
+                // leadership: [],
+                leadership: [
+                    {
+                        name: 'John Doe',
+                        title: 'CEO',
+                        position: 'Founder & CEO',
+                        image: '/images/team/john_doe.jpg'
+                    },
+                    {
+                        name: 'Jane Smith',
+                        title: 'CTO',
+                        position: 'Chief Technology Officer',
+                        image: '/images/team/jane_smith.jpg'
+                    }
+                ],
             }
         },
 
@@ -52,11 +60,8 @@
 
 <style lang="scss" scoped>
     .team{
-        margin-top: 1rem;
-
         &__header{
             &--title{
-                text-align: center;
                 font-size: $font-hd;
                 font-weight: bold;
                 margin-bottom: 0;
@@ -66,8 +71,6 @@
 
     @media (min-width: 992px) { 
         .team{
-            margin-top: 3rem;
-    
             &__header{
                 &--title{
                     font-size: $font-md;

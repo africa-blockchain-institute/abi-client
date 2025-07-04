@@ -38,7 +38,7 @@
 </template>
 
 <script>
-    import Hero from '@/components/reusable/Hero.vue';
+    import Hero from '~/components/reusable/Hero-v1.vue';
     import About from '~/components/reusable/about/About.vue';
     import Mission from '~/components/reusable/about/Mission.vue';
     import Priorities from '~/components/reusable/about/Priorities.vue';

@@ -50,7 +50,7 @@
 </template>
 
 <script>
-    import Hero from '@/components/reusable/Hero.vue';
+    import Hero from '~/components/reusable/Hero-v1.vue';
 
     export default {
         name: "contact-us",

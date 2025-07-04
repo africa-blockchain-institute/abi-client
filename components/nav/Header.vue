@@ -1,9 +1,10 @@
 <template>
   <header class="header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+    <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
         <nuxt-link to="/" class="navbar-brand header__logo">
-          <img src="/logo.png" alt="Africa blockchain institute Logo" />
+          <img src="/logo_1.png" alt="Africa blockchain institute Logo" />
         </nuxt-link>
 
         <button
@@ -123,8 +124,11 @@ export default {
     border: none;
     box-shadow: none;
   }
-
+  
   &__links {
+    background-color: white;
+    z-index: 5;
+
     .nav-item {
       margin-bottom: 0.5rem;
       text-align: center;
@@ -133,8 +137,12 @@ export default {
         font-size: 0.9rem;
         font-weight: bold;
 
+        &:hover {
+          color: $secondary;
+        }
+
         &.nuxt-link-exact-active {
-          color: $primary;
+          color: $secondary;
         }
       }
 
@@ -157,6 +165,7 @@ export default {
 
     &__links {
       margin-bottom: 0;
+      background-color: transparent;
 
       .nav-item {
         margin-right: 1rem;
@@ -168,6 +177,7 @@ export default {
 
         a {
           font-size: 0.9rem;
+          color: $white;
         }
       }
     }

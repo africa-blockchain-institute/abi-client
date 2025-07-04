@@ -1,7 +1,7 @@
 <template>
     <div>
         <SliderMsg />
-        <Header />
+        <!-- <Header /> -->
         <Nuxt />
         <Footer />
     </div>

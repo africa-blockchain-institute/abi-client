@@ -12,7 +12,7 @@
 </template>
 
 <script>
-    import Hero from '@/components/reusable/Hero.vue';
+    import Hero from '~/components/reusable/Hero-v1.vue';
     import Lists from '@/components/reusable/CardLists.vue';
 
     export default {
