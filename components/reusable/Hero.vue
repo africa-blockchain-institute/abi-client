@@ -101,7 +101,7 @@
             height: 45vh;
 
             &__content{
-                padding-left: 4rem;
+                // padding-left: 0rem;
                 bottom: 10%;
 
                 &--title {

@@ -78,7 +78,7 @@ export default {
     return {
       navLinks: [
         { name: "About ABI", path: "/about-abi" },
-        { name: "Program", path: "/program" },
+        { name: "Programs", path: "/programs" },
         { name: "Research", path: "/research" },
         { name: "Enterprise", path: "/enterprise" },
         { name: "Insights", path: "/insights" },

@@ -31,12 +31,16 @@
 @mixin form-control{
     padding-left: 1rem;
     // background: $white!important;
+    // background: $grey;
+    background: #F6F6F6;
     box-shadow: none;
     font-size: .9rem;
     padding: .75rem;
+    color: $dark;
+    border: 1px solid $grey;
 
     &:focus{
-        border: 1px solid $primary;
+        border: 1px solid $secondary;
     }
 }
 
@@ -57,7 +61,8 @@
         bottom: -.7rem;
         left: .75rem;
         z-index: 10;
-        background: $white;
+        // background: $white;
+        background: #F6F6F6;
         font-size: $font-sm;
         padding: .1rem .3rem;
         font-weight: bold;
@@ -68,13 +73,13 @@
         padding-top: 1rem;
         padding-bottom: .5rem;
         padding-left: 1rem;
-        background: $white!important;
         box-shadow: none;
         font-size: $font-rg;
 
         &:focus{
-            border: 1px solid $primary;
-            background: $white!important;
+            // border: 1px solid $primary;
+            // background: $white!important;
+            border: 1px solid $secondary;
         }
     }
 
