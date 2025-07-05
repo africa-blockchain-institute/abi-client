@@ -57,6 +57,8 @@
 </template>
 
 <script>
+    import Header from '@/components/nav/Header';
+    
     export default {
         head(){
             return{
@@ -83,7 +85,11 @@
                     })
                 },
             }
-        }
+        },
+
+        components: {
+            Header,
+        },
     }
 </script>
 
@@ -160,11 +166,151 @@
     }
 
     // Medium devices (tablets, 767px and up)
-    @media (min-width: 767px) {  }
+    @media (min-width: 767px) {  
+        .wrapper{
+            .hero {
+                height: 40vh;
+                
+                &__content{
+                    bottom: 7%;
+                
+                    &--title{
+                        font-size: $font-hd;
+                        margin-bottom: 1.5rem;
+                    }
+                    
+                    &--pub{
+                        font-size: .7rem;
+                    }
+
+                    &--date{
+                        font-size: .9rem;
+                    }
+
+                    &--tag {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+
+            .insight {
+                padding: 2rem 3rem;
+            }
+
+            .comment {
+                padding: 2rem 3rem;
+            }
+
+            .related{
+                padding: 2rem 1rem;
+
+                &__head{
+                    margin-bottom: 1rem;
+
+                    &--title{
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
 
     // Large devices (desktops, 991px and up)
-    @media (min-width: 991px) {  }
+    @media (min-width: 991px) {  
+        .wrapper{
+            .hero {
+                height: 40vh;
+                
+                &__content{
+                    bottom: 7%;
+                
+                    &--title{
+                        font-size: $font-hd;
+                        margin-bottom: 1.5rem;
+                    }
+                    
+                    &--pub{
+                        font-size: .7rem;
+                    }
+
+                    &--date{
+                        font-size: .9rem;
+                    }
+
+                    &--tag {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+
+            .insight {
+                padding: 2rem 3rem;
+            }
+
+            .comment {
+                padding: 2rem 3rem;
+            }
+
+            .related{
+                padding: 2rem 1rem;
+
+                &__head{
+                    margin-bottom: 1rem;
+
+                    &--title{
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
 
     // XX-Large devices (larger desktops, 1439px and up)
-    @media (min-width: 1439px) {  }
+    @media (min-width: 1439px) {  
+        .wrapper{
+            .hero {
+                height: 50vh;
+                
+                &__content{
+                    bottom: 7%;
+                
+                    &--title{
+                        font-size: $font-lg;
+                    }
+                    
+                    &--pub{
+                        font-size: .8rem;
+                    }
+
+                    &--date{
+                        font-size: 1rem;
+                    }
+
+                    &--tag {
+                        font-size: 0.75rem;
+                    }
+                }
+            }
+
+            .insight {
+                padding: 2rem 3rem;
+            }
+
+            .comment {
+                padding: 2rem 3rem;
+            }
+
+            .related{
+                padding: 2rem 1rem;
+
+                &__head{
+                    margin-bottom: 1rem;
+
+                    &--title{
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+    }
 </style>

@@ -388,17 +388,7 @@
         <!-- event section ends -->
 
         <!-- talent section starts -->
-        <div class="talent">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-10 col-xxl-8 talent__body">
-                        <h2 class="talent__body--text">Finding a Talent?</h2>
-                        <p class="talent__body--sub">Get now a talent from our vibrant network of alumni. <br> Post your opportunities here.</p>
-                        <nuxt-link to="/top-talents" class="talent__body--btn btn">Find Talent</nuxt-link>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Find :title="find.title" :text="find.text" :buttonText="find.buttonText" :image="find.image" :link="find.link" />
         <!-- talent section ends -->
     </div>
 </template>
@@ -798,36 +788,7 @@
         }
         /** event section ends */
 
-        /** talent section starts */
-        .talent {
-            padding: 2rem 1rem;
-            background-color: $secondary-2;
-
-            &__body {
-                background: url('~/assets/images/home/find_talent.jpg') no-repeat center center;
-                background-size: cover;
-                text-align: left;
-                border-radius: 1rem;
-                padding: 7rem 1rem 1rem;
-
-                &--text {
-                    font-size: $font-hd;
-                    color: $white;
-                    font-weight: bold;
-                }
-                
-                &--sub {
-                    font-size: 1rem;
-                    color: $white;
-                }
-
-                &--btn {
-                    @include button();
-                    margin-top: 1rem;
-                }
-            }
-        }
-        /** talent section ends */
+        
     }
 
     // Medium devices (tablets, 767px and up)
@@ -1021,24 +982,6 @@
                 }
             }
             /** event section ends */
-
-            /** talent section starts */
-            .talent {
-                padding: 3rem 1rem;
-
-                &__body {
-                    padding: 9rem 2rem 2rem;
-                    
-                    &--text {
-                        font-size: $font-hd;
-                    }
-                    
-                    &--sub {
-                        font-size: 1rem;
-                    }
-                }
-            }
-            /** talent section ends */
         }
     }
 
@@ -1249,24 +1192,6 @@
                     }
                 }
             }
-
-            /** talent section starts */
-            .talent {
-                padding: 4rem 1rem;
-
-                &__body {
-                    padding: 10rem 2rem 2rem;
-                    
-                    &--text {
-                        font-size: $font-lg;
-                    }
-                    
-                    &--sub {
-                        font-size: 1.2rem;
-                    }
-                }
-            }
-            /** talent section ends */
         }
     }
 
@@ -1433,28 +1358,13 @@
                 }
             }
             /** know section ends */
-
-            /** talent section starts */
-            .talent {
-                &__body {
-                    padding: 12rem 3rem 3rem;
-                    
-                    &--text {
-                        font-size: $font-lg;
-                    }
-                    
-                    &--sub {
-                        font-size: 1.2rem;
-                    }
-                }
-            }
-            /** talent section ends */
         }
     }
 </style>
 
 <script>
     import Lists from '@/components/reusable/CardLists.vue';
+    import Find from '~/components/reusable/Find.vue';
 
     export default {
         head(){
@@ -1472,12 +1382,19 @@
         data() {
             return {
                 events: [],
-                insights: []
+                insights: [],
+                find: {
+                    title: 'Finding a Talent?',
+                    text: 'Get now a talent from our vibrant network of alumni. Post your opportunities here.',
+                    buttonText: 'Find Talent',
+                    image: 'home/find_talent.jpg',
+                    link: '/top-talents'
+                }
             }
         },
 
         components: {
-            Lists
+            Lists, Find
         },
 
         created() {

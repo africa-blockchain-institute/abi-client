@@ -177,6 +177,7 @@
                         font-size: 0.75rem;
                         margin-bottom: 1rem;
                         padding: .25rem .75rem;
+                        font-weight: 600;
                     }
 
                     &--title {
