@@ -6,9 +6,10 @@
                     <h3 class="title">{{ title }}</h3>
                     <p class="body" v-html="text1"></p>
                     <p class="body" v-html="text2"></p>
+                    <button class="btn sect__content--btn" v-if="buttonText">{{ buttonText }}</button>
                 </div>
                 <div class="col-md-5 col-xl-4 order-1 order-md-2 offset-xl-1 sect__content--img">
-                    <img :src="require(`~/assets/images/programs/${image}`)" :alt="title" class="img-fluid">
+                    <img :src="require(`~/assets/images/${image}`)" :alt="title" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -17,7 +18,7 @@
 
 <script>
     export default {
-        props: ['title', 'image', 'text1', 'text2'],        
+        props: ['title', 'image', 'text1', 'text2', 'buttonText'],        
     }
 </script>
 
@@ -49,6 +50,11 @@
                 }
 
             }
+
+            &--btn {
+                @include button();
+                // margin-top: 1rem;
+            }
         }
     }
 
@@ -77,7 +83,7 @@
     @media (min-width: 991px) { 
         .sect {
             &__content{
-                padding: 3rem auto;
+                padding: 3rem;
 
                 &--img{
                     margin-bottom: 0;

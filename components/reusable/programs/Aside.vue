@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row sect__content">
                 <div class="col-md-5 col-xl-4 order-1 order-md-1 sect__content--img">
-                    <img :src="require(`~/assets/images/programs/${image}`)" :alt="title" class="img-fluid">
+                    <img :src="require(`~/assets/images/${image}`)" :alt="title" class="img-fluid">
                 </div>
                 <div class="col-md-7 col-xl-5 offset-xl-1 order-2 order-md-2 sect__content--text">
                     <h3 class="title">{{ title }}</h3>
@@ -78,7 +78,7 @@
     @media (min-width: 991px) { 
         .sect {
             &__content{
-                padding: 3rem;
+                padding: 4rem;
 
                 &--img{
                     margin-bottom: 0;
