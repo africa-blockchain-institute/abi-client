@@ -266,6 +266,16 @@
                         <h2 class="market__head--sub">Market Size Overview</h2>
                     </div>
                 </div>
+
+                <div class="row justify-content-center align-items-end">
+                    <div class="col-md-2 col-xl-2 market__stat">
+                        <h2 class="market__stat--title">45.2%</h2>
+                        <p class="market__stat--desc">Global market CAGR, 2024-2032</p>
+                    </div>
+                    <div class="col-md-10 col-xl-8 offset-xl-1">
+                        <img src="~/assets/images/market/market_stat.png" alt="Blockchain Market Overview" class="img-fluid">
+                    </div>
+                </div>
             
             </div>
         </div>
@@ -648,6 +658,20 @@
                     color: $secondary-2;
                 }
             }
+
+            &__stat {
+                margin-bottom: 1rem;
+
+                &--title {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    margin-bottom: 0rem;
+                }
+
+                &--desc {
+                    font-size: .9rem;
+                }
+            }
         }
         /** market section ends */
 
@@ -842,6 +866,30 @@
             /** market section starts */
             .market{
                 padding: 3rem 1rem;
+
+                &__head{
+                    margin-bottom: 1rem;
+
+                    &--title{
+                        font-size: 1.2rem;
+                    }
+
+                    &--sub {
+                        font-size: .9rem;
+                    }
+                }
+
+                &__stat {
+                    margin-bottom: 0;
+                    
+                    &--title {
+                        font-size: 2rem;
+                    }
+
+                    &--desc {
+                        font-size: .9rem;
+                    }
+                }
             }
             /** market section ends */
 
@@ -1195,6 +1243,18 @@
                     } 
                     &--sub {
                         font-size: 1.2rem;
+                    }
+                }
+
+                &__stat {
+                    margin-bottom: 0;
+                    
+                    &--title {
+                        font-size: 3rem;
+                    }
+
+                    &--desc {
+                        font-size: 1rem;
                     }
                 }
             }
