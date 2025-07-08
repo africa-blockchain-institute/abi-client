@@ -156,11 +156,11 @@
     export default {
         head(){
             return{
-                title: 'About Us -  Africa Blockchain Institute',
+                title: 'About ABI -  Africa Blockchain Institute',
                 meta: [
                     {
-                        name: 'About-Us',
-                        content: 'About Us'
+                        name: 'about-abi',
+                        content: 'About ABI'
                     }
                 ],
             }

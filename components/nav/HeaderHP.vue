@@ -45,18 +45,18 @@
                 <li><a class="dropdown-item" href="#">ES</a></li>
               </ul>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <nuxt-link class="nav-link btn" to="/donate"
                 >Donate</nuxt-link
               >
-            </li>
+            </li> -->
             <!-- <li class="nav-item" v-if="$auth.loggedIn">
               <nuxt-link class="nav-link btn" to="/user/courses"
                 >Dashboard</nuxt-link
               >
             </li>
             <li class="nav-item" v-else>
-              <nuxt-link class="nav-link btn" to="/login">Login</nuxt-link>
+              <nuxt-link class="nav-link btn" to="/auth/login">Login</nuxt-link>
             </li> -->
           </ul>
         </div>
@@ -72,7 +72,7 @@ export default {
     return {
       navLinks: [
         { name: "About ABI", path: "/about-abi" },
-        { name: "Program", path: "/program" },
+        { name: "Programs", path: "/programs" },
         { name: "Research", path: "/research" },
         { name: "Enterprise", path: "/enterprise" },
         { name: "Insights", path: "/insights" },

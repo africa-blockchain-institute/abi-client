@@ -15,7 +15,7 @@
                         <div class="carousel-caption">
                             <h5 class="title">Improving the Narrative of Blockchain Across Africa</h5>
                             <p class="sub">Driving awareness, education, and innovation to reshape blockchain’s impact across Africa—empowering communities, fostering adoption, and building a decentralized future.</p>
-                            <nuxt-link to="/about-us" class="btn">Explore</nuxt-link>
+                            <nuxt-link to="/about-abi" class="btn">Explore</nuxt-link>
                         </div>
                     </div>
                 </div>

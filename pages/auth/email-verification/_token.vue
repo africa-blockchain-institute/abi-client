@@ -9,7 +9,7 @@
         <div class="proceed">
             <div class="row">
                 <div class="col text-center">
-                    <nuxt-link to="/login" class="btn proceed__btn" v-if="!err">Proceed to Login</nuxt-link>
+                    <nuxt-link to="/auth/login" class="btn proceed__btn" v-if="!err">Proceed to Login</nuxt-link>
                     <nuxt-link to="/auth/resend-email-verification" v-if="err" class="btn proceed__btn">Resend Verification Link</nuxt-link>
                 </div>
             </div>
