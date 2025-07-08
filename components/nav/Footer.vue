@@ -44,17 +44,17 @@
                         <div class="col-6">
                             <ul class="footer__sect--links ps-0">
                                 <li><nuxt-link to="/about-abi" class="link">About ABI</nuxt-link> </li>
-                                <li><nuxt-link to="/faculty" class="link">Faculty</nuxt-link> </li>
-                                <li><nuxt-link to="/courses" class="link">Courses</nuxt-link> </li>
+                                <li><nuxt-link to="/events" class="link">Events</nuxt-link> </li>
+                                <li><nuxt-link to="/our-impact" class="link">Our Impact</nuxt-link> </li>
                                 <li><nuxt-link to="/enterprise" class="link">Enterprise</nuxt-link> </li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <ul class="footer__sect--links ps-0">
                                 <li><a href="https://www.careers.africablockchain.institute/" class="link">Careers</a> </li>
-                                <li><nuxt-link to="/blockchain-report" class="link">Research</nuxt-link> </li>
-                                <li><nuxt-link to="/incubator-program" class="link">Incubator Program</nuxt-link> </li>
-                                <li><nuxt-link to="/mentor-program" class="link">Mentorship Program</nuxt-link> </li>
+                                <li><nuxt-link to="/research" class="link">Research</nuxt-link> </li>
+                                <li><nuxt-link to="/programs" class="link">Programs</nuxt-link> </li>
+                                <li><nuxt-link to="/insights" class="link">Insights</nuxt-link> </li>
                             </ul>
                         </div>
                     </div>
@@ -150,7 +150,7 @@
             margin-bottom: 2rem;
 
             &--header {
-                font-size: $font-hd;
+                font-size: 1.2rem;
                 color: $white;
                 font-weight: bold;
                 margin-bottom: 1rem;

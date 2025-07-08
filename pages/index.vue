@@ -1,7 +1,8 @@
 <template>
     <div class="wrapper">
         <!-- hero section starts -->
-        <!-- <div class="hero">
+        <div class="hero">
+            <HeaderHP />
             <div id="carouselNav" class="carousel carousel-dark slide">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselNav" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -17,13 +18,6 @@
                             <nuxt-link to="/about-us" class="btn">Explore</nuxt-link>
                         </div>
                     </div>
-                    <div class="carousel-item" data-bs-interval="2000">
-                        <img src="~/assets/images/home/hero_3.jpg" class="d-block" alt="Improving the Narrative of Blockchain Across Africa">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
-                    </div>
                 </div>
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselNav" data-bs-slide="prev">
@@ -35,11 +29,11 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-        </div> -->
+        </div>
         <!-- hero section ends -->
 
         <!-- info section starts -->
-        <!-- <div class="info">
+        <div class="info">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-md-10">
@@ -68,11 +62,11 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <!-- info section ends -->
         
         <!-- organizations section starts -->
-        <!-- <div class="trust">
+        <div class="trust">
 			<div class="container">
 				<div class="row">
                     <div class="col-md-7 offset-md-1 col-xxl-6 trust__head">
@@ -170,11 +164,11 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
         <!-- organizations section ends -->
         
         <!-- values section starts -->
-        <!-- <div class="values">
+        <div class="values">
 			<div class="container">
 				<div class="row">
                     <div class="col-7 values__head">
@@ -205,11 +199,11 @@
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
         <!-- values section ends -->
 
         <!-- impact section starts -->
-        <!-- <div class="impact">
+        <div class="impact">
             <div class="container">
                 <div class="row">
                     <div class="col-md-7 impact__head">
@@ -237,7 +231,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <!-- impact section ends -->
 
         <!-- insights section starts -->
@@ -245,49 +239,22 @@
         <div class="insights">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-7 insights__head">
-                        <h2 class="insights__head--title">Read some of our Insights</h2>
+                    <div class="col-12 insights__head">
+                        <h2 class="insights__head--title">Insights</h2>
                     </div>
                 </div>
 
-                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 g-xl-3">
-                    <!-- <div class="col insights__list" v-for="(insight, index) in insights" :key="index"> -->
-                    <div class="col insights__list">
-                        <!-- <a :href="insight.link" target="blank"> -->
-                        <a href="#" target="blank">
-                            <div class="card h-100">
-                                <!-- <img :src="insight.image" :alt="insight.title" class="img-fluid card-img-top"> -->
-                                <div class="card-body">
-                                    <!-- <h5 class="insights__list--title mb-3">{{ insight.title }}</h5> -->
-                                    <h5 class="insights__list--title mb-3">Hew Post</h5>
-									<!-- <p class="insights__list--text">Click to read post on our Medium Channel.</p> -->
-									<!-- <p class="insights__list--text">{{ insight.description }}</p> -->
-                                    <button class="btn btn-sm insights__list--btn">Read Insight</button>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                <Insight />
 
-                    <div class="col insights__list">
-                        <a href="#" target="blank">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h5 class="insights__list--title mb-3">Hew Post</h5>
-								    <button class="btn btn-sm insights__list--btn">Read Insight</button>
-                                </div>
-                            </div>
-                        </a>
+                <div class="row">
+                    <div class="col-12 insights__cta">
+                        <div class="text-center">
+                            <nuxt-link to="/insights" class="btn insights__cta--btn">View All Insights</nuxt-link>
+                        </div>
                     </div>
-
                 </div>
-
-				<div class="row">
-					<div class="col-12 insights__btn text-center">
-						<a href="https://medium.com/@africablockchaininstitute" class="btn insights__btn--btn" target="_blank">See More</a>
-					</div>
-				</div>
             </div>
-        </div>                 
+        </div>         
         <!-- insights section ends -->
         
         <!-- market starts -->
@@ -305,7 +272,7 @@
         <!-- market ends -->
         
         <!-- know section starts -->
-        <!-- <div class="know">
+        <div class="know">
             <div class="container">
                 <div class="row">
                     <div class="col-12 know__body">
@@ -316,7 +283,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <!-- know section ends -->
         
         <!-- event section starts -->
@@ -325,61 +292,16 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 events__head">
-                        <h2 class="events__head--title">Upcoming events</h2>
+                        <h2 class="events__head--title">Upcoming Events</h2>
                     </div>
                 </div>
 
-                <!-- <div class="row row-cols-1 row-cols-md-2 g-lg-5" v-if="events.length > 0">
-                    <div class="col events__list" v-for="(event, index) in events" :key="index">
-                        <div class="card h-100">
-                            <div class="row align-items-end">
-                                <div class="col-md-4 events__img">
-                                    <img :src="event.image" class="img-fluid rounded-start" :alt="event.title">
-                                </div>
-                                <div class="col-md-8 events__info">
-                                    <div class="card-body">
-                                        <h5 class="events__info--title">{{ event.title }} </h5>
-                                        <p class="events__info--text">{{ event.description }}</p>
-                                        <p class="events__info--text fw-bold">Date: {{ event.schedule | formatDate }}</p>
-                                        <a :href="event.link" class="events__info--link" target="blank"> View More Details </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
+                <Event />
 
-                <div class="row row-cols-1 row-cols-lg-2">
-                    <div class="col events__list">
-                        <div class="card h-100">
-                            <div class="row align-items-end">
-                                <div class="col-md-4 col-lg-5 events__img">
-                                    <img src="~/assets/images/home/drive_impact_research.jpg" class="img-fluid">
-                                </div>
-                                <div class="col-md-8 col-lg-7 events__info bg-dange">
-                                    <div class="card-body">
-                                        <h5 class="events__info--title">Event Title to fin the three lines that was required and when it exceeds? </h5>
-                                        <p class="events__info--date"> <span class="fas fa-calendar"></span> August 23rd, 2025 </p>
-                                        <a href="#" class="events__info--link" target="blank"> View details <span class="fas fa-arrow-right"></span> </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col events__list">
-                        <div class="card h-100">
-                            <div class="row align-items-end">
-                                <div class="col-md-4 col-lg-5 events__img">
-                                    <img src="~/assets/images/home/drive_impact_research.jpg" class="img-fluid">
-                                </div>
-                                <div class="col-md-8 col-lg-7 events__info bg-dange">
-                                    <div class="card-body">
-                                        <h5 class="events__info--title">Event Title in the most unimpressive manner and tomne defense </h5>
-                                        <p class="events__info--date"> <span class="fas fa-calendar"></span> August 23rd, 2025 </p>
-                                        <a href="#" class="events__info--link" target="blank"> View details <span class="fas fa-arrow-right"></span> </a>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="row">
+                    <div class="col-12 events__cta">
+                        <div class="text-center">
+                            <nuxt-link to="/events" class="btn events__cta--btn">View All Events</nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -393,13 +315,78 @@
     </div>
 </template>
 
+<script>
+    import Header from '@/components/nav/Header.vue';
+    import Find from '@/components/reusable/Find.vue';
+    import Lists from '@/components/reusable/CardLists.vue';
+    import HeaderHP from '@/components/nav/HeaderHP.vue';
+    import Insight from '~/components/reusable/Insight.vue';
+    import Event from '@/components/reusable/Event.vue';
+
+    export default {
+        head(){
+            return{
+                title: 'Home -  Africa Blockchain Institute',
+                meta: [
+                    {
+                        name: 'Home',
+                        content: 'Home page'
+                    }
+                ],
+            }
+        },
+
+        data() {
+            return {
+                events: [],
+                insights: [],
+                find: {
+                    title: 'Finding a Talent?',
+                    text: 'Get now a talent from our vibrant network of alumni. Post your opportunities here.',
+                    buttonText: 'Find Talent',
+                    image: 'home/find_talent.jpg',
+                    link: '/top-talents'
+                }
+            }
+        },
+
+        components: {
+            Header, HeaderHP, Lists, Find, Insight, Event
+        },
+
+        created() {
+            // this.getInsights();
+            // this.getEvents();
+        },
+
+        methods: {
+            async getInsights() {
+                try {
+                    let response = await this.$axios.$get('/posts');
+                    this.insights = response.data;
+                } catch (error) {
+                    console.error('Error fetching posts:', error);
+                }
+            },
+
+            async getEvents() {
+                try {
+                    let response = await this.$axios.$get('/events/upcoming-events');
+                    this.events = response.data;
+                } catch (error) {
+                    console.error('Error fetching events:', error);
+                }
+            },
+        }
+    }
+</script>
+
 <style lang="scss" scoped>
     .wrapper{
         /** hero section starts */
         .hero{
             .carousel {
-                max-height: 60vh;
-
+                max-height: 45vh;
                 .carousel-indicators {
                     button {
                         background-color: $grey;
@@ -411,7 +398,7 @@
                 }
 
                 .carousel-inner {
-                    height: 60vh;
+                    height: 45vh;
                 
                     .carousel-item {
                         height: 100%;
@@ -423,10 +410,12 @@
                         }
 
                         .carousel-caption {
-                            position: absolute;
+                            // position: absolute;
                             color: $white;
-                            transform: translateY(-40%);
-                            top: 40%;
+                            transform: translateY(-30%);
+                            top: 30%;
+                            left: 5%;
+                            right: 5%;
                             
                             .title {
                                 font-size: $font-hd;
@@ -455,6 +444,7 @@
                     height: 2rem;
                     margin-left: 2rem;
                     margin-right: 2rem;
+                    display: none;
 
                     .carousel-control-prev-icon,
                     .carousel-control-next-icon {
@@ -487,7 +477,7 @@
                 color: $white;
 
                 &--num {
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     font-weight: bold;
                     margin-bottom: 0.5rem;
                 }
@@ -508,7 +498,7 @@
                 margin-bottom: 2rem;
 
                 &--title {
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                     color: black;
                     font-weight: bold;
                 }
@@ -537,21 +527,21 @@
                 margin-bottom: 1rem;
 
                 &--title{
-                    font-size: $font-hd;
+                    font-size: 1.2rem;
                     font-weight: bold;
                 }
             }
 
 			&__key{
-                margin-bottom: 1rem;
+                margin-bottom: 1.2rem;
 
                 &--img{
                     width: 2rem;
-                    margin-bottom: 1.5rem;
+                    margin-bottom: 1.3rem;
                 }
 
                 &--title{
-                    font-size: 1.1rem;
+                    font-size: 1rem;
                     font-weight: bold;
                 }
 
@@ -571,7 +561,7 @@
                 margin-bottom: 1rem;
 
                 &--title {
-                    font-size: 1.5rem;
+                    font-size: 1.2rem;
                     color: black;
                     font-weight: bold;
                 }
@@ -616,62 +606,27 @@
         /** insights section starts */
         .insights{
             padding: 2rem 1rem;
-			background-color: $primary-light;
 
             &__head{
                 text-align: left;
                 margin-bottom: 1rem;
 
                 &--title{
-                    font-size: $font-hd;
+                    font-size: 1.2rem;
                     font-weight: bold;
                 }
             }
 
-            &__list{
-                margin-bottom: 2rem;
-
-                a {
-                    text-decoration: none;
-                }
-
-                .card {
-                    @include card();
-
-                    &:hover{
-                        box-shadow: 0 .35rem .65rem rgba(0,0,0,.075)!important;
-                    }
-
-                    &-body{
-                        padding: 1.5rem 1.2rem;
-                        color: $dark;
-                    }
-                }
-                
-                &--title{
-                    font-size: 1.1rem;
-                    font-weight: bold;
-                    margin-bottom: .5rem;
-                }
-                
-                &--text{
-                    font-size: $font-rg;
-					margin-bottom: 0;
-                }
+            &__cta{
+                text-align: center;
+                margin-top: 2rem;
 
                 &--btn{
                     @include button();
-                    padding: .35rem .5rem;
+                    padding: .75rem 1rem;
+                    font-size: .9rem;
                 }
             }
-
-			&__btn{
-				margin-top: 2rem;
-
-				&--btn{
-					@include button();
-				}
-			}
         }
         /** insights section ends */
 
@@ -684,12 +639,12 @@
                 margin-bottom: 1rem;
 
                 &--title{
-                    font-size: $font-hd;
+                    font-size: 1.2rem;
                     font-weight: bold;
                 }
 
                 &--sub {
-                    font-size: 1rem;
+                    font-size: .9rem;
                     color: $secondary-2;
                 }
             }
@@ -698,7 +653,7 @@
 
         /** know section ends */
         .know {
-            padding: 1rem;
+            padding: 2rem 1rem;
             
             &__body {
                 padding: 3rem 1rem 3rem;
@@ -729,66 +684,23 @@
                 margin-bottom: 1rem;
 
                 &--title{
-                    font-size: $font-hd;
+                    font-size: 1.2rem;
                     font-weight: bold;
                 }
             }
 
-            &__list{
-                margin-bottom: 2rem;
-				
-                .card {
-                    @include card();
-                    padding: .5rem;
+            &__cta{
+                text-align: center;
+                margin-top: 2rem;
 
-                    &:hover {
-                        .fa-arrow-right {
-                            transform: translateX(.25rem);
-                        }
-                    }
-                }
-			}
-
-            &__img{
-                img {
-                    border-radius: .75rem;
-                }
-            }
-
-			&__info {
-                padding-left: 0;
-
-                &--title{
-                    font-size: 1rem;
-                    font-weight: bold;
-                    margin-bottom: .5rem;
-                }
-                
-                &--date{
+                &--btn{
+                    @include button();
+                    padding: .75rem 1rem;
                     font-size: .9rem;
-
-                    .fas {
-                        margin-right: .5rem;
-                        color: $secondary;
-                    }
                 }
-
-				&--link{
-					color: $secondary;
-					font-size: .9rem;
-					text-decoration: none;
-
-                    .fa-arrow-right {
-                        margin-left: .25rem;
-                        transition: all .3s ease;
-                        transform: translateX(0);
-                    }
-				}
             }
         }
         /** event section ends */
-
-        
     }
 
     // Medium devices (tablets, 767px and up)
@@ -961,25 +873,6 @@
                         font-size: $font-hd;
                     }
                 }
-
-                &__list{
-                    margin-bottom: 2rem;
-                }
-
-                &__info {
-                    &--title{
-                        font-size: 1.2rem;
-                        margin-bottom: .75rem;
-                    }
-                    
-                    &--date{
-                        font-size: .9rem;
-                    }
-
-                    &--link{
-                        font-size: .9rem;
-                    }
-                }
             }
             /** event section ends */
         }
@@ -1121,26 +1014,18 @@
             /** impact section ends */
 
             /** insights section starts */
-            .insights{
-                padding: 4rem 1rem;
-
+            .insights {
                 &__head{
                     &--title{
                         font-size: $font-md;
                     }
                 }
 
-                &__list{
-                    margin-bottom: 2rem;
+                &__cta{
+                    margin-top: 2rem;
 
-                    .card {
-                        &-body{
-                            padding: 2.5rem 1.5rem;
-                        }
-                    }
-                    
-                    &--title{
-                        font-size: 1.1rem;
+                    &--btn{
+                        font-size: 1rem;
                     }
                 }
             }
@@ -1173,7 +1058,7 @@
 
                     &--text {
                         width: 75%;
-                        font-size: $font-xl;
+                        font-size: $font-lg;
                         line-height: 4rem;
                     }
                 }
@@ -1300,34 +1185,6 @@
             }
             /** impact section ends */
 
-            /** insights section starts */
-             .insights{
-                &__head{
-                    &--title{
-                        font-size: $font-md;
-                    }
-                }
-
-                &__list{
-                    margin-bottom: 2rem;
-
-                    .card {
-                        &-body{
-                            padding: 2.5rem 1.5rem;
-                        }
-                    }
-                    
-                    &--title{
-                        font-size: 1.2rem;
-                    }
-                    
-                    &--text{
-                        font-size: 1rem;
-                    }
-                }
-            }
-            /** insights section ends */
-
             /** market section starts */
             .market {
                 &__head{
@@ -1358,68 +1215,20 @@
                 }
             }
             /** know section ends */
+
+            /** event section ends */
+            .events{
+                padding: 4rem 1rem;
+
+                &__cta{
+                    margin-top: 2rem;
+
+                    &--btn{
+                        font-size: 1rem;
+                    }
+                }
+            }
+            /** event section ends */   
         }
     }
 </style>
-
-<script>
-    import Lists from '@/components/reusable/CardLists.vue';
-    import Find from '~/components/reusable/Find.vue';
-
-    export default {
-        head(){
-            return{
-                title: 'Home -  Africa Blockchain Institute',
-                meta: [
-                    {
-                        name: 'Home',
-                        content: 'Home page'
-                    }
-                ],
-            }
-        },
-
-        data() {
-            return {
-                events: [],
-                insights: [],
-                find: {
-                    title: 'Finding a Talent?',
-                    text: 'Get now a talent from our vibrant network of alumni. Post your opportunities here.',
-                    buttonText: 'Find Talent',
-                    image: 'home/find_talent.jpg',
-                    link: '/top-talents'
-                }
-            }
-        },
-
-        components: {
-            Lists, Find
-        },
-
-        created() {
-            // this.getInsights();
-            // this.getEvents();
-        },
-
-        methods: {
-            async getInsights() {
-                try {
-                    let response = await this.$axios.$get('/posts');
-                    this.insights = response.data;
-                } catch (error) {
-                    console.error('Error fetching posts:', error);
-                }
-            },
-
-            async getEvents() {
-                try {
-                    let response = await this.$axios.$get('/events/upcoming-events');
-                    this.events = response.data;
-                } catch (error) {
-                    console.error('Error fetching events:', error);
-                }
-            },
-        }
-    }
-</script>

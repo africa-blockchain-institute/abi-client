@@ -28,11 +28,6 @@
                 >{{ link.name }}</nuxt-link
               >
             </li>
-            <!-- <li class="nav-item">
-              <nuxt-link class="nav-link" to="/program" nuxt-link-active exact
-                >Program</nuxt-link
-              >
-            </li> -->
           </ul>
         </div>
 
@@ -133,8 +128,12 @@ export default {
         font-size: 0.9rem;
         font-weight: bold;
 
+        &:hover {
+          color: $secondary;
+        }
+
         &.nuxt-link-exact-active {
-          color: $primary;
+          color: $secondary;
         }
       }
 

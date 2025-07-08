@@ -6,7 +6,7 @@
                     <h3 class="title">{{ title }}</h3>
                     <p class="body" v-html="text1"></p>
                     <p class="body" v-html="text2"></p>
-                    <button class="btn sect__content--btn" v-if="buttonText">{{ buttonText }}</button>
+                    <nuxt-link :to="linkUrl" class="btn sect__content--btn" v-if="linkText">{{ linkText }}</nuxt-link>
                 </div>
                 <div class="col-md-5 col-xl-4 order-1 order-md-2 offset-xl-1 sect__content--img">
                     <img :src="require(`~/assets/images/${image}`)" :alt="title" class="img-fluid">
@@ -18,7 +18,7 @@
 
 <script>
     export default {
-        props: ['title', 'image', 'text1', 'text2', 'buttonText'],        
+        props: ['title', 'image', 'text1', 'text2', 'linkText', 'linkUrl'],        
     }
 </script>
 

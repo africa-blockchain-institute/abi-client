@@ -1,6 +1,5 @@
 <template>
   <header class="header">
-    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
         <nuxt-link to="/" class="navbar-brand header__logo">
@@ -29,11 +28,6 @@
                 >{{ link.name }}</nuxt-link
               >
             </li>
-            <!-- <li class="nav-item">
-              <nuxt-link class="nav-link" to="/program" nuxt-link-active exact
-                >Program</nuxt-link
-              >
-            </li> -->
           </ul>
         </div>
 
