@@ -9,7 +9,7 @@
                         <h1 class="hero__content--title">{{ event.title }}</h1>
 
                         <p class="hero__content--pub">Published:</p>
-                        <p class="hero__content--date">{{ event.date }}</p>
+                        <p class="hero__content--date">{{ event.schedule | formatDate }}</p>
                     </div>
                 </div>
             </div>
@@ -20,18 +20,10 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-xl-10 col-xxl-8 event__content">
                         <p class="event__content--body">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum repudiandae ut quos in, vel sapiente, blanditiis repellendus tempora sed nesciunt, adipisci distinctio ex error obcaecati rem iure consectetur illo dignissimos!
+                            {{ event.description }}
                         </p>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="comment">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-xl-10 col-xxl-8 comment__content">
-                        <Disqus :identifier="this.$route.path" />
+                        <a :href="event.link" class="btn event__content--btn">Register For Event</a>
                     </div>
                 </div>
             </div>
@@ -45,12 +37,11 @@
     export default {
         head(){
             return{
-                // title: `${this.course.title} -  Africa Blockchain Institute`,
-                title: `Africa Blockchain Institute`,
+                title: `${this.event.title} -  Africa Blockchain Institute`,
                 meta: [
                     {
-                        // name: this.course.title,
-                        // content: this.course.title
+                        name: this.event.title,
+                        content: this.event.title
                     }
                 ],
             }
@@ -58,21 +49,31 @@
 
         data() {
             return {
-                event: {
-                    title: 'Insights into the most formidable challenges facing the blockchain industry today',
-                    tag: 'Discovery',
-                    date: new Date().toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    })
-                },
+                event: {},
             }
+        },
+
+        created(){
+            console.log('Event slug:', this.$route.params.slug);
+            
+            this.getEvent();
         },
 
         components: {
             Header,
         },
+
+        methods: {
+            async getEvent() {
+                try {
+                    // Assuming you have an API endpoint to fetch the event details
+                    let response = await this.$axios.$get(`/events/${this.$route.params.slug}`);
+                    this.event = response.data;
+                } catch (error) {
+                    console.error('Error fetching event:', error);
+                }
+            },
+        }
     }
 </script>
 
@@ -127,22 +128,12 @@
                     font-size: 1rem;
                     line-height: 1.6;
                 }
-            }
-        }
-
-        .comment {
-            padding: 2rem 1rem;
-        }
-
-        .related{
-            padding: 2rem 1rem;
-
-            &__head{
-                margin-bottom: 1rem;
-
-                &--title{
-                    font-size: 1.2rem;
-                    font-weight: bold;
+                
+                &--btn {
+                    margin-top: 1rem;
+                    @include button();
+                    padding: 0.75rem 1.5rem;
+                    font-size: 1rem;
                 }
             }
         }
@@ -179,22 +170,6 @@
             .event {
                 padding: 2rem 3rem;
             }
-
-            .comment {
-                padding: 2rem 3rem;
-            }
-
-            .related{
-                padding: 2rem 1rem;
-
-                &__head{
-                    margin-bottom: 1rem;
-
-                    &--title{
-                        font-size: 1.2rem;
-                    }
-                }
-            }
         }
     }
 
@@ -229,22 +204,6 @@
             .event {
                 padding: 2rem 3rem;
             }
-
-            .comment {
-                padding: 2rem 3rem;
-            }
-
-            .related{
-                padding: 2rem 1rem;
-
-                &__head{
-                    margin-bottom: 1rem;
-
-                    &--title{
-                        font-size: 1.2rem;
-                    }
-                }
-            }
         }
     }
 
@@ -277,22 +236,6 @@
 
             .event {
                 padding: 2rem 3rem;
-            }
-
-            .comment {
-                padding: 2rem 3rem;
-            }
-
-            .related{
-                padding: 2rem 1rem;
-
-                &__head{
-                    margin-bottom: 1rem;
-
-                    &--title{
-                        font-size: 1.2rem;
-                    }
-                }
             }
         }
     }

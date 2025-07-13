@@ -10,18 +10,18 @@
             </div>
         </div> -->
 
-        <div class="col event__list">
+        <div class="col event__list" v-for="(list, index) in listings" :key="index">
             <div class="card h-100">
                 <div class="row">
                     <div class="event__img">
-                        <img src="~/assets/images/home/drive_impact_research.jpg" class="img-fluid">
+                        <img :src="list.image" class="img-fluid">
                     </div>
                     <div class="event__info">
                         <div class="card-body">
-                            <h5 class="event__info--title">Event Title to fin the three lines that was required and when it exceeds? </h5>
-                            <p class="event__info--date"> <span class="fas fa-calendar"></span> August 23rd, 2025 </p>
-                            <p class="event__info--location"> <span class="fas fa-map-marker"></span> Kigali, Rwanda </p>
-                            <a href="#" class="event__info--link" target="blank"> View details <span class="fas fa-arrow-right"></span> </a>
+                            <h5 class="event__info--title">{{ list.title }}</h5>
+                            <p class="event__info--date"> <span class="fas fa-calendar"></span> {{ list.schedule | formatDate }} </p>
+                            <p class="event__info--location"> <span class="fas fa-map-marker"></span> {{ list.location }} </p>
+                            <nuxt-link :to="{ name: 'events-slug', params: { slug: list.slug } }" class="event__info--link"> View details <span class="fas fa-arrow-right"></span> </nuxt-link>
                         </div>
                     </div>
                 </div>

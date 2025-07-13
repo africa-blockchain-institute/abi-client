@@ -7,7 +7,7 @@
         <!-- events section starts -->
         <section class="events">
             <div class="container">
-                <Event />
+                <Event :listings="events"/>
             </div>
         </section> 
         <!-- events section ends -->
@@ -33,6 +33,7 @@
 
         data() {
             return {
+                events: [],
                 title: "Events",
                 image: 'events',
                 desc: 'At Africa Blockchain Institute, our events bring together innovators, policymakers, developers, and industry leaders to charter the digital future for Africa.',
@@ -42,6 +43,21 @@
         components: {
             Hero, Event
         },
+
+        created() {
+            this.getEvents();
+        },
+
+        methods: {
+            async getEvents() {
+                try {
+                    let response = await this.$axios.$get('/events');
+                    this.events = response.data;
+                } catch (error) {
+                    console.error('Error fetching events:', error);
+                }
+            },
+        }
 
     }
 </script>
@@ -55,7 +71,7 @@
 
     @media (min-width: 1439px) {  
         .wrapper {
-            .insights {
+            .events {
                 padding: 4rem 1rem;
             }
         }

@@ -306,7 +306,7 @@
                     </div>
                 </div>
 
-                <Event />
+                <Event :listings="events"/>
 
                 <div class="row">
                     <div class="col-12 events__cta">
@@ -366,7 +366,7 @@
 
         created() {
             // this.getInsights();
-            // this.getEvents();
+            this.getEvents();
         },
 
         methods: {
@@ -381,7 +381,7 @@
 
             async getEvents() {
                 try {
-                    let response = await this.$axios.$get('/events/upcoming-events');
+                    let response = await this.$axios.$get('/events/upcoming-three-events');
                     this.events = response.data;
                 } catch (error) {
                     console.error('Error fetching events:', error);
