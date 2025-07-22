@@ -8,7 +8,36 @@
         <div class="details">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 col-md-8 details__form">
+                    <div class="col-12 col-md-4 col-lg-4 details__contact">
+                        <div class="details__info">
+                            <p class="details__info--icon"><span class="fas fa-envelope"></span> </p>
+
+                            <div>
+                                <p class="details__info--title">Email Us</p>
+                                <p class="details__info--text">info@africablockchain.institute</p>
+                            </div>
+                        </div>
+
+                        <div class="details__info">
+                            <p class="details__info--icon"><span class="fas fa-map-marker"></span> </p>
+
+                            <div>
+                                <p class="details__info--title">Visit Us</p>
+                                <p class="details__info--text">KN 5 Airport Road, Kimihurura, Kigali, Rwanda</p>
+                            </div>
+                        </div>
+
+                        <div class="details__info">
+                            <p class="details__info--icon"><span class="fas fa-phone"></span> </p>
+
+                            <div>
+                                <p class="details__info--title">Call Us</p>
+                                <p class="details__info--text">+250 783 632 405</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-md-7 col-lg-7 offset-md-1 details__form">
                         <form @submit.prevent="sendMessage()">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-md-6">
@@ -32,7 +61,7 @@
                                     <textarea class="form-control" id="message" rows="3" v-model="form.message" :class="{'is-invalid': errors.status }" placeholder="Enter your message" required></textarea>
                                     <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                 </div>
-                                <div class="small">For any question, contact our 24/7 call center: <span class="fw-bold"> +250 783 632 405. </span></div>
+                                <div class="small">By submitting this form, you consent to Africa Blockchain Institute storing and processing your information to manage your request and share relevant updates about our programs, events, and resources. You can unsubscribe from these communications at any time. </div>
                             </div>
 
                             <div class="row">
@@ -127,6 +156,29 @@
                 &--title{
                     font-size: $font-hd;
                     font-weight: bold;
+                }
+            }
+
+            &__contact{
+
+                .details__info{
+                    margin-bottom: 1rem;
+                    display: flex;
+                    gap: 1rem;
+
+                    &--icon{
+                        font-size: 1.1rem;
+                    }
+
+                    &--title{
+                        font-weight: bold;
+                        font-size: 1.1rem;
+                        margin-bottom: .25rem;
+                    }
+
+                    &--text{
+                        font-size: $font-rg;
+                    }
                 }
             }
 

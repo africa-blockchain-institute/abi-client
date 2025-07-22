@@ -2,14 +2,15 @@
     <div class="sect">
         <div class="container-fluid">
             <div class="row sect__content">
-                <div class="col-md-6 col-xl-4 order-1 order-md-1 sect__content--img">
-                    <img :src="require(`~/assets/images/${image}`)" :alt="title" class="img-fluid">
-                </div>
-                <div class="col-md-6 col-xl-5 offset-xl-1 order-2 order-md-2 sect__content--text">
+                <div class="col-md-7 col-xl-5 order-2 order-md-1 sect__content--text">
                     <h3 class="title">{{ title }}</h3>
                     <p class="body" v-html="text1"></p>
-                    <p class="body" v-html="text2"></p>
-                    <p class="body" v-html="text3"></p>
+                    <ul class="body">
+                        <li v-for="(list, index) in lists" :key="index">{{ list }}</li>
+                    </ul>
+                </div>
+                <div class="col-md-5 col-xl-4 order-1 order-md-2 offset-xl-1 sect__content--img">
+                    <img :src="require(`~/assets/images/${image}`)" :alt="title" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -18,7 +19,7 @@
 
 <script>
     export default {
-        props: ['title', 'image', 'text1', 'text2', 'text3'],        
+        props: ['title', 'image', 'text1', 'lists'],        
     }
 </script>
 
@@ -27,10 +28,9 @@
         color: $secondary!important;
         text-decoration: none !important;
     }
-
+    
     .sect{
         &__content{
-            background-color: $primary-light;
             justify-content: center;
             padding: 2rem 1rem;
 
@@ -50,6 +50,14 @@
                     line-height: 1.7;
                 }
 
+                li {
+                    margin-bottom: .75rem;
+                }
+
+            }
+
+            &--btn {
+                @include button();
             }
         }
     }
@@ -79,7 +87,7 @@
     @media (min-width: 991px) { 
         .sect {
             &__content{
-                padding: 4rem;
+                padding: 3rem;
 
                 &--img{
                     margin-bottom: 0;
@@ -94,14 +102,13 @@
         }            
     }
 
-
     // Large devices (desktops, 992px and up)
     @media (min-width: 1439px) { 
         .sect {
             &__content{
                 padding: 4rem;
 
-                &--text {
+                 &--text {
                     .body{
                         font-size: 1.1rem;
                     }

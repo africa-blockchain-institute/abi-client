@@ -33,14 +33,14 @@
         </div>
         <!-- carousel section ends -->
         
-        <Aside2
+        <!-- <Aside2
             title="Download Our Impact Report – A Demi-Decade of Transformation"
             image="impact/report.png"
             text1="<p>We are excited to share with you our Impact Report, a comprehensive reflection of our five-year journey driving blockchain innovation across Africa. This landmark report highlights our strides in research, education, incubation, and policy advocacy, detailing how ABI has empowered thousands of developers, entrepreneurs, and policymakers, and cultivated a new generation of blockchain changemakers. From launching Africa’s first accredited Master’s program in Blockchain Technology to forming strategic partnerships such as our MoU with the Government of Rwanda, ABI has consistently pushed the boundaries of what is possible with decentralized technology.</p>"
             text2="<p>Whether you're a policymaker, educator, tech enthusiast, or ecosystem stakeholder, this report offers valuable insights into how blockchain is being used to solve some of Africa’s most pressing challenges, and beyond. Dive into the stories, milestones, and metrics that define our collective progress.</p>"
             linkText="Download Impact Report"
             linkUrl="/impact-report"
-        />
+        /> -->
     </div>
 </template>
 
@@ -54,11 +54,11 @@
     export default {
         head(){
             return{
-                title: 'Our Imapct -  Africa Blockchain Institute',
+                title: 'Our Impact -  Africa Blockchain Institute',
                 meta: [
                     {
-                        name: 'Our Imapct',
-                        content: 'Our Imapct'
+                        name: 'Our Impact',
+                        content: 'Our Impact'
                     }
                 ],
             }
