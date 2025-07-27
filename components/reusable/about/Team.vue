@@ -1,7 +1,7 @@
 <template>     
     <div class="team">
         <!-- board section starts -->
-        <Lists :listings="advisory" title="Our Advisory" />
+        <Lists :listings="advisory" title="Advisory Board" />
         <!-- board section ends -->
         
         <!-- leadership section ends -->       

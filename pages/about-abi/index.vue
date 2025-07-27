@@ -94,7 +94,7 @@
                                 <div class="col-md-8 col-lg-7 priorities__info">
                                     <div class="card-body">
                                         <h5 class="priorities__info--title">Advancing Innovative Blockchain Policies</h5>
-                                        <p class="priorities__info--desc">ABI is committed to creating an enabling environment for blockchain adoption by collaborating with African governments and regional bodies to develop progressive and sustainable policies. <br> Through targeted frameworks, we aim to encourage ethical use of blockchain technology while fostering innovation.</p>
+                                        <p class="priorities__info--desc">ABI is committed to creating an enabling environment for blockchain adoption by collaborating with African governments and regional bodies to develop progressive and sustainable policies. Through targeted frameworks, we aim to encourage ethical use of blockchain technology while fostering innovation.</p>
                                     </div>
                                 </div>
                             </div>
@@ -346,7 +346,7 @@
             .about {
                 &__header {
                     &--title {
-                        font-size: $font-md;
+                        font-size: $font-hd;
                     }
                 }
 
@@ -461,7 +461,7 @@
 
                 &__head{
                     &--title{
-                        font-size: $font-md;
+                        font-size: $font-hd;
                     }
                 }
 
