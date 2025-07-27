@@ -48,12 +48,11 @@
                                 <li><nuxt-link to="/events" class="link">Events</nuxt-link> </li>
                                 <li><nuxt-link to="/our-impact" class="link">Our Impact</nuxt-link> </li>
                                 <li><nuxt-link to="/enterprise" class="link">Enterprise</nuxt-link> </li>
-                                <li><nuxt-link to="/careers" class="link">Careers</nuxt-link> </li>
+                                <li><a href="https://bittersweet-cellar-8f6.notion.site/Africa-Blockchain-Institute-ABI-fca726ed28944074b98cf5f110aed317" class="link">Careers</a> </li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <ul class="footer__sect--links ps-0">
-                                <li><a href="https://bittersweet-cellar-8f6.notion.site/Africa-Blockchain-Institute-ABI-fca726ed28944074b98cf5f110aed317" class="link">Careers</a> </li>
                                 <li><nuxt-link to="/research" class="link">Research</nuxt-link> </li>
                                 <li><nuxt-link to="/programs" class="link">Programs</nuxt-link> </li>
                                 <li><nuxt-link to="/insights" class="link">Insights</nuxt-link> </li>

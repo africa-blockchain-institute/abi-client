@@ -50,6 +50,7 @@
                                         <option value="3rd">3rd Edition</option>
                                     </select>
                                 </div>
+                                <div class="small">By submitting this form, you consent to Africa Blockchain Institute storing and processing your information to manage your request and share relevant updates about our programs, events, and resources. You can unsubscribe from these communications at any time. </div>
                             </div>
 
                             <div class="row">

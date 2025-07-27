@@ -121,9 +121,9 @@
 
         data(){
             return{
-                title: 'Regulatory Landscape: Navigating Compliance in Blockchain',
+                title: 'Insights',
                 image: 'insights',
-                desc: ""
+                desc: "Our insights reflect the evolving landscape of blockchain innovation in Africa and across the world; highlighting trends, research, press release, and thought leadership that shape policy, build ecosystem, and inform deployment of transformative solutions."
             }
         },
 

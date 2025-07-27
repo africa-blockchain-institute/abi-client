@@ -25,11 +25,11 @@
                             
                         <div class="row">
                             <div class="col-md-4 info__key">
-                                <img src="~/assets/images/enterprise/icons/data-efficiency.png" alt="process data efficiently" class="info__key--img">
+                                <img src="~/assets/images/enterprise/icons/trust-secure.png" alt="process data efficiently" class="info__key--img">
                                 <p class="info__key--title">Process data efficiently</p>
                             </div>
                             <div class="col-md-4 info__key">
-                                <img src="~/assets/images/enterprise/icons/trust-secure.png" alt="Trusted transactions and secure business networks" class="info__key--img">
+                                <img src="~/assets/images/enterprise/icons/data-efficiency.png" alt="Trusted transactions and secure business networks" class="info__key--img">
                                 <p class="info__key--title">Trusted transactions and secure business networks</p>
                             </div>
                             <div class="col-md-4 info__key">
@@ -463,7 +463,6 @@
                 padding-left: 2rem;
                 bottom: 5%;
             
-
                 &--title{
                     font-weight: bold;
                     color: $white;
@@ -508,10 +507,11 @@
         }
 
         .slogan{
-            background: url("~/assets/images/home-v1/pattern.jpg");
+            background: url("~/assets/images/enterprise/slogan.jpg");
             padding: 4rem 1rem;
             text-align: center;
             background-size: cover;
+            background-position: top center;
 
             &__info{
                 font-size: $font-hd;
@@ -760,7 +760,6 @@
                 padding: 3rem 1rem;
 
                 &__intro{
-                    line-height: 1.7;
                     margin-bottom: 3rem;
                 }
 
@@ -858,6 +857,7 @@
                     
                     &--desc{
                         font-size: 1rem;
+                        margin-bottom: 2rem;
                     }
                 }
             }

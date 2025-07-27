@@ -61,6 +61,7 @@
                                     <textarea class="form-control" id="message" rows="3" v-model="form.message" :class="{'is-invalid': errors.status }" placeholder="To guide the discussion, please give us details on your interest in speaking with the ABI Enterprise Team. " required></textarea>
                                     <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                 </div>
+                                <div class="small">By submitting this form, you consent to Africa Blockchain Institute storing and processing your information to manage your request and share relevant updates about our programs, events, and resources. You can unsubscribe from these communications at any time. </div>
                             </div>
 
                             <div class="row">

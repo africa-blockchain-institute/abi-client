@@ -5,7 +5,7 @@
         <!-- hero section ends -->
         
         <Aside
-            image="impact/report.png"
+            image="membership/member.png"
             text1="<p>Africa Blockchain Institute (ABI) welcomes forward-thinking organizations, corporations, public institutions, and enterprises to become part of our pan-African community committed to operate at the intersection of blockchain policy, resilient ecosystem, and sustainable solutions to improve positively the narrative of blockchain innovations in Africa.</p>"
             text2="<p>ABI’s Membership Program is designed for entities that recognize the transformative potential of blockchain and emerging technologies to solve real-world challenges.</p>"
             text3="<p>By joining our network, your organization becomes part of a mission-driven alliance working to shape policy, promote innovation, drive ecosystem sustainably, and build the digital infrastructure for a resilient African future.</p>"
@@ -29,14 +29,14 @@
         
         <Aside3
             title="Who Should Join?"
-            image="impact/report.png"
+            image="membership/join-us.jpg"
             text1="<p>Our membership is ideal for: </p>"
             :lists="lists"
             text2="<p>Whether you're a policymaker, educator, tech enthusiast, or ecosystem stakeholder, this report offers valuable insights into how blockchain is being used to solve some of Africa’s most pressing challenges, and beyond. Dive into the stories, milestones, and metrics that define our collective progress.</p>"
         />
 
         <!-- membership section starts -->
-         
+        
         <!-- membership section ends -->
     </div>
 </template>
