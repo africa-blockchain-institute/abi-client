@@ -82,7 +82,7 @@
 
     @media (min-width: 992px) { 
         .hero{
-            height: 60vh;
+            height: 70vh;
 
             &__content{
                 &--title {

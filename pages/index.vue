@@ -108,7 +108,7 @@
 							<img src="~/assets/images/home/organizations/ghana-tech.png" alt="ghana tech hub">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/ict.png" alt="ict">
+                            <img src="~/assets/images/home/organizations/rwanda-ict.jpg" alt="rwanda ict">
 						</div>
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/microsoft.png" alt="microsoft">
@@ -162,16 +162,10 @@
 							<img src="~/assets/images/home/organizations/world-bank-group.png" alt="world bank group">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/risa.jpg" alt="risa">
-						</div>
-						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/hashgraph.png" alt="hashgraph">
 						</div>
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/solana.png" alt="solana">
-						</div>
-						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/rwanda-ict.jpg" alt="rwanda ict">
 						</div>
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/seme-city.png" alt="seme city">
@@ -379,7 +373,7 @@
                 insights: [],
                 find: {
                     title: 'Finding a Talent?',
-                    text: 'Get now a talent from our vibrant network of alumni. Post your opportunities here.',
+                    text: 'Get a talent now from our vibrant network of alumni. Post your opportunities here.',
                     buttonText: 'Find Talent',
                     image: 'home/find_talent.jpg',
                     link: '/top-talents'

@@ -29,12 +29,13 @@
                     </div>
 
                     <div class="footer__sect--social">
-                        <a href="mailto:info@africablockchain.institute" target="blank" class="icon"><span class="fas fa-envelope"></span></a>
-                        <a href="https://twitter.com/AfricaBlockInst" target="blank" class="icon"><span class="fab fa-twitter"></span></a>
+                        <!-- new twitter icon -->
+                        <a href="https://twitter.com/AfricaBlockInst" target="blank" class="icon"><span class="fab fa-twitter"></span></a> 
                         <a href="https://www.linkedin.com/company/africablockinst" target="blank" class="icon thin"><span class="fab fa-linkedin"></span></a>
                         <a href="https://web.facebook.com/Africa-Blockchain-Institute-103445117670312" target="blank" class="icon thin"><span class="fab fa-facebook-square"></span></a>
                         <a href="https://www.youtube.com/@AfricaBlockInst" target="blank" class="icon thin"><span class="fab fa-youtube"></span></a>
                         <a href="https://www.instagram.com/africa.blockchain.institute/" target="blank" class="icon thin"><span class="fab fa-instagram"></span></a>
+                        <a href="/" target="blank" class="icon thin"><span class="fab fa-tiktok"></span></a>
                         <!-- <a href="#" target="blank" class="icon thin"><span class="fab fa-medium"></span></a> -->
                     </div>
                 </div>
@@ -56,6 +57,7 @@
                                 <li><nuxt-link to="/research" class="link">Research</nuxt-link> </li>
                                 <li><nuxt-link to="/programs" class="link">Programs</nuxt-link> </li>
                                 <li><nuxt-link to="/insights" class="link">Insights</nuxt-link> </li>
+                                <li><nuxt-link to="#" class="link">Incubation Program</nuxt-link> </li>
                                 <li><nuxt-link to="/membership-network" class="link">Membership Network</nuxt-link> </li>
                             </ul>
                         </div>

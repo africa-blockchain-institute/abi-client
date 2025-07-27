@@ -73,10 +73,6 @@ Your access and use of the Third-Party Sites are governed by the Terms of Use an
                             <h3 class="privacy__content--intro">REVISION</h3>              
                             <p class="privacy__content--text">We reserve the right, at our sole discretion and without prior notice, to modify or replace these Terms of Use, or change the Site, stop providing the Site, applications or services, or create usage limits for the Site, or change, improve or correct the information, materials and descriptions on the Site at any time for any reason. You are bound by any such revisions and should therefore periodically visit this page to review the then current Terms of Use to which you are bound.</p>
                         </div>
-                        <div class="sect">
-                            <h3 class="privacy__content--intro">License </h3>              
-                            <p class="privacy__content--text"> </p>
-                        </div>
                     </div>
                 </div>
             </div>
