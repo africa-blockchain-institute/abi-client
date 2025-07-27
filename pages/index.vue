@@ -14,10 +14,25 @@
                         <img src="~/assets/images/home/hero_1.jpg" class="d-block" alt="Improving the Narrative of Blockchain Across Africa">
                         <div class="carousel-caption">
                             <h5 class="title">Improving the Narrative of Blockchain Across Africa</h5>
+                            <nuxt-link to="/about-abi" class="btn">Explore</nuxt-link>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="10000">
+                        <img src="~/assets/images/home/hero_1.jpg" class="d-block" alt="Improving the Narrative of Blockchain Across Africa">
+                        <div class="carousel-caption">
+                            <h5 class="title">Improving the Narrative of Blockchain Across Africa</h5>
                             <p class="sub">Driving awareness, education, and innovation to reshape blockchain’s impact across Africa—empowering communities, fostering adoption, and building a decentralized future.</p>
                             <nuxt-link to="/about-abi" class="btn">Explore</nuxt-link>
                         </div>
                     </div>
+                    <!-- <div class="carousel-item" data-bs-interval="10000">
+                        <img src="~/assets/images/home/hero_1.jpg" class="d-block" alt="Improving the Narrative of Blockchain Across Africa">
+                        <div class="carousel-caption">
+                            <h5 class="title">Improving the Narrative of Blockchain Across Africa</h5>
+                            <p class="sub">Driving awareness, education, and innovation to reshape blockchain’s impact across Africa—empowering communities, fostering adoption, and building a decentralized future.</p>
+                            <nuxt-link to="/about-abi" class="btn">Explore</nuxt-link>
+                        </div>
+                    </div> -->
                 </div>
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselNav" data-bs-slide="prev">
@@ -38,7 +53,7 @@
                 <div class="row justify-content-center">
                     <div class="col-md-10">
                         <p class="info__intro">
-							Africa Blockchain Institute is Africa’s foremost Blockchain Think-Tank that is reimagining the possibilities of Blockchain Education, extensive Evidence-Based Researches, and High-End Deployment solutions, for Digital Transformation in Africa. Our Programs are built with global standards, and facilitated by leading experts. We partner with organizations and individuals to address their unique needs, providing options that help them reach their goals.
+                            Africa Blockchain Institute is Africa's foremost Blockchain Think-Tank that is addressing critical Blockchain Policy gaps, Building a Resilient Ecosystem, and Powering Sustainable Innovations via Real-World Applications for Africa. With presence across multiple regions in Africa, ABI work with Governments, Multinationals, Universities, and Global Blockchain Organizations to create impactful initiatives and projects.
                         </p>
                     </div>
                 </div>
@@ -90,16 +105,10 @@
 							<img src="~/assets/images/home/organizations/codeln.png" alt="codeln">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/forbes.png" alt="forbes">
-						</div>
-						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/ghana-tech.png" alt="ghana tech hub">
 						</div>
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/ict.png" alt="ict">
-						</div>
-						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/jelurida.png" alt="jelurida">
 						</div>
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/microsoft.png" alt="microsoft">
@@ -120,19 +129,10 @@
 							<img src="~/assets/images/home/organizations/convexity.jpeg" alt="convexity">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/open_labs.png" alt="open_labs">
-						</div>
-						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/juubix.png" alt="juubix">
-						</div>
-						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/algorand.png" alt="algorand">
 						</div>
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/alu.png" alt="African leadership university">
-						</div>
-						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/freeton.png" alt="freeton">
 						</div>
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/gba.png" alt="governement blockchain association">
@@ -141,25 +141,52 @@
 							<img src="~/assets/images/home/organizations/kleros.png" alt="kleros">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/maker.png" alt="maker">
-						</div>
-						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/wouessi.png" alt="wouessi">
-						</div>
-						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/rousseau_cooper.png" alt="rousseau cooper">
 						</div>
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/tech_london.png" alt="tech london">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/ton_labs.png" alt="ton labs">
-						</div>
-						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/bbic.jpg" alt="black women">
 						</div>
 						<div class="col trust__content--sect">
-							<img src="~/assets/images/home/organizations/brighter.jpeg" alt="black women">
+							<img src="~/assets/images/home/organizations/rrgf.png" alt="rrgf">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/epitech.png" alt="epitech">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/aims.png" alt="aims">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/world-bank-group.png" alt="world bank group">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/risa.jpg" alt="risa">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/hashgraph.png" alt="hashgraph">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/solana.png" alt="solana">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/rwanda-ict.jpg" alt="rwanda ict">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/seme-city.png" alt="seme city">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/berlin.png" alt="berlin">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/movetia.jpg" alt="movetia">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/fhnw.png" alt="fhnw">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/tether.png" alt="tether">
 						</div>
 					</div>
 				</div>
@@ -435,11 +462,11 @@
 
                             .sub {
                                 font-size: .9rem;
-                                margin-bottom: 1.5rem;
                             }
-
+                            
                             .btn {
                                 @include button();
+                                margin-top: 1.5rem;
                                 padding: 0.5rem 1rem;
                                 font-size: 0.9rem;
                             }
@@ -473,7 +500,7 @@
 
             &__intro{
                 font-size: 1rem;
-                line-height: 1.75rem;
+                // line-height: 1.5rem;
                 text-align: center;
                 color: $white;
             }
@@ -749,10 +776,10 @@
 
                                 .sub {
                                     font-size: 1rem;
-                                    margin-bottom: 3rem;
                                 }
-
+                                
                                 .btn {
+                                    margin-top: 3rem;
                                     padding: .75rem 2rem;
                                     font-size: 1rem;
                                 }
@@ -970,7 +997,6 @@
 
                 &__intro{
                     font-size: 1.2rem;
-                    line-height: 2.5rem;
                 }
 
                 .row:nth-child(2) {

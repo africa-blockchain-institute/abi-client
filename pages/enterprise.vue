@@ -852,7 +852,7 @@
     @media (min-width: 992px) {  
         .wrapper{
             .hero{
-                height: 55vh;
+                height: 70vh;
 
                 &__content{
                     
@@ -1037,7 +1037,7 @@
     @media (min-width: 1439px) {  
         .wrapper{
             .hero{
-                height: 50vh;
+                height: 65vh;
 
                 &__content{
                     &--title {

@@ -45,6 +45,12 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="details" class="form-label">Team Details <span>*</span> </label>
+                                        <textarea id="details" v-model="form.details" required class="form-control" rows="3" ></textarea>
+                                    </div>
+                                </div>
 
                                 <div class="col-lg-8 mx-auto">
                                     <button type="submit" class="btn btn-primary" :disabled="status">
@@ -87,6 +93,7 @@
                     image: '',
                     title: '',
                     name: '',
+                    details: '',
                 },
                 imageErr: null,
                 status: true,
@@ -106,6 +113,7 @@
                     formData.append('position', this.form.position)
                     formData.append('category', this.form.category)
                     formData.append('title', this.form.title)
+                    formData.append('details', this.form.details)
                     formData.append('image', this.form.image)
 
                     await this.$axios.$post('/teams', formData)

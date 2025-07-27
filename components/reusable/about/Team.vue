@@ -7,36 +7,41 @@
         <!-- leadership section ends -->       
         <Lists :listings="leadership" title="Our Team" />
         <!-- leadership section ends -->
+
+        <ListsModal :listings="leaderships" title="Our Leadership" />
     </div>
 </template>
 
 <script>
     import Lists from '@/components/reusable/CardLists.vue';
+    import ListsModal from '../CardListsModal.vue';
 
     export default {
         data(){
             return{
                 advisory: [],
-                // leadership: [],
-                leadership: [
+                leadership: [],
+                leaderships: [
                     {
                         name: 'John Doe',
                         title: 'CEO',
                         position: 'Founder & CEO',
-                        image: '/images/team/john_doe.jpg'
+                        image: 'https://placehold.co/400x420',
+                        details: 'John is the visionary behind our institute, leading the team with over 20 years of experience in blockchain technology.'
                     },
                     {
                         name: 'Jane Smith',
                         title: 'CTO',
                         position: 'Chief Technology Officer',
-                        image: '/images/team/jane_smith.jpg'
+                        image: 'https://placehold.co/400x420',
+                        details: 'Jane oversees all technological developments, ensuring our programs are at the forefront of blockchain innovation.'
                     }
                 ],
             }
         },
 
         components: {
-            Lists
+            Lists, ListsModal, 
         },
 
         created(){

@@ -3,9 +3,9 @@
         <div class="talent">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-md-10 col-xl-8 talent__body" :style="{ backgroundImage: 'url('+ require('~/assets/images/'+image)}">
+                    <div class="col-md-10 col-xl-10 talent__body" :style="{ backgroundImage: 'url('+ require('~/assets/images/'+image)}">
                         <div class="row">
-                            <div class="col-md-10 col-xxl-7">
+                            <div class="col-md-10 col-xxl-6">
                                 <h2 class="talent__body--text">{{ title }}</h2>
                                 <p class="talent__body--sub">{{ text }}</p>
                                 <nuxt-link :to="link" class="talent__body--btn btn">{{ buttonText }}</nuxt-link>
@@ -24,13 +24,6 @@
 
         head(){
             return{
-                title: 'Home -  Africa Blockchain Institute',
-                meta: [
-                    {
-                        name: 'Home',
-                        content: 'Home'
-                    }
-                ],
             }
         },
     }
@@ -108,7 +101,7 @@
     @media (min-width: 1439px) {  
         .talent {
             &__body {
-                padding: 10rem 3rem 3rem;
+                padding: 15rem 3rem 3rem;
             }
         }
     }

@@ -14,22 +14,10 @@
 
                     <div class="col-12 col-md-8 col-lg-7 about__body">
                         <p class="about__body--text">
-                            Our story began with the remarkable successes of the Africa Blockchain Incubation Program, an initiative that nurtured groundbreaking ideas and empowered countless innovators.
+                            Our story began with the remarkable successes of the Africa Blockchain Incubation Program, an initiative that nurtured groundbreaking ideas and empowered countless innovators. The program’s impact resonated far and wide, and the feedback from our participants revealed a growing need for deeper engagement and sustained support. This inspired us to launch the ABI Venture Studio, a dynamic hub designed to serve Africa’s blockchain community by transforming innovative ideas into viable businesses. Positioned in Morocco, this venture studio not only strengthens ABI’s reach in Northern Africa but also acts as a beacon of entrepreneurial excellence for the region.
                         </p>
                         <p class="about__body--text">
-                            The program’s impact resonated far and wide, and the feedback from our participants revealed a growing need for deeper engagement and sustained support.
-                        </p>
-                        <p class="about__body--text">
-                            This inspired us to launch the ABI Venture Studio, a dynamic hub designed to serve Africa’s blockchain community by transforming innovative ideas into viable businesses.
-                        </p>
-                        <p class="about__body--text">
-                            Positioned in Morocco, this venture studio not only strengthens ABI’s reach in Northern Africa but also acts as a beacon of entrepreneurial excellence for the region.
-                        </p>
-                        <p class="about__body--text">
-                            The power of knowledge has always been a cornerstone of our mission. With our research publications earning acclaim across Africa and globally, the establishment of the Africa Centre of Excellence in Blockchain Research in Namibia became a natural progression.
-                        </p>
-                        <p class="about__body--text">
-                            This centre serves the ABI’s mission in the Southern African region with a dedicated space for cutting-edge research, empowering scholars and professionals with the resources to publish more authoritative resources.
+                            The power of knowledge has always been a cornerstone of our mission. With our research publications earning acclaim across Africa and globally, the establishment of the Africa Centre of Excellence in Blockchain Research in Namibia became a natural progression. This centre serves the ABI’s mission in the Southern African region with a dedicated space for cutting-edge research, empowering scholars and professionals with the resources to publish more authoritative resources.
                         </p>
                     </div>
                 </div>
@@ -73,12 +61,18 @@
                         </p>
                     </div>
 
-                    <div class="col-12 col-md-4 col-lg-5 offset-lg-1 order-1 order-md-2 mission__img">
+                    <div class="col-12 col-md-4 col-lg-5 ms-auto order-1 order-md-2 mission__img">
                         <img src="~/assets/images/about/about-mission.jpg" alt="mission" class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
+        <!-- <Aside2 
+            title="Incubation Programs"
+            image="programs/incubation-program.png"
+            text1="<p>The Africa Blockchain Incubation Program is a premier initiative designed to spark creativity and ideas implementation around Distributed Ledger Technologies in the African Local Innovation and Entrepreneurship Landscape. Qualified candidates will be nurtured for through a structured 4-Month program of technical trainings, business development supports, mentorship, community events, and networking sessions.</p>"
+            text2="<p>The incubation program supports and develop these solutions-turn-to-Start Ups in growing their business, strengthening their commercial viability and increasing their competitiveness in domestic and international markets. Ultimately placing Africa as a major actor in the global blockchain ecosystem. This program started in 2021, and after four (4) years of continued successes this program is now coordinated by the <a id='link' href='https://abivs.co' target='_blank'>ABI Venture Studio</a> for more opportunities. </p>"
+        /> -->
         <!-- mission section ends -->
 
         <!-- priorities section starts -->
@@ -90,14 +84,14 @@
                     </div>
                 </div>
 
-                <div class="row row-cols-1 row-cols-xl-2">
-                    <div class="col priorities__list">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-xl-9 col-xxl-9 priorities__list">
                         <div class="card h-100">
                             <div class="row align-items-end">
                                 <div class="col-md-4 col-lg-5 priorities__img">
-                                    <img src="~/assets/images/about/priorities-1.png" class="img-fluid">
+                                    <img src="~/assets/images/about/priorities-1.jpg" class="img-fluid">
                                 </div>
-                                <div class="col-md-8 col-lg-7 priorities__info bg-dange">
+                                <div class="col-md-8 col-lg-7 priorities__info">
                                     <div class="card-body">
                                         <h5 class="priorities__info--title">Advancing Innovative Blockchain Policies</h5>
                                         <p class="priorities__info--desc">ABI is committed to creating an enabling environment for blockchain adoption by collaborating with African governments and regional bodies to develop progressive and sustainable policies. <br> Through targeted frameworks, we aim to encourage ethical use of blockchain technology while fostering innovation.</p>
@@ -107,11 +101,11 @@
                         </div>
                     </div>
 
-                    <div class="col priorities__list">
+                    <div class="col-lg-10 col-xl-9 col-xxl-9 priorities__list">
                         <div class="card h-100">
                             <div class="row align-items-end">
                                 <div class="col-md-4 col-lg-5 priorities__img">
-                                    <img src="~/assets/images/about/priorities-2.png" class="img-fluid">
+                                    <img src="~/assets/images/about/priorities-2.jpg" class="img-fluid">
                                 </div>
                                 <div class="col-md-8 col-lg-7 priorities__info">
                                     <div class="card-body">
@@ -123,11 +117,11 @@
                         </div>
                     </div>
 
-                    <div class="col priorities__list">
+                    <div class="col-lg-10 col-xl-9 col-xxl-9 priorities__list">
                         <div class="card h-100">
                             <div class="row align-items-end">
                                 <div class="col-md-4 col-lg-5 priorities__img">
-                                    <img src="~/assets/images/about/priorities-3.png" class="img-fluid">
+                                    <img src="~/assets/images/about/priorities-3.jpg" class="img-fluid">
                                 </div>
                                 <div class="col-md-8 col-lg-7 priorities__info">
                                     <div class="card-body">
@@ -152,6 +146,7 @@
 <script>
     import Hero from '~/components/reusable/Hero.vue';
     import Team from '~/components/reusable/about/Team.vue';
+    import Aside2 from '~/components/reusable/programs/Aside2.vue';
 
     export default {
         head(){
@@ -170,12 +165,12 @@
             return{
                 title: 'About ABI',
                 image: 'about',
-                desc: "Africa Blockchain Institute is Africa’s foremost Blockchain Think-Tank that is Advancing Innovative Blockchain Policies, Building a Resilient Ecosystem, and Powering Sustainable Innovations for Digital Transformation in Africa."
+                desc: "Africa Blockchain Institute is Africa’s foremost Blockchain Think-Tank that is Advancing Innovative Blockchain Policies, Building a Resilient Ecosystem, and Powering Sustainable Innovations for Digital Transformation in Africa.",
             }
         },
 
-         components: {
-            Hero, Team,
+        components: {
+            Hero, Team, Aside2,
         },
 
     }
@@ -197,7 +192,6 @@
             &__body {
                 &--text {
                     font-size: 1rem;
-                    line-height: 1.6;
                     color: $dark;
                 }
             }
@@ -262,7 +256,7 @@
 				
                 .card {
                     @include card();
-                    padding: 1rem;
+                    padding: 2rem;
                     color: $white;
                     background-color: $secondary-2;
                 }
@@ -276,16 +270,16 @@
 
 			&__info {
                 .card-body {
-                    padding: .7rem 0 0;
+                    padding: 1rem 0 0;
                 }
 
                 &--title{
-                    font-size: 1rem;
+                    font-size: 1.1rem;
                     font-weight: bold;
                 }
                 
                 &--desc{
-                    font-size: .9rem;
+                    font-size: 1rem;
                     margin-bottom: 0;
                 }
             }
@@ -316,11 +310,6 @@
                 &__body {
                     &--title {
                         font-size: $font-hd;
-                    }
-
-                    &--text {
-                        font-size: 1rem;
-                        line-height: 1.6;
                     }
                 }
             }
@@ -393,11 +382,6 @@
                     &--title {
                         font-size: $font-hd;
                     }
-
-                    &--text {
-                        font-size: 1.1rem;
-                        line-height: 1.8;
-                    }
                 }
             }
 
@@ -419,7 +403,8 @@
                     }
 
                     &--title{
-                        margin-bottom: .5rem;
+                        font-size: 1.2rem;
+                        margin-bottom: 1rem;
                     }
                 }
             }
@@ -445,7 +430,6 @@
                 }
             }
 
-
             .map {
                 padding: 4rem 0;
 
@@ -464,14 +448,8 @@
                     &--title {
                         font-size: $font-md;
                     }
-
-                    &--text {
-                        font-size: 1.1rem;
-                        line-height: 1.8;
-                    }
                 }
             }
-
 
             /** priorities section ends */
             .priorities{
@@ -484,10 +462,20 @@
                 }
 
                 &__info {
-                    padding-left: 0;
+                    padding-left: 1rem;
 
                     .card-body {
                         padding: 0 .5rem;
+                    }
+
+                    &--title{
+                        font-size: $font-hd;
+                        margin-bottom: 1rem;
+                    }
+
+                    &--desc{
+                        font-size: 1.1rem;
+                        margin-bottom: 0;
                     }
                 }
             }

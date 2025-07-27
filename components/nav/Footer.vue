@@ -33,8 +33,9 @@
                         <a href="https://twitter.com/AfricaBlockInst" target="blank" class="icon"><span class="fab fa-twitter"></span></a>
                         <a href="https://www.linkedin.com/company/africablockinst" target="blank" class="icon thin"><span class="fab fa-linkedin"></span></a>
                         <a href="https://web.facebook.com/Africa-Blockchain-Institute-103445117670312" target="blank" class="icon thin"><span class="fab fa-facebook-square"></span></a>
-                        <a href="#" target="blank" class="icon thin"><span class="fab fa-youtube"></span></a>
-                        <a href="#" target="blank" class="icon thin"><span class="fab fa-medium"></span></a>
+                        <a href="https://www.youtube.com/@AfricaBlockInst" target="blank" class="icon thin"><span class="fab fa-youtube"></span></a>
+                        <a href="https://www.instagram.com/africa.blockchain.institute/" target="blank" class="icon thin"><span class="fab fa-instagram"></span></a>
+                        <!-- <a href="#" target="blank" class="icon thin"><span class="fab fa-medium"></span></a> -->
                     </div>
                 </div>
                 <div class="col-md-4 footer__sect">

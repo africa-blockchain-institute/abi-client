@@ -68,7 +68,7 @@
 
     @media (min-width: 768px) { 
         .hero{
-            height: 40vh;
+            height: 50vh;
 
             &__content{
                 bottom: 7%;
@@ -82,7 +82,7 @@
 
     @media (min-width: 992px) { 
         .hero{
-            height: 50vh;
+            height: 60vh;
 
             &__content{
                 &--title {
@@ -98,7 +98,7 @@
 
     @media (min-width: 1439px) { 
         .hero{
-            height: 45vh;
+            height: 55vh;
 
             &__content{
                 // padding-left: 0rem;
