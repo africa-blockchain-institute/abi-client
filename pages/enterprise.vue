@@ -171,7 +171,7 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <img src="~/assets/images/enterprise/icons/strategy-assessment.png" class="work__list--img" alt="strategy assessment">
-                                <h5 class="work__list--title"> Strategy assessment </h5>
+                                <h5 class="work__list--title"> Strategy Assessment </h5>
                                 <p class="work__list--description">We'll assess your goals and evaluate blockchain's applicability and business impact to help you define and prioritize your transformation.</p>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <img src="~/assets/images/enterprise/icons/hands-on-training.png" class="work__list--img" alt="Hands-on training and rapid prototyping">
-                                <h5 class="work__list--title"> Hands-on training and rapid prototyping  </h5>
+                                <h5 class="work__list--title"> Hands-on Training and Rapid Prototyping  </h5>
                                 <p class="work__list--description">Technology leadership workshops and training upskill your team while working side-by-side with experts in rapid blockchain development environments.</p>
                             </div>
                         </div>
@@ -198,7 +198,7 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <img src="~/assets/images/enterprise/icons/build-implementation.png" class="work__list--img" alt="Build and implementation">
-                                <h5 class="work__list--title"> Build and implementation  </h5>
+                                <h5 class="work__list--title"> Build and Implementation  </h5>
                                 <p class="work__list--description">Complex implementation management, third-party integration and custom coding assures each solution fits within existing systems to meet future demand.</p>
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <img src="~/assets/images/enterprise/icons/assets-solution.png" class="work__list--img" alt="Assets and solutions">
-                                <h5 class="work__list--title"> Assets and solutions  </h5>
+                                <h5 class="work__list--title"> Assets and Solutions  </h5>
                                 <p class="work__list--description">Proprietary software add-ons, such as redaction, key management and hardware security modules, give you greater control and customization.</p>
                             </div>
                         </div>
