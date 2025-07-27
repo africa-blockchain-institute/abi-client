@@ -54,10 +54,10 @@
                         <h1 class="mission__body--title">Our Mission</h1>
                         
                         <p class="mission__body--text">
-                            As we delved deeper into blockchain’s adoption across Africa, our research unveiled a striking truth about Francophone Africa. Despite the presence of highly skilled blockchain experts, the region lacked a cohesive and collaborative ecosystem. To bridge this gap, we launched the ABI Francophone Initiative. This program unites experts, fosters collaboration, and drives sustainable blockchain activities in the region. Covering Western Africa, the initiative serves as a platform for ABI in strengthening the Francophone community’s contribution to Africa’s blockchain future.
+                            We want to inspire and multiply the kind of technology advancements that furthers innovation, decentralization, and other areas of digital transformation that will best serve Africa.
                         </p>
                         <p class="mission__body--text">
-                            ABI’s headquarters in Rwanda positions us at the center of Central and Eastern Africa’s blockchain activities. From there, we oversee and coordinate the efforts of all our regional initiatives, ensuring they remain aligned with our mission to serve the entire continent. By maintaining a presence in all corners of Africa, ABI embodies the spirit of pan-Africanism, fostering unity and growth through blockchain technology.
+                            At Africa Blockchain Institute, we are committed to fostering a thriving ecosystem where groundbreaking blockchain solutions emerge, equipping individuals, businesses, and policymakers with the knowledge and tools to leverage this technology for sustainable development.
                         </p>
                     </div>
 
@@ -233,7 +233,6 @@
 
                 &--text {
                     font-size: 1rem;
-                    line-height: 1.6;
                 }
             }
         }
@@ -381,6 +380,11 @@
                 &__body {
                     &--title {
                         font-size: $font-hd;
+                    }
+
+                    &--text {
+                        font-size: 1.1rem;
+                        line-height: 1.7;
                     }
                 }
             }
