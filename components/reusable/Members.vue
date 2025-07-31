@@ -45,7 +45,7 @@
                 border-radius: .5rem;
                 background-color: $grey;
                 padding: 1rem;
-                justify-content: space-between;
+                // justify-content: space-between;
             }
 
             &--num{

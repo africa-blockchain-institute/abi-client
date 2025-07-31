@@ -45,11 +45,11 @@
                 <li><a class="dropdown-item" href="#">ES</a></li>
               </ul>
             </li>
-            <!-- <li class="nav-item">
+            <li class="nav-item">
               <nuxt-link class="nav-link btn" to="/donate"
                 >Donate</nuxt-link
               >
-            </li> -->
+            </li>
             <!-- <li class="nav-item" v-if="$auth.loggedIn">
               <nuxt-link class="nav-link btn" to="/user/courses"
                 >Dashboard</nuxt-link

@@ -2,10 +2,10 @@
     <div class="sect">
         <div class="container-fluid">
             <div class="row sect__content">
-                <div class="col-md-6 col-lg-6 col-xxl-5 order-1 order-md-1 sect__content--img">
+                <div class="col-md-5 col-xl-6 col-xxl-4 order-1 order-md-1 sect__content--img">
                     <img :src="require(`~/assets/images/${image}`)" :alt="title" class="img-fluid">
                 </div>
-                <div class="col-md-6 col-lg-6 col-xxl-5 ms-auto order-2 order-md-2 sect__content--text">
+                <div class="col-md-7 col-xl-5 col-xxl-5 offset-xxl-1 order-2 order-md-2 sect__content--text">
                     <h3 class="title">{{ title }}</h3>
                     <p class="body" v-html="text1"></p>
                     <p class="body" v-html="text2"></p>

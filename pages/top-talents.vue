@@ -144,7 +144,7 @@
 </template>
 
 <script>
-    import Hero from '~/components/reusable/Hero-v1.vue';
+    import Hero from '~/components/reusable/Hero.vue';
 
     export default {
         name: "top-talents",

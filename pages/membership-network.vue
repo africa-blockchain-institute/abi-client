@@ -58,9 +58,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-12 col-md-6">
                                     <label for="sector" class="form-label">Sector/Industry<span>*</span> </label>
-                                    <select name="sector" id="sector" class="form-select form-select-lg" v-model="form.sector" required>
-                                        <option value="Content">Content</option>
-                                    </select>
+                                    <input type="text" v-model="form.sector" class="form-control form-control-lg" placeholder="e.g. ICT" id="sector" required>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="company_size" class="form-label">Company Size<span>*</span> </label>
@@ -214,11 +212,11 @@
                 ],
 
                 lists: [
-                    "Private Sector Companies (Fintechs, Banks, Telcos, Agritech, Healthtech, etc.)",
-                    "Public Sector Institutions and Government Agencies",
-                    "International Development Organizations",
-                    "Technology Enterprises and Blockchain Solution Providers",
-                    "Chambers of Commerce, Industry Associations, and Research Institutions"
+                    "Private Sector Companies (Fintechs, Banks, Telcos, Agritech, Healthtech, etc.).",
+                    "Public Sector Institutions and Government Agencies.",
+                    "International Development Organizations.",
+                    "Technology Enterprises and Blockchain Solution Providers.",
+                    "Chambers of Commerce, Industry Associations, and Research Institutions."
                 ],
 
                 form:{

@@ -25,18 +25,21 @@
             <div class="row">
                 <div class="col-md-4 footer__sect">
                     <div class="footer__sect--logo">
-                        <img src="/logo_1.png" alt="Africa Blockchain Institute Logo" class="img-fluid">
+                        <nuxt-link to="/"> 
+                            <img src="/logo_1.png" alt="Africa Blockchain Institute Logo" class="img-fluid">
+                        </nuxt-link>
                     </div>
 
                     <div class="footer__sect--social">
-                        <!-- new twitter icon -->
-                        <a href="https://twitter.com/AfricaBlockInst" target="blank" class="icon"><span class="fab fa-twitter"></span></a> 
+                        <!-- <a href="https://twitter.com/AfricaBlockInst" target="blank" class="icon"><span class="fab fa-twitter"></span></a>  -->
                         <a href="https://www.linkedin.com/company/africablockinst" target="blank" class="icon thin"><span class="fab fa-linkedin"></span></a>
                         <a href="https://web.facebook.com/Africa-Blockchain-Institute-103445117670312" target="blank" class="icon thin"><span class="fab fa-facebook-square"></span></a>
                         <a href="https://www.youtube.com/@AfricaBlockInst" target="blank" class="icon thin"><span class="fab fa-youtube"></span></a>
                         <a href="https://www.instagram.com/africa.blockchain.institute/" target="blank" class="icon thin"><span class="fab fa-instagram"></span></a>
-                        <a href="/" target="blank" class="icon thin"><span class="fab fa-tiktok"></span></a>
-                        <!-- <a href="#" target="blank" class="icon thin"><span class="fab fa-medium"></span></a> -->
+                        <a href="https://www.tiktok.com/@africablockinst" target="blank" class="icon thin"><span class="fab fa-tiktok"></span></a>
+                        <a href="https://twitter.com/AfricaBlockInst" target="blank" class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-twitter-x" viewBox="0 0 24 24"> <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/> </svg>
+                        </a> 
                     </div>
                 </div>
                 <div class="col-md-4 footer__sect">

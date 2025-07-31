@@ -182,6 +182,12 @@
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/tether.png" alt="tether">
 						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/gbbc.jpeg" alt="gbbc">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/ton.png" alt="ton">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -234,21 +240,27 @@
 
                 <div class="row row-cols-1 row-cols-md-3 gx-lg-5">
                     <div class="col impact__img">
-                        <div class="card first">
-                            <img src="~/assets/images/home/abivs-logo.png" alt="Africa Blockchain Institute Venture Studio" class="img-fluid logo">
-                        </div>
+                        <a href="https://abivs.co/" target="_blank" rel="noopener noreferrer">
+                            <div class="card first">
+                                <img src="~/assets/images/home/abivs-logo.png" alt="Africa Blockchain Institute Venture Studio" class="img-fluid logo">
+                            </div>
+                        </a>
                     </div>
 
                     <div class="col impact__img">
-                        <div class="card second">
-                            <img src="~/assets/images/home/acebr-logo.png" alt="Africa Blockchain Institute Venture Studio" class="img-fluid logo">
-                        </div>
+                        <a href="https://acebr.org/" target="_blank" rel="noopener noreferrer">
+                            <div class="card second">
+                                <img src="~/assets/images/home/acebr-logo.png" alt="Africa Centre of Excellence in Blockchain Research" class="img-fluid logo">
+                            </div>
+                        </a>
                     </div>
 
                     <div class="col impact__img">
-                        <div class="card third">
-                            <img src="~/assets/images/home/francophone-logo.png" alt="Africa Blockchain Institute Venture Studio" class="img-fluid logo">  
-                        </div>
+                        <a href="https://www.abifrancophone.com/" target="_blank" rel="noopener noreferrer">
+                            <div class="card third">
+                                <img src="~/assets/images/home/francophone-logo.png" alt="Africa Blockchain Institute Francophone" class="img-fluid logo">  
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

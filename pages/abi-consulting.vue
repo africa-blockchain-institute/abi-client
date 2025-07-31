@@ -1,7 +1,11 @@
 <template>
     <div class="wrapper">
         <!-- hero section starts -->
-        <Hero title="Bring ABI To Your Business" image="enterprise" />
+        <Hero 
+            title="Bring ABI To Your Business" 
+            desc="ABI Enterprise helps clients explore every aspect of blockchain and build tailored solutions designed to deliver value. Our cutting-edge Blockchain Technology Capabilities lead the way to a disruptive future for numerous businesses striving for transparent, secure, decentralized and productive business solutions, that are market-ready and address real business issues." 
+            image="enterprise" 
+        />
         <!-- hero section ends -->
 
         <!-- details section -->

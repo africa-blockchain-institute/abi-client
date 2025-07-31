@@ -9,14 +9,14 @@
             title="Incubation Programs"
             image="programs/incubation-program.jpg"
             text1="<p>The Africa Blockchain Incubation Program is a premier initiative designed to spark creativity and ideas implementation around Distributed Ledger Technologies in the African Local Innovation and Entrepreneurship Landscape. Qualified candidates will be nurtured for through a structured 4-Month program of technical trainings, business development supports, mentorship, community events, and networking sessions.</p>"
-            text2="<p>The incubation program supports and develop these solutions-turn-to-Start Ups in growing their business, strengthening their commercial viability and increasing their competitiveness in domestic and international markets. Ultimately placing Africa as a major actor in the global blockchain ecosystem. This program started in 2021, and after four (4) years of continued successes this program is now coordinated by the <a id='link' href='https://abivs.co' target='_blank'>ABI Venture Studio</a> for more opportunities. </p>"
+            text2="<p>The incubation program supports and develop these solutions-turn-to-Start Ups in growing their business, strengthening their commercial viability and increasing their competitiveness in domestic and international markets. Ultimately placing Africa as a major actor in the global blockchain ecosystem. This program started in 2021, and after four (4) years of continued successes this program is now coordinated by the ABI Venture Studio for more opportunities. </p>"
         />
         <!-- aside section ends -->
 
         <Aside2 
             title="Bootcamps"
             image="programs/bootcamp.jpg"
-            text1="<p>Our Bootcamp Programs are designed to provide intensive, hands-on training that equips participants with the necessary skills to understand and implement blockchain solutions. Previously, we had done: Rwanda Blockchain Bootcamp, Enterprise Blockchain Bootcamp, Summer Blockchain Bootcamp (For Teens), amongst others, which is now managed by <a href='https://africablockchain.institute/enterprise' id='link' target='_blank'>ABI Enterprise</a>. Moving forward, ABI is presently focused on Bootcamps that align with her priorities, that is Blockchain Policy Bootcamp, etc.</p>"
+            text1="<p>Our Bootcamp Programs are designed to provide intensive, hands-on training that equips participants with the necessary skills to understand and implement blockchain solutions. Previously, we had done: Rwanda Blockchain Bootcamp, Enterprise Blockchain Bootcamp, Summer Blockchain Bootcamp (For Teens), amongst others, which is now managed by ABI Enterprise. Moving forward, ABI is presently focused on Bootcamps that align with her priorities, that is Blockchain Policy Bootcamp, etc.</p>"
             text2="<p>The bootcamps serve as practical learning experiences for developers, tech-entrepreneurs, regulators, and corporate professionals, ensuring they gain industry-relevant expertise. Through bootcamps, ABI continues to empower Africa’s workforce with the skills required to thrive in the blockchain industry. </p>"
         />
 

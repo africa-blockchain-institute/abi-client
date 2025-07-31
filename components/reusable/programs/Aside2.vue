@@ -8,7 +8,7 @@
                     <p class="body" v-html="text2"></p>
                     <nuxt-link :to="linkUrl" class="btn sect__content--btn" v-if="linkText">{{ linkText }}</nuxt-link>
                 </div>
-                <div class="col-md-5 col-xl-6 col-xxl-4 order-1 order-md-2 offset-xl-1 sect__content--img">
+                <div class="col-md-5 col-xl-6 col-xxl-4 order-1 order-md-2 offset-xxl-1 sect__content--img">
                     <img :src="require(`~/assets/images/${image}`)" :alt="title" class="img-fluid">
                 </div>
             </div>

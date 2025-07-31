@@ -409,7 +409,7 @@
         data(){
             return{
                 hero: {
-                    title: 'Blockchain Consulting Solutions Development',
+                    title: 'Blockchain Consulting & Solutions Development',
                     image: 'enterprise',
                     desc: 'ABI Enterprise helps clients explore every aspect of blockchain and build tailored solutions designed to deliver value. Our cutting-edge Blockchain Technology Capabilities lead the way to a disruptive future for numerous businesses striving for transparent, secure, decentralized and productive business solutions, that are market-ready and address real business issues.',
                     buttonText: 'Bring ABI to your Business'
@@ -692,7 +692,6 @@
 
             &__head{
                 margin-bottom: 2rem;
-                text-align: center;
 
                 &--title{
                     font-size: $font-hd;
