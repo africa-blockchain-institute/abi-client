@@ -1,6 +1,6 @@
 <template>
     <div class="wrapper">
-        <div class="hero" :style="{ backgroundImage: 'url('+ require('~/assets/images/insights/banner.jpg')}">
+        <div class="hero" :style="{ backgroundImage: 'url('+ insight.image +')' }">
             <div class="container">
                 <Header />
                 <div class="row">
@@ -20,7 +20,7 @@
                 <div class="row justify-content-center">
                     <div class="col-12 col-xl-10 col-xxl-8 insight__content">
                         <p class="insight__content--body">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum repudiandae ut quos in, vel sapiente, blanditiis repellendus tempora sed nesciunt, adipisci distinctio ex error obcaecati rem iure consectetur illo dignissimos!
+                            {{ insight.content }}
                         </p>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="related">
+        <!-- <div class="related">
              <div class="container">
                 <div class="row">
                     <div class="col-12 related__head">
@@ -51,7 +51,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </template>
@@ -62,12 +62,11 @@
     export default {
         head(){
             return{
-                // title: `${this.course.title} -  Africa Blockchain Institute`,
-                title: `Africa Blockchain Institute`,
+                title: `${this.insight.title} -  Africa Blockchain Institute`,
                 meta: [
                     {
-                        // name: this.course.title,
-                        // content: this.course.title
+                        name: this.insight.title,
+                        content: this.insight.title
                     }
                 ],
             }
@@ -75,21 +74,28 @@
 
         data() {
             return {
-                insight: {
-                    title: 'Insights into the most formidable challenges facing the blockchain industry today',
-                    tag: 'Discovery',
-                    date: new Date().toLocaleDateString('en-US', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    })
-                },
+                insight: {},
             }
         },
 
         components: {
             Header,
         },
+
+        mounted(){
+            this.getInsight();
+        },
+
+        methods: {
+            async getInsight() {
+                try {
+                    let response = await this.$axios.$get(`/insights/${this.$route.params.slug}`);
+                    this.event = response.data;
+                } catch (error) {
+                    console.error('Error fetching insight:', error);
+                }
+            },
+        }
     }
 </script>
 

@@ -1,66 +1,18 @@
 <template>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 g-xl-4">
-        <!-- <div class="col listings__list" v-for="(list, index) in listings" :key="index">
-            <div class="card h-100">
-                <img :src="list.image" class="card-img-top" alt="">
-                <div class="card-body">
-                    <h5 class="listings__list--name">{{ list.name }}</h5>
-                    <span class="listings__list--title">{{ list.title }} </span>
-                </div>
-            </div>
-        </div> -->
-
-        <div class="col insight__list">
+        <div class="col insight__list" v-for="(list, index) in listings" :key="index">
             <div class="card">
                 <div class="row">
                     <div class="insight__image">
-                        <img src="~/assets/images/insights/insight-1.jpg" class="img-fluid" />
+                        <img :src="list.image" class="img-fluid" />
                     </div>
                     <div class="insight__info">
                         <div class="card-body">
-                            <button class="btn insight__info--tag">Featured</button>
-                            <h5 class="insight__info--title">Event Title to fin and even more so the three lines that was required and when it exceeds? </h5>
-                            <p class="insight__info--date"> August 23rd, 2025 </p>
-                            <!-- <nuxt-link :to="{ name: 'insights-slug', params: { slug: insight.slug } }"  class="insight__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link> -->
-                            <nuxt-link :to="{ name: 'insights-slug', params: '/insights/_slug/' }"  class="insight__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col insight__list">
-            <div class="card">
-                <div class="row">
-                    <div class="insight__image">
-                        <img src="~/assets/images/insights/insight-2.jpg" class="img-fluid" />
-                    </div>
-                    <div class="insight__info">
-                        <div class="card-body">
-                            <button class="btn insight__info--tag">Featured</button>
-                            <h5 class="insight__info--title">Event lines that was required and when it exceeds? </h5>
-                            <p class="insight__info--date"> August 23rd, 2025 </p>
-                            <!-- <nuxt-link :to="{ name: 'insights-slug', params: { slug: insight.slug } }"  class="insight__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link> -->
-                            <nuxt-link :to="{ name: 'insights-slug', params: '/insights/_slug/' }"  class="insight__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col insight__list">
-            <div class="card">
-                <div class="row">
-                    <div class="insight__image">
-                        <img src="~/assets/images/insights/insight-2.jpg" class="img-fluid" />
-                    </div>
-                    <div class="insight__info">
-                        <div class="card-body">
-                            <button class="btn insight__info--tag">Featured</button>
-                            <h5 class="insight__info--title">lines that was required and when it exceeds? </h5>
-                            <p class="insight__info--date"> August 23rd, 2025 </p>
-                            <!-- <nuxt-link :to="{ name: 'insights-slug', params: { slug: insight.slug } }"  class="insight__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link> -->
-                            <nuxt-link :to="{ name: 'insights-slug', params: '/insights/_slug/' }"  class="insight__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link>
+                            <button class="btn insight__info--tag">{{ list.tag }}</button>
+                            <h5 class="insight__info--title">{{ list.title }} </h5>
+                            <p class="insight__info--date"> {{ list.published | formatDate }} </p>
+                            <nuxt-link :to="{ name: 'insights-slug', params: { slug: list.slug } }"  class="insight__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link>
+                            <!-- <nuxt-link :to="{ name: 'insights-slug', params: '/insights/_slug/' }"  class="insight__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link> -->
                         </div>
                     </div>
                 </div>

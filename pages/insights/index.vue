@@ -8,42 +8,24 @@
         <section class="insights">
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-                    <div class="col events__list">
+                    <div class="col events__list" v-for="(insight, index) in insights" :key="index">
                         <div class="card">
                             <div class="row">
                                 <div class="events__image">
-                                    <img src="~/assets/images/insights/insight-1.jpg" class="img-fluid" />
+                                    <img :src="insight.image" class="img-fluid" />
                                 </div>
                                 <div class="events__info">
                                     <div class="card-body">
-                                        <button class="btn events__info--tag">Featured</button>
-                                        <h5 class="events__info--title">Event Title to fin and even more so the three lines that was required and when it exceeds? </h5>
-                                        <p class="events__info--date"> August 23rd, 2025 </p>
-                                        <!-- <nuxt-link :to="{ name: 'insights-slug', params: { slug: insight.slug } }"  class="events__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link> -->
-                                        <nuxt-link :to="{ name: 'insights-slug', params: '/insights/_slug/' }"  class="events__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link>
+                                        <button class="btn events__info--tag">{{ insight.tag }}</button>
+                                        <h5 class="events__info--title">{{ insight.title  }} </h5>
+                                        <p class="events__info--date"> {{ insight.published | formatDate }} </p>
+                                        <nuxt-link :to="{ name: 'insights-slug', params: { slug: insight.slug } }"  class="events__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col events__list">
-                        <div class="card">
-                            <div class="row">
-                                <div class="events__image">
-                                    <img src="~/assets/images/insights/insight-2.jpg" class="img-fluid" />
-                                </div>
-                                <div class="events__info">
-                                    <div class="card-body">
-                                        <button class="btn events__info--tag">Featured</button>
-                                        <h5 class="events__info--title">As required and when it exceeds? </h5>
-                                        <p class="events__info--date"> August 23rd, 2025 </p>
-                                        <a href="#" class="events__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col events__list">
+                    <!-- <div class="col events__list">
                         <div class="card">
                             <div class="row">
                                 <div class="events__image">
@@ -59,43 +41,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col events__list">
-                        <div class="card">
-                            <div class="row">
-                                <div class="events__image">
-                                    <img src="~/assets/images/insights/insight-2.jpg" class="img-fluid" />
-                                </div>
-                                <div class="events__info">
-                                    <div class="card-body">
-                                        <button class="btn events__info--tag">Featured</button>
-                                        <h5 class="events__info--title">This is is the making of something great and even more pleased</h5>
-                                        <p class="events__info--date"> August 23rd, 2025 </p>
-                                        <a href="#" class="events__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col events__list">
-                        <div class="card">
-                            <div class="row">
-                                <div class="events__image">
-                                    <img src="~/assets/images/insights/insight-2.jpg" class="img-fluid" />
-                                </div>
-                                <div class="events__info">
-                                    <div class="card-body">
-                                        <button class="btn events__info--tag">Featured</button>
-                                        <h5 class="events__info--title">This is is the making of something great and even more pleased</h5>
-                                        <p class="events__info--date"> August 23rd, 2025 </p>
-                                        <a href="#" class="events__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </section> 
@@ -121,15 +67,32 @@
 
         data(){
             return{
+                insights: [],
+
                 title: 'Insights',
                 image: 'insights',
                 desc: "Our insights reflect the evolving landscape of blockchain innovation in Africa and across the world; highlighting trends, research, press release, and thought leadership that shape policy, build ecosystem, and inform deployment of transformative solutions."
             }
         },
 
-         components: {
+        components: {
             Hero,
         },
+
+        created() {
+            this.getInsights();
+        },
+
+        methods: {
+            async getInsights() {
+                try {
+                    let response = await this.$axios.$get('/insights');
+                    this.insights = response.data;
+                } catch (error) {
+                    console.error('Error fetching insights:', error);
+                }
+            },
+        }
 
     }
 </script>

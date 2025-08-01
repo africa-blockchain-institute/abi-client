@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="wrapper__head d-flex justify-content-between">
-            <h1 class="wrapper__head--title">Create Event</h1>
+            <h1 class="wrapper__head--title">Create Insight</h1>
         </div>
 
         <div class="wrapper__body shadow">
@@ -11,29 +11,25 @@
                         <div class="wrapper__form">
                             <form class="row" @submit.prevent="submit">
                                 <div class="row justify-content-center">
-                                    <div class="col-12 col-md-4">
-                                        <label for="title" class="form-label">Event Title<span>*</span> </label>
+                                    <div class="col-12 col-md-8">
+                                        <label for="title" class="form-label">Insight Title<span>*</span> </label>
                                         <input type="text" v-model.trim="form.title" class="form-control form-control-lg" id="title" required>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <label for="link" class="form-label">Event Link<span>*</span> </label>
-                                        <input type="url" v-model.trim="form.link" class="form-control form-control-lg" id="link" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-4">
-                                        <label for="schedule" class="form-label">Event Date<span>*</span> </label>
-                                        <input type="date" v-model.trim="form.schedule" class="form-control form-control-lg" id="schedule" required>
+                                        <label for="published" class="form-label">Insight Published Date<span>*</span> </label>
+                                        <input type="date" v-model.trim="form.published" class="form-control form-control-lg" id="published" required>
                                     </div>
                                     <div class="col-12 col-md-4">
-                                        <label for="location" class="form-label">Event Location<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.location" class="form-control form-control-lg" id="location" required>
+                                        <label for="tag" class="form-label">Insight Tag<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.tag" class="form-control form-control-lg" id="tag" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <div class="form-group">
-                                            <label class="form-label">Event Image</label>
+                                            <label class="form-label">Insight Image</label>
                                             <input class="form-control form-control-lg" type="file" ref="image"
                                             @change="uploadImage" :class="{'is-invalid': imageErr }" required>
                                             <div class="invalid-feedback">{{ this.imageErr }} </div>
@@ -42,8 +38,8 @@
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
-                                        <label for="description" class="form-label">Event Description<span>*</span> </label>
-                                        <textarea  v-model.trim="form.description" class="form-control" rows="3" :class="{'is-invalid': errors.status }" id="description" required></textarea>
+                                        <label for="content" class="form-label">Insight Content<span>*</span> </label>
+                                        <textarea  v-model.trim="form.content" class="form-control" rows="3" :class="{'is-invalid': errors.status }" id="content" required></textarea>
                                         <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                     </div>
                                 </div>
@@ -51,7 +47,7 @@
                                 <div class="col-lg-8 mx-auto">
                                     <button type="submit" class="btn btn-primary" :disabled="status">
                                         <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span>
-                                        Create Event
+                                        Create Insight
                                     </button>
                                 </div>
                             </form>
@@ -69,11 +65,11 @@
 
         head(){
             return{
-                title: 'Create Event -  Africa Blockchain Institute',
+                title: 'Create Insight -  Africa Blockchain Institute',
                 meta: [
                     {
-                        name: 'Events',
-                        content: 'Events'
+                        name: 'Insights',
+                        content: 'Insights'
                     }
                 ],
             }
@@ -84,12 +80,11 @@
                 loading: false,
                 categories: {},
                 form : {
-                    link: '',
-                    description: '',
+                    tag: '',
+                    content: '',
                     image: '',
                     title: '',
-                    schedule: '',
-                    location: '',
+                    published: '',
                 },
                 imageErr: null,
                 status: true,
@@ -105,21 +100,20 @@
 
                 try {
                     let formData = new FormData()
-                    formData.append('link', this.form.link)
-                    formData.append('description', this.form.description)
+                    formData.append('tag', this.form.tag)
+                    formData.append('content', this.form.content)
                     formData.append('title', this.form.title)
                     formData.append('image', this.form.image)
-                    formData.append('schedule', this.form.schedule)
-                    formData.append('location', this.form.location)
+                    formData.append('published', this.form.published)
 
-                    await this.$axios.$post('/events', formData)
+                    await this.$axios.$post('/insights', formData)
                     this.loading = false;
 
-                    this.$toast.success("Event created successfully", {
+                    this.$toast.success("Insight created successfully", {
                         icon : 'check'
                     });
 
-                    this.$router.push({ name: "admin-events" })
+                    this.$router.push({ name: "admin-insights" })
 
                 } catch (err) {
                     this.loading = false;

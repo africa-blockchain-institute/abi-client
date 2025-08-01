@@ -21,9 +21,13 @@
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
-                                    <div class="col-12 col-md-8">
+                                    <div class="col-12 col-md-4">
                                         <label for="schedule" class="form-label">Event Date<span>*</span> </label>
                                         <input type="date" v-model.trim="form.schedule" class="form-control form-control-lg" id="schedule">
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <label for="location" class="form-label">Event Location<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.location" class="form-control form-control-lg" id="location">
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
@@ -85,6 +89,7 @@
                     image: '',
                     title: '',
                     schedule: '',
+                    location: '',
                 },
                 imageErr: null,
                 status: true,
@@ -97,7 +102,7 @@
 
         methods:{
             async getDoc(){
-                let event = await this.$axios.$get(`/events/${this.$route.params.id}`)
+                let event = await this.$axios.$get(`/events/${this.$route.params.slug}`)
                 this.title = event.data.title;
                 this.form = event.data
             },
@@ -112,8 +117,9 @@
                     formData.append('title', this.form.title)
                     formData.append('image', this.form.image)
                     formData.append('schedule', this.form.schedule)
+                    formData.append('location', this.form.location)
 
-                    await this.$axios.$patch(`/events/${this.$route.params.id}`, formData)
+                    await this.$axios.$patch(`/events/${this.$route.params.slug}`, formData)
                     this.loading = false;
 
                     this.$toast.success("Event updated successfully", {

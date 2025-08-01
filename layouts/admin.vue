@@ -8,10 +8,10 @@
                 </nuxt-link>
 
                 <div class="list-group sidebar__list">
-                    <nuxt-link to="/admin/courses" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
+                    <!-- <nuxt-link to="/admin/courses" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-user-graduate icon"></span>
                         <span class="name" :class="{ active: toggle }">Courses</span>
-                    </nuxt-link>
+                    </nuxt-link> -->
                     <nuxt-link to="/admin/resources" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-book icon"></span>
                         <span class="name" :class="{ active: toggle }">Resources</span>
@@ -19,6 +19,10 @@
                     <nuxt-link to="/admin/events" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-calendar icon"></span>
                         <span class="name" :class="{ active: toggle }">Events</span>
+                    </nuxt-link>
+                    <nuxt-link to="/admin/insights" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
+                        <span class="fas fa-list-ul icon"></span>
+                        <span class="name" :class="{ active: toggle }">Insights</span>
                     </nuxt-link>
                     <nuxt-link to="/admin/mentions" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-vote-yea icon"></span>
@@ -40,10 +44,10 @@
                         <span class="fas fa-warehouse icon"></span>
                         <span class="name" :class="{ active: toggle }">Bring ABI </span>
                     </nuxt-link>
-                    <nuxt-link to="/admin/payments" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
+                    <!-- <nuxt-link to="/admin/payments" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-money-check icon"></span>
                         <span class="name" :class="{ active: toggle }">Payments</span>
-                    </nuxt-link>
+                    </nuxt-link> -->
                     <nuxt-link to="/admin/partners" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-hands icon"></span>
                         <span class="name" :class="{ active: toggle }">Partners</span>

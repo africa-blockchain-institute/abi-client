@@ -277,7 +277,7 @@
                     </div>
                 </div>
 
-                <Insight />
+                <Insight :listings="insights"/>
 
                 <div class="row">
                     <div class="col-12 insights__cta">
@@ -398,17 +398,17 @@
         },
 
         created() {
-            // this.getInsights();
+            this.getInsights();
             this.getEvents();
         },
 
         methods: {
             async getInsights() {
                 try {
-                    let response = await this.$axios.$get('/posts');
+                    let response = await this.$axios.$get('/insights/upcoming-three-insights');
                     this.insights = response.data;
                 } catch (error) {
-                    console.error('Error fetching posts:', error);
+                    console.error('Error fetching insights:', error);
                 }
             },
 

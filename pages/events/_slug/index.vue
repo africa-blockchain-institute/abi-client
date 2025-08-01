@@ -1,6 +1,7 @@
 <template>
     <div class="wrapper">
-        <div class="hero" :style="{ backgroundImage: 'url('+ require('~/assets/images/events/banner.jpg')}">
+        <!-- <div class="hero" :style="{ backgroundImage: 'url('+ require('~/assets/images/events/banner.jpg')}"> -->
+        <div class="hero" :style="{ backgroundImage: 'url('+ event.image +')' }">
             <div class="container">
                 <Header />
                 <div class="row">
@@ -8,7 +9,7 @@
                         <button class="btn hero__content--tag">Featured</button>
                         <h1 class="hero__content--title">{{ event.title }}</h1>
 
-                        <p class="hero__content--pub">Published:</p>
+                        <p class="hero__content--pub">Scheduled Date:</p>
                         <p class="hero__content--date">{{ event.schedule | formatDate }}</p>
                     </div>
                 </div>
@@ -53,9 +54,7 @@
             }
         },
 
-        created(){
-            console.log('Event slug:', this.$route.params.slug);
-            
+        mounted(){
             this.getEvent();
         },
 
@@ -66,7 +65,6 @@
         methods: {
             async getEvent() {
                 try {
-                    // Assuming you have an API endpoint to fetch the event details
                     let response = await this.$axios.$get(`/events/${this.$route.params.slug}`);
                     this.event = response.data;
                 } catch (error) {
@@ -81,9 +79,10 @@
     .wrapper{
         .hero{
             height: 30vh;
-            background-size: cover;
-            background-position: center;
             position: relative;
+            background-size: cover;
+            background-position: top center;
+            background-blend-mode: difference;
             
             &__content{
                 position: absolute;
