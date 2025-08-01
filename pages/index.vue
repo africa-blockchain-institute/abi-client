@@ -11,6 +11,13 @@
 
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/H4mSCuqSscM?autoplay=1&mute=1"> </iframe>
+                        <div class="carousel-caption">
+                            <h5 class="title">Improving the Narrative of Blockchain Across Africa</h5>
+                            <nuxt-link to="/about-abi" class="btn">Explore</nuxt-link>
+                        </div>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="10000">
                         <img src="~/assets/images/home/hero_1.jpg" class="d-block" alt="Improving the Narrative of Blockchain Across Africa">
                         <div class="carousel-caption">
                             <h5 class="title">Improving the Narrative of Blockchain Across Africa</h5>
@@ -188,6 +195,12 @@
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/ton.png" alt="ton">
 						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/digital-sme.png" alt="digital sme">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/hague.png" alt="hague">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -205,22 +218,22 @@
 
 				<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
 					<div class="col values__key">
-						<img src="~/assets/images/home/innovation.png" alt="Leading Innovation" class="values__key--img">
+						<img src="~/assets/images/home/innovation.svg" alt="Leading Innovation" class="values__key--img">
 						<h4 class="values__key--title">Leading Innovation</h4>
 						<p class="values__key--text"> We are driven by the passion to create innovative solutions and participate in cutting edge projects. </p>
 					</div>
 					<div class="col values__key">
-						<img src="~/assets/images/home/impact.png" alt="Global Impact" class="values__key--img">
+						<img src="~/assets/images/home/impact.svg" alt="Global Impact" class="values__key--img">
 						<h4 class="values__key--title">Global Impact</h4>
 						<p class="values__key--text">The scalability of our initiatives tends to be highly impactful not only in Africa, but the world at large.</p>
 					</div>
 					<div class="col values__key">
-						<img src="~/assets/images/home/inclusivity.png" alt="Inclusivity" class="values__key--img">
+						<img src="~/assets/images/home/inclusivity.svg" alt="Inclusivity" class="values__key--img">
 						<h4 class="values__key--title">Inclusivity</h4>
 						<p class="values__key--text">We are committed to ensuring equal access to blockchain opportunities for all.</p>
 					</div>
 					<div class="col values__key">
-						<img src="~/assets/images/home/excellence.png" alt="Excellence" class="values__key--img">
+						<img src="~/assets/images/home/excellence.svg" alt="Excellence" class="values__key--img">
 						<h4 class="values__key--title">Excellence</h4>
 						<p class="values__key--text"> We are dedicated to delivering high-quality initiatives that position Africa as a leader in the global blockchain landscape.</p>
 					</div>
@@ -268,8 +281,7 @@
         <!-- impact section ends -->
 
         <!-- insights section starts -->
-        <!-- <div class="insights" v-if="insights.length > 0"> -->
-        <div class="insights">
+        <div class="insights" v-if="insights.length > 0">
             <div class="container">
                 <div class="row">
                     <div class="col-12 insights__head">
@@ -330,8 +342,7 @@
         <!-- know section ends -->
         
         <!-- event section starts -->
-        <!-- <div class="events" v-if="events.length > 0"> -->
-        <div class="events">
+        <div class="events" v-if="events.length > 0">
             <div class="container">
                 <div class="row">
                     <div class="col-12 events__head">
@@ -1227,7 +1238,7 @@
                     margin-bottom: 1.5rem;
 
                     &--img{
-                        width: 2rem;
+                        width: 4rem;
                         margin-bottom: 1.5rem;
                     }
 

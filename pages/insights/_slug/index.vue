@@ -225,7 +225,7 @@
     @media (min-width: 991px) {  
         .wrapper{
             .hero {
-                height: 40vh;
+                height: 60vh;
                 
                 &__content{
                     bottom: 7%;
