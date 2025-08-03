@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <!-- hero section starts -->
-        <Hero title="Access TOP Blockchain Talents" image="extras" />
+        <Hero title="Access TOP Blockchain Talents" image="extras" position="top center" />
         <!-- hero section ends -->
 
         <!-- intro section starts -->

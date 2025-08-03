@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <!-- hero section starts -->
-        <Hero :title="hero.title" :image="hero.image" />
+        <Hero :title="hero.title" :image="hero.image" position="top"/>
         <!-- hero section ends -->
         
         <Aside
@@ -212,7 +212,7 @@
                 ],
 
                 lists: [
-                    "Private Sector Companies (Fintechs, Banks, Telcos, Agritech, Healthtech, etc.).",
+                    "Private Sector Companies (Fintechs, Banks, Telcos, Agritech, Healthtech, etc).",
                     "Public Sector Institutions and Government Agencies.",
                     "International Development Organizations.",
                     "Technology Enterprises and Blockchain Solution Providers.",

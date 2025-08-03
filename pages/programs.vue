@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <!-- hero section starts -->
-        <Hero :title="hero.title" :desc="hero.desc" :image="hero.image" />
+        <Hero :title="hero.title" :desc="hero.desc" :image="hero.image" position="top center" />
         <!-- hero section ends -->
         
         <!-- aside section starts -->

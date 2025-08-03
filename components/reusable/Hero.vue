@@ -1,9 +1,17 @@
 <template>
-    <div class="hero" :style="{ backgroundImage: 'url('+ require('~/assets/images/'+image+'/banner.jpg')}">
+    <div
+        class="hero"
+        :style="{
+            background: 'url(' + require('~/assets/images/' + image + '/banner.jpg') + ') no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: position ? position : 'center center'
+        }"
+    >
         <div class="container">
             <Header />
             <div class="row">
                 <div class="col-md-9 col-xl-7 col-xxl-6 hero__content">
+                    {{ position }}
                     <h1 class="hero__content--title">{{ title }}</h1>
                     <p class="hero__content--desc">{{ desc }}</p>
                     <button class="btn hero__content--btn" v-if="buttonText">{{ buttonText }}</button>
@@ -17,7 +25,7 @@
     import Header from '@/components/nav/Header';
 
     export default {
-        props: ['title', 'desc', 'image', 'buttonText'],
+        props: ['title', 'desc', 'image', 'buttonText', 'position'],
 
         data(){
             return{
@@ -39,7 +47,8 @@
     .hero{
         height: 40vh;
         background-size: cover;
-        background-position: center;
+        // background-position: center;
+        background-repeat: no-repeat;
         position: relative;
         
         &__content{

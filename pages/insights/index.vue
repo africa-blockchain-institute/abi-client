@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <!-- hero section starts -->
-        <Hero :title="title" :image="image" :desc="desc" />
+        <Hero :title="title" :image="image" :desc="desc" position="top center"/>
         <!-- hero section ends -->
 
         <!-- insights section starts -->

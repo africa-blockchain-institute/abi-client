@@ -46,9 +46,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <nuxt-link class="nav-link btn" to="/donate"
-                >Donate</nuxt-link
-              >
+              <a href="https://store.pesapal.com/africablockchaininstitute" class="nav-link btn" target="blank" > Donate </a>
             </li>
             <!-- <li class="nav-item" v-if="$auth.loggedIn">
               <nuxt-link class="nav-link btn" to="/user/courses"

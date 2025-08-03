@@ -11,24 +11,24 @@
 
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/H4mSCuqSscM?autoplay=1&mute=1"> </iframe>
+                        <video 
+                            src="https://abi-api-assets.s3.us-east-2.amazonaws.com/general/AFRICAN+BLOCKCHAIN+VIDEO+compressed.mp4"
+                            class="d-block w-100"
+                            autoplay
+                            muted
+                            loop
+                        ></video>
                         <div class="carousel-caption">
                             <h5 class="title">Improving the Narrative of Blockchain Across Africa</h5>
                             <nuxt-link to="/about-abi" class="btn">Explore</nuxt-link>
                         </div>
                     </div>
+                    <!-- <div class="carousel-item active" data-bs-interval="10000"> -->
                     <div class="carousel-item" data-bs-interval="10000">
                         <img src="~/assets/images/home/hero_1.jpg" class="d-block" alt="Improving the Narrative of Blockchain Across Africa">
                         <div class="carousel-caption">
-                            <h5 class="title">Improving the Narrative of Blockchain Across Africa</h5>
-                            <nuxt-link to="/about-abi" class="btn">Explore</nuxt-link>
-                        </div>
-                    </div>
-                    <div class="carousel-item" data-bs-interval="10000">
-                        <img src="~/assets/images/home/hero_1.jpg" class="d-block" alt="Improving the Narrative of Blockchain Across Africa">
-                        <div class="carousel-caption">
-                            <h5 class="title">Improving the Narrative of Blockchain Across Africa</h5>
-                            <p class="sub">Driving awareness, education, and innovation to reshape blockchain’s impact across Africa—empowering communities, fostering adoption, and building a decentralized future.</p>
+                            <h5 class="title">Deploy Blockchain with Ease</h5>
+                            <p class="sub">With our Expert Engineers, let's Build you Scalable and Decentralized Solutions.</p>
                             <nuxt-link to="/about-abi" class="btn">Explore</nuxt-link>
                         </div>
                     </div>
@@ -43,11 +43,12 @@
                 </div>
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselNav" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon icon" aria-hidden="true"></span>
+                    <!-- <span class="carousel-control-prev-icon icon" aria-hidden="true"></span> -->
+                    <span class="fas fa-chevron-left icon text-white" aria-hidden="true"></span>
                     <span class="visually-hidden">Prev</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselNav" data-bs-slide="next">
-                    <span class="carousel-control-next-icon icon" aria-hidden="true"></span>
+                    <span class="fas fa-chevron-right icon text-white" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
@@ -440,19 +441,19 @@
         /** hero section starts */
         .hero{
             .carousel {
-                max-height: 45vh;
+                // max-height: 45vh;
                 .carousel-indicators {
                     button {
-                        background-color: $grey;
+                        background-color: white;
 
                         &.active {
-                            background-color: $primary;
+                            background-color: $secondary;
                         }
                     }
                 }
 
                 .carousel-inner {
-                    height: 45vh;
+                    // height: 45vh;
                 
                     .carousel-item {
                         height: 100%;
@@ -498,12 +499,19 @@
                     height: 2rem;
                     margin-left: 2rem;
                     margin-right: 2rem;
-                    display: none;
+                    // display: none;
+                    color: white;
 
                     .carousel-control-prev-icon,
                     .carousel-control-next-icon {
                         width: 1rem;
                         height: 1rem;
+                        color: white!important;
+                    }
+
+                    .fas {
+                        font-size: 1.2rem;
+                        color: white;
                     }
                 }
             }
@@ -779,12 +787,12 @@
                     max-height: 60vh;
 
                     .carousel-inner {
-                        height: 60vh;
+                        // height: 60vh;
                     
                         .carousel-item {
                             .carousel-caption {
-                                transform: translateY(-40%);
-                                top: 40%;
+                                transform: translateY(-50%);
+                                top: 50%;
                                 
                                 .title {
                                     font-size: $font-lg;
@@ -796,7 +804,7 @@
                                 }
                                 
                                 .btn {
-                                    margin-top: 3rem;
+                                    margin-top: 2rem;
                                     padding: .75rem 2rem;
                                     font-size: 1rem;
                                 }
@@ -983,12 +991,12 @@
                         .carousel-item {
                             .carousel-caption {
                                 width: 65%;
-                                transform: translate(-50%, -45%);
-                                top: 45%;
+                                transform: translate(-50%, -50%);
+                                top: 50%;
                                 left: 50%;
                                 
                                 .title {
-                                    font-size: 4rem;
+                                    font-size: 3.5rem;
                                     margin-bottom: 1rem;
                                 }
 
