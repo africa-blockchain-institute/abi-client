@@ -11,7 +11,6 @@
             <Header />
             <div class="row">
                 <div class="col-md-9 col-xl-7 col-xxl-6 hero__content">
-                    {{ position }}
                     <h1 class="hero__content--title">{{ title }}</h1>
                     <p class="hero__content--desc">{{ desc }}</p>
                     <button class="btn hero__content--btn" v-if="buttonText">{{ buttonText }}</button>

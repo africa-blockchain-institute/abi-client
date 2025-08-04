@@ -16,7 +16,6 @@
                             class="d-block w-100"
                             autoplay
                             muted
-                            loop
                         ></video>
                         <div class="carousel-caption">
                             <h5 class="title">Improving the Narrative of Blockchain Across Africa</h5>
@@ -28,7 +27,7 @@
                         <img src="~/assets/images/home/hero_1.jpg" class="d-block" alt="Improving the Narrative of Blockchain Across Africa">
                         <div class="carousel-caption">
                             <h5 class="title">Deploy Blockchain with Ease</h5>
-                            <p class="sub">With our Expert Engineers, let's Build you Scalable and Decentralized Solutions.</p>
+                            <p class="sub">Work with our Expert Engineers, let's Build you Scalable and Decentralized Solutions.</p>
                             <nuxt-link to="/about-abi" class="btn">Explore</nuxt-link>
                         </div>
                     </div>
@@ -43,7 +42,6 @@
                 </div>
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselNav" data-bs-slide="prev">
-                    <!-- <span class="carousel-control-prev-icon icon" aria-hidden="true"></span> -->
                     <span class="fas fa-chevron-left icon text-white" aria-hidden="true"></span>
                     <span class="visually-hidden">Prev</span>
                 </button>
@@ -991,12 +989,12 @@
                         .carousel-item {
                             .carousel-caption {
                                 width: 65%;
-                                transform: translate(-50%, -50%);
-                                top: 50%;
+                                transform: translate(-55%, -55%);
+                                top: 55%;
                                 left: 50%;
                                 
                                 .title {
-                                    font-size: 3.5rem;
+                                    font-size: 3rem;
                                     margin-bottom: 1rem;
                                 }
 
@@ -1190,7 +1188,7 @@
                                 width: 70%;
                                 
                                 .title {
-                                    font-size: 4.5rem;
+                                    font-size: 4rem;
                                     margin-bottom: 1rem;
                                 }
 
