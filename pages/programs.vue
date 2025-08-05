@@ -79,18 +79,4 @@
 </script>
 
 <style lang="scss" scoped>
-    .wrapper{
-    }
-
-    // Medium devices (tablets, 768px and up)
-    @media (min-width: 768px) {  
-        
-    }
-
-    // Large devices (desktops, 992px and up)
-    @media (min-width: 992px) { 
-        .wrapper{
-        }
-        
-    }
 </style>
