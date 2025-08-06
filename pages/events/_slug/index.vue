@@ -1,7 +1,8 @@
 <template>
     <div class="wrapper">
-        <!-- <div class="hero" :style="{ backgroundImage: 'url('+ require('~/assets/images/events/banner.jpg')}"> -->
-        <div class="hero" :style="{ backgroundImage: 'url('+ event.image +')' }">
+        <!-- <div class="hero" :style="{ backgroundImage: 'url('+ event.image +')' }"> -->
+        <div class="hero" :style="backgroundStyle">
+            <div class="overlay"></div>
             <div class="container">
                 <Header />
                 <div class="row">
@@ -54,6 +55,14 @@
             }
         },
 
+        computed: {
+            backgroundStyle() {
+                return {
+                    backgroundImage: `url(${this.event.image})`
+                }
+            }
+        },
+
         mounted(){
             this.getEvent();
         },
@@ -82,7 +91,16 @@
             position: relative;
             background-size: cover;
             background-position: top center;
-            background-blend-mode: difference;
+
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6); /* black overlay */
+            }
             
             &__content{
                 position: absolute;

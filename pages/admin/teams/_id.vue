@@ -46,6 +46,15 @@
                                     </div>
                                 </div>
 
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
+                                        <label for="details" class="form-label">Team Details <span>*</span> </label>
+                                        <client-only>
+                                            <froala id="details" :tag="'textarea'" v-model="form.details" required></froala>
+                                        </client-only>
+                                      </div>
+                                </div>
+
                                 <div class="col-lg-8 mx-auto">
                                     <button type="submit" class="btn btn-primary">
                                         <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span>
@@ -87,9 +96,13 @@
                     image: '',
                     title: '',
                     name: '',
+                    details: '',
                 },
                 imageErr: null,
                 status: true,
+                froalaConfig: {
+                    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'superscript', 'subscript', 'insertLink'],
+                }
             }
         },
 
@@ -113,6 +126,7 @@
                     formData.append('name', this.form.name)
                     formData.append('category', this.form.category)
                     formData.append('title', this.form.title)
+                    formData.append('details', this.form.details)
                     formData.append('image', this.form.image)
 
                     await this.$axios.$patch(`/teams/${this.$route.params.id}`, formData)

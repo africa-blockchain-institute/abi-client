@@ -57,7 +57,9 @@
               <nuxt-link class="nav-link btn" to="/auth/login">Login</nuxt-link>
             </li> -->
 
-            
+            <div class="gtranslate_wrapper"></div>
+            <script>window.gtranslateSettings = {"default_language":"en","languages":["en","fr","es","ar","pt"],"wrapper_selector":".gtranslate_wrapper","switcher_horizontal_position":"right"}</script>
+            <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
           </ul>
         </div>
 

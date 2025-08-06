@@ -1,6 +1,8 @@
 <template>
     <div class="wrapper">
-        <div class="hero" :style="{ backgroundImage: 'url('+ insight.image +')' }">
+        <!-- <div class="hero" :style="{ backgroundImage: 'url('+ insight.image +')' }"> -->
+        <div class="hero" :style="backgroundStyle">
+            <div class="overlay"></div>
             <div class="container">
                 <Header />
                 <div class="row">
@@ -9,7 +11,7 @@
                         <h1 class="hero__content--title">{{ insight.title }}</h1>
 
                         <p class="hero__content--pub">Published:</p>
-                        <p class="hero__content--date">{{ insight.date }}</p>
+                        <p class="hero__content--date">{{ insight.published | formatDate }}</p>
                     </div>
                 </div>
             </div>
@@ -19,9 +21,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-xl-10 col-xxl-8 insight__content">
-                        <p class="insight__content--body">
-                            {{ insight.content }}
-                        </p>
+                        <div class="insight__content--body" v-html="insight.content"> </div>
                     </div>
                 </div>
             </div>
@@ -78,6 +78,14 @@
             }
         },
 
+        computed: {
+            backgroundStyle() {
+                return {
+                    backgroundImage: `url(${this.insight.image})`
+                }
+            }
+        },
+
         components: {
             Header,
         },
@@ -90,7 +98,7 @@
             async getInsight() {
                 try {
                     let response = await this.$axios.$get(`/insights/${this.$route.params.slug}`);
-                    this.event = response.data;
+                    this.insight = response.data;
                 } catch (error) {
                     console.error('Error fetching insight:', error);
                 }
@@ -106,6 +114,15 @@
             background-size: cover;
             background-position: center;
             position: relative;
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.6); /* black overlay */
+            }
             
             &__content{
                 position: absolute;

@@ -48,7 +48,12 @@
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <label for="details" class="form-label">Team Details <span>*</span> </label>
-                                        <textarea id="details" v-model="form.details" required class="form-control" rows="3" ></textarea>
+                                        <client-only>
+                                            <froala id="details" :tag="'textarea'"  v-model="form.details" required></froala>
+                                        </client-only>
+
+                                        <!-- <label for="details" class="form-label">Team Details <span>*</span> </label>
+                                        <textarea id="details" v-model="form.details" required class="form-control" rows="3" ></textarea> -->
                                     </div>
                                 </div>
 
@@ -97,6 +102,9 @@
                 },
                 imageErr: null,
                 status: true,
+                froalaConfig:{
+                    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'superscript', 'subscript', 'insertLink'],
+                }
             }
         },
 

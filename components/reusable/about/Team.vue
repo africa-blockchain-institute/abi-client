@@ -8,7 +8,7 @@
         <Lists :listings="leadership" title="Our Team" />
         <!-- leadership section ends -->
 
-        <ListsModal :listings="leaderships" title="Our Leadership" />
+        <ListsModal :listings="leadership" title="Our Leadership" />
     </div>
 </template>
 

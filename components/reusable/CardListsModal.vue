@@ -8,7 +8,7 @@
             </div>
             <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 g-xl-4">
                 <div class="col listings__list" v-for="(list, index) in listings" :key="index">
-                    <div class="card h-100" data-bs-toggle="modal" data-bs-target="#teamModal">
+                    <div class="card h-100" data-bs-toggle="modal" :data-bs-target="'#teamModal-' + index">
                         <img :src="list.image" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="listings__list--name">{{ list.name }}</h5>
@@ -16,10 +16,11 @@
                         </div>
                     </div>
 
-                    <div class="modal fade" id="teamModal" tabindex="-1" aria-labelledby="teamModallabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
+                    <div class="modal fade" :id="'teamModal-'+index" tabindex="-1" aria-labelledby="teamModallabel" aria-hidden="true">
+                        <div class="modal-dialog modal-xl">
                             <div class="modal-content">
                                 <div class="modal-header">
+                                    <h3 class="modal-title">Our Leadership</h3>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -31,7 +32,7 @@
                                             <div class="col-md-7 ms-auto modal__detail">
                                                 <h1 class="modal__detail--name">{{ list.name }}</h1>
                                                 <h5 class="modal__detail--title">{{ list.title }}</h5>
-                                                <p class="modal__detail--body"> {{ list.details }} </p>
+                                                <div class="modal__detail--body" v-html="list.details"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -39,7 +40,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -52,12 +52,6 @@
             listings: Array,
             title: String,
         },
-
-        data(){
-            return{
-
-            }
-        }
     }
 </script>
 

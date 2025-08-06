@@ -39,7 +39,9 @@
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <label for="content" class="form-label">Insight Content<span>*</span> </label>
-                                        <textarea  v-model.trim="form.content" class="form-control" rows="3" :class="{'is-invalid': errors.status }" id="content" required></textarea>
+                                        <client-only>
+                                            <froala id="content" :tag="'textarea'" :config="froalaConfig" v-model="form.content" required></froala>
+                                        </client-only>
                                         <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                     </div>
                                 </div>
@@ -88,6 +90,9 @@
                 },
                 imageErr: null,
                 status: true,
+                froalaConfig: {
+                    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'superscript', 'subscript', 'insertLink'],
+                }
             }
         },
 
