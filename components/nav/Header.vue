@@ -36,7 +36,7 @@
           id="navbarNav"
         >
           <ul class="navbar-nav">
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 EN
               </a>
@@ -44,7 +44,7 @@
                 <li><a class="dropdown-item" href="#">FR</a></li>
                 <li><a class="dropdown-item" href="#">ES</a></li>
               </ul>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a href="https://store.pesapal.com/africablockchaininstitute" class="nav-link btn" target="blank" > Donate </a>
             </li>
@@ -56,6 +56,8 @@
             <li class="nav-item" v-else>
               <nuxt-link class="nav-link btn" to="/auth/login">Login</nuxt-link>
             </li> -->
+
+            
           </ul>
         </div>
 
