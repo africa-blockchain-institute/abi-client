@@ -11,6 +11,15 @@
 
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="~/assets/images/home/hero_1.jpg" class="d-block" alt="Improving the Narrative of Blockchain Across Africa">
+                        <div class="carousel-caption">
+                            <h5 class="title">Deploy Blockchain with Ease</h5>
+                            <p class="sub">Work with our Expert Engineers, let's Build you Scalable and Decentralized Solutions.</p>
+                            <nuxt-link to="/about-abi" class="btn">Explore</nuxt-link>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item" data-bs-interval="10000">
                         <video 
                             src="https://abi-api-assets.s3.us-east-2.amazonaws.com/general/AFRICAN+BLOCKCHAIN+VIDEO+compressed.mp4"
                             class="d-block w-100"
@@ -22,15 +31,7 @@
                             <nuxt-link to="/about-abi" class="btn">Explore</nuxt-link>
                         </div>
                     </div>
-                    <!-- <div class="carousel-item active" data-bs-interval="10000"> -->
-                    <div class="carousel-item" data-bs-interval="10000">
-                        <img src="~/assets/images/home/hero_1.jpg" class="d-block" alt="Improving the Narrative of Blockchain Across Africa">
-                        <div class="carousel-caption">
-                            <h5 class="title">Deploy Blockchain with Ease</h5>
-                            <p class="sub">Work with our Expert Engineers, let's Build you Scalable and Decentralized Solutions.</p>
-                            <nuxt-link to="/about-abi" class="btn">Explore</nuxt-link>
-                        </div>
-                    </div>
+
                     <!-- <div class="carousel-item" data-bs-interval="10000">
                         <img src="~/assets/images/home/hero_1.jpg" class="d-block" alt="Improving the Narrative of Blockchain Across Africa">
                         <div class="carousel-caption">
