@@ -1,14 +1,14 @@
 <template>     
     <div class="team">
         <!-- board section starts -->
-        <Lists :listings="advisory" title="Advisory Board" />
+        <ListsModal :listings="advisory" title="Advisory Board" />
         <!-- board section ends -->
         
         <!-- leadership section ends -->       
-        <Lists :listings="leadership" title="Our Team" />
+        <Lists :listings="leadership" title="Our Leadership" />
         <!-- leadership section ends -->
 
-        <ListsModal :listings="leadership" title="Our Leadership" />
+        <!-- <ListsModal :listings="leadership" title="Our Leadership" /> -->
     </div>
 </template>
 
@@ -21,22 +21,22 @@
             return{
                 advisory: [],
                 leadership: [],
-                leaderships: [
-                    {
-                        name: 'John Doe',
-                        title: 'CEO',
-                        position: 'Founder & CEO',
-                        image: 'https://placehold.co/400x420',
-                        details: 'John is the visionary behind our institute, leading the team with over 20 years of experience in blockchain technology.'
-                    },
-                    {
-                        name: 'Jane Smith',
-                        title: 'CTO',
-                        position: 'Chief Technology Officer',
-                        image: 'https://placehold.co/400x420',
-                        details: 'Jane oversees all technological developments, ensuring our programs are at the forefront of blockchain innovation.'
-                    }
-                ],
+                // leaderships: [
+                //     {
+                //         name: 'John Doe',
+                //         title: 'CEO',
+                //         position: 'Founder & CEO',
+                //         image: 'https://placehold.co/400x420',
+                //         details: 'John is the visionary behind our institute, leading the team with over 20 years of experience in blockchain technology.'
+                //     },
+                //     {
+                //         name: 'Jane Smith',
+                //         title: 'CTO',
+                //         position: 'Chief Technology Officer',
+                //         image: 'https://placehold.co/400x420',
+                //         details: 'Jane oversees all technological developments, ensuring our programs are at the forefront of blockchain innovation.'
+                //     }
+                // ],
             }
         },
 
