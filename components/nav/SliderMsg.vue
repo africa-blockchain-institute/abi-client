@@ -1,6 +1,9 @@
 <template>
     <div class="slider fixed" v-if="msg.length > 0">
-        <p class="slider__text" v-html="msg"></p>
+        <p class="slider__text">
+            {{ msg }}.
+            <a :href="link" class="slider__text--link" target="_blank" v-if="link"> Click here to learn more</a>
+        </p>
     </div>
 </template>
 
@@ -10,6 +13,7 @@
         data(){
             return{
                 msg: '',
+                link: '',
             }
         },
 
@@ -22,8 +26,7 @@
                 try {
                     let doc = await this.$axios.$get(`/messages`);
                     this.msg = doc.data.message;
-
-                    console.log(doc.data.message);
+                    this.link = doc.data.link;
                 } catch (err) {
                     if (err.response) {
                         // this.doc = err.response.data;
@@ -37,15 +40,21 @@
 <style lang="scss" scoped>
     .slider {
         background-color: $secondary-2;
-        padding: .25rem 1rem;
+        padding: .5rem 1rem;
         text-align: right;
 
         &__text {
             color: $white;
             margin-bottom: 0;
             font-size: $font-rg;
-            font-weight: bold;
+            // font-weight: bold;
             animation: slide-across 30s linear infinite;
+
+            &--link {
+                color: $white;
+                text-decoration: underline;
+                font-weight: bold;
+            }
         }
 
         @keyframes slide-across {

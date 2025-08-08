@@ -14,12 +14,13 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">Message</th>
-                                        <th scope="col">#</th>
+                                        <th scope="col">URL</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="wrapper__table--row" v-if="doc">
                                         <td>{{ doc.message }}</td>
+                                        <td>{{ doc.link }}</td>
                                         <td class="">
                                             <button class="btn btn-danger" @click="deleteDoc(doc._id)">
                                                 <span class="fas fa-trash"></span>

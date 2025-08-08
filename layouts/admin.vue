@@ -58,7 +58,7 @@
                     </nuxt-link>
                     <nuxt-link to="/admin/messages" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-envelope icon"></span>
-                        <span class="name" :class="{ active: toggle }">Message</span>
+                        <span class="name" :class="{ active: toggle }">Slider Message</span>
                     </nuxt-link>
                     <a href="#" @click="logout()" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-sign-out-alt icon"></span>

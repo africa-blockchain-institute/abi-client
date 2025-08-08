@@ -12,8 +12,12 @@
                             <form class="row" @submit.prevent="submit">
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
-                                        <label for="name" class="form-label">Message<span>*</span> </label>
-                                        <textarea v-model="form.message" class="form-control form-control-lg" id="name" required />
+                                        <label for="message" class="form-label">Message<span>*</span> </label>
+                                        <input type="text" v-model="form.message" class="form-control form-control-lg" id="message" required />
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <label for="link" class="form-label">Link<span>*</span> </label>
+                                        <input type="url" v-model="form.link" class="form-control form-control-lg" id="link" required />
                                     </div>
                                 </div>
 
@@ -41,7 +45,7 @@
                 title: 'Create Message -  Africa Blockchain Institute.',
                 meta: [
                     {
-                        name: 'Message',
+                        message: 'Message',
                         content: 'message'
                     }
                 ],
@@ -53,6 +57,7 @@
                 loading: false,
                 form : {
                     message: '',
+                    link: '',
                 },
                 status: true,
             }
