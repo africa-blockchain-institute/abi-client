@@ -8,7 +8,7 @@
                 </div>
             </div>
 
-            <div class="row row-cols-2 row-cols-md-3 row-cols-md-4 justify-cotent-center list__content">
+            <div class="row row-cols-2 row-cols-md-3 justify-cotent-center list__content">
                 <div class="col list__content--sect">
                     <div class="card h-100">
                         <img src="~/assets/images/incubator/icons/blockchain1.png" alt="">

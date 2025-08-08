@@ -19,8 +19,7 @@
                                         <label for="category" class="form-label">Team Member Category<span>*</span> </label>
                                         <select class="form-control form-control-lg" name="category" id="category" v-model.trim="form.category" required>
                                             <option value="advisory">Advisory</option>
-                                            <option value="leadership">Leadership</option>
-                                            <option value="faculty">Faculty</option>
+                                            <option value="team">Team</option>
                                         </select>
                                     </div>
                                 </div>
@@ -31,8 +30,8 @@
                                         <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                     </div>
                                     <div class="col-12 col-md-4">
-                                        <label for="position" class="form-label">Team Member Organization </label>
-                                        <input type="text" v-model.trim="form.position" class="form-control form-control-lg" id="position">
+                                        <label for="organization" class="form-label">Team Member Organization </label>
+                                        <input type="text" v-model.trim="form.organization" class="form-control form-control-lg" id="organization">
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
@@ -47,9 +46,9 @@
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
-                                        <label for="details" class="form-label">Team Details <span>*</span> </label>
+                                        <label for="details" class="form-label">Team Details </label>
                                         <client-only>
-                                            <froala id="details" :tag="'textarea'"  v-model="form.details" required></froala>
+                                            <froala id="details" :tag="'textarea'"  v-model="form.details"></froala>
                                         </client-only>
 
                                         <!-- <label for="details" class="form-label">Team Details <span>*</span> </label>
@@ -93,7 +92,7 @@
                 loading: false,
                 categories: {},
                 form : {
-                    position: '',
+                    organization: '',
                     category: '',
                     image: '',
                     title: '',
@@ -118,7 +117,7 @@
                 try {
                     let formData = new FormData()
                     formData.append('name', this.form.name)
-                    formData.append('position', this.form.position)
+                    formData.append('organization', this.form.organization)
                     formData.append('category', this.form.category)
                     formData.append('title', this.form.title)
                     formData.append('details', this.form.details)

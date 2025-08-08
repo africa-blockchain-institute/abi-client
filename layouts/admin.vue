@@ -12,6 +12,10 @@
                         <span class="fas fa-user-graduate icon"></span>
                         <span class="name" :class="{ active: toggle }">Courses</span>
                     </nuxt-link> -->
+                    <nuxt-link to="/admin/dashboard" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
+                        <span class="fas fa-th icon"></span>
+                        <span class="name" :class="{ active: toggle }">Dashboard</span>
+                    </nuxt-link>
                     <nuxt-link to="/admin/resources" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-book icon"></span>
                         <span class="name" :class="{ active: toggle }">Resources</span>
@@ -34,7 +38,7 @@
                     </nuxt-link>
                     <nuxt-link to="/admin/teams" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-user-plus icon"></span>
-                        <span class="name" :class="{ active: toggle }">Teams</span>
+                        <span class="name" :class="{ active: toggle }">Team</span>
                     </nuxt-link>
                     <nuxt-link to="/admin/talents" class="list-group-item list-group-item-action sidebar__list--link" aria-current="true" nuxt-link-active>
                         <span class="fas fa-search icon"></span>

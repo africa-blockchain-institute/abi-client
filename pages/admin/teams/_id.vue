@@ -31,8 +31,8 @@
                                         <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                     </div>
                                     <div class="col-12 col-md-4">
-                                        <label for="position" class="form-label">Team Member Organization </label>
-                                        <input type="text" v-model.trim="form.position" class="form-control form-control-lg" id="position">
+                                        <label for="organization" class="form-label">Team Member Organization </label>
+                                        <input type="text" v-model.trim="form.organization" class="form-control form-control-lg" id="organization">
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
@@ -91,7 +91,7 @@
                 loading: false,
                 title: "",
                 form : {
-                    position: '',
+                    organization: '',
                     category: '',
                     image: '',
                     title: '',
@@ -122,7 +122,7 @@
 
                 try {
                     let formData = new FormData()
-                    formData.append('position', this.form.position)
+                    formData.append('organization', this.form.organization)
                     formData.append('name', this.form.name)
                     formData.append('category', this.form.category)
                     formData.append('title', this.form.title)

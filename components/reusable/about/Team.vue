@@ -5,7 +5,7 @@
         <!-- board section ends -->
         
         <!-- leadership section ends -->       
-        <Lists :listings="leadership" title="Our Leadership" />
+        <Lists :listings="leadership" title="Our Team" />
         <!-- leadership section ends -->
 
         <!-- <ListsModal :listings="leadership" title="Our Leadership" /> -->

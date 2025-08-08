@@ -16,9 +16,9 @@
                                         <th scope="col">#</th>
                                         <th scope="col">Image</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Title</th>
                                         <th scope="col">Category</th>
-                                        <th scope="col">Position</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Organization</th>
                                         <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
@@ -29,7 +29,7 @@
                                         <td>{{ doc.name }}</td>
                                         <td>{{ doc.title }}</td>
                                         <td>{{ doc.category | capitalize }} </td>
-                                        <td>{{ doc.position || '-' }} </td>
+                                        <td>{{ doc.organization || '-' }} </td>
                                         <td class="">
                                             <nuxt-link :to="{ name: 'admin-teams-id', params:{ id: doc._id} }" class="btn btn-primary">
                                                 <span class="fas fa-edit"></span>

@@ -106,13 +106,14 @@
 
                     let destination;
 
-                    if(user.data.role == 'user'){
-                        destination = '/user/courses'
-                    }else if( user.data.role == 'instructor'){
-                        destination = '/instructor/courses'
-                    }else if(user.data.role == 'admin' ){
-                        destination = '/admin/courses'
-                    }
+                    // if(user.data.role == 'user'){
+                    //     destination = '/user/courses'
+                    // }else if( user.data.role == 'instructor'){
+                    //     destination = '/instructor/courses'
+                    // }else if(user.data.role == 'admin' ){
+                    //     destination = '/admin/courses'
+                    // }
+                    destination = '/admin/dashboard';
 
                     let res = await this.$auth.loginWith('local', { data: this.form });
                     this.loading = false;
