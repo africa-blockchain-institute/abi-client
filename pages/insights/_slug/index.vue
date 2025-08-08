@@ -11,7 +11,7 @@
                         <h1 class="hero__content--title">{{ insight.title }}</h1>
 
                         <p class="hero__content--pub">Published:</p>
-                        <p class="hero__content--date">{{ insight.published | formatDate }}</p>
+                        <p class="hero__content--date">{{ insight.createdAt | formatDate }}</p>
                     </div>
                 </div>
             </div>

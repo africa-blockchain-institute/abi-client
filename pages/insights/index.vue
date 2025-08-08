@@ -18,7 +18,7 @@
                                     <div class="card-body">
                                         <button class="btn events__info--tag">{{ insight.tag }}</button>
                                         <h5 class="events__info--title">{{ insight.title  }} </h5>
-                                        <p class="events__info--date"> {{ insight.published | formatDate }} </p>
+                                        <p class="events__info--date"> {{ insight.createdAt | formatDate }} </p>
                                         <nuxt-link :to="{ name: 'insights-slug', params: { slug: insight.slug } }"  class="events__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link>
                                     </div>
                                 </div>

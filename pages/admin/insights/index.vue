@@ -29,7 +29,7 @@
                                         <td>{{ doc.title }}</td>
                                         <td>{{ doc.tag }} </td>
                                         <td>{{ doc.content | truncate }} </td>
-                                        <td>{{ doc.published | formatDate }} </td>
+                                        <td>{{ doc.createdAt | formatDate }} </td>
                                         <td class="">
                                             <nuxt-link :to="{ name: 'admin-insights-slug', params:{ slug: doc.slug} }" class="btn btn-primary">
                                                 <span class="fas fa-edit"></span>

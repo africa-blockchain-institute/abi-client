@@ -18,22 +18,17 @@
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-4">
-                                        <label for="published" class="form-label">Insight Published Date<span>*</span> </label>
-                                        <input type="date" v-model.trim="form.published" class="form-control form-control-lg" id="published" required>
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <label for="tag" class="form-label">Insight Tag<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.tag" class="form-control form-control-lg" id="tag" required>
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-12 col-md-8">
                                         <div class="form-group">
                                             <label class="form-label">Insight Image</label>
                                             <input class="form-control form-control-lg" type="file" ref="image"
                                             @change="uploadImage" :class="{'is-invalid': imageErr }" required>
                                             <div class="invalid-feedback">{{ this.imageErr }} </div>
                                         </div>
+                                    </div>
+
+                                     <div class="col-12 col-md-4">
+                                        <label for="tag" class="form-label">Insight Tag<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.tag" class="form-control form-control-lg" id="tag" required>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
@@ -86,7 +81,6 @@
                     content: '',
                     image: '',
                     title: '',
-                    published: '',
                 },
                 imageErr: null,
                 status: true,
@@ -109,7 +103,6 @@
                     formData.append('content', this.form.content)
                     formData.append('title', this.form.title)
                     formData.append('image', this.form.image)
-                    formData.append('published', this.form.published)
 
                     await this.$axios.$post('/insights', formData)
                     this.loading = false;
@@ -130,11 +123,11 @@
                 this.imageErr = ''
 
                 if(image.type.startsWith('image')){
-                    if(image.size <= 1000000){
+                    if(image.size <= 2000000){
                         this.form.image = image
                         this.status = false
                     }else {
-                        this.imageErr = "Image Size Must be less than 1mb"
+                        this.imageErr = "Image Size Must be less than 2mb"
                     }
                 }else {
                     this.imageErr = "File Must be of an Image format (PNG, JPG, JPEG)"

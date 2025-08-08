@@ -18,22 +18,16 @@
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-4">
-                                        <label for="published" class="form-label">Insight Published Date<span>*</span> </label>
-                                        <input type="date" v-model.trim="form.published" class="form-control form-control-lg" id="published">
-                                    </div>
-                                    <div class="col-12 col-md-4">
-                                        <label for="tag" class="form-label">Insight Tag<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.tag" class="form-control form-control-lg" id="tag">
-                                    </div>
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-12 col-md-8">
                                         <div class="form-group">
                                             <label class="form-label">Insight Image</label>
                                             <input class="form-control form-control-lg" type="file" ref="image"
                                             @change="uploadImage" :class="{'is-invalid': imageErr }">
                                             <div class="invalid-feedback">{{ this.imageErr }} </div>
                                         </div>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <label for="tag" class="form-label">Insight Tag<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.tag" class="form-control form-control-lg" id="tag">
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
@@ -86,7 +80,6 @@
                     content: '',
                     image: '',
                     title: '',
-                    published: '',
                     tag: '',
                 },
                 imageErr: null,
@@ -116,7 +109,6 @@
                     formData.append('content', this.form.content)
                     formData.append('title', this.form.title)
                     formData.append('image', this.form.image)
-                    formData.append('published', this.form.published)
                     formData.append('tag', this.form.tag)
 
                     await this.$axios.$patch(`/insights/${this.$route.params.slug}`, formData)

@@ -10,7 +10,7 @@
                         <div class="card-body">
                             <button class="btn insight__info--tag">{{ list.tag }}</button>
                             <h5 class="insight__info--title">{{ list.title }} </h5>
-                            <p class="insight__info--date"> {{ list.published | formatDate }} </p>
+                            <p class="insight__info--date"> {{ list.createdAt | formatDate }} </p>
                             <nuxt-link :to="{ name: 'insights-slug', params: { slug: list.slug } }"  class="insight__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link>
                             <!-- <nuxt-link :to="{ name: 'insights-slug', params: '/insights/_slug/' }"  class="insight__info--link" target="blank"> Read More <span class="fas fa-arrow-right"></span> </nuxt-link> -->
                         </div>
