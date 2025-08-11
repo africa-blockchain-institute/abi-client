@@ -78,6 +78,8 @@
                 }
             }
 
+            cursor: pointer;
+
             &--name{
                 font-size: $font-rg;
                 margin-bottom: .5rem;
