@@ -16,8 +16,8 @@
                                         <th scope="col">#</th>
                                         <th scope="col">Image</th>
                                         <th scope="col">Name</th>
-                                        <th scope="col">Category</th>
                                         <th scope="col">Title</th>
+                                        <th scope="col">Category</th>
                                         <th scope="col">Organization</th>
                                         <th scope="col">Actions</th>
                                     </tr>

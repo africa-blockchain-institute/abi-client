@@ -19,8 +19,7 @@
                                         <label for="category" class="form-label">Team Member Category<span>*</span> </label>
                                         <select class="form-control form-control-lg" name="category" id="category" v-model.trim="form.category" required>
                                             <option value="advisory">Advisory</option>
-                                            <option value="leadership">Leadership</option>
-                                            <option value="faculty">Faculty</option>
+                                            <option value="team">Team</option>
                                         </select>
                                     </div>
                                 </div>
