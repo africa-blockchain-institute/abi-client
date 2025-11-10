@@ -12,7 +12,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="10000">
                         <video 
-                            src="https://abi-api-assets.s3.us-east-2.amazonaws.com/general/AFRICAN+BLOCKCHAIN+VIDEO+compressed.mp4"
+                            src="https://res.cloudinary.com/dnteyhwjn/video/upload/v1762797010/AFRICAN_BLOCKCHAIN_VIDEO_compressed_poblz4.mp4"
                             class="d-block w-100"
                             autoplay
                             muted

@@ -124,6 +124,7 @@
                     formData.append('image', this.form.image)
 
                     await this.$axios.$post('/teams', formData)
+
                     this.loading = false;
 
                     this.$toast.success("Team created successfully.", {
