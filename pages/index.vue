@@ -201,6 +201,12 @@
 						<div class="col trust__content--sect">
 							<img src="~/assets/images/home/organizations/hague.png" alt="hague">
 						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/utila.png" alt="utila">
+						</div>
+						<div class="col trust__content--sect">
+							<img src="~/assets/images/home/organizations/cite-des.png" alt="cite-des">
+						</div>
 					</div>
 				</div>
 			</div>
