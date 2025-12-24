@@ -49,8 +49,8 @@
                         <form action="" @submit.prevent="submit()">
                             <div class="row justify-content-center">
                                 <div class="col-12">
-                                    <label for="org_name" class="form-label">Organization Name<span>*</span> </label>
-                                    <input type="text" v-model="form.org_name" class="form-control form-control-lg" placeholder="e.g. Africa Blockchain Institute" id="org_name" required>
+                                    <label for="company_name" class="form-label">Organization Name<span>*</span> </label>
+                                    <input type="text" v-model="form.company_name" class="form-control form-control-lg" placeholder="e.g. Africa Blockchain Institute" id="company_name" required>
                                 </div>
                                 
                             </div>
@@ -89,15 +89,15 @@
                                     <input type="email" v-model.trim="form.email" class="form-control form-control-lg" placeholder="e.g. johndoe@abi.com" id="email" required>
                                 </div>
                                 <div class="col-12 col-md-6">
-                                    <label for="phone_number" class="form-label">Phone Number<span>*</span> </label>
-                                    <input type="text" v-model="form.phone_number" class="form-control form-control-lg" placeholder="+44 123456789" id="phone_number" required>
+                                    <label for="contact_number" class="form-label">Phone Number<span>*</span> </label>
+                                    <input type="text" v-model="form.contact_number" class="form-control form-control-lg" placeholder="+44 123456789" id="contact_number" required>
                                 </div>
                             </div>
 
                             <div class="row justify-content-center">
                                 <div class="col-12 col-md-6">
                                     <label for="website" class="form-label">Website<span>*</span> </label>
-                                    <input type="url" v-model="form.website" class="form-control form-control-lg" placeholder="https://africablockchain.institute" id="website" required>
+                                    <input type="text" v-model="form.website" class="form-control form-control-lg" placeholder="https://africablockchain.institute" id="website" required>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="hear_about_us" class="form-label">How did you hear about us?<span>*</span> </label>
@@ -220,7 +220,6 @@
                 ],
 
                 form:{
-                    org_name: "",
                     company_name: "",
                     sector: "",
                     company_size: "",
@@ -228,7 +227,7 @@
                     contact_person: "",
                     job_title: "",
                     email: "",
-                    phone_number: "",
+                    contact_number: "",
                     role: "",
                     hear_about_us: "",
                     message: ""
@@ -251,13 +250,16 @@
                     if(res.status === 'success'){
                         this.$toast.success(res.message);
                         this.form = {
-                            name: "",
-                            email: "",
-                            phone_number: "",
                             company_name: "",
+                            sector: "",
+                            company_size: "",
+                            contact_person: "",
                             job_title: "",
+                            email: "",
+                            contact_number: "",
+                            website: "",
                             hear_about_us: "",
-                            message: ""
+                            message: "",
                         };
                     } else {
                         this.$toast.error(res.message);
