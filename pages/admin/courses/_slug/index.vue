@@ -45,7 +45,7 @@
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
                                         <label for="description" class="form-label">Course Description <span>*</span> </label>
-                                        <textarea id="description" v-model="form.description" required class="form-control" rows="3" ></textarea>
+                                        <quill-editor id="description" v-model="form.description" :options="quillConfig" required></quill-editor>
                                     </div>
                                 </div>
 
@@ -143,8 +143,20 @@
                 imageErr: null,
                 status: true,
 
-                froalaConfig:{
-                    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'superscript', 'subscript', 'insertLink'],
+                quillConfig: {
+                    placeholder: 'Enter Course Description',
+                    theme: 'snow',
+                    modules: {
+                        toolbar: [
+                            ['bold', 'italic', 'underline'],
+                            [{ 'header': 1 }, { 'header': 2 }],
+                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                            [{ 'script': 'sub'}, { 'script': 'super' }],
+                            [{ 'indent': '-1'}, { 'indent': '+1' }],
+                            [{ 'align': [] }],
+                            ['link']
+                        ]
+                    }
                 }
             }
         },

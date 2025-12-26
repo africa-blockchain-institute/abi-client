@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="wrapper__head d-flex justify-content-between">
-            <h1 class="wrapper__head--title">Edit Insight -  {{title}}</h1>
+            <h1 class="wrapper__head--title">Create Team</h1>
         </div>
 
         <div class="wrapper__body shadow">
@@ -11,39 +11,55 @@
                         <div class="wrapper__form">
                             <form class="row" @submit.prevent="submit">
                                 <div class="row justify-content-center">
-                                    <div class="col-12 col-md-8">
-                                        <label for="title" class="form-label">Insight Title<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.title" class="form-control form-control-lg" id="title" required>
+                                    <div class="col-12 col-md-4">
+                                        <label for="name" class="form-label">Team Member name<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.name" class="form-control form-control-lg" id="name" required>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <label for="category" class="form-label">Team Member Category<span>*</span> </label>
+                                        <select class="form-control form-control-lg" name="category" id="category" v-model.trim="form.category" required>
+                                            <option value="advisory">Advisory</option>
+                                            <option value="team">Team</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-4">
+                                        <label for="title" class="form-label">Team Member Title<span>*</span> </label>
+                                        <input type="text" v-model.trim="form.title" :class="{'is-invalid': errors.status }" class="form-control form-control-lg" id="title" required>
+                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+                                    </div>
+                                    <div class="col-12 col-md-4">
+                                        <label for="organization" class="form-label">Team Member Organization </label>
+                                        <input type="text" v-model.trim="form.organization" class="form-control form-control-lg" id="organization">
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-12 col-md-8">
                                         <div class="form-group">
-                                            <label class="form-label">Insight Image</label>
+                                            <label class="form-label">Team Member Image</label>
                                             <input class="form-control form-control-lg" type="file" ref="image"
-                                            @change="uploadImage" :class="{'is-invalid': imageErr }">
+                                            @change="uploadImage" :class="{'is-invalid': imageErr }" required>
                                             <div class="invalid-feedback">{{ this.imageErr }} </div>
                                         </div>
                                     </div>
-                                    <div class="col-12 col-md-4">
-                                        <label for="tag" class="form-label">Insight Tag<span>*</span> </label>
-                                        <input type="text" v-model.trim="form.tag" class="form-control form-control-lg" id="tag">
-                                    </div>
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-md-8">
-                                        <label for="content" class="form-label">Insight Content<span>*</span> </label>
+                                        <label for="details" class="form-label">Team Details </label>
                                         <client-only>
-                                            <quill-editor id="content" v-model="form.content" :options="quillConfig" required></quill-editor>
+                                            <quill-editor id="details" v-model="form.details" :options="quillConfig"></quill-editor>
                                         </client-only>
-                                        <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
+
+                                        <!-- <label for="details" class="form-label">Team Details <span>*</span> </label>
+                                        <textarea id="details" v-model="form.details" required class="form-control" rows="3" ></textarea> -->
                                     </div>
                                 </div>
 
                                 <div class="col-lg-8 mx-auto">
-                                    <button type="submit" class="btn btn-primary">
+                                    <button type="submit" class="btn btn-primary" :disabled="status">
                                         <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span>
-                                        Edit Insight
+                                        Create Team Member
                                     </button>
                                 </div>
                             </form>
@@ -61,11 +77,11 @@
 
         head(){
             return{
-                title: 'Edit '+ this.title +'- Africa Blockchain Institute',
+                title: 'Create Team Member -  Africa Blockchain Institute.',
                 meta: [
                     {
-                        name: 'Insights',
-                        content: 'Insights'
+                        name: 'Team Members',
+                        content: 'Team Members'
                     }
                 ],
             }
@@ -74,51 +90,48 @@
         data(){
             return {
                 loading: false,
-                title: "",
+                categories: {},
                 form : {
-                    link: '',
-                    content: '',
+                    organization: '',
+                    category: '',
                     image: '',
                     title: '',
-                    tag: '',
+                    name: '',
+                    details: '',
                 },
                 imageErr: null,
                 status: true,
-                 froalaConfig:{
+                froalaConfig:{
                     toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'superscript', 'subscript', 'insertLink'],
                 }
             }
         },
 
         created(){
-            this.getDoc()
         },
 
         methods:{
-            async getDoc(){
-                let insight = await this.$axios.$get(`/insights/${this.$route.params.slug}`)
-                this.title = insight.data.title;
-                this.form = insight.data
-            },
-
             async submit(){
                 this.loading = true;
 
                 try {
                     let formData = new FormData()
-                    formData.append('content', this.form.content)
+                    formData.append('name', this.form.name)
+                    formData.append('organization', this.form.organization)
+                    formData.append('category', this.form.category)
                     formData.append('title', this.form.title)
+                    formData.append('details', this.form.details)
                     formData.append('image', this.form.image)
-                    formData.append('tag', this.form.tag)
 
-                    await this.$axios.$patch(`/insights/${this.$route.params.slug}`, formData)
+                    await this.$axios.$post('/teams', formData)
+
                     this.loading = false;
 
-                    this.$toast.success("Insight updated successfully", {
+                    this.$toast.success("Team created successfully.", {
                         icon : 'check'
                     });
 
-                    this.$router.push({ name: "admin-insights" })
+                    this.$router.push({ name: "admin-teams" })
 
                 } catch (err) {
                     this.loading = false;
@@ -134,10 +147,10 @@
                         this.form.image = image
                         this.status = false
                     }else {
-                        this.imageErr = "Image Size Must be less than 1mb"
+                        this.imageErr = "Image Size Must be less than 1mb."
                     }
                 }else {
-                    this.imageErr = "File Must be of an Image format (PNG, JPG, JPEG)"
+                    this.imageErr = "File Must be of an Image format (PNG, JPG, JPEG)."
                 }
             },
         }

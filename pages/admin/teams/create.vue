@@ -48,7 +48,14 @@
                                     <div class="col-12 col-md-8">
                                         <label for="details" class="form-label">Team Details </label>
                                         <client-only>
-                                            <froala id="details" :tag="'textarea'"  v-model="form.details"></froala>
+                                            <quill-editor
+                                                id="details"
+                                                v-model="form.details"
+                                                :options="quillConfig"
+                                                @blur="onEditorBlur"
+                                                @focus="onEditorFocus"
+                                                @ready="onEditorReady">
+                                            </quill-editor>
                                         </client-only>
 
                                         <!-- <label for="details" class="form-label">Team Details <span>*</span> </label>
@@ -101,8 +108,19 @@
                 },
                 imageErr: null,
                 status: true,
-                froalaConfig:{
-                    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'superscript', 'subscript', 'insertLink'],
+                quillConfig: {
+                    modules: {
+                        toolbar: [
+                            ['bold', 'italic', 'underline'],
+                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                            [{ 'indent': '-1'}, { 'indent': '+1' }],
+                            [{ 'align': [] }],
+                            ['link'],
+                            [{ 'script': 'sub'}, { 'script': 'super' }],
+                            ['clean']
+                        ]
+                    },
+                    theme: 'snow'
                 }
             }
         },
@@ -111,6 +129,15 @@
         },
 
         methods:{
+            onEditorBlur(quill) {
+                // Handle blur event
+            },
+            onEditorFocus(quill) {
+                // Handle focus event  
+            },
+            onEditorReady(quill) {
+                // Handle ready event
+            },
             async submit(){
                 this.loading = true;
 

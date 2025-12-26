@@ -54,8 +54,8 @@ export default {
 		{ src: '~/plugins/vue-paystack.js',  ssr: false },
 		{ src: '~/plugins/vue-flutterwave.js',  ssr: false },
         { src: "~/plugins/vue-player.js", ssr: false },
-        // { src: "~/plugins/vue-quill-editor.js", ssr: false },
-        { src: "~/plugins/froala.js", ssr: false },
+        { src: "~/plugins/vue-quill-editor.js", ssr: false },
+        // { src: "~/plugins/froala.js", ssr: false },
 		{ src: '~/plugins/mixins/user.js' },
         { src: '~/plugins/mixins/validation.js' },
 	],
@@ -86,9 +86,9 @@ export default {
 	
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
 	axios: {
-		// baseURL: "http://127.0.0.1:8080/api/v1",
+		baseURL: "http://127.0.0.1:8080/api/v1",
 		// baseURL: "https://africabi-api.herokuapp.com/api/v1",
-		baseURL: "https://abi-api.onrender.com/api/v1"
+		// baseURL: "https://abi-api.onrender.com/api/v1"
 	},
 
 	auth:{
@@ -147,6 +147,15 @@ export default {
 
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {
+		transpile: ['vue-quill-editor'],
+		extend(config, ctx) {
+			// Add rule for handling quill
+			config.module.rules.push({
+				test: /\.js$/,
+				loader: 'babel-loader',
+				include: [/node_modules\/quill/]
+			})
+		}
 	},
 
 	styleResources: {

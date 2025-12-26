@@ -49,7 +49,7 @@
                                     <div class="col-12 col-md-8">
                                         <label for="details" class="form-label">Team Details <span>*</span> </label>
                                         <client-only>
-                                            <froala id="details" :tag="'textarea'" v-model="form.details" required></froala>
+                                            <quill-editor id="details" v-model="form.details" :options="quillConfig" required></quill-editor>
                                         </client-only>
                                       </div>
                                 </div>

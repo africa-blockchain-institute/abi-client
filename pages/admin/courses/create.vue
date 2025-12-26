@@ -46,7 +46,7 @@
                                     <div class="col-12 col-md-8">
                                         <label for="description" class="form-label">Course Description <span>*</span> </label>
                                         <client-only>
-                                            <froala id="description" :tag="'textarea'" :config="froalaConfig" v-model="form.description" required></froala>
+                                            <quill-editor id="description" v-model="form.description" :options="quillConfig" required></quill-editor>
                                         </client-only>
                                     </div>
                                 </div> -->
@@ -152,8 +152,20 @@
                 imageErr: null,
                 status: true,
 
-                froalaConfig:{
-                    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'superscript', 'subscript', 'insertLink'],
+                quillConfig: {
+                    placeholder: 'Enter Course Description',
+                    theme: 'snow',
+                    modules: {
+                        toolbar: [
+                            ['bold', 'italic', 'underline'],
+                            [{ 'header': 1 }, { 'header': 2 }],
+                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                            [{ 'script': 'sub'}, { 'script': 'super' }],
+                            [{ 'indent': '-1'}, { 'indent': '+1' }],
+                            [{ 'align': [] }],
+                            ['link']
+                        ]
+                    }
                 },
             }
         },

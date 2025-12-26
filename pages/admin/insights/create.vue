@@ -35,7 +35,7 @@
                                     <div class="col-12 col-md-8">
                                         <label for="content" class="form-label">Insight Content<span>*</span> </label>
                                         <client-only>
-                                            <froala id="content" :tag="'textarea'" :config="froalaConfig" v-model="form.content" required></froala>
+                                            <quill-editor id="content" v-model="form.content" :options="quillConfig" required></quill-editor>
                                         </client-only>
                                         <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                     </div>
