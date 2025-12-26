@@ -42,6 +42,7 @@ export default {
 	router:{
 		middleware: [
             'clearValidationErrors',
+            'courses-redirect',
         ]
 	},
 

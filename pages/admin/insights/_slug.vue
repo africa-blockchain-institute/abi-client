@@ -34,7 +34,7 @@
                                     <div class="col-12 col-md-8">
                                         <label for="content" class="form-label">Insight Content<span>*</span> </label>
                                         <client-only>
-                                            <quill-editor id="content" v-model="form.content" :options="quillConfig" required></quill-editor>
+                                            <quill-editor id="content" v-model="form.content" required></quill-editor>
                                         </client-only>
                                         <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                     </div>

@@ -49,7 +49,7 @@
                                     <div class="col-12 col-md-8">
                                         <label for="details" class="form-label">Team Details <span>*</span> </label>
                                         <client-only>
-                                            <quill-editor id="details" v-model="form.details" :options="quillConfig" required></quill-editor>
+                                            <quill-editor id="details" v-model="form.details" required></quill-editor>
                                         </client-only>
                                       </div>
                                 </div>
@@ -98,10 +98,7 @@
                     details: '',
                 },
                 imageErr: null,
-                status: true,
-                froalaConfig: {
-                    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'superscript', 'subscript', 'insertLink'],
-                }
+                status: true
             }
         },
 

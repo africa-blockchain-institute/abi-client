@@ -51,10 +51,7 @@
                                             <quill-editor
                                                 id="details"
                                                 v-model="form.details"
-                                                :options="quillConfig"
-                                                @blur="onEditorBlur"
-                                                @focus="onEditorFocus"
-                                                @ready="onEditorReady">
+                                                >
                                             </quill-editor>
                                         </client-only>
 
@@ -107,21 +104,7 @@
                     details: '',
                 },
                 imageErr: null,
-                status: true,
-                quillConfig: {
-                    modules: {
-                        toolbar: [
-                            ['bold', 'italic', 'underline'],
-                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-                            [{ 'indent': '-1'}, { 'indent': '+1' }],
-                            [{ 'align': [] }],
-                            ['link'],
-                            [{ 'script': 'sub'}, { 'script': 'super' }],
-                            ['clean']
-                        ]
-                    },
-                    theme: 'snow'
-                }
+                status: true
             }
         },
 
