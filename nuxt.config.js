@@ -86,9 +86,9 @@ export default {
 	
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
 	axios: {
-		baseURL: "http://127.0.0.1:8080/api/v1",
+		// baseURL: "http://127.0.0.1:8080/api/v1",
 		// baseURL: "https://africabi-api.herokuapp.com/api/v1",
-		// baseURL: "https://abi-api.onrender.com/api/v1"
+		baseURL: "https://abi-api.onrender.com/api/v1"
 	},
 
 	auth:{
