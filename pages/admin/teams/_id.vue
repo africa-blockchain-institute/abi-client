@@ -78,8 +78,8 @@
                 title: 'Edit '+ this.title +'- Africa Blockchain Institute',
                 meta: [
                     {
-                        name: 'teams',
-                        content: 'teams'
+                        name: 'Teams',
+                        content: 'Teams'
                     }
                 ],
             }

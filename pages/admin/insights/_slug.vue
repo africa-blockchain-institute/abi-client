@@ -84,9 +84,6 @@
                 },
                 imageErr: null,
                 status: true,
-                 froalaConfig:{
-                    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat', 'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'superscript', 'subscript', 'insertLink'],
-                }
             }
         },
 

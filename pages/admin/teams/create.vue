@@ -48,11 +48,7 @@
                                     <div class="col-12 col-md-8">
                                         <label for="details" class="form-label">Team Details </label>
                                         <client-only>
-                                            <quill-editor
-                                                id="details"
-                                                v-model="form.details"
-                                                >
-                                            </quill-editor>
+                                            <quill-editor id="details" v-model="form.details"></quill-editor>
                                         </client-only>
 
                                         <!-- <label for="details" class="form-label">Team Details <span>*</span> </label>
