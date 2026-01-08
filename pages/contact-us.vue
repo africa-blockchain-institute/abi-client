@@ -38,7 +38,7 @@
                     </div>
                     
                     <div class="col-12 col-md-7 col-lg-7 offset-md-1 details__form">
-                        <form @submit.prevent="sendMessage()">
+                        <form action="" @submit.prevent="sendMessage()">
                             <div class="row justify-content-center">
                                 <div class="col-12 col-md-6">
                                     <label for="fname" class="form-label">First Name<span>*</span> </label>
@@ -66,7 +66,7 @@
 
                             <div class="row">
                                 <div class="col text-end">
-                                    <button class="btn details__form--btn"> <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span> Send Message</button>
+                                    <button class="btn details__form--btn"> <span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span> Send Message </button>
                                 </div>
                             </div>
                         </form>
@@ -117,7 +117,7 @@
             async sendMessage(){
                 try {
                     this.loading= true;
-                    const res = await this.$axios.$post('/auth/send-message', this.form);
+                    const res = await this.$axios.$post('/messages/send-contact-message', this.form);
 
                     if(res.status == 'success'){
                         this.$swal.fire({

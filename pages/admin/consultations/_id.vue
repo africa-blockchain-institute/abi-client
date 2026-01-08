@@ -19,7 +19,7 @@
                             </div>
                             <div class="col-md-4">
                                 <small class="consultation__info--title"> Phone Number </small>
-                                <p class="consultation__info--info">{{ consultation.phone_number }} </p>
+                                <p class="consultation__info--info">{{ consultation.contact_number }} </p>
                             </div>
                         </div>
 

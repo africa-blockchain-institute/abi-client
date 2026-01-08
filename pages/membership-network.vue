@@ -155,7 +155,9 @@
 
         data(){
             return{
-                hero:{
+                loading: false,
+
+                hero: {
                     title: "Join the ABI Membership Network",
                     image: "membership",
                 },
@@ -247,28 +249,24 @@
 
                     const res = await this.$axios.$post('/memberships', this.form);
 
-                    if(res.status === 'success'){
-                        this.$toast.success(res.message);
-                        this.form = {
-                            company_name: "",
-                            sector: "",
-                            company_size: "",
-                            contact_person: "",
-                            job_title: "",
-                            email: "",
-                            contact_number: "",
-                            website: "",
-                            hear_about_us: "",
-                            message: "",
-                        };
-                    } else {
-                        this.$toast.error(res.message);
+                   if(res.status == 'success'){
+                        this.$swal.fire({
+                            title: 'Thank you!',
+                            text: "Your request was sent successfully! We'll get back to you shortly.",
+                            type: 'success',
+                            showCancelButton: false,
+                        }).then((result) => {
+                            if (result.value) {
+                                return;
+                            }
+                        })
                     }
+
+                    this.form = "";
+                    this.loading = false
+
                 } catch (error) {
-                    console.error(error);
                     this.$toast.error('An error occurred while submitting the form.');
-                } finally {
-                    this.loading = false;
                 }
             }
         }

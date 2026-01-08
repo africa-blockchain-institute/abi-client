@@ -2,19 +2,19 @@
     <div class="slider">
         <VueSlickCarousel v-bind="settings">
             <div class="slider__image">
-                <img src="~/assets/images/impact/gallery/gallery-1.jpg" alt="gallery images" class="img-fluid">
+                <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767793873/photo_5994796781050904074_y_b9seyc.jpg" alt="gallery images" class="img-fluid">
             </div>
             <div class="slider__image">
-                <img src="~/assets/images/impact/gallery/gallery-2.jpg" alt="gallery images" class="img-fluid">
+                <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767793874/photo_5997081231205974534_y_ixmeuq.jpg" alt="gallery images" class="img-fluid">
             </div>
             <div class="slider__image">
-                <img src="~/assets/images/impact/gallery/gallery-3.jpg" alt="gallery images" class="img-fluid">
+                <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767793910/_MG_0296_a6jnrr.jpg" alt="gallery images" class="img-fluid">
             </div>
             <div class="slider__image">
-                <img src="~/assets/images/impact/gallery/gallery-4.jpg" alt="gallery images" class="img-fluid">
+                <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767793919/2024EAHCDay1-127_j8kt13.jpg" alt="gallery images" class="img-fluid">
             </div>
             <div class="slider__image">
-                <img src="~/assets/images/impact/gallery/gallery-5.jpg" alt="gallery images" class="img-fluid">
+                <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767793921/RM1L5520_tndh8x.jpg" alt="gallery images" class="img-fluid">
             </div>
         </VueSlickCarousel>
     </div>

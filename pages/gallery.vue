@@ -9,11 +9,6 @@
                  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
                     <div class="col gallery__list">
                         <div class="card">
-                            <img src="~/assets/images/impact/gallery/gallery-1.jpg" class="img-fluid" />
-                        </div>
-                    </div>
-                    <div class="col gallery__list">
-                        <div class="card">
                             <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1766936283/IMG_0942_xauvxq.jpg" class="img-fluid" />
                         </div>
                     </div>
@@ -245,11 +240,6 @@
                     </div>
                     <div class="col gallery__list">
                         <div class="card">
-                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1766936026/0Q0A9535_iqrjam.jpg" class="img-fluid" />
-                        </div>
-                    </div>
-                    <div class="col gallery__list">
-                        <div class="card">
                             <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1766936025/0Q0A8676_ttm6bg.jpg" class="img-fluid" />
                         </div>
                     </div>
@@ -403,14 +393,20 @@
                     </div>
                     <div class="col gallery__list">
                         <div class="card">
-                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1766936027/0Q0A9879_h07lc0.jpg" class="img-fluid" />
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767797195/AH9A0013_pdiqgv.jpg" class="img-fluid" />
                         </div>
                     </div>
                     <div class="col gallery__list">
                         <div class="card">
-                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1766936089/DV5A2336_2_exajof.jpg" class="img-fluid" />
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767796898/0Q0A8830_azfqcg.jpg" class="img-fluid" />
                         </div>
                     </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1766936027/0Q0A9879_h07lc0.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    
                     <div class="col gallery__list">
                         <div class="card">
                             <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1766936025/0Q0A8620_mbeypv.jpg" class="img-fluid" />
@@ -419,6 +415,11 @@
                     <div class="col gallery__list">
                         <div class="card">
                             <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1766936018/kai_studios_5_qfmrtx.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1766936089/DV5A2336_2_exajof.jpg" class="img-fluid" />
                         </div>
                     </div>
                     <div class="col gallery__list">

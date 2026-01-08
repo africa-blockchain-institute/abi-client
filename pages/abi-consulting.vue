@@ -33,8 +33,8 @@
 
                             <div class="row justify-content-center">
                                 <div class="col-12 col-md-6">
-                                    <label for="phone_number" class="form-label">Phone Number<span>*</span> </label>
-                                    <input type="text" v-model="form.phone_number" class="form-control form-control-lg" placeholder="e.g. +44 123 778 990" id="phone_number" required>
+                                    <label for="contact_number" class="form-label">Phone Number<span>*</span> </label>
+                                    <input type="text" v-model="form.contact_number" class="form-control form-control-lg" placeholder="e.g. +44 123 778 990" id="contact_number" required>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <label for="company_name" class="form-label">Company Name<span>*</span> </label>
@@ -70,7 +70,7 @@
 
                             <div class="row">
                                 <div class="col text-end">
-                                    <button class="btn details__form--btn"><span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span> Submit</button>
+                                    <button class="btn details__form--btn"><span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span> Submit </button>
                                 </div>
                             </div>
                         </form>
@@ -107,7 +107,7 @@
                 form:{
                     name: "",
                     email: "",
-                    phone_number: "",
+                    contact_number: "",
                     company_name: "",
                     job_title: "",
                     hear_about_us: "",
