@@ -424,7 +424,7 @@
                     </div>
                     <div class="col gallery__list">
                         <div class="card">
-                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1766936028/0Q0A9957_yh7prx.jpg" class="img-fluid" />
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767975605/0Q0A9957_yh7prx.jpg" class="img-fluid" />
                         </div>
                     </div>
                     <div class="col gallery__list">
@@ -450,6 +450,78 @@
                     <div class="col gallery__list">
                         <div class="card">
                             <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1766936006/_MG_0355_ygll2o.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+
+                    <!--  -->
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767975250/photo_5994796781050904074_y_rqti0e.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767975228/RM1L5494_vpbshh.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767975218/Picture_4_q2wylu.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767975205/IMG_2290_vh93li.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767975196/IMG_20231128_171000_q8jusc.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767975137/unnamed_22_v8wj21.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767975105/unnamed_14_c9ovt7.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767975091/unnamed_11_kre847.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767975080/unnamed_28_iakrw5.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767975071/20231206_171229_ldxgiu.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767975057/113_eyuvxq.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767974993/unnamed_5_kgh39e.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767965623/photo_5997081231205974534_y_y4ypyd.jpg" class="img-fluid" />
+                        </div>
+                    </div>
+                    <div class="col gallery__list">
+                        <div class="card">
+                            <img src="https://res.cloudinary.com/dnteyhwjn/image/upload/v1767975316/unnamed_26_xzorky.jpg" class="img-fluid" />
                         </div>
                     </div>
                 </div>
