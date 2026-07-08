@@ -120,6 +120,8 @@
                                 <div class="small">By submitting this form, you consent to Africa Blockchain Institute storing and processing your information to manage your request and share relevant updates about our programs, events, and resources. You can unsubscribe from these communications at any time. </div>
                             </div>
 
+                            <ReCaptcha ref="recaptcha" />
+
                             <div class="row">
                                 <div class="col text-end">
                                     <button class="btn memberships__form--btn"><span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span> Submit</button>
@@ -139,6 +141,7 @@
     import Aside from '~/components/reusable/programs/Aside.vue';
     import Aside3 from '~/components/reusable/programs/Aside3.vue';
     import Members from '~/components/reusable/Members.vue';
+    import ReCaptcha from '~/components/reusable/ReCaptcha.vue';
 
     export default {
         head(){
@@ -239,15 +242,16 @@
         },
 
         components: {
-            Hero, Aside, Aside3, Members,
+            Hero, Aside, Aside3, Members, ReCaptcha,
         },
 
         methods: {
             async submit(){
                 try {
                     this.loading = true;
-
-                    const res = await this.$axios.$post('/memberships', this.form);
+                    const token = await this.$refs.recaptcha.getToken();
+                    const payload = { ...this.form, recaptchaToken: token };
+                    const res = await this.$axios.$post('/memberships', payload);
 
                    if(res.status == 'success'){
                         this.$swal.fire({

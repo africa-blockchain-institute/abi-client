@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     
-                    <div class="carousel-item" data-bs-interval="10000">
+                    <div class="carousel-item" data-bs-interval="5000">
                         <img src="~/assets/images/home/hero_1.jpg" class="d-block" alt="Improving the Narrative of Blockchain Across Africa">
                         <div class="carousel-caption">
                             <h5 class="title">Deploy Blockchain with Ease</h5>

@@ -75,6 +75,8 @@
                                 </div>
                             </div>
 
+                            <ReCaptcha ref="recaptcha" />
+
                             <div class="row">
                                 <div class="col text-end">
                                     <button class="btn details__form--btn"><span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span> Submit</button>
@@ -91,6 +93,7 @@
 
 <script>
     import Hero from '~/components/reusable/Hero-v1.vue';
+    import ReCaptcha from '~/components/reusable/ReCaptcha.vue';
 
     export default {
         name: "abi-consulting",
@@ -124,7 +127,8 @@
         },
 
         components: {
-            Hero
+            Hero,
+            ReCaptcha,
         },
 
         created(){
@@ -135,8 +139,9 @@
             async submit(){
                 try {
                     this.loading = true;
-
-                    const res = await this.$axios.$post('/consultations', this.form);
+                    const token = await this.$refs.recaptcha.getToken();
+                    const payload = { ...this.form, recaptchaToken: token };
+                    const res = await this.$axios.$post('/consultations', payload);
 
                     if(res.status == 'success'){
                         this.$swal.fire({

@@ -23,6 +23,7 @@ export default {
 			{ src: "https://kit.fontawesome.com/24b54c8fdd.js", type: 'text/javascript' },
 			{ src: "//code.tidio.co/bvlgrr2nu3l3g6zzvkejcdavzcyseijl.js", type: 'text/javascript' },
 			{ src: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" },
+			{ src: "https://www.google.com/recaptcha/api.js", async: true, defer: true },
 		]
 	},
 
@@ -56,6 +57,7 @@ export default {
 		{ src: '~/plugins/vue-flutterwave.js',  ssr: false },
         { src: "~/plugins/vue-player.js", ssr: false },
         { src: "~/plugins/vue-quill-editor.js", ssr: false },
+        { src: "~/plugins/recaptcha.js", ssr: false },
         // { src: "~/plugins/froala.js", ssr: false },
 		{ src: '~/plugins/mixins/user.js' },
         { src: '~/plugins/mixins/validation.js' },
@@ -87,9 +89,9 @@ export default {
 	
 	// Axios module configuration: https://go.nuxtjs.dev/config-axios
 	axios: {
-		// baseURL: "http://127.0.0.1:8081/api/v1",
+		baseURL: "http://127.0.0.1:8081/api/v1",
 		// baseURL: "https://africabi-api.herokuapp.com/api/v1",
-		baseURL: "https://abi-api.onrender.com/api/v1",
+		// baseURL: "https://abi-api.onrender.com/api/v1",
 	},
 
 	auth:{

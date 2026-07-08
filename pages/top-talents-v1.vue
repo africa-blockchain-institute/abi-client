@@ -121,6 +121,8 @@
                                 </div>
                             </div>
 
+                            <ReCaptcha ref="recaptcha" />
+
                             <div class="row">
                                 <div class="col text-end">
                                     <button class="btn details__form--btn">
@@ -139,6 +141,7 @@
 
 <script>
     import Hero from '~/components/reusable/Hero-v1.vue';
+    import ReCaptcha from '~/components/reusable/ReCaptcha.vue';
 
     export default {
         name: "top-talents",
@@ -177,15 +180,17 @@
         },
 
         components: {
-            Hero
+            Hero,
+            ReCaptcha,
         },
 
         methods: {
             async submit(){
                 try {
                     this.loading = true;
-
-                    const res = await this.$axios.$post('/talents', this.form);
+                    const token = await this.$refs.recaptcha.getToken();
+                    const payload = { ...this.form, recaptchaToken: token };
+                    const res = await this.$axios.$post('/talents', payload);
 
                     if(res.status == 'success'){
                         this.$swal.fire({

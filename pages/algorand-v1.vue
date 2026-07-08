@@ -129,8 +129,12 @@
 
                             <div class="row">
                                 <div class="col text-center">
-                                    <button class="btn details__form--btn">Download</button>
+                                    <ReCaptcha ref="recaptcha" />
                                 </div>
+                            </div>
+
+                            <div class="row">
+                                <button class="btn details__form--btn">Download</button>
                             </div>
                         </form>
                     </div>
@@ -183,8 +187,14 @@
 </template>
 
 <script>
+import ReCaptcha from '~/components/reusable/ReCaptcha.vue';
+
 export default {
     name: "algorand",
+
+    components: {
+        ReCaptcha,
+    },
 
     data(){
         return {
@@ -205,8 +215,9 @@ export default {
     methods: {
         async downloadReport(){
             try {
-
-                const res = await this.$axios.$post('/subscribers/add-subscriber', this.form);
+                const token = await this.$refs.recaptcha.getToken();
+                const payload = { ...this.form, recaptchaToken: token };
+                const res = await this.$axios.$post('/subscribers/add-subscriber', payload);
 
                 if(res.status == 'success'){
                     this.$swal.fire({

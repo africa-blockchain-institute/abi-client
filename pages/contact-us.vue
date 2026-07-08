@@ -61,8 +61,10 @@
                                     <textarea class="form-control" id="message" rows="3" v-model="form.message" :class="{'is-invalid': errors.status }" placeholder="Enter your message" required></textarea>
                                     <div class="invalid-feedback" v-if="errors"> {{ errors.message }} </div>
                                 </div>
-                                <div class="small">By submitting this form, you consent to Africa Blockchain Institute storing and processing your information to manage your request and share relevant updates about our programs, events, and resources. You can unsubscribe from these communications at any time. </div>
+                                <div class="small mb-4">By submitting this form, you consent to Africa Blockchain Institute storing and processing your information to manage your request and share relevant updates about our programs, events, and resources. You can unsubscribe from these communications at any time. </div>
                             </div>
+                            
+                            <ReCaptcha ref="recaptcha"/>
 
                             <div class="row">
                                 <div class="col text-end">
@@ -80,6 +82,7 @@
 
 <script>
     import Hero from '~/components/reusable/Hero.vue';
+    import ReCaptcha from '~/components/reusable/ReCaptcha.vue';
 
     export default {
         name: "contact-us",
@@ -110,14 +113,17 @@
         },
 
         components: {
-            Hero
+            Hero,
+            ReCaptcha,
         },
 
         methods: {
             async sendMessage(){
                 try {
-                    this.loading= true;
-                    const res = await this.$axios.$post('/messages/send-contact-message', this.form);
+                    this.loading = true;
+                    const token = await this.$refs.recaptcha.getToken();
+                    const payload = { ...this.form, recaptchaToken: token };
+                    const res = await this.$axios.$post('/messages/send-contact-message', payload);
 
                     if(res.status == 'success'){
                         this.$swal.fire({

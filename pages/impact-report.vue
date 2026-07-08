@@ -53,6 +53,8 @@
                                 <div class="small">By submitting this form, you consent to Africa Blockchain Institute storing and processing your information to manage your request and share relevant updates about our programs, events, and resources. You can unsubscribe from these communications at any time. </div>
                             </div>
 
+                            <ReCaptcha ref="recaptcha" />
+
                             <div class="row">
                                 <div class="col text-end">
                                     <button type="submit" class="btn details__form--btn">Download {{ this.form.edition }} Edition</button>
@@ -69,6 +71,7 @@
 
 <script>
     import Hero from '~/components/reusable/Hero.vue';
+    import ReCaptcha from '~/components/reusable/ReCaptcha.vue';
 
     export default {
         name: "impact-report",
@@ -100,33 +103,35 @@
         },
 
         components: {
-            Hero
+            Hero,
+            ReCaptcha,
         },
 
-         methods: {
+        methods: {
             async downloadReport(){
                 try {
-                    if(true){
-                        this.$swal.fire({
-                            title: 'Thank you!',
-                            text: `You can proceed to download the ${this.form.edition} Edition report.`,
-                            type: 'success',
-                            showCancelButton: false,
-                            confirmButtonText: `Download Report!`
-                        }).then((result) => {
-                            if (result.value) {
-                                if (this.form.edition == "1st") {
-                                    return window.open('https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+2021-2.pdf', '_blank')
-                                } else if (this.form.edition == "2nd") {
-                                    return window.open("https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+II+-+2022.pdf", '_blank')
-                                } else if (this.form.edition == "3rd") {
-                                    return window.open("https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+III+-+2023.pdf", '_blank')
-                                }
+                    const token = await this.$refs.recaptcha.getToken();
+                    const payload = { ...this.form, recaptchaToken: token };
+                    
+                    this.$swal.fire({
+                        title: 'Thank you!',
+                        text: `You can proceed to download the ${this.form.edition} Edition report.`,
+                        type: 'success',
+                        showCancelButton: false,
+                        confirmButtonText: `Download Report!`
+                    }).then((result) => {
+                        if (result.value) {
+                            if (this.form.edition == "1st") {
+                                return window.open('https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+2021-2.pdf', '_blank')
+                            } else if (this.form.edition == "2nd") {
+                                return window.open("https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+II+-+2022.pdf", '_blank')
+                            } else if (this.form.edition == "3rd") {
+                                return window.open("https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+III+-+2023.pdf", '_blank')
                             }
-                        })
-                    }
+                        }
+                    })
 
-                    await this.$axios.$post('/subscribers/add-subscriber', this.form);
+                    await this.$axios.$post('/subscribers/add-subscriber', payload);
                     this.form = this.form;
                 } catch (err) {
                     console.log(err)

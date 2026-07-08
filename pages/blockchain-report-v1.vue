@@ -135,8 +135,12 @@
 
                             <div class="row">
                                 <div class="col text-center">
-                                    <button type="submit" class="btn details__form--btn">Download {{ this.form.edition }} Edition</button>
+                                    <ReCaptcha ref="recaptcha" />
                                 </div>
+                            </div>
+
+                            <div class="row">
+                                <button type="submit" class="btn details__form--btn">Download {{ this.form.edition }} Edition</button>
                             </div>
                         </form>
                     </div>
@@ -166,6 +170,8 @@
 </template>
 
 <script>
+    import ReCaptcha from '~/components/reusable/ReCaptcha.vue';
+
     export default {
         name: "blockchain-report",
         layout: "vacuous",
@@ -182,6 +188,10 @@
             }
         },
         
+        components: {
+            ReCaptcha,
+        },
+
         data(){
             return {
                 form:{
@@ -198,27 +208,28 @@
         methods: {
             async downloadReport(){
                 try {
-                    if(true){
-                        this.$swal.fire({
-                            title: 'Thank you!',
-                            text: `You can proceed to download the ${this.form.edition} Edition report.`,
-                            type: 'success',
-                            showCancelButton: false,
-                            confirmButtonText: `Download Report!`
-                        }).then((result) => {
-                            if (result.value) {
-                                if (this.form.edition == "1st") {
-                                    return window.open('https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+2021-2.pdf', '_blank')
-                                } else if (this.form.edition == "2nd") {
-                                    return window.open("https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+II+-+2022.pdf", '_blank')
-                                } else if (this.form.edition == "3rd") {
-                                    return window.open("https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+III+-+2023.pdf", '_blank')
-                                }
+                    const token = await this.$refs.recaptcha.getToken();
+                    const payload = { ...this.form, recaptchaToken: token };
+                    
+                    this.$swal.fire({
+                        title: 'Thank you!',
+                        text: `You can proceed to download the ${this.form.edition} Edition report.`,
+                        type: 'success',
+                        showCancelButton: false,
+                        confirmButtonText: `Download Report!`
+                    }).then((result) => {
+                        if (result.value) {
+                            if (this.form.edition == "1st") {
+                                return window.open('https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+2021-2.pdf', '_blank')
+                            } else if (this.form.edition == "2nd") {
+                                return window.open("https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+II+-+2022.pdf", '_blank')
+                            } else if (this.form.edition == "3rd") {
+                                return window.open("https://abi-api-assets.s3.us-east-2.amazonaws.com/algorand-report/AFRICA+Blockchain+Report+III+-+2023.pdf", '_blank')
                             }
-                        })
-                    }
+                        }
+                    })
 
-                    await this.$axios.$post('/subscribers/add-subscriber', this.form);
+                    await this.$axios.$post('/subscribers/add-subscriber', payload);
                     this.form = this.form;
                 } catch (err) {
                     console.log(err)
