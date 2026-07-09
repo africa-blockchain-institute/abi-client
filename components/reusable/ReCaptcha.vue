@@ -1,9 +1,10 @@
 <template>
   <div class="recaptcha-wrapper" v-if="!hideRecaptcha">
     <div 
-      :id="`recaptcha-${_uid}`" 
-      class="g_recaptcha"
-      data-sitekey="6LcyC0otAAAAANUykd-b_5WVc5EGy7gAQ40B1HQe"
+      :id="`turnstile-${_uid}`" 
+      class="cf-turnstile"
+      data-sitekey="0x4AAAAAADyovV4Fph6cYj5t"
+      data-theme="light"
     ></div>
     <div v-if="error" class="alert alert-danger mt-2" role="alert">
       {{ error }}
@@ -29,7 +30,7 @@ export default {
     }
   },
   mounted() {
-    this.containerId = `recaptcha-${this._uid}`
+    this.containerId = `turnstile-${this._uid}`
     
     // Ensure DOM is ready before rendering
     this.$nextTick(() => {
@@ -39,7 +40,7 @@ export default {
   methods: {
     renderWidget() {
       const attemptRender = () => {
-        if (!window.grecaptcha) {
+        if (!window.turnstile) {
           setTimeout(attemptRender, 500)
           return
         }
@@ -54,14 +55,16 @@ export default {
 
           // Only render if not already rendered
           if (container.children.length === 0) {
-            this.widgetId = window.grecaptcha.render(this.containerId, {
-              sitekey: '6LcyC0otAAAAANUykd-b_5WVc5EGy7gAQ40B1HQe',
-              callback: () => this.onVerify(),
+            window.turnstile.render(`#${this.containerId}`, {
+              sitekey: '0x4AAAAAADyovV4Fph6cYj5t',
+              theme: 'light',
+              callback: (token) => this.onVerify(token),
+              'error-callback': () => this.onError(),
               'expired-callback': () => this.onExpire(),
             })
           }
         } catch (err) {
-          console.error('reCAPTCHA render error:', err)
+          console.error('Turnstile render error:', err)
         }
       }
 
@@ -71,9 +74,9 @@ export default {
       try {
         this.error = null
         
-        // Get token from grecaptcha
-        if (!window.grecaptcha) {
-          throw new Error('reCAPTCHA not loaded yet')
+        // Get token from Turnstile
+        if (!window.turnstile) {
+          throw new Error('Turnstile not loaded yet')
         }
 
         // If widget hasn't been rendered yet, try rendering it now
@@ -84,26 +87,30 @@ export default {
           await new Promise(resolve => setTimeout(resolve, 1000))
         }
 
-        // Try to get response (use 0 for first widget if widgetId is null)
-        const token = window.grecaptcha.getResponse(this.widgetId || 0)
+        // Get the response token
+        const token = window.turnstile.getResponse(this.containerId)
         
         if (!token) {
-          throw new Error('Please complete the reCAPTCHA challenge')
+          throw new Error('Please complete the Turnstile challenge')
         }
         return token
       } catch (err) {
-        this.error = err.message || 'reCAPTCHA verification failed. Please try again.'
-        console.error('reCAPTCHA error:', err)
+        this.error = err.message || 'Turnstile verification failed. Please try again.'
+        console.error('Turnstile error:', err)
         throw err
       }
     },
-    onVerify() {
-      this.token = window.grecaptcha.getResponse(this.widgetId || 0)
-      window.__recaptchaToken = this.token
+    onVerify(token) {
+      this.token = token
+      window.__turnstileToken = token
+      this.error = null
+    },
+    onError() {
+      this.error = 'Turnstile encountered an error. Please try again.'
     },
     onExpire() {
       this.token = null
-      window.__recaptchaToken = null
+      window.__turnstileToken = null
     },
   },
 }
@@ -111,6 +118,6 @@ export default {
 
 <style scoped>
 .recaptcha-wrapper {
-  margin-bottom: 1rem;
+  margin-bottom: .25rem;
 }
 </style>

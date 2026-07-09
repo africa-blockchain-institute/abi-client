@@ -23,7 +23,7 @@ export default {
 			{ src: "https://kit.fontawesome.com/24b54c8fdd.js", type: 'text/javascript' },
 			{ src: "//code.tidio.co/bvlgrr2nu3l3g6zzvkejcdavzcyseijl.js", type: 'text/javascript' },
 			{ src: "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" },
-			{ src: "https://www.google.com/recaptcha/api.js", async: true, defer: true },
+			{ src: "https://challenges.cloudflare.com/turnstile/v0/api.js", async: true, defer: true },
 		]
 	},
 
