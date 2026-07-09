@@ -118,6 +118,6 @@ export default {
 
 <style scoped>
 .recaptcha-wrapper {
-  margin-bottom: .25rem;
+  margin-bottom: .5rem;
 }
 </style>

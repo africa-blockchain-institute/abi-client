@@ -68,6 +68,8 @@
                                 <div class="small">By submitting this form, you consent to Africa Blockchain Institute storing and processing your information to manage your request and share relevant updates about our programs, events, and resources. You can unsubscribe from these communications at any time. </div>
                             </div>
 
+                            <ReCaptcha ref="recaptcha" />
+
                             <div class="row">
                                 <div class="col text-end">
                                     <button class="btn details__form--btn"><span class="fas fa-spinner fa-spin mr-2" v-if="loading"></span> Submit </button>
@@ -84,6 +86,7 @@
 
 <script>
     import Hero from '~/components/reusable/Hero.vue';
+    import ReCaptcha from '~/components/reusable/ReCaptcha.vue';
 
     export default {
         name: "abi-consulting",
@@ -117,7 +120,8 @@
         },
 
         components: {
-            Hero
+            Hero,
+            ReCaptcha,
         },
 
         created(){
@@ -129,7 +133,9 @@
                 try {
                     this.loading = true;
 
-                    const res = await this.$axios.$post('/consultations', this.form);
+                    const token = await this.$refs.recaptcha.getToken();
+                    const payload = { ...this.form, recaptchaToken: token };
+                    const res = await this.$axios.$post('/consultations', payload);
 
                     if(res.status == 'success'){
                         this.$swal.fire({

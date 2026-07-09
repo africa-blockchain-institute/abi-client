@@ -123,9 +123,11 @@
 
                             <div class="row justify-content-center">
                                 <div class="col">
-                                    <p class="consent">By submitting this form, you consent to Africa Blockchain Institute storing and processing your information to manage your request and share relevant updates about our programs, events, and resources. You can unsubscribe from these communications at any time. </p>
+                                    <p class="consent mb-3">By submitting this form, you consent to Africa Blockchain Institute storing and processing your information to manage your request and share relevant updates about our programs, events, and resources. You can unsubscribe from these communications at any time. </p>
                                 </div>
                             </div>
+
+                            <ReCaptcha ref="recaptcha" />
 
                             <div class="row">
                                 <div class="col text-start">
@@ -145,6 +147,7 @@
 
 <script>
     import Hero from '~/components/reusable/Hero.vue';
+    import ReCaptcha from '~/components/reusable/ReCaptcha.vue';
 
     export default {
         name: "top-talents",
@@ -183,7 +186,8 @@
         },
 
         components: {
-            Hero
+            Hero,
+            ReCaptcha
         },
 
         methods: {
@@ -191,7 +195,9 @@
                 try {
                     this.loading = true;
 
-                    const res = await this.$axios.$post('/talents', this.form);
+                    const token = await this.$refs.recaptcha.getToken();
+                    const payload = { ...this.form, recaptchaToken: token };
+                    const res = await this.$axios.$post('/talents', payload);
 
                     if(res.status == 'success'){
                         this.$swal.fire({
